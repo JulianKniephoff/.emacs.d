@@ -5,3 +5,7 @@
 
 (require 'pallet)
 (pallet-mode t)
+
+;; Misc
+
+(setq inhibit-startup-screen t)
