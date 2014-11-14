@@ -1,3 +1,5 @@
+;; Set up Cask
+
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
