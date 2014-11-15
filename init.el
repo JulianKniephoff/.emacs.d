@@ -6,7 +6,7 @@
 (require 'pallet)
 (pallet-mode t)
 
-;; Misc
+;; Appearance
 
 (setq inhibit-startup-screen t)
 
@@ -15,3 +15,7 @@
 
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-24"))
 (load-theme 'solarized-dark t)
+
+;; Behavior
+
+(evil-mode 1)
