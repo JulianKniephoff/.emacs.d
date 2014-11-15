@@ -19,3 +19,10 @@
 ;; Behavior
 
 (evil-mode 1)
+
+;; Keep backups in one directory
+
+(setq backup-directory-alist `((".*" . ,(expand-file-name "backups" user-emacs-directory))))
+(setq auto-save-file-name-transforms `((".*" ,(expand-file-name "autosave" user-emacs-directory) t)))
+
+;; Misc
