@@ -11,4 +11,5 @@
 (setq inhibit-startup-screen t)
 
 (tool-bar-mode -1)
+(setq default-frame-alist '((fullscreen . maximized)))
 
