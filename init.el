@@ -26,3 +26,12 @@
 (setq auto-save-file-name-transforms `((".*" ,(expand-file-name "autosave" user-emacs-directory) t)))
 
 ;; Misc
+
+;; Path
+
+;; This seems necessary under Cygwin
+
+(add-to-list 'exec-path "/usr/local/bin")
+(add-to-list 'exec-path "/usr/bin")
+(add-to-list 'exec-path "/bin")
+(add-to-list 'exec-path "/usr/sbin")
