@@ -13,3 +13,4 @@
 (tool-bar-mode -1)
 (setq default-frame-alist '((fullscreen . maximized)))
 
+(add-to-list 'default-frame-alist '(font . "Source Code Pro-24"))
