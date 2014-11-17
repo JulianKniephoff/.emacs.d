@@ -67,14 +67,21 @@
 (setq org-expiry-inactive-timestamp t)
 (org-expiry-insinuate)
 
+;; Agenda
+
+(setq org-agenda-files
+      '("inbox.org"
+	"todo.org"
+	"scratch.org"))
+
+;; Refile
+
+(setq org-refile-targets
+      '((org-agenda-files . (:maxlevel . 14))))
+(setq org-completion-use-ido t)
+(setq org-refile-use-outline-path 'file)
+
 ;; MobileOrg
 
 (setq org-mobile-inbox-for-pull "~/Documents/org/inbox.org")
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-
-;; Misc
-
-(ido-mode t)
-
-
-
