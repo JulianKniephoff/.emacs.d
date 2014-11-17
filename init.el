@@ -31,6 +31,26 @@
 
 (setq org-directory "~/Documents/org")
 
+;; Create new nodes
+
+(global-set-key (kbd "C-c c") 'org-capture)
+(setq org-capture-templates
+      `((" " "Inbox entry" entry
+	 (file ,(expand-file-name "inbox.org" org-directory))
+	 "* %?
+:PROPERTIES:
+:CREATED: %U
+:END:")))
+
+;; org-expiry
+
+(require 'org-expiry)
+
+;; Also insert CREATED timestamps when creating nodes manually
+
+(setq org-expiry-inactive-timestamp t)
+(org-expiry-insinuate)
+
 ;; Misc
 
 ;; Path
