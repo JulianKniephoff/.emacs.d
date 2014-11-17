@@ -25,6 +25,12 @@
 (setq backup-directory-alist `((".*" . ,(expand-file-name "backups" user-emacs-directory))))
 (setq auto-save-file-name-transforms `((".*" ,(expand-file-name "autosave" user-emacs-directory) t)))
 
+;; Org Mode
+
+(require 'org)
+
+(setq org-directory "~/Documents/org")
+
 ;; Misc
 
 ;; Path
