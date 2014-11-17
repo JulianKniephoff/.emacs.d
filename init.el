@@ -22,6 +22,14 @@
 
 (ido-mode t)
 
+;; Path
+
+;; This seems necessary under Cygwin
+(add-to-list 'exec-path "/usr/local/bin")
+(add-to-list 'exec-path "/usr/bin")
+(add-to-list 'exec-path "/bin")
+(add-to-list 'exec-path "/usr/sbin")
+
 ;; Keep backups in one directory
 
 (setq backup-directory-alist `((".*" . ,(expand-file-name "backups" user-emacs-directory))))
@@ -68,11 +76,5 @@
 
 (ido-mode t)
 
-;; Path
 
-;; This seems necessary under Cygwin
 
-(add-to-list 'exec-path "/usr/local/bin")
-(add-to-list 'exec-path "/usr/bin")
-(add-to-list 'exec-path "/bin")
-(add-to-list 'exec-path "/usr/sbin")
