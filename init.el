@@ -58,6 +58,8 @@
 
 ;; Misc
 
+(ido-mode t)
+
 ;; Path
 
 ;; This seems necessary under Cygwin
