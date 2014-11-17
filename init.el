@@ -25,6 +25,12 @@
 (setq backup-directory-alist `((".*" . ,(expand-file-name "backups" user-emacs-directory))))
 (setq auto-save-file-name-transforms `((".*" ,(expand-file-name "autosave" user-emacs-directory) t)))
 
+;; Remember cursor position accross sessions
+
+(require 'saveplace)
+(setq save-place-file (expand-file-name "save-place" user-emacs-directory))
+(setq-default save-place t)
+
 ;; Org Mode
 
 (require 'org)
