@@ -51,6 +51,11 @@
 (setq org-expiry-inactive-timestamp t)
 (org-expiry-insinuate)
 
+;; MobileOrg
+
+(setq org-mobile-inbox-for-pull "~/Documents/org/inbox.org")
+(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+
 ;; Misc
 
 ;; Path
