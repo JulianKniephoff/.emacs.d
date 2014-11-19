@@ -71,6 +71,8 @@
 
 ;; Agenda
 
+(global-set-key (kbd "C-c a") 'org-agenda)
+
 (setq org-agenda-files
       '("inbox.org"
 	"todo.org"
