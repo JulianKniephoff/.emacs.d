@@ -74,9 +74,11 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 (setq org-agenda-files
-      '("inbox.org"
-	"todo.org"
-	"scratch.org"))
+      (mapcar (lambda (f)
+		(expand-file-name f org-directory))
+	      '("inbox.org"
+		"todo.org"
+		"scratch.org")))
 
 ;; Refile
 
