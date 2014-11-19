@@ -58,6 +58,8 @@
 
 (setq org-startup-indented t)
 
+(setq org-log-into-drawer t)
+
 ;; Create new nodes
 
 (global-set-key (kbd "C-c c") 'org-capture)
