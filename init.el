@@ -16,6 +16,8 @@
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-24"))
 (load-theme 'solarized-dark t)
 
+(global-hl-line-mode)
+
 ;; Behavior
 
 (evil-mode 1)
