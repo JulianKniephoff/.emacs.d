@@ -47,6 +47,8 @@
 
 (setq org-directory "~/Documents/org")
 
+(setq org-startup-indented t)
+
 ;; Create new nodes
 
 (global-set-key (kbd "C-c c") 'org-capture)
