@@ -32,8 +32,15 @@
 
 ;; Keep backups in one directory
 
-(setq backup-directory-alist `((".*" . ,(expand-file-name "backups" user-emacs-directory))))
-(setq auto-save-file-name-transforms `((".*" ,(expand-file-name "autosave" user-emacs-directory) t)))
+(setq backup-directory-alist
+      `((".*" . ,(file-name-as-directory
+		  (expand-file-name "backups"
+				    user-emacs-directory)))))
+(setq auto-save-file-name-transforms
+      `((".*" ,(file-name-as-directory
+		(expand-file-name "autosave"
+				  user-emacs-directory))
+	 t)))
 
 ;; Remember cursor position accross sessions
 
