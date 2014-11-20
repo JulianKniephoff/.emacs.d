@@ -97,6 +97,7 @@
       '((org-agenda-files . (:maxlevel . 14))))
 (setq org-completion-use-ido t)
 (setq org-refile-use-outline-path 'file)
+(setq org-outline-path-complete-in-steps nil)
 
 ;; MobileOrg
 
