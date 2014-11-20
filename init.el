@@ -56,9 +56,12 @@
 
 (setq org-directory "~/Documents/org")
 
-(setq org-startup-indented t)
-
 (setq org-log-into-drawer t)
+
+;; Clean outlines
+
+(setq org-startup-indented t)
+(setq org-hide-leading-stars t)
 
 ;; Create new nodes
 
