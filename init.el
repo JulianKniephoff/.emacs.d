@@ -107,6 +107,11 @@
 
 (require 'org-habit)
 
+;; Sorting
+
+(add-to-list 'org-agenda-sorting-strategy
+	     '(agenda . (scheduled-up habit-down deadline-up)))
+
 ;; Autofocus
 
 (defun jk/org-cmp-tsia (a b)
