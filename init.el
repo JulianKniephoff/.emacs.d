@@ -86,7 +86,7 @@
 
 ;; Also insert CREATED timestamps when creating nodes manually
 
-(setq org-expiry-inactive-timestamp t)
+(setq org-expiry-inactive-timestamps t)
 (org-expiry-insinuate)
 
 ;; Agenda
