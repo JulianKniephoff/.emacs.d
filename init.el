@@ -104,6 +104,29 @@
 
 (require 'org-habit)
 
+;; Autofocus
+
+(defun jk/org-cmp-tsia (a b)
+  (let* ((ma (or (get-text-property 1 'org-marker a)
+		 (get-text-property 1 'org-hd-marker a)))
+	 (mb (or (get-text-property 1 'org-marker b)
+		 (get-text-property 1 'org-hd-marker b)))
+	 (tsa (org-entry-get ma "TIMESTAMP_IA"))
+	 (tsb (org-entry-get mb "TIMESTAMP_IA"))
+	 (ta (when tsa (date-to-time tsa)))
+	 (tb (when tsb (date-to-time tsb))))
+    (cond ((not ta) +1)
+	  ((not tb) -1)
+	  ((time-less-p ta tb) -1)
+	  ((time-less-p tb ta) +1)
+	  (t nil))))
+
+(setq org-agenda-custom-commands
+      '(("x" "Autofocus" tags "/-DONE-CANCELED"
+	 ((org-agenda-overriding-header "Autofocus")
+	  (org-agenda-cmp-user-defined 'jk/org-cmp-tsia)
+	  (org-agenda-sorting-strategy '(user-defined-up))))))
+
 ;; Refile
 
 (setq org-refile-targets
