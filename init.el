@@ -94,6 +94,8 @@
 		"todo.org"
 		"scratch.org")))
 
+(setq org-agenda-span 'day)
+
 ;; Refile
 
 (setq org-refile-targets
