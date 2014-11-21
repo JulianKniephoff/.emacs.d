@@ -58,6 +58,12 @@
 
 (setq org-log-into-drawer t)
 
+;; Links
+
+(global-set-key (kbd "C-c l") 'org-store-link)
+(require 'org-id)
+(setq org-id-link-to-org-use-id t)
+
 ;; Clean outlines
 
 (setq org-startup-indented t)
