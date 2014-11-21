@@ -20,9 +20,12 @@
 
 ;; Behavior
 
-(evil-mode 1)
-
 (ido-mode t)
+
+;; Evil
+
+(evil-mode)
+(global-evil-surround-mode)
 
 ;; Path
 
