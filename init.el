@@ -96,6 +96,8 @@
 
 (setq org-agenda-span 'day)
 
+(require 'org-habit)
+
 ;; Refile
 
 (setq org-refile-targets
