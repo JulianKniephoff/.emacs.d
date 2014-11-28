@@ -104,6 +104,7 @@
 		"scratch.org")))
 
 (setq org-agenda-span 'day)
+(setq org-extend-today-until 4)
 
 (require 'org-habit)
 
