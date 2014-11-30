@@ -107,6 +107,7 @@
 (setq org-extend-today-until 4)
 
 (require 'org-habit)
+(setq org-habit-show-habits-only-for-today nil)
 
 ;; Sorting
 
