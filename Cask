@@ -5,6 +5,7 @@
 (depends-on "color-theme-solarized")
 (depends-on "evil")
 (depends-on "evil-surround")
+(depends-on "fill-column-indicator")
 (depends-on "haskell-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
