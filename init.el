@@ -18,6 +18,14 @@
 
 (global-hl-line-mode)
 
+;; Highlighting whitespace
+
+(require 'whitespace)
+
+(setq whitespace-style
+      '(face trailing empty space-mark tab-mark))
+(global-whitespace-mode)
+
 ;; Behavior
 
 (ido-mode t)
