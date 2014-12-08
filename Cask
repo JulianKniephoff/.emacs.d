@@ -1,6 +1,7 @@
 (source melpa)
 (source org)
 
+(depends-on "clojure-mode")
 (depends-on "color-theme-solarized")
 (depends-on "evil")
 (depends-on "evil-surround")
