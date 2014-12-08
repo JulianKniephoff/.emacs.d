@@ -6,5 +6,6 @@
 (depends-on "evil-surround")
 (depends-on "haskell-mode")
 (depends-on "magit")
+(depends-on "markdown-mode")
 (depends-on "org-plus-contrib")
 (depends-on "pallet")
