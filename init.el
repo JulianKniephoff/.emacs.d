@@ -13,7 +13,7 @@
 (tool-bar-mode -1)
 (setq default-frame-alist '((fullscreen . maximized)))
 
-(add-to-list 'default-frame-alist '(font . "Source Code Pro-24"))
+(add-to-list 'default-frame-alist '(font . "Source Code Pro-18"))
 (load-theme 'solarized-dark t)
 
 (global-hl-line-mode)
