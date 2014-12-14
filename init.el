@@ -173,3 +173,12 @@
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (setq indent-tabs-mode nil)))
+
+;; JavaScript
+
+(add-hook 'js-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode t
+                  c-basic-offset 4
+                  tab-width 4)))
+
