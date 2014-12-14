@@ -165,3 +165,11 @@
 
 (setq org-mobile-inbox-for-pull "~/Documents/org/inbox.org")
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+
+;; Programming
+
+;; Lisp
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode nil)))
