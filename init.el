@@ -115,6 +115,10 @@
 (setq org-expiry-inactive-timestamps t)
 (org-expiry-insinuate)
 
+;; Log refiling
+
+(setq org-log-refile 'time)
+
 ;; Agenda
 
 (global-set-key (kbd "C-c a") 'org-agenda)
