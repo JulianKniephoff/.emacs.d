@@ -26,13 +26,20 @@
       '(face trailing empty tab-mark))
 (global-whitespace-mode)
 
-;; 80 columns
+;; Long lines
+
+;; 80 columns indicator
 
 (define-globalized-minor-mode global-fci-mode
   fci-mode
   (lambda ()
     (fci-mode 1)))
 (global-fci-mode)
+
+;; Wrapping
+
+(setq fci-handle-truncate-lines nil)
+(setq truncate-partial-width-windows nil)
 
 ;; Behavior
 
