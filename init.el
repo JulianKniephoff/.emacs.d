@@ -23,7 +23,7 @@
 (require 'whitespace)
 
 (setq whitespace-style
-      '(face trailing empty space-mark tab-mark))
+      '(face trailing empty tab-mark))
 (global-whitespace-mode)
 
 ;; 80 columns
