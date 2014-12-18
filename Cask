@@ -3,6 +3,7 @@
 
 (depends-on "clojure-mode")
 (depends-on "color-theme-solarized")
+(depends-on "dash")
 (depends-on "evil")
 (depends-on "evil-surround")
 (depends-on "fill-column-indicator")
@@ -10,4 +11,6 @@
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "org-plus-contrib")
+(depends-on "package-build")
 (depends-on "pallet")
+(depends-on "smart-tabs-mode")
