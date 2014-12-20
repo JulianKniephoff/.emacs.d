@@ -183,9 +183,9 @@
 
 ;; Lisp
 
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (setq indent-tabs-mode nil)))
+(defun jk/emacs-lisp-indentation-mode-hook ()
+  (setq indent-tabs-mode nil))
+(add-hook 'emacs-lisp-mode-hook 'jk/emacs-lisp-indentation-mode-hook)
 
 
 ;; JavaScript
