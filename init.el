@@ -164,6 +164,150 @@
 	  (org-agenda-cmp-user-defined 'jk/org-cmp-tsia)
 	  (org-agenda-sorting-strategy '(user-defined-up))))))
 
+;; Show deadline warnings every day
+
+(eval-after-load "org-agenda"
+  '(defun org-agenda-get-deadlines (&optional with-hour)
+     "Return the deadline information for agenda display.
+When WITH-HOUR is non-nil, only return deadlines with an hour
+specification like [h]h:mm."
+     (let* ((props (list 'mouse-face 'highlight
+                         'org-not-done-regexp org-not-done-regexp
+                         'org-todo-regexp org-todo-regexp
+                         'org-complex-heading-regexp org-complex-heading-regexp
+                         'help-echo
+                         (format "mouse-2 or RET jump to org file %s"
+                                 (abbreviate-file-name buffer-file-name))))
+            (regexp (if with-hour
+                        org-deadline-time-hour-regexp
+                      org-deadline-time-regexp))
+            (todayp (org-agenda-todayp date)) ; DATE bound by calendar
+            (d1 (calendar-absolute-from-gregorian date)) ; DATE bound by calendar
+            (dl0 (car org-agenda-deadline-leaders))
+            (dl1 (nth 1 org-agenda-deadline-leaders))
+            (dl2 (or (nth 2 org-agenda-deadline-leaders) dl1))
+            d2 diff dfrac wdays pos pos1 category category-pos level
+            tags suppress-prewarning ee txt head face s todo-state
+            show-all upcomingp donep timestr warntime inherited-tags ts-date)
+       (goto-char (point-min))
+       (while (re-search-forward regexp nil t)
+         (catch :skip
+           (org-agenda-skip)
+           (setq s (match-string 1)
+                 txt nil
+                 pos (1- (match-beginning 1))
+                 todo-state (save-match-data (org-get-todo-state))
+                 show-all (or (eq org-agenda-repeating-timestamp-show-all t)
+                              (member todo-state
+                                      org-agenda-repeating-timestamp-show-all))
+                 d2 (org-time-string-to-absolute
+                     s d1 'past show-all (current-buffer) pos)
+                 diff (- d2 d1))
+           (setq suppress-prewarning
+                 (let ((ds (and org-agenda-skip-deadline-prewarning-if-scheduled
+                                (let ((item (buffer-substring (point-at-bol)
+                                                              (point-at-eol))))
+                                  (save-match-data
+                                    (and (string-match
+                                          org-scheduled-time-regexp item)
+                                         (match-string 1 item)))))))
+                   (cond
+                    ((not ds) nil)
+                    ;; The current item has a scheduled date (in ds), so
+                    ;; evaluate its prewarning lead time.
+                    ((integerp org-agenda-skip-deadline-prewarning-if-scheduled)
+                     ;; Use global prewarning-restart lead time.
+                     org-agenda-skip-deadline-prewarning-if-scheduled)
+                    ((eq org-agenda-skip-deadline-prewarning-if-scheduled
+                         'pre-scheduled)
+                     ;; Set prewarning to no earlier than scheduled.
+                     (min (- d2 (org-time-string-to-absolute
+                                 ds d1 'past show-all (current-buffer) pos))
+                          org-deadline-warning-days))
+                    ;; Set prewarning to deadline.
+                    (t 0))))
+           (setq wdays (if suppress-prewarning
+                           (let ((org-deadline-warning-days suppress-prewarning))
+                             (org-get-wdays s))
+                         (org-get-wdays s))
+                 dfrac (- 1 (/ (* 1.0 diff) (max wdays 1)))
+                 upcomingp (and todayp (> diff 0)))
+           ;; NOTE was
+           ;; upcomingp (and todayp (> diff 0)))
+           ;; When to show a deadline in the calendar:
+           ;; If the expiration is within wdays warning time.
+           ;; Past-due deadlines are only shown on the current date
+           (if (or (and (<= diff wdays)
+                        (not org-agenda-only-exact-dates))
+                   (= diff 0))
+               ;; NOTE was
+               ;; (if (and (or (and (<= diff wdays)
+               ;; 		  (and todayp (not org-agenda-only-exact-dates)))
+               ;; 	     (= diff 0)))
+               (save-excursion
+                 ;; (setq todo-state (org-get-todo-state))
+                 (setq donep (member todo-state org-done-keywords))
+                 (if (and donep
+                          (or org-agenda-skip-deadline-if-done
+                              (not (= diff 0))))
+                     (setq txt nil)
+                   (setq category (org-get-category)
+                         warntime (get-text-property (point) 'org-appt-warntime)
+                         category-pos (get-text-property (point) 'org-category-position))
+                   (if (not (re-search-backward "^\\*+[ \t]+" nil t))
+                       (throw :skip nil)
+                     (goto-char (match-end 0))
+                     (setq pos1 (match-beginning 0))
+                     (setq level (make-string (org-reduced-level (org-outline-level)) ? ))
+                     (setq inherited-tags
+                           (or (eq org-agenda-show-inherited-tags 'always)
+                               (and (listp org-agenda-show-inherited-tags)
+                                    (memq 'agenda org-agenda-show-inherited-tags))
+                               (and (eq org-agenda-show-inherited-tags t)
+                                    (or (eq org-agenda-use-tag-inheritance t)
+                                        (memq 'agenda org-agenda-use-tag-inheritance))))
+                           tags (org-get-tags-at pos1 (not inherited-tags)))
+                     (setq head (buffer-substring
+                                 (point)
+                                 (progn (skip-chars-forward "^\r\n")
+                                        (point))))
+                     (if (string-match " \\([012]?[0-9]:[0-9][0-9]\\)" s)
+                         (setq timestr
+                               (concat (substring s (match-beginning 1)) " "))
+                       (setq timestr 'time))
+                     (setq txt (org-agenda-format-item
+                                (cond ((= diff 0) dl0)
+                                      ((> diff 0)
+                                       (if (functionp dl1)
+                                           (funcall dl1 diff date)
+                                         (format dl1 diff)))
+                                      (t
+                                       (if (functionp dl2)
+                                           (funcall dl2 diff date)
+                                         (format dl2 (if (string= dl2 dl1)
+                                                         diff (abs diff))))))
+                                head level category tags
+                                (if (not (= diff 0)) nil timestr)))))
+                 (when txt
+                   (setq face (org-agenda-deadline-face dfrac))
+                   (org-add-props txt props
+                     'org-marker (org-agenda-new-marker pos)
+                     'warntime warntime
+                     'level level
+                     'ts-date d2
+                     'org-hd-marker (org-agenda-new-marker pos1)
+                     'priority (+ (- diff)
+                                  (org-get-priority txt))
+                     'org-category category
+                     'org-category-position category-pos
+                     'todo-state todo-state
+                     'type (if upcomingp "upcoming-deadline" "deadline")
+                     'date (if upcomingp date d2)
+                     'face (if donep 'org-agenda-done face)
+                     'undone-face face 'done-face 'org-agenda-done)
+                   (push txt ee))))))
+       (nreverse ee))))
+
 ;; Refile
 
 (setq org-refile-targets
