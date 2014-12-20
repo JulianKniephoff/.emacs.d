@@ -187,6 +187,7 @@
   (setq indent-tabs-mode nil))
 (add-hook 'emacs-lisp-mode-hook 'jk/emacs-lisp-indentation-mode-hook)
 
+(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 
 ;; JavaScript
 
