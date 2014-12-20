@@ -179,6 +179,8 @@
 
 ;; Programming
 
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
 ;; Lisp
 
 (add-hook 'emacs-lisp-mode-hook

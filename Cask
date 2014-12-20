@@ -13,4 +13,5 @@
 (depends-on "org-plus-contrib")
 (depends-on "package-build")
 (depends-on "pallet")
+(depends-on "rainbow-delimiters")
 (depends-on "smart-tabs-mode")
