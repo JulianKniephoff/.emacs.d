@@ -187,11 +187,12 @@
           (lambda ()
             (setq indent-tabs-mode nil)))
 
+
 ;; JavaScript
 
-(add-hook 'js-mode-hook
-          (lambda ()
-            (setq indent-tabs-mode t
-                  c-basic-offset 4
-                  tab-width 4)))
+(defun jk/js-mode-indentation-hook ()
+  (setq indent-tabs-mode t
+        c-basic-offset 4
+        tab-width 4))
+(add-hook 'js-mode-hook 'jk/js-mode-indentation-hook)
 
