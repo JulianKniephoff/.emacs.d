@@ -325,6 +325,11 @@ specification like [h]h:mm."
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+;; Babel
+
+(setq org-src-fontify-natively t)
+(setq org-src-preserve-indentation t)
+
 ;; Lisp
 
 (defun jk/emacs-lisp-indentation-mode-hook ()
