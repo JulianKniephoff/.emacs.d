@@ -58,7 +58,14 @@
 (add-to-list 'exec-path "/bin")
 (add-to-list 'exec-path "/usr/sbin")
 
-;; Keep backups in one directory
+;; Keep everything in one directory
+
+;; Customize
+
+(setq custom-file (expand-file-name "customize.el"
+                                    user-emacs-directory))
+
+;; Backups
 
 (setq backup-directory-alist
       `((".*" . ,(file-name-as-directory
@@ -343,3 +350,6 @@ specification like [h]h:mm."
         tab-width 4))
 (add-hook 'js-mode-hook 'jk/js-mode-indentation-hook)
 
+;; Load Customizations
+
+(load custom-file)
