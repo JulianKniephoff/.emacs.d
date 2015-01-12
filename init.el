@@ -53,6 +53,8 @@
 ;; Path
 
 ;; This seems necessary under Cygwin
+(setenv "PATH" (concat "/usr/local/bin:/usr/bin:/bin:/usr/sbin:"
+                       (getenv "PATH")))
 (add-to-list 'exec-path "/usr/local/bin")
 (add-to-list 'exec-path "/usr/bin")
 (add-to-list 'exec-path "/bin")
