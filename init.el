@@ -113,7 +113,7 @@
 ;; Also insert CREATED timestamps when creating nodes manually
 
 (setq org-expiry-inactive-timestamps t)
-(org-expiry-insinuate)
+;; (org-expiry-insinuate)
 
 ;; Log refiling
 
