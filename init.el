@@ -123,12 +123,9 @@
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 
+(load-library "find-lisp")
 (setq org-agenda-files
-      (mapcar (lambda (f)
-		(expand-file-name f org-directory))
-	      '("inbox.org"
-		"todo.org"
-		"scratch.org")))
+      (find-lisp-find-files org-directory "\\.org$"))
 
 (setq org-agenda-span 'day)
 (setq org-extend-today-until 4)
