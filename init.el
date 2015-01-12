@@ -13,8 +13,11 @@
 (tool-bar-mode -1)
 (setq default-frame-alist '((fullscreen . maximized)))
 
+(setq frame-background-mode 'dark)
+(mapc 'frame-set-background-mode (frame-list))
+(load-theme 'solarized t)
+
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-18"))
-(load-theme 'solarized-dark t)
 
 (global-hl-line-mode)
 
