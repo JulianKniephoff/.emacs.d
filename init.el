@@ -17,7 +17,7 @@
 (mapc 'frame-set-background-mode (frame-list))
 (load-theme 'solarized t)
 
-(add-to-list 'default-frame-alist '(font . "Source Code Pro-18"))
+(set-face-attribute 'default nil :height 240)
 
 (global-hl-line-mode)
 
