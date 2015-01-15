@@ -78,7 +78,7 @@
 				    user-emacs-directory)))))
 (setq auto-save-file-name-transforms
       `((".*" ,(file-name-as-directory
-		(expand-file-name "autosave"
+		(expand-file-name "auto-save"
 				  user-emacs-directory))
 	 t)))
 
