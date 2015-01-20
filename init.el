@@ -38,6 +38,12 @@
   (lambda ()
     (fci-mode 1)))
 (global-fci-mode)
+(defun auto-fci-mode (&optional unused)
+  (if (> (window-width) fci-rule-column)
+      (fci-mode 1)
+    (fci-mode 0)))
+(add-hook 'after-change-major-mode-hook 'auto-fci-mode)
+(add-hook 'window-configuration-change-hook 'auto-fci-mode)
 
 ;; Wrapping
 
