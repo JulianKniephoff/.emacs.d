@@ -11,6 +11,7 @@
 (depends-on "evil-surround")
 (depends-on "f")
 (depends-on "fill-column-indicator")
+(depends-on "git-rebase-mode")
 (depends-on "haskell-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
