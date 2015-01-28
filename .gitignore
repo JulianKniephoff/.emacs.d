@@ -1,7 +1,7 @@
 .cask
-backups
 auto-save-list
 bookmarks
+/backups
 /save-place
 /ido.last
 /.org-id-locations
