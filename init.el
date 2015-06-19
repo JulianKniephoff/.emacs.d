@@ -17,7 +17,8 @@
 (mapc 'frame-set-background-mode (frame-list))
 (load-theme 'solarized t)
 
-(set-face-attribute 'default nil :height 240)
+;; Set font size
+(set-face-attribute 'default nil :height 360)
 
 (global-hl-line-mode)
 
@@ -102,6 +103,11 @@
 
 (setq org-log-into-drawer t)
 
+;; Explicitly load the beamer exporter
+
+;; This is necessary for asynchronous exports to work.
+(require 'ox-beamer)
+
 ;; Links
 
 (global-set-key (kbd "C-c l") 'org-store-link)
@@ -115,14 +121,17 @@
 
 ;; Create new nodes
 
+(defun jk/new-inbox-entry-file ()
+  (expand-file-name (concat (format-time-string "%Y-%m-%d-%H-%M-%S")
+                            ".txt")
+                    "~/Dropbox/Inbox"))
 (global-set-key (kbd "C-c c") 'org-capture)
 (setq org-capture-templates
-      `((" " "Inbox entry" entry
-	 (file ,(expand-file-name "inbox.org" org-directory))
-	 "* %?
-:PROPERTIES:
-:CREATED: %U
-:END:")))
+      `((" " "Inbox entry" plain
+	 (file (jk/new-inbox-entry-file))
+         "# -*-org-*-
+
+%?")))
 
 ;; org-expiry
 
@@ -135,7 +144,10 @@
 
 ;; Log refiling
 
-(setq org-log-refile 'time)
+; (setq org-log-refile 'time)
+
+;; Logging for repetition
+(setq org-log-repeat nil)
 
 ;; Agenda
 
@@ -159,8 +171,8 @@
 ;; Autofocus
 
 (defun jk/org-cmp-tsia (a b)
-  (let* ((ma (or (get-text-property 1 'org-marker a)
-		 (get-text-property 1 'org-hd-marker a)))
+  (let* ((ma (or (get-text-property 1 'org-marker a))
+             (get-text-property 1 'org-hd-marker a))
 	 (mb (or (get-text-property 1 'org-marker b)
 		 (get-text-property 1 'org-hd-marker b)))
 	 (tsa (org-entry-get ma "TIMESTAMP_IA"))
@@ -344,6 +356,8 @@ specification like [h]h:mm."
 
 (setq org-src-fontify-natively t)
 (setq org-src-preserve-indentation t)
+(org-babel-do-load-languages 'org-babel-load-languages
+                             '((ruby . t)))
 
 ;; Lisp
 
@@ -360,6 +374,12 @@ specification like [h]h:mm."
         c-basic-offset 4
         tab-width 4))
 (add-hook 'js-mode-hook 'jk/js-mode-indentation-hook)
+
+;; Load today file
+
+;; Misc
+
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; Load Customizations
 
