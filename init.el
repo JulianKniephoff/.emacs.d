@@ -375,6 +375,13 @@ specification like [h]h:mm."
         tab-width 4))
 (add-hook 'js-mode-hook 'jk/js-mode-indentation-hook)
 
+;; HTML
+(defun jk/html-mode-indentation-hook ()
+  (setq indent-tabs-mode t
+        sgml-basic-offset 4
+        tab-width 4))
+(add-hook 'html-mode-hook 'jk/html-mode-indentation-hook)
+
 ;; Load today file
 
 ;; Misc
