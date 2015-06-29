@@ -384,7 +384,6 @@ specification like [h]h:mm."
         tab-width 4))
 (add-hook 'html-mode-hook 'jk/html-mode-indentation-hook)
 
-;; Load today file
 
 ;; Misc
 
