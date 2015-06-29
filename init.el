@@ -11,14 +11,16 @@
 (setq inhibit-startup-screen t)
 
 (tool-bar-mode -1)
-(setq default-frame-alist '((fullscreen . maximized)))
+;; Start up maximized
+;; This is actually the job of the window manager
+;(setq default-frame-alist '((fullscreen . maximized)))
 
 (setq frame-background-mode 'dark)
 (mapc 'frame-set-background-mode (frame-list))
 (load-theme 'solarized t)
 
 ;; Set font size
-(set-face-attribute 'default nil :height 360)
+(set-face-attribute 'default nil :height 280)
 
 (global-hl-line-mode)
 
