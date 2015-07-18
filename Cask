@@ -6,6 +6,7 @@
 (depends-on "cask")
 (depends-on "clojure-mode")
 (depends-on "color-theme-solarized")
+(depends-on "context-coloring")
 (depends-on "dash")
 (depends-on "epl")
 (depends-on "evil")

@@ -371,11 +371,36 @@ specification like [h]h:mm."
 
 ;; JavaScript
 
+(add-to-list 'auto-mode-alist '("\\.js\\'". js2-mode))
 (defun jk/js-mode-indentation-hook ()
   (setq indent-tabs-mode t
         c-basic-offset 4
         tab-width 4))
 (add-hook 'js-mode-hook 'jk/js-mode-indentation-hook)
+(add-hook 'js2-mode-hook 'jk/js-mode-indentation-hook)
+;; Adopt context-coloring-mode to solarized
+;; TODO Should only be used when solarized is active?
+(custom-theme-set-faces
+ 'solarized
+ '(context-coloring-level-0-face  ((t :foreground "#839496")))
+ '(context-coloring-level-1-face  ((t :foreground "#268bd2")))
+ '(context-coloring-level-2-face  ((t :foreground "#2aa198")))
+ '(context-coloring-level-3-face  ((t :foreground "#859900")))
+ '(context-coloring-level-4-face  ((t :foreground "#b58900")))
+ '(context-coloring-level-5-face  ((t :foreground "#cb4b16")))
+ '(context-coloring-level-6-face  ((t :foreground "#dc322f")))
+ '(context-coloring-level-7-face  ((t :foreground "#d33682")))
+ '(context-coloring-level-8-face  ((t :foreground "#6c71c4")))
+ '(context-coloring-level-9-face  ((t :foreground "#69b7f0")))
+ '(context-coloring-level-10-face ((t :foreground "#69cabf")))
+ '(context-coloring-level-11-face ((t :foreground "#b4c342")))
+ '(context-coloring-level-12-face ((t :foreground "#deb542")))
+ '(context-coloring-level-13-face ((t :foreground "#f2804f")))
+ '(context-coloring-level-14-face ((t :foreground "#ff6e64")))
+ '(context-coloring-level-15-face ((t :foreground "#f771ac")))
+ '(context-coloring-level-16-face ((t :foreground "#9ea0e5"))))
+;; TODO Does not work
+;(add-hook 'js2-mode-hook 'context-coloring-mode)
 
 ;; HTML
 (defun jk/html-mode-indentation-hook ()
