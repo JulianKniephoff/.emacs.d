@@ -101,7 +101,7 @@
 
 (require 'org)
 
-(setq org-directory "~/Documents/org")
+; (setq org-directory "~/Documents/org")
 
 (setq org-log-into-drawer t)
 
