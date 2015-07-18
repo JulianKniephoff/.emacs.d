@@ -155,9 +155,9 @@
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 
-(load-library "find-lisp")
-(setq org-agenda-files
-      (find-lisp-find-files org-directory "\\.org$"))
+; (load-library "find-lisp")
+; (setq org-agenda-files
+;       (find-lisp-find-files org-directory "\\.org$"))
 
 (setq org-agenda-span 'day)
 (setq org-extend-today-until 4)
