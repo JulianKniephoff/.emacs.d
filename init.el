@@ -85,11 +85,11 @@
       `((".*" . ,(file-name-as-directory
 		  (expand-file-name "backups"
 				    user-emacs-directory)))))
-(setq auto-save-file-name-transforms
-      `((".*" ,(file-name-as-directory
-		(expand-file-name "auto-save"
-				  user-emacs-directory))
-	 t)))
+(let ((auto-save-directory (expand-file-name "auto-save" user-emacs-directory)))
+  ;; Ensure the auto-save directory exists
+  (mkdir auto-save-directory 'ignore-existing)
+  (setq auto-save-file-name-transforms
+        `((".*" ,(file-name-as-directory auto-save-directory) t))))
 
 ;; Remember cursor position accross sessions
 
