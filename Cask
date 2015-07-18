@@ -27,3 +27,4 @@
 (depends-on "rainbow-identifiers")
 (depends-on "shut-up")
 (depends-on "smart-tabs-mode")
+(depends-on "web-mode")
