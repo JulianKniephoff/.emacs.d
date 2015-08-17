@@ -352,6 +352,14 @@ specification like [h]h:mm."
 
 ;; Programming
 
+;; Set some sensible defaults for programming modes
+(defun jk/default-indentation-mode-hook ()
+  (setq indent-tabs-mode t
+        tab-width 4
+        sgml-basic-offset 4
+        c-basic-offset 4))
+(add-hook 'prog-mode-hook 'jk/default-indentation-mode-hook)
+
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; Babel
@@ -373,9 +381,7 @@ specification like [h]h:mm."
 
 (add-to-list 'auto-mode-alist '("\\.js\\'". js2-mode))
 (defun jk/js-mode-indentation-hook ()
-  (setq indent-tabs-mode t
-        c-basic-offset 4
-        tab-width 4))
+  (setq c-basic-offset 4))
 (add-hook 'js-mode-hook 'jk/js-mode-indentation-hook)
 (add-hook 'js2-mode-hook 'jk/js-mode-indentation-hook)
 ;; Adopt context-coloring-mode to solarized
@@ -404,16 +410,12 @@ specification like [h]h:mm."
 
 ;; HTML
 (defun jk/html-mode-indentation-hook ()
-  (setq indent-tabs-mode t
-        sgml-basic-offset 4
-        tab-width 4))
+  (setq sgml-basic-offset 4))
 (add-hook 'html-mode-hook 'jk/html-mode-indentation-hook)
 
 ;; CSS
 (defun jk/css-mode-indentation-hook ()
-  (setq indent-tabs-mode t
-        c-basic-offset 4
-        tab-width 4))
+  (setq c-basic-offset 4))
 (add-hook 'css-mode-hook 'jk/css-mode-indentation-hook)
 
 ;; Misc
