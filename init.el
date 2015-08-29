@@ -403,6 +403,7 @@ specification like [h]h:mm."
 ;(add-hook 'js2-mode-hook 'context-coloring-mode)
 
 ;; CSS
+
 (defun jk/css-mode-indentation-hook ()
   (setq c-basic-offset 4))
 (add-hook 'css-mode-hook 'jk/css-mode-indentation-hook)
