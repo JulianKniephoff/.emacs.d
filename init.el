@@ -352,13 +352,11 @@ specification like [h]h:mm."
 
 ;; Programming
 
-;; Set some sensible defaults for programming modes
-(defun jk/default-indentation-mode-hook ()
-  (setq indent-tabs-mode t
-        tab-width 4
-        sgml-basic-offset 4
-        c-basic-offset 4))
-(add-hook 'prog-mode-hook 'jk/default-indentation-mode-hook)
+;; Set some sensible indentation defaults for programming modes
+(setq-default indent-tabs-mode t
+              tab-width 4
+              sgml-basic-offset 4
+              c-basic-offset 4)
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
@@ -380,10 +378,6 @@ specification like [h]h:mm."
 ;; JavaScript
 
 (add-to-list 'auto-mode-alist '("\\.js\\'". js2-mode))
-(defun jk/js-mode-indentation-hook ()
-  (setq c-basic-offset 4))
-(add-hook 'js-mode-hook 'jk/js-mode-indentation-hook)
-(add-hook 'js2-mode-hook 'jk/js-mode-indentation-hook)
 ;; Adopt context-coloring-mode to solarized
 ;; TODO Should only be used when solarized is active?
 (custom-theme-set-faces
@@ -407,11 +401,6 @@ specification like [h]h:mm."
  '(context-coloring-level-16-face ((t :foreground "#9ea0e5"))))
 ;; TODO Does not work
 ;(add-hook 'js2-mode-hook 'context-coloring-mode)
-
-;; HTML
-(defun jk/html-mode-indentation-hook ()
-  (setq sgml-basic-offset 4))
-(add-hook 'html-mode-hook 'jk/html-mode-indentation-hook)
 
 ;; CSS
 (defun jk/css-mode-indentation-hook ()
