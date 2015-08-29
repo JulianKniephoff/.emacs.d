@@ -56,6 +56,7 @@
 ;; Behavior
 
 (ido-mode t)
+(ido-vertical-mode t)
 
 ;; Evil
 
@@ -366,6 +367,13 @@ specification like [h]h:mm."
 (setq org-src-preserve-indentation t)
 (org-babel-do-load-languages 'org-babel-load-languages
                              '((ruby . t)))
+
+;; Ruby
+
+(setq ruby-insert-encoding-magic-comment nil)
+(defun jk/ruby-indentation-mode-hook ()
+  (setq indent-tabs-mode nil))
+(add-hook 'ruby-mode-hook 'jk/ruby-indentation-mode-hook)
 
 ;; Lisp
 
