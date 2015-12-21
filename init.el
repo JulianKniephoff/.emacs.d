@@ -416,6 +416,10 @@ specification like [h]h:mm."
   (setq c-basic-offset 4))
 (add-hook 'css-mode-hook 'jk/css-mode-indentation-hook)
 
+(defun jk/latex-mode-indentation-hook ()
+  (setq indent-tabs-mode t))
+(add-hook 'latex-mode-hook 'jk/latex-mode-indentation-hook)
+
 ;; Misc
 
 (setq magit-last-seen-setup-instructions "1.4.0")
