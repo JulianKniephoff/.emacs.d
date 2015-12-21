@@ -420,6 +420,9 @@ specification like [h]h:mm."
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
+;; Start server
+(server-start)
+
 ;; Load Customizations
 
 (load custom-file)
