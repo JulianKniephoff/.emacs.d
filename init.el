@@ -389,6 +389,7 @@ specification like [h]h:mm."
 ;; JavaScript
 
 (add-to-list 'auto-mode-alist '("\\.js\\'". js2-mode))
+(add-to-list 'auto-mode-alist '("\\.html.erb\\'". web-mode))
 ;; Adopt context-coloring-mode to solarized
 ;; TODO Should only be used when solarized is active?
 (custom-theme-set-faces
