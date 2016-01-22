@@ -98,6 +98,9 @@
 (setq save-place-file (expand-file-name "save-place" user-emacs-directory))
 (setq-default save-place t)
 
+;; Navigation
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+
 ;; Org Mode
 
 (require 'org)
