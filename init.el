@@ -357,6 +357,7 @@ specification like [h]h:mm."
 ;; Programming
 
 ;; Set some sensible indentation defaults for programming modes
+
 (setq-default indent-tabs-mode t
               tab-width 4
               sgml-basic-offset 4
@@ -420,6 +421,8 @@ specification like [h]h:mm."
   (setq c-basic-offset 4))
 (add-hook 'css-mode-hook 'jk/css-mode-indentation-hook)
 
+;; LaTeX
+
 (defun jk/latex-mode-indentation-hook ()
   (setq indent-tabs-mode t))
 (add-hook 'latex-mode-hook 'jk/latex-mode-indentation-hook)
@@ -428,7 +431,6 @@ specification like [h]h:mm."
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
-;; Start server
 (server-start)
 
 ;; Load Customizations
