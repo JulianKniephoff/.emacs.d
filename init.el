@@ -176,4 +176,5 @@
 
 ;; Load Customizations
 
+;; TODO Why is this loaded twice?
 (load custom-file)
