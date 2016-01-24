@@ -6,3 +6,4 @@ bookmarks
 /ido.last
 /.org-id-locations
 /auto-save
+*.elc
