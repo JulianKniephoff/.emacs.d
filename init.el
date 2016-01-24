@@ -3,7 +3,7 @@
 (require 'cask "~/opt/cask/cask.el")
 (cask-initialize)
 
-(require 'pallet)
+;(require 'pallet)
 (pallet-mode t)
 
 ;; Appearance
