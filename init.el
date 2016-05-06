@@ -102,6 +102,18 @@
 
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
+
+;; Capture
+(defun jk/new-inbox-entry-file ()
+  (expand-file-name (concat (format-time-string "%Y-%m-%d-%H-%M-%S")
+                            ".txt")
+                    "~/Dropbox/Inbox"))
+(setq org-capture-templates
+      `((" " "Inbox entry" plain
+         (file (jk/new-inbox-entry-file))
+         "")))
+(global-set-key (kbd "C-c c") 'org-capture)
+
 ;; Programming
 
 ;; Set some sensible indentation defaults for programming modes
