@@ -10,6 +10,8 @@
 (depends-on "cider")
 (depends-on "clojure-mode")
 (depends-on "color-theme-solarized")
+(depends-on "company")
+(depends-on "company-racer")
 (depends-on "context-coloring")
 (depends-on "dash")
 (depends-on "elm-mode")
