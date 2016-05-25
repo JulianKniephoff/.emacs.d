@@ -5,6 +5,7 @@
 (depends-on "ace-jump-mode")
 (depends-on "async")
 (depends-on "auctex")
+(depends-on "cargo")
 (depends-on "cask")
 (depends-on "cider")
 (depends-on "clojure-mode")
