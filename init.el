@@ -125,6 +125,17 @@
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+;; Rust
+
+(add-hook 'rust-mode-hook 'cargo-minor-mode)
+(setq racer-cmd "/home/jules/.cargo/bin/racer")
+(setq racer-rust-src-path "/home/jules/src/rust/src")
+
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'racer-mode-hook #'company-mode)
+(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+
 ;; Ruby
 
 (setq ruby-insert-encoding-magic-comment nil)
