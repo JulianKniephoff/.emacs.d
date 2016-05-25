@@ -20,6 +20,7 @@
 (depends-on "evil-surround")
 (depends-on "f")
 (depends-on "fill-column-indicator")
+(depends-on "flycheck-rust")
 (depends-on "git-commit")
 (depends-on "haskell-mode")
 (depends-on "ido-vertical-mode")
