@@ -25,6 +25,7 @@
 (depends-on "flycheck-rust")
 (depends-on "fsharp-mode")
 (depends-on "git-commit")
+(depends-on "glsl-mode")
 (depends-on "haskell-mode")
 (depends-on "ido-vertical-mode")
 (depends-on "js2-mode")
