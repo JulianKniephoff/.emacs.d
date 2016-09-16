@@ -28,6 +28,7 @@
 (depends-on "glsl-mode")
 (depends-on "haskell-mode")
 (depends-on "ido-vertical-mode")
+(depends-on "idris-mode")
 (depends-on "js2-mode")
 (depends-on "magit")
 (depends-on "magit-popup")
