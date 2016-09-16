@@ -23,6 +23,7 @@
 (depends-on "fill-column-indicator")
 (depends-on "flycheck")
 (depends-on "flycheck-rust")
+(depends-on "fsharp-mode")
 (depends-on "git-commit")
 (depends-on "haskell-mode")
 (depends-on "ido-vertical-mode")
