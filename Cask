@@ -47,6 +47,7 @@
 (depends-on "seq")
 (depends-on "shut-up")
 (depends-on "smart-tabs-mode")
+(depends-on "swift-mode")
 (depends-on "web-mode")
 (depends-on "with-editor")
 (depends-on "yaml-mode")
