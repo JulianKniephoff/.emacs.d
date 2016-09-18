@@ -20,7 +20,7 @@
 (load-theme 'solarized t)
 
 ;; Set font size
-(set-face-attribute 'default nil :height 280)
+(set-face-attribute 'default nil :height 360)
 
 (global-hl-line-mode)
 
@@ -64,14 +64,15 @@
 (global-evil-surround-mode)
 
 ;; Path
+(exec-path-from-shell-initialize)
 
 ;; This seems necessary under Cygwin
-(setenv "PATH" (concat "/usr/local/bin:/usr/bin:/bin:/usr/sbin:"
-                       (getenv "PATH")))
-(add-to-list 'exec-path "/usr/local/bin")
-(add-to-list 'exec-path "/usr/bin")
-(add-to-list 'exec-path "/bin")
-(add-to-list 'exec-path "/usr/sbin")
+;; (setenv "PATH" (concat "/usr/local/bin:/usr/bin:/bin:/usr/sbin:"
+;;                        (getenv "PATH")))
+;; (add-to-list 'exec-path "/usr/local/bin")
+;; (add-to-list 'exec-path "/usr/bin")
+;; (add-to-list 'exec-path "/bin")
+;; (add-to-list 'exec-path "/usr/sbin")
 
 ;; Keep everything in one directory
 

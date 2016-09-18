@@ -19,6 +19,7 @@
 (depends-on "epl")
 (depends-on "evil")
 (depends-on "evil-surround")
+(depends-on "exec-path-from-shell")
 (depends-on "f")
 (depends-on "fill-column-indicator")
 (depends-on "flycheck")
