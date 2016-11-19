@@ -110,8 +110,8 @@
                             ".txt")
                     "~/Dropbox/Inbox"))
 (setq org-capture-templates
-      `((" " "Inbox entry" plain
-         (file (jk/new-inbox-entry-file))
+      '((" " "Inbox entry" plain
+         (file jk/new-inbox-entry-file)
          "")))
 (global-set-key (kbd "C-c c") 'org-capture)
 
