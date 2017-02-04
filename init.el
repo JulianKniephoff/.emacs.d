@@ -129,8 +129,8 @@
 ;; Rust
 
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
-(setq racer-cmd "/home/jules/.cargo/bin/racer")
-(setq racer-rust-src-path "/home/jules/src/rust/src")
+(setq racer-cmd (expand-file-name "~/.cargo/bin/racer"))
+(setq racer-rust-src-path (expand-file-name "~/src/rust/src"))
 
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)
