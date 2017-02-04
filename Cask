@@ -34,6 +34,7 @@
 (depends-on "idris-mode")
 (depends-on "js2-mode")
 (depends-on "json-mode")
+(depends-on "let-alist")
 (depends-on "magit")
 (depends-on "magit-popup")
 (depends-on "markdown-mode")
