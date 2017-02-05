@@ -137,6 +137,10 @@
 (add-hook 'racer-mode-hook #'company-mode)
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
+;; Swift
+
+(setq swift-mode:parenthesized-expression-offset 4)
+
 ;; Ruby
 
 (setq ruby-insert-encoding-magic-comment nil)
