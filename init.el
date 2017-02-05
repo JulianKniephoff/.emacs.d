@@ -1,4 +1,3 @@
-;; Set up Cask
 
 (require 'cask "~/opt/cask/cask.el")
 (cask-initialize)
