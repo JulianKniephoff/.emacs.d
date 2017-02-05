@@ -1,5 +1,11 @@
 
-(require 'cask "~/opt/cask/cask.el")
+(defvar jk/cask-path "~/.cask/cask.el"
+  "The path where Cask is installed.")
+
+;; Load site specific stuff, e.g. values for the variables above
+(load (expand-file-name "site" user-emacs-directory) 'noerror)
+
+(require 'cask jk/cask-path)
 (cask-initialize)
 
 (require 'pallet)

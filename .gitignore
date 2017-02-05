@@ -7,3 +7,4 @@ bookmarks
 /.org-id-locations
 /auto-save
 *.elc
+/site.el
