@@ -6,5 +6,6 @@
 /ido.last
 /.org-id-locations
 /auto-save
+/sessions
 *.elc
 /site.el

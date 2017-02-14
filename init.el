@@ -101,6 +101,13 @@
   (setq auto-save-file-name-transforms
         `((".*" ,(file-name-as-directory auto-save-directory) t))))
 
+;; Session files
+(defun emacs-session-filename--subdir (orig-fn session-id)
+  (expand-file-name session-id
+                    (expand-file-name "sessions"
+                                      user-emacs-directory)))
+(advice-add 'emacs-session-filename :around #'emacs-session-filename--subdir)
+
 ;; Remember cursor position accross sessions
 
 (require 'saveplace)
