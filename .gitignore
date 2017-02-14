@@ -1,6 +1,6 @@
-.cask
-auto-save-list
-bookmarks
+/.cask
+/auto-save-list
+/bookmarks
 /backups
 /save-place
 /ido.last
