@@ -1,4 +1,3 @@
-
 (defvar jk/cask-path "~/.cask/cask.el"
   "The path where Cask is installed.")
 
