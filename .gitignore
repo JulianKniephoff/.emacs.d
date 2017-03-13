@@ -9,3 +9,4 @@
 /sessions
 *.elc
 /site.el
+/default.el

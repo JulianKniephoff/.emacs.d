@@ -227,3 +227,6 @@
 
 ;; TODO Why is this loaded twice?
 (load custom-file)
+
+;; Load user defaults file
+(load (expand-file-name "default" user-emacs-directory) 'noerror)
