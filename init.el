@@ -23,12 +23,6 @@
 (mapc 'frame-set-background-mode (frame-list))
 (load-theme 'solarized t)
 
-;; Set font size
-(set-face-attribute 'default nil :height 180)
-
-;; Enable Emoji?
-(set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend)
-
 (global-hl-line-mode)
 
 ;; Highlighting whitespace
