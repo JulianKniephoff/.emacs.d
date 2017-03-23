@@ -111,8 +111,8 @@
 
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
-
 ;; Capture
+
 (defun jk/new-inbox-entry-file ()
   (expand-file-name (concat (format-time-string "%Y-%m-%d-%H-%M-%S")
                             ".txt")
