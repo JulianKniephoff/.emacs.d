@@ -54,6 +54,7 @@
 (depends-on "smart-tabs-mode")
 (depends-on "spinner")
 (depends-on "swift-mode")
+(depends-on "typescript-mode")
 (depends-on "undo-tree")
 (depends-on "web-mode")
 (depends-on "with-editor")
