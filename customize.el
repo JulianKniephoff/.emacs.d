@@ -5,7 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(safe-local-variable-values
    (quote
-    ((eval setq js2-additional-externs
+    ((require-final-newline t)
+     (eval setq js2-additional-externs
            (nconc
             (append js2-node-externs js2-browser-externs)
             js2-additional-externs))
