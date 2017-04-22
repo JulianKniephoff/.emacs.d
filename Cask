@@ -39,6 +39,7 @@
 (depends-on "magit")
 (depends-on "magit-popup")
 (depends-on "markdown-mode")
+(depends-on "nginx-mode")
 (depends-on "org-plus-contrib")
 (depends-on "package-build")
 (depends-on "pallet")
