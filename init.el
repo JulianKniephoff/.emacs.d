@@ -244,9 +244,12 @@ from the top down."
   (setq indent-tabs-mode t))
 (add-hook 'latex-mode-hook 'jk/latex-mode-indentation-hook)
 
-;; Misc
+;; Magit
 
+(global-set-key [(control c) ?g] 'magit-status)
 (setq magit-last-seen-setup-instructions "1.4.0")
+
+;; Misc
 
 (server-start)
 
