@@ -9,6 +9,7 @@
 (depends-on "cask")
 (depends-on "cider")
 (depends-on "clojure-mode")
+(depends-on "cmake-mode")
 (depends-on "color-theme-solarized")
 (depends-on "company")
 (depends-on "company-quickhelp")
