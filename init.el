@@ -244,6 +244,9 @@ from the top down."
   (setq indent-tabs-mode t))
 (add-hook 'latex-mode-hook 'jk/latex-mode-indentation-hook)
 
+;; Interpret latexmk configuration correctly as Perl
+(add-to-list 'auto-mode-alist '("latexmkrc\\'" . perl-mode))
+
 ;; Magit
 
 (global-set-key [(control c) ?g] 'magit-status)
