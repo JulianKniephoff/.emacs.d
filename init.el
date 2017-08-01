@@ -103,9 +103,8 @@
 
 ;; Remember cursor position accross sessions
 
-(require 'saveplace)
 (setq save-place-file (expand-file-name "save-place" user-emacs-directory))
-(setq-default save-place t)
+(save-place-mode 1)
 
 ;; Navigation
 
