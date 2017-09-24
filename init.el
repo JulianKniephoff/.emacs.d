@@ -157,13 +157,6 @@ from the top down."
 
 ;; Programming
 
-;; Set some sensible indentation defaults for programming modes
-
-(setq-default indent-tabs-mode t
-              tab-width 4
-              sgml-basic-offset 4
-              c-basic-offset 4)
-
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; Rust
