@@ -159,6 +159,11 @@ from the top down."
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+;; C++
+
+(c-set-offset 'arglist-intro '+)
+(c-set-offset 'arglist-close 0)
+
 ;; Rust
 
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
