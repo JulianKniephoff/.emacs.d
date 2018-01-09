@@ -21,7 +21,7 @@
 
 (setq frame-background-mode 'dark)
 (mapc 'frame-set-background-mode (frame-list))
-(load-theme 'solarized t)
+(load-theme 'solarized-dark t)
 
 (global-hl-line-mode)
 
