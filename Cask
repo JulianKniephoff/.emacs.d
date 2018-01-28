@@ -23,6 +23,7 @@
 (depends-on "exec-path-from-shell")
 (depends-on "f")
 (depends-on "fill-column-indicator")
+(depends-on "floobits")
 (depends-on "flycheck")
 (depends-on "flycheck-rust")
 (depends-on "fsharp-mode")
