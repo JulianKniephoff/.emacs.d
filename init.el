@@ -32,6 +32,9 @@
 (setq whitespace-style
       '(face trailing empty tab-mark))
 (global-whitespace-mode)
+(defun jk/prevent-whitespace-mode-for-magit ()
+  (not (derived-mode-p 'magit-mode)))
+(add-function :before-while whitespace-enable-predicate 'jk/prevent-whitespace-mode-for-magit)
 
 ;; Long lines
 
