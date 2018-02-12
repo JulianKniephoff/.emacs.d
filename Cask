@@ -27,6 +27,7 @@
 (depends-on "flycheck")
 (depends-on "flycheck-rust")
 (depends-on "fsharp-mode")
+(depends-on "ghub")
 (depends-on "git-commit")
 (depends-on "glsl-mode")
 (depends-on "goto-chg")
