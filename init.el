@@ -1,3 +1,8 @@
+;; This is not needed in our Cask/pallet setup,
+;; however, Emacs insists on automatically adding it
+;; if it is not here, at least commented out.
+;(package-initialize)
+
 (defvar jk/cask-path "~/.cask/cask.el"
   "The path where Cask is installed.")
 
