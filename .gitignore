@@ -10,3 +10,4 @@
 *.elc
 /site.el
 /default.el
+/customize.el
