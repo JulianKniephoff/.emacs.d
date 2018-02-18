@@ -33,6 +33,7 @@
 (depends-on "goto-chg")
 (depends-on "haml-mode")
 (depends-on "haskell-mode")
+(depends-on "highlight")
 (depends-on "ido-vertical-mode")
 (depends-on "idris-mode")
 (depends-on "js2-mode")
