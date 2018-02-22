@@ -67,6 +67,10 @@
 (ido-mode t)
 (ido-vertical-mode t)
 
+;; Enable magit in ido
+(define-key ido-common-completion-map
+  [?\C-x ?g] 'ido-enter-magit-status)
+
 ;; Evil
 
 (evil-mode)
