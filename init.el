@@ -89,11 +89,6 @@
 
 ;; Keep everything in one directory
 
-;; Customize
-
-(setq custom-file (expand-file-name "customize.el"
-                                    user-emacs-directory))
-
 ;; Backups
 
 (setq backup-directory-alist
@@ -267,8 +262,10 @@ from the top down."
 
 ;; Load Customizations
 
-;; TODO Why is this loaded twice?
-(load custom-file)
+;; Customize
+(setq custom-file (expand-file-name "customize.el" user-emacs-directory))
+(when (file-readable-p custom-file)
+  (load custom-file))
 
 ;; Load user defaults file
 (load (expand-file-name "default" user-emacs-directory) 'noerror)
