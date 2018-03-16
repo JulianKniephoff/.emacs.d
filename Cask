@@ -7,6 +7,7 @@
 (depends-on "cider")
 (depends-on "clojure-mode")
 (depends-on "cmake-mode")
+(depends-on "coffee-mode")
 (depends-on "context-coloring")
 (depends-on "elm-mode")
 (depends-on "evil")
