@@ -76,6 +76,11 @@
 (evil-mode)
 (global-evil-surround-mode)
 
+;; Ace integration
+(define-key evil-motion-state-map [? ]  'evil-ace-jump-char-mode)
+(define-key evil-motion-state-map [return] 'evil-ace-jump-line-mode)
+(define-key evil-motion-state-map [?\C- ] 'evil-ace-jump-char-to-mode)
+
 ;; Path
 (exec-path-from-shell-initialize)
 
