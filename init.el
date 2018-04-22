@@ -77,9 +77,10 @@
 (global-evil-surround-mode)
 
 ;; Ace integration
-(define-key evil-motion-state-map [? ]  'evil-ace-jump-char-mode)
-(define-key evil-motion-state-map [return] 'evil-ace-jump-line-mode)
-(define-key evil-motion-state-map [?\C- ] 'evil-ace-jump-char-to-mode)
+(define-key evil-motion-state-map [?g ? ] 'evil-ace-jump-char-mode)
+(define-key evil-motion-state-map [?g ?	] 'evil-ace-jump-char-to-mode)
+(define-key evil-motion-state-map [?g ?b] 'evil-ace-jump-word-mode)
+(define-key evil-motion-state-map [?g return] 'evil-ace-jump-line-mode)
 
 ;; Path
 (exec-path-from-shell-initialize)
@@ -117,10 +118,6 @@
 
 (setq save-place-file (expand-file-name "save-place" user-emacs-directory))
 (save-place-mode 1)
-
-;; Navigation
-
-(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; Capture
 
