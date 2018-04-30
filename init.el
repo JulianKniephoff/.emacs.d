@@ -78,6 +78,8 @@
 (global-evil-surround-mode)
 (evil-collection-init)
 
+(require 'evil-magit)
+
 ;; Ace integration
 (require 'ace-jump-mode)
 (define-key evil-motion-state-map [?g ? ] 'evil-ace-jump-char-mode)
