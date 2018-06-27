@@ -35,7 +35,8 @@
 (require 'whitespace)
 
 (setq whitespace-style
-      '(face trailing empty tab-mark))
+      '(face trailing empty tabs))
+(setq whitespace-tab 'highlight)
 (global-whitespace-mode)
 (defun jk/prevent-whitespace-mode-for-magit ()
   (not (derived-mode-p 'magit-mode)))
