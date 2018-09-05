@@ -17,6 +17,11 @@
 
 ;; Appearance
 
+;; Set font if you wish
+;; (let ((font "Source Code Pro"))
+;;   (when (member font (font-family-list))
+;;     (set-face-attribute 'default nil :family font)))
+
 (setq inhibit-startup-screen t)
 
 (tool-bar-mode -1)
