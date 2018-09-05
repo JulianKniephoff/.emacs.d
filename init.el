@@ -79,6 +79,8 @@
 (global-evil-surround-mode)
 (evil-collection-init)
 
+(evil-select-search-module 'evil-search-module 'evil-search)
+
 (require 'evil-magit)
 
 ;; Ace integration
