@@ -33,6 +33,7 @@
 (depends-on "org-plus-contrib")
 (depends-on "pallet")
 (depends-on "paredit")
+(depends-on "python-mode")
 (depends-on "rainbow-blocks")
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-identifiers")
