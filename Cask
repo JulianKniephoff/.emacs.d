@@ -20,6 +20,7 @@
 (depends-on "fsharp-mode")
 (depends-on "glsl-mode")
 (depends-on "haml-mode")
+(depends-on "handlebars-mode")
 (depends-on "haskell-mode")
 (depends-on "ido-vertical-mode")
 (depends-on "idris-mode")
