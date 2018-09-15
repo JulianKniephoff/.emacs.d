@@ -80,6 +80,7 @@
 ;; Evil
 
 (setq evil-want-integration nil)
+(setq evil-want-keybinding nil)
 (evil-mode)
 (global-evil-surround-mode)
 (evil-collection-init)
