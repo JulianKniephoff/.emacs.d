@@ -272,6 +272,12 @@ from the top down."
 (global-set-key [(control c) ?g] 'magit-status)
 (setq magit-last-seen-setup-instructions "1.4.0")
 
+;; Org
+
+(setq jk/org-files (directory-files-recursively "~/Dropbox/Org" "\\.org$"))
+(setq org-refile-targets '((jk/org-files . (:regexp . "."))))
+(setq org-refile-use-outline-path 'file)
+
 ;; Misc
 
 (server-start)
