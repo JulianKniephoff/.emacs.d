@@ -274,9 +274,13 @@ from the top down."
 
 ;; Org
 
+;; Refile
 (setq jk/org-files (directory-files-recursively "~/Dropbox/Org" "\\.org$"))
 (setq org-refile-targets '((jk/org-files . (:regexp . "."))))
 (setq org-refile-use-outline-path 'file)
+
+;; Indentation
+(setq org-startup-indented t)
 
 ;; Misc
 
