@@ -135,14 +135,13 @@
 
 ;; Capture
 
-(defun jk/new-inbox-entry-file ()
-  (expand-file-name (concat (format-time-string "%Y-%m-%d-%H-%M-%S")
-                            ".txt")
-                    "~/Dropbox/Inbox"))
 (setq org-capture-templates
-      '((" " "Inbox entry" plain
-         (file jk/new-inbox-entry-file)
-         "")))
+      '((" " "Inbox entry" entry
+         (file "~/Dropbox/Org/inbox.org")
+         "* %?")
+        ("w" "Browser capture" entry
+         (file "~/Dropbox/Org/inbox.org")
+         "* %:annotation\n%i")))
 (global-set-key (kbd "C-c c") 'org-capture)
 
 ;; Allow multiple "nested" `.dir-locals.el` files
@@ -285,6 +284,7 @@ from the top down."
 ;; Misc
 
 (server-start)
+(require 'org-protocol)
 
 ;; Load Customizations
 
