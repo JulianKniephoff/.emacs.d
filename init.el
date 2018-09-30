@@ -287,6 +287,9 @@ from the top down."
 ;; LaTeX preview
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.5))
 
+;; Highlighting in code blocks
+(setq org-src-fontify-natively t)
+
 ;; Misc
 
 (server-start)
