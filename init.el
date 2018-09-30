@@ -281,6 +281,9 @@ from the top down."
 ;; Indentation
 (setq org-startup-indented t)
 
+;; LaTeX preview
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.5))
+
 ;; Misc
 
 (server-start)
