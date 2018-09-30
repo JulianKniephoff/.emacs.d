@@ -133,17 +133,6 @@
 (setq save-place-file (expand-file-name "save-place" user-emacs-directory))
 (save-place-mode 1)
 
-;; Capture
-
-(setq org-capture-templates
-      '((" " "Inbox entry" entry
-         (file "~/Dropbox/Org/inbox.org")
-         "* %?")
-        ("w" "Browser capture" entry
-         (file "~/Dropbox/Org/inbox.org")
-         "* %:annotation\n%i")))
-(global-set-key (kbd "C-c c") 'org-capture)
-
 ;; Allow multiple "nested" `.dir-locals.el` files
 ;; Source: http://emacs.stackexchange.com/a/5537
 
@@ -272,6 +261,16 @@ from the top down."
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; Org
+
+;; Capture
+(setq org-capture-templates
+      '((" " "Inbox entry" entry
+         (file "~/Dropbox/Org/inbox.org")
+         "* %?")
+        ("w" "Browser capture" entry
+         (file "~/Dropbox/Org/inbox.org")
+         "* %:annotation\n%i")))
+(global-set-key (kbd "C-c c") 'org-capture)
 
 ;; Refile
 (setq jk/org-files (directory-files-recursively "~/Dropbox/Org" "\\.org$"))
