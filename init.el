@@ -278,6 +278,10 @@ from the top down."
 (setq org-refile-targets '((jk/org-files . (:regexp . "."))))
 (setq org-refile-use-outline-path 'file)
 
+;; Agenda
+(setq org-agenda-files jk/org-files)
+(global-set-key (kbd "C-c a") 'org-agenda)
+
 ;; Indentation
 (setq org-startup-indented t)
 
