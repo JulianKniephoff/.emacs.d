@@ -263,6 +263,8 @@ from the top down."
 
 ;; Org
 
+(require 'org)
+
 ;; Capture
 (setq org-capture-templates
       '((" " "Inbox entry" entry
