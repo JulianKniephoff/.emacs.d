@@ -68,10 +68,11 @@
 (setq fci-handle-truncate-lines nil)
 (setq truncate-partial-width-windows nil)
 
-;; Behavior
+;; ido
 
-(ido-mode t)
-(ido-vertical-mode t)
+(ido-mode)
+(ido-vertical-mode)
+(ido-ubiquitous-mode)
 
 ;; Enable magit in ido
 (define-key ido-common-completion-map
@@ -279,6 +280,8 @@ from the top down."
 (setq jk/org-files (directory-files-recursively "~/Dropbox/Org" "\\.org$"))
 (setq org-refile-targets '((jk/org-files . (:regexp . "."))))
 (setq org-refile-use-outline-path 'file)
+(setq org-outline-path-complete-in-steps nil)
+(setq org-completion-use-ido t)
 
 ;; Agenda
 (setq org-agenda-files jk/org-files)

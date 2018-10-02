@@ -22,6 +22,7 @@
 (depends-on "haml-mode")
 (depends-on "handlebars-mode")
 (depends-on "haskell-mode")
+(depends-on "ido-completing-read+")
 (depends-on "ido-vertical-mode")
 (depends-on "idris-mode")
 (depends-on "js2-mode")
