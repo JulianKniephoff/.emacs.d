@@ -301,7 +301,8 @@ from the top down."
 
 ;; Misc
 
-(server-start)
+(unless (server-running-p)
+  (server-start))
 (require 'org-protocol)
 
 ;; Load Customizations
