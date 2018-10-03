@@ -78,6 +78,8 @@
 (define-key ido-common-completion-map
   [?\C-x ?g] 'ido-enter-magit-status)
 
+(setq magit-completing-read-function 'magit-ido-completing-read)
+
 ;; Evil
 
 (setq evil-want-integration nil)
