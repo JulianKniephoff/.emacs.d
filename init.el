@@ -273,10 +273,10 @@ from the top down."
 (setq org-capture-templates
       '((" " "Inbox entry" entry
          (file "~/Dropbox/Org/inbox.org")
-         "* %?")
+         "* %?\nSCHEDULED: %t")
         ("w" "Browser capture" entry
          (file "~/Dropbox/Org/inbox.org")
-         "* %:annotation\n%i")))
+         "* %:annotation\nSCHEDULED: %t\n%i")))
 (global-set-key (kbd "C-c c") 'org-capture)
 
 ;; Refile
