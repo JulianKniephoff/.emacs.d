@@ -72,6 +72,7 @@
 
 (ido-mode)
 (ido-vertical-mode)
+(ido-everywhere)
 (ido-ubiquitous-mode)
 
 ;; Enable magit in ido
