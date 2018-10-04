@@ -270,12 +270,14 @@ from the top down."
 (require 'org)
 
 ;; Capture
+(setq org-directory "~/Dropbox/Org")
+(setq org-default-notes-file (expand-file-name "inbox.org" org-directory))
 (setq org-capture-templates
       '((" " "Inbox entry" entry
-         (file "~/Dropbox/Org/inbox.org")
+         (file "")
          "* %?\nSCHEDULED: %t")
         ("w" "Browser capture" entry
-         (file "~/Dropbox/Org/inbox.org")
+         (file "")
          "* %:annotation\nSCHEDULED: %t\n%i")))
 (global-set-key (kbd "C-c c") 'org-capture)
 
