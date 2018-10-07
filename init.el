@@ -281,6 +281,12 @@ from the top down."
          "* %:annotation\nSCHEDULED: %t\n%i")))
 (global-set-key (kbd "C-c c") 'org-capture)
 
+;; Integrate with EVIL
+(add-hook 'org-mode-hook 'evil-org-mode)
+;(evil-org-set-key-theme '(navigation insert textobjects additional calendar))
+(require 'evil-org-agenda)
+(evil-org-agenda-set-keys)
+
 ;; Refile
 (setq jk/org-files (directory-files-recursively "~/Dropbox/Org" "\\.org$"))
 (setq org-refile-targets '((jk/org-files . (:regexp . "."))))

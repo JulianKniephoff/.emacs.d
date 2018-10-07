@@ -13,6 +13,7 @@
 (depends-on "evil")
 (depends-on "evil-collection")
 (depends-on "evil-magit")
+(depends-on "evil-org")
 (depends-on "evil-surround")
 (depends-on "exec-path-from-shell")
 (depends-on "fill-column-indicator")
