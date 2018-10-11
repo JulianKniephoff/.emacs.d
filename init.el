@@ -22,6 +22,10 @@
 ;;   (when (member font (font-family-list))
 ;;     (set-face-attribute 'default nil :family font)))
 
+(defun set-font-size (n)
+  (interactive "N")
+  (set-face-attribute 'default (selected-frame) :height n))
+
 (setq inhibit-startup-screen t)
 
 (tool-bar-mode -1)
