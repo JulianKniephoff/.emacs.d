@@ -292,14 +292,15 @@ from the top down."
 (evil-org-agenda-set-keys)
 
 ;; Refile
-(setq jk/org-files (directory-files-recursively "~/Dropbox/Org" "\\.org$"))
+(defun jk/org-files ()
+  (directory-files-recursively org-directory "\\.org$"))
 (setq org-refile-targets '((jk/org-files . (:regexp . "."))))
 (setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
 (setq org-completion-use-ido t)
 
 ;; Agenda
-(setq org-agenda-files jk/org-files)
+(setq org-agenda-files (list org-directory))
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; Indentation
