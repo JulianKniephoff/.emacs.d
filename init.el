@@ -23,8 +23,8 @@
 ;;     (set-face-attribute 'default nil :family font)))
 
 (defun set-font-size (n)
-  (interactive "N")
-  (set-face-attribute 'default (selected-frame) :height n))
+  (interactive "NSize: ")
+  (set-face-attribute 'default nil :height n))
 
 (setq inhibit-startup-screen t)
 
