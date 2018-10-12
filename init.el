@@ -24,7 +24,7 @@
 
 (defun set-font-size (n)
   (interactive "NSize: ")
-  (set-face-attribute 'default nil :height n))
+  (set-face-attribute 'default nil :height (* 10 n)))
 
 (setq inhibit-startup-screen t)
 
