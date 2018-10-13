@@ -299,6 +299,18 @@ from the top down."
 (setq org-outline-path-complete-in-steps nil)
 (setq org-completion-use-ido t)
 
+(defun org-reenter ()
+  (interactive)
+  (let ((pos (condition-case nil
+                 (save-excursion
+                   (org-up-element)
+                   (point)
+                   ;(org-end-of-subtree t t)
+                   )
+               (error nil))))
+    (org-refile nil nil (list nil (buffer-file-name) nil pos))))
+(define-key org-mode-map [?\C-c ?\C-x ?\C-h] 'org-reenter)
+
 ;; Agenda
 (setq org-agenda-files (list org-directory))
 (global-set-key (kbd "C-c a") 'org-agenda)
