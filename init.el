@@ -315,6 +315,9 @@ from the top down."
 (setq org-agenda-files (list org-directory))
 (global-set-key (kbd "C-c a") 'org-agenda)
 
+;; Links
+(global-set-key (kbd "C-c l") 'org-store-link)
+
 ;; Indentation
 (setq org-startup-indented t)
 
