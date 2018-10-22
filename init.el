@@ -273,6 +273,9 @@ from the top down."
 
 (require 'org)
 
+;; Make (inline) code use a monospaced font
+(set-face-attribute 'org-code nil :family "monospace")
+
 ;; Capture
 (setq org-directory "~/Dropbox/Org")
 (setq org-default-notes-file (expand-file-name "inbox.org" org-directory))
