@@ -22,9 +22,17 @@
 ;;   (when (member font (font-family-list))
 ;;     (set-face-attribute 'default nil :family font)))
 
+(require 'org)
 (defun set-font-size (n)
   (interactive "NSize: ")
-  (set-face-attribute 'default nil :height (* 10 n)))
+  (let* ((new-size (* 10 n))
+         (old-size (face-attribute 'default :height)) ; TODO Pass frame?
+         (scale (/ new-size (float old-size)))
+         (old-scale (plist-get org-format-latex-options :scale))
+         (new-scale (* scale old-scale)))
+    (set-face-attribute 'default nil :height new-size)
+    (setq org-format-latex-options (plist-put org-format-latex-options :scale new-scale))))
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.2))
 
 (setq inhibit-startup-screen t)
 
@@ -271,8 +279,6 @@ from the top down."
 
 ;; Org
 
-(require 'org)
-
 ;; Make (inline) code use a monospaced font
 (set-face-attribute 'org-code nil :family "monospace")
 
@@ -323,9 +329,6 @@ from the top down."
 
 ;; Indentation
 (setq org-startup-indented t)
-
-;; LaTeX preview
-(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.5))
 
 ;; Highlighting in code blocks
 (setq org-src-fontify-natively t)
