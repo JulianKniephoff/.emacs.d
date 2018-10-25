@@ -13,7 +13,7 @@
 (cask-initialize)
 
 (require 'pallet)
-(pallet-mode t)
+(pallet-mode)
 
 ;; Appearance
 
@@ -66,7 +66,7 @@
 (define-globalized-minor-mode global-fci-mode
   fci-mode
   (lambda ()
-    (fci-mode 1)))
+    (fci-mode)))
 (global-fci-mode)
 (defun auto-fci-mode ()
   (if (> (window-width) (or fci-rule-column fill-column))
@@ -147,7 +147,7 @@
 ;; Remember cursor position accross sessions
 
 (setq save-place-file (expand-file-name "save-place" user-emacs-directory))
-(save-place-mode 1)
+(save-place-mode)
 
 ;; Allow multiple "nested" `.dir-locals.el` files
 ;; Source: http://emacs.stackexchange.com/a/5537
