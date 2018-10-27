@@ -313,9 +313,7 @@ from the top down."
   (let ((pos (condition-case nil
                  (save-excursion
                    (org-up-element)
-                   (point)
-                   ;(org-end-of-subtree t t)
-                   )
+                   (point))
                (error nil))))
     (org-refile nil nil (list nil (buffer-file-name) nil pos))))
 (define-key org-mode-map [?\C-c ?\C-x ?\C-h] 'org-reenter)
