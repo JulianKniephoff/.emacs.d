@@ -43,6 +43,7 @@
 (depends-on "rainbow-identifiers")
 (depends-on "rust-mode")
 (depends-on "sass-mode")
+(depends-on "scala-mode")
 (depends-on "solarized-theme")
 (depends-on "swift-mode")
 (depends-on "systemd")
