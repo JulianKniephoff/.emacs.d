@@ -317,6 +317,7 @@ from the top down."
                  (save-excursion
                    (org-up-element)
                    (point))
+               ;; TODO Is this right?! Shouldn't it just be `nil`?
                (error nil))))
     (org-refile nil nil (list nil (buffer-file-name) nil pos))))
 (define-key org-mode-map [?\C-c ?\C-x ?\C-h] 'org-reenter)
