@@ -321,6 +321,10 @@ from the top down."
     (org-refile nil nil (list nil (buffer-file-name) nil pos))))
 (define-key org-mode-map [?\C-c ?\C-x ?\C-h] 'org-reenter)
 
+;; Automatically save after refile
+;; TODO This seems excessive; can you just save the source and target file?
+(advice-add 'org-refile :after (lambda (&rest _) (org-save-all-org-buffers)))
+
 ;; Agenda
 (setq org-agenda-files (list org-directory))
 (global-set-key (kbd "C-c a") 'org-agenda)
