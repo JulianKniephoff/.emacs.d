@@ -182,6 +182,9 @@ from the top down."
 (advice-add 'hack-dir-local-variables :around
             #'hack-dir-local-variables-chained-advice)
 
+;; Automatically reload changed files from disk
+(global-auto-revert-mode)
+
 ;; Programming
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
