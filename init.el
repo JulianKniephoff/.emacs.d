@@ -296,6 +296,7 @@ from the top down."
          (file "")
          "* %:annotation\nSCHEDULED: %t\n%i")))
 (global-set-key (kbd "C-c c") 'org-capture)
+(add-hook 'org-capture-mode-hook 'evil-insert-state)
 
 ;; Integrate with EVIL
 (add-hook 'org-mode-hook 'evil-org-mode)
