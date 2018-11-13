@@ -299,6 +299,7 @@ from the top down."
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
 ;; Integrate with EVIL
+(require 'evil-org)
 (add-hook 'org-mode-hook 'evil-org-mode)
 (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
 (require 'evil-org-agenda)
