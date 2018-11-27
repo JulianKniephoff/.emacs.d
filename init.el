@@ -282,7 +282,7 @@ from the top down."
 ;; Org
 
 ;; Make (inline) code use a monospaced font
-(set-face-attribute 'org-code nil :family "monospace")
+(set-face-attribute 'org-code nil :family "Monospace")
 
 ;; Capture
 (setq org-directory "~/Dropbox/Org")
