@@ -10,6 +10,7 @@
 (depends-on "coffee-mode")
 (depends-on "context-coloring")
 (depends-on "csharp-mode")
+(depends-on "d-mode")
 (depends-on "elm-mode")
 (depends-on "evil")
 (depends-on "evil-collection")
