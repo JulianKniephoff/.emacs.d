@@ -288,7 +288,7 @@ from the top down."
 (setq org-directory "~/Dropbox/Org")
 (setq org-default-notes-file (expand-file-name "inbox.org" org-directory))
 (setq org-capture-templates
-      '((" " "Inbox entry" entry
+      '(("i" "Inbox entry" entry
          (file "")
          "* %?\nSCHEDULED: %t")
         ("w" "Browser capture" entry
