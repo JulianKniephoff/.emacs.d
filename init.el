@@ -294,7 +294,7 @@ from the top down."
         ("w" "Browser capture" entry
          (file "")
          "* %:annotation\nSCHEDULED: %t\n%i")))
-(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c c") (lambda (goto) (interactive "P") (org-capture goto "i")))
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
 ;; Integrate with EVIL
