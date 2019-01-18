@@ -284,6 +284,9 @@ from the top down."
 ;; Make (inline) code use a monospaced font
 (set-face-attribute 'org-code nil :family "Monospace")
 
+;; Use IDs for linking if they are there
+(setq org-id-link-to-org-use-id 'use-existing)
+
 ;; Capture
 (setq org-directory "~/Dropbox/Org")
 (setq org-default-notes-file (expand-file-name "inbox.org" org-directory))
