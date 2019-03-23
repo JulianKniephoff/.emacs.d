@@ -12,6 +12,7 @@
 (depends-on "csharp-mode")
 (depends-on "d-mode")
 (depends-on "elm-mode")
+(depends-on "elnode")
 (depends-on "evil")
 (depends-on "evil-collection")
 (depends-on "evil-ledger")
