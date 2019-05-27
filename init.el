@@ -283,7 +283,8 @@ from the top down."
 ;; Org
 
 (org-babel-do-load-languages 'org-babel-load-languages
-                             '((shell . t)))
+                             '((shell . t)
+                               (latex . t)))
 
 ;; Make (inline) code use a monospaced font
 (set-face-attribute 'org-code nil :family "Monospace")
