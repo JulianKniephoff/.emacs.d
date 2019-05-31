@@ -3,7 +3,7 @@
 ;; if it is not here, at least commented out.
 ;(package-initialize)
 
-(defvar jk/cask-path "~/.cask/cask.el"
+(defvar jk/cask-path "/usr/share/cask/cask.el"
   "The path where Cask is installed.")
 
 ;; Load site specific stuff, e.g. values for the variables above
