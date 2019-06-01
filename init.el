@@ -284,6 +284,14 @@ from the top down."
 
 (require 'ob-async)
 
+;; TODO Why is this even necessary?
+(setcdr (assq 'system org-file-apps-defaults-gnu)
+        (lambda (file &rest args)
+          (call-process "xdg-open" nil 0 nil file)))
+;; TODO This seems like kind of a hack;
+;;   shouldn't we just remove "pdf" from the `auto-mode-alist`?
+(setq org-file-apps (cons '("pdf" . system) org-file-apps))
+
 (org-babel-do-load-languages 'org-babel-load-languages
                              '((shell . t)
                                (latex . t)))
