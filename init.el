@@ -282,6 +282,8 @@ from the top down."
 
 ;; Org
 
+(require 'ob-async)
+
 (org-babel-do-load-languages 'org-babel-load-languages
                              '((shell . t)
                                (latex . t)))

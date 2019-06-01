@@ -37,6 +37,7 @@
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "nginx-mode")
+(depends-on "ob-async")
 (depends-on "org-plus-contrib")
 (depends-on "pallet")
 (depends-on "paredit")
