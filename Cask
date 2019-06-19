@@ -27,6 +27,7 @@
 (depends-on "haml-mode")
 (depends-on "handlebars-mode")
 (depends-on "haskell-mode")
+(depends-on "highlight-indent-guides")
 (depends-on "ido-completing-read+")
 (depends-on "ido-vertical-mode")
 (depends-on "idris-mode")
