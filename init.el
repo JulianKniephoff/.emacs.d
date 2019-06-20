@@ -187,6 +187,8 @@ from the top down."
 ;; Programming
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+(setq highlight-indent-guides-method 'character)
 
 ;; C++
 
@@ -294,7 +296,8 @@ from the top down."
 
 (org-babel-do-load-languages 'org-babel-load-languages
                              '((shell . t)
-                               (latex . t)))
+                               (latex . t)
+                               (python . t)))
 
 ;; Make (inline) code use a monospaced font
 (set-face-attribute 'org-code nil :family "Monospace")
