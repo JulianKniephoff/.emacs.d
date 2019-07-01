@@ -31,6 +31,7 @@
 (depends-on "ido-completing-read+")
 (depends-on "ido-vertical-mode")
 (depends-on "idris-mode")
+(depends-on "indium")
 (depends-on "js2-mode")
 (depends-on "json-mode")
 (depends-on "ledger-mode")
