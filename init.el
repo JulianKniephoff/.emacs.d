@@ -365,10 +365,13 @@ from the top down."
       '(("i" "Inbox entry" entry
          (file "")
          "* %?\nSCHEDULED: %t")
+        ("p" "Inbox entry from clipboard" entry
+         (file "")
+         "* %x%?\nSCHEDULED: %t")
         ("w" "Browser capture" entry
          (file "")
          "* %:annotation\nSCHEDULED: %t\n%i")))
-(global-set-key (kbd "C-c c") (lambda (goto) (interactive "P") (org-capture goto "i")))
+(global-set-key (kbd "C-c c") (lambda (goto) (interactive "P") (org-capture goto)))
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
 ;; Integrate with EVIL
