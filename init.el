@@ -44,6 +44,9 @@
 (setq frame-background-mode 'dark)
 (mapc 'frame-set-background-mode (frame-list))
 (load-theme 'solarized-dark t)
+(set-face-attribute 'org-block-begin-line nil :underline nil :overline nil)
+(set-face-attribute 'org-block-end-line nil :underline nil :overline nil)
+
 ;; Fix diff colors
 (require 'magit)  ;; TODO Or use hooks?
 (dolist (entry '((ediff-current-diff-C . ((((class color) (background light))
