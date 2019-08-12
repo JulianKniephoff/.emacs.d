@@ -360,7 +360,7 @@ from the top down."
 (setq org-id-link-to-org-use-id 'use-existing)
 
 ;; Capture
-(setq org-directory "~/Dropbox/Org")
+(setq org-directory "~/org")
 (setq org-default-notes-file (expand-file-name "inbox.org" org-directory))
 (setq org-capture-templates
       '(("i" "Inbox entry" entry
