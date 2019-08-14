@@ -432,3 +432,11 @@ from the top down."
 
 ;; Load user defaults file
 (load (expand-file-name "default" user-emacs-directory) 'noerror)
+
+;; utility functions
+(defun inspect (f o)
+  (funcall f o)
+  o)
+
+(defmacro comment (&body)
+  nil)
