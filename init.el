@@ -15,6 +15,8 @@
 (require 'pallet)
 (pallet-mode)
 
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
 ;; Appearance
 
 ;; Set font if you wish
@@ -432,11 +434,3 @@ from the top down."
 
 ;; Load user defaults file
 (load (expand-file-name "default" user-emacs-directory) 'noerror)
-
-;; utility functions
-(defun inspect (f o)
-  (funcall f o)
-  o)
-
-(defmacro comment (&body)
-  nil)
