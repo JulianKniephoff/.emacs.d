@@ -57,4 +57,24 @@
                              property)
                             nil))
 
+(defun org-element-go-to (element &optional position)
+  (interactive)
+  (goto-char (org-element-property (or position :begin) element)))
+
+(defun org-element-find (&optional pos element)
+  (interactive)
+  (let ((pos (or pos (point)))
+        (stack (if element
+                   (list element)
+                 (org-element-contents (org-element-parse-buffer))))
+        found)
+    (while stack
+      (let ((element (car stack)))
+        (when (and (>= pos (org-element-property :begin element))
+                   (< pos (org-element-property :end element)))
+          (setq found element)
+          (setq stack (append stack (org-element-contents element)))))
+      (setq stack (cdr stack)))
+    found))
+
 (provide 'org-element-x)
