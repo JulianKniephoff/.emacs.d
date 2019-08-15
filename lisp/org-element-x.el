@@ -40,13 +40,6 @@
             (org-element-insert-before property-drawer (car contents))
           (org-element-adopt-elements element property-drawer))))))
 
-(defun org-element-up (types element)
-  (while (and element
-              (not (memq (org-element-type element)
-                         (if (listp types) types (list types)))))
-    (setq element (org-element-property :parent element)))
-  element)
-
 (defun org-element-remove-property (element property)
   (org-element-map element 'node-property
     (lambda (p)
@@ -61,20 +54,24 @@
   (interactive)
   (goto-char (org-element-property (or position :begin) element)))
 
-(defun org-element-find (&optional pos element)
+(defun org-element-find (element &optional pos types)
   (interactive)
-  (let ((pos (or pos (point)))
-        (stack (if element
-                   (list element)
-                 (org-element-contents (org-element-parse-buffer))))
-        found)
+  (let* ((pos (or pos (point)))
+         types (if (listp types) types (list types))
+         (stack (if (eq (org-element-type element) 'org-data)
+                    (org-element-contents element)
+                  (list element)))
+         found
+         found-with-type)
     (while stack
       (let ((element (car stack)))
         (when (and (>= pos (org-element-property :begin element))
                    (< pos (org-element-property :end element)))
           (setq found element)
+          (when (memq (org-element-type element) types)
+            (setq found-with-type element))
           (setq stack (append stack (org-element-contents element)))))
       (setq stack (cdr stack)))
-    found))
+    (if types found-with-type found)))
 
 (provide 'org-element-x)

@@ -8,7 +8,9 @@
   (print element)
   (print interactive)
   (when (not element)
-    (setq element (org-element-up 'headline (org-element-at-point))))
+    (save-excursion
+      (org-up-heading-safe)
+      (setq element (org-element-at-point))))
   (let ((copy (org-element-deep-copy element 'headline))
         (id (or (org-element-property :ID element)
                 (org-id-uuid))))
