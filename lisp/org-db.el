@@ -24,4 +24,22 @@
       (goto-char (point-max))
       (insert (org-element-interpret-data copy)))))
 
+(defun org-db-push ()
+  (interactive)
+  (let ((db-buffer (find-file-noselect org-db-file)))
+    (org-map-region
+     (lambda ()
+       (when (not (org-entry-get (point) "SOURCE_ID"))
+         (org-copy-subtree nil nil nil 'nosubtrees)
+         (let (id
+               (parent-id (org-entry-get-with-inheritance "SOURCE_ID")))
+           (with-current-buffer db-buffer
+             (goto-char (point-max))
+             (org-paste-subtree 1)
+             (setq id (org-id-get-create))
+             (when parent-id
+               (org-entry-put (point) "PARENT_ID" parent-id)))
+           (org-entry-put (point) "SOURCE_ID" id))))
+     (point-min) (point-max))))
+
 (provide 'org-db)
