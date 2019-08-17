@@ -5,8 +5,6 @@
 
 (defun org-db-insert (&optional element interactive)
   (interactive "i\np")
-  (print element)
-  (print interactive)
   (when (not element)
     (save-excursion
       (org-up-heading-safe)
