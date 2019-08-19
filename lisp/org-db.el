@@ -1,5 +1,6 @@
 (require 'org-id)
 (require 'org-element-x)
+(require 'util)
 
 (defvar org-db-file (expand-file-name "db.org" org-directory))
 
@@ -29,17 +30,38 @@
   (let ((db-buffer (find-file-noselect org-db-file)))
     (org-map-region
      (lambda ()
-       (when (not (org-entry-get (point) "SOURCE_ID"))
+       (let ((parent-id (save-excursion
+                          (when (org-up-heading-safe)
+                            (org-entry-get (point) "SOURCE_ID")))))
          (org-copy-subtree nil nil nil 'nosubtrees)
-         (let (id
-               (parent-id (org-entry-get-with-inheritance "SOURCE_ID")))
+         (if-let ((source-id (org-entry-get (point) "SOURCE_ID")))
+             (progn
+               (let* ((source-marker (org-id-find source-id 'markerp))
+                      (source-position
+                       (marker-position source-marker)))
+                 (with-current-buffer (marker-buffer source-marker)
+                   (goto-char source-position)
+                   (org-entry-delete (point) "ID")
+                   (org-demote)
+                   (let ((current-parent-ids
+                          (org-entry-get (point) "PARENT_ID")))
+                     (org-paste-subtree 1)
+                     (when current-parent-ids
+                       (org-entry-put (point) "PARENT_ID"
+                                      current-parent-ids)))
+                   (org-entry-put (point) "ID" source-id)
+                   (org-entry-delete (point) "SOURCE_ID")
+                   (when parent-id
+                     (org-entry-add-to-multivalued-property
+                      source-position "PARENT_ID" parent-id)))))
+           (let (id)
            (with-current-buffer db-buffer
              (goto-char (point-max))
              (org-paste-subtree 1)
              (setq id (org-id-get-create))
              (when parent-id
                (org-entry-put (point) "PARENT_ID" parent-id)))
-           (org-entry-put (point) "SOURCE_ID" id))))
+             (org-entry-put (point) "SOURCE_ID" id)))))
      (point-min) (point-max))))
 
 (provide 'org-db)
