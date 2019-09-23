@@ -11,6 +11,7 @@
 (depends-on "context-coloring")
 (depends-on "csharp-mode")
 (depends-on "d-mode")
+(depends-on "dockerfile-mode")
 (depends-on "elm-mode")
 (depends-on "elnode")
 (depends-on "evil")
