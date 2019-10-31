@@ -49,6 +49,7 @@
 (depends-on "rainbow-blocks")
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-identifiers")
+(depends-on "rjsx-mode")
 (depends-on "rust-mode")
 (depends-on "sass-mode")
 (depends-on "scala-mode")
