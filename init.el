@@ -342,7 +342,7 @@ from the top down."
 (require 'ob-async)
 
 ;; TODO Why is this even necessary?
-(setcdr (assq 'system org-file-apps-defaults-gnu)
+(setcdr (assq 'system org-file-apps-gnu)
         (lambda (file &rest args)
           (call-process "xdg-open" nil 0 nil file)))
 ;; TODO This seems like kind of a hack;
