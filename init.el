@@ -257,6 +257,10 @@ from the top down."
 ;; TODO Does not work
 ;(add-hook 'js2-mode-hook 'context-coloring-mode)
 
+(advice-add #'js2-identifier-start-p
+            :after-until
+            (lambda (c) (eq c ?#)))
+
 ;; Special settings for `package.json` to appease `npm install --save`
 (defun jk/package-json-hook ()
   (when (string= (file-name-nondirectory buffer-file-name) "package.json")
