@@ -25,6 +25,7 @@
 ;;     (set-face-attribute 'default nil :family font)))
 
 (require 'org)
+(require 'org-inlinetask)
 (defun set-font-size (n)
   (interactive "NSize: ")
   (let* ((new-size (* 10 n))
