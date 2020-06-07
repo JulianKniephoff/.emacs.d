@@ -55,12 +55,12 @@
                      (org-entry-add-to-multivalued-property
                       source-position "PARENT_ID" parent-id)))))
            (let (id)
-           (with-current-buffer db-buffer
-             (goto-char (point-max))
-             (org-paste-subtree 1)
-             (setq id (org-id-get-create))
-             (when parent-id
-               (org-entry-put (point) "PARENT_ID" parent-id)))
+             (with-current-buffer db-buffer
+               (goto-char (point-max))
+               (org-paste-subtree 1)
+               (setq id (org-id-get-create))
+               (when parent-id
+                 (org-entry-put (point) "PARENT_ID" parent-id)))
              (org-entry-put (point) "SOURCE_ID" id)))))
      (point-min) (point-max))))
 
