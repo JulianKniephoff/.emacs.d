@@ -4,6 +4,7 @@
 
 (depends-on "ace-jump-mode")
 (depends-on "auctex")
+(depends-on "cargo")
 (depends-on "cider")
 (depends-on "clojure-mode")
 (depends-on "cmake-mode")
