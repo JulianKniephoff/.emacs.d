@@ -38,6 +38,7 @@
 (depends-on "json-mode")
 (depends-on "ledger-mode")
 (depends-on "less-css-mode")
+(depends-on "lsp-mode")
 (depends-on "lua-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
