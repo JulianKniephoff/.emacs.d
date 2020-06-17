@@ -42,22 +42,7 @@
 (depends-on "less-css-mode")
 (depends-on "lsp-mode")
 (depends-on "lua-mode")
-;(depends-on "magit")
-(depends-on "magit"
-            :git "https://github.com/magit/magit.git"
-            :ref "8b45756390e43bfc3247dd85bf5f7738516e569a"
-            ;; Source: https://github.com/melpa/melpa/blob/master/recipes/magit
-            :files ("lisp/magit"
-                    "lisp/magit*.el"
-                    "lisp/git-rebase.el"
-                    "Documentation/magit.texi"
-                    "Documentation/AUTHORS.md"
-                    "LICENSE"
-                    (:exclude "lisp/magit-libgit.el"
-                              ;; Cannot remove this yet because it would
-                              ;; also be removed from the stable version.
-                              ;; "lisp/magit-section.el"
-                              )))
+(depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "nginx-mode")
 (depends-on "nix-mode")
