@@ -1,4 +1,4 @@
-(defun inspect (f o)
+(defun tap (f o)
   (funcall f o)
   o)
 
