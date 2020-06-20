@@ -12,7 +12,6 @@
 (require 'cask jk/cask-path)
 (cask-initialize)
 
-(require 'pallet)
 (pallet-mode)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
