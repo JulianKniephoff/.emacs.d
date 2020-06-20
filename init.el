@@ -369,11 +369,6 @@ from the top down."
 (with-eval-after-load "ledger-mode"
   (setq ledger-default-date-format ledger-iso-date-format))
 
-;; Misc
-
-(unless (server-running-p)
-  (server-start))
-
 ;; Load Customizations
 
 ;; Customize
