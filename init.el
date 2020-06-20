@@ -126,7 +126,6 @@
   (require 'evil-magit))
 
 ;; Ace integration
-(require 'ace-jump-mode)
 (define-key evil-motion-state-map [?g ? ] 'evil-ace-jump-char-mode)
 (define-key evil-motion-state-map [?g ?	] 'evil-ace-jump-char-to-mode)
 (define-key evil-motion-state-map [?g ?b] 'evil-ace-jump-word-mode)
