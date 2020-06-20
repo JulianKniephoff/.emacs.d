@@ -373,7 +373,6 @@ from the top down."
 
 (unless (server-running-p)
   (server-start))
-(require 'org-protocol)
 
 ;; Load Customizations
 
