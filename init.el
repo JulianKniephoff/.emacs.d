@@ -3,6 +3,11 @@
 ;; if it is not here, at least commented out.
 ;(package-initialize)
 
+;; Some performance optimizations
+;; TODO You might want to reset this at the end ...
+(setq gc-cons-threshold 100000000
+      file-name-handler-alist nil)
+
 (defvar jk/cask-path "/usr/share/cask/cask.el"
   "The path where Cask is installed.")
 
@@ -12,7 +17,7 @@
 (require 'cask jk/cask-path)
 (cask-initialize)
 
-(pallet-mode)
+;(pallet-mode)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
@@ -23,18 +28,31 @@
 ;;   (when (member font (font-family-list))
 ;;     (set-face-attribute 'default nil :family font)))
 
-(require 'org)
-(require 'org-inlinetask)
+;; TODO It's not nice that this returns another scale than `set-font-size`
+;;   but it's more convenient like this for now ...
+(defun get-font-size ()
+  ;; TODO Is this right? Pass a frame? What face to use?!
+  (face-attribute 'default :height))
+
+(defun scale-org-latex-fonts (new-size)
+  ;; TODO Maybe this should just assume a fixed scale?
+  ;; TODO Is it even guaranteed that `(face-attribute 'default :height)` is what you want?
+  (let* ((old-size (get-font-size))
+         (old-scale (plist-get org-format-latex-options :scale))
+         (scale (/ new-size (float old-size)))
+         (new-scale (* scale old-scale)))
+    (setq org-format-latex-options
+          (plist-put org-format-latex-options
+                     :scale new-scale))))
+
 (defun set-font-size (n)
   (interactive "NSize: ")
-  (let* ((new-size (* 10 n))
-         (old-size (face-attribute 'default :height)) ; TODO Pass frame?
-         (scale (/ new-size (float old-size)))
-         (old-scale (plist-get org-format-latex-options :scale))
-         (new-scale (* scale old-scale)))
-    (set-face-attribute 'default nil :height new-size)
-    (setq org-format-latex-options (plist-put org-format-latex-options :scale new-scale))))
-(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.2))
+  (let ((new-size (* 10 n)))
+    (when (boundp 'org-format-latex-options)
+      (scale-org-latex-fonts new-size))
+    (set-face-attribute 'default nil :height new-size)))
+(with-eval-after-load "org"
+  (scale-org-latex-fonts (get-font-size)))
 
 (setq inhibit-startup-screen t)
 
@@ -104,7 +122,8 @@
 
 (evil-select-search-module 'evil-search-module 'evil-search)
 
-(require 'evil-magit)
+(with-eval-after-load "magit"
+  (require 'evil-magit))
 
 ;; Ace integration
 (require 'ace-jump-mode)
@@ -285,24 +304,26 @@ from the top down."
 
 ;; Org
 
-(require 'ob-async)
+(with-eval-after-load "org"
+  (require 'org-inlinetask)
+  (require 'ob-async)
 
-;; TODO Why is this even necessary?
-(setcdr (assq 'system org-file-apps-gnu)
-        (lambda (file &rest args)
-          (call-process "xdg-open" nil 0 nil file)))
-;; TODO This seems like kind of a hack;
-;;   shouldn't we just remove "pdf" from the `auto-mode-alist`?
-(add-to-list 'org-file-apps '("pdf" . system))
-(add-to-list 'org-file-apps '("ods" . system))
+  ;; TODO Why is this even necessary?
+  (setcdr (assq 'system org-file-apps-gnu)
+          (lambda (file &rest args)
+            (call-process "xdg-open" nil 0 nil file)))
+  ;; TODO This seems like kind of a hack;
+  ;;   shouldn't we just remove "pdf" from the `auto-mode-alist`?
+  (add-to-list 'org-file-apps '("pdf" . system))
+  (add-to-list 'org-file-apps '("ods" . system))
 
-(org-babel-do-load-languages 'org-babel-load-languages
-                             '((shell . t)
-                               (latex . t)
-                               (python . t)))
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               '((shell . t)
+                                 (latex . t)
+                                 (python . t)))
 
-;; Make (inline) code use a monospaced font
-(set-face-attribute 'org-code nil :family "Monospace")
+  ;; Make (inline) code use a monospaced font
+  (set-face-attribute 'org-code nil :family "Monospace"))
 
 ;; Use IDs for linking if they are there
 (setq org-id-link-to-org-use-id 'use-existing)
@@ -324,11 +345,12 @@ from the top down."
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
 ;; Integrate with EVIL
-(require 'evil-org)
-(add-hook 'org-mode-hook 'evil-org-mode)
-(evil-org-set-key-theme '(navigation insert textobjects additional calendar))
-(require 'evil-org-agenda)
-(evil-org-agenda-set-keys)
+(with-eval-after-load "org"
+  (require 'evil-org)
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
 
 ;; Refile
 (defun jk/org-files ()
@@ -346,7 +368,8 @@ from the top down."
                    (point))
                (error nil))))
     (org-refile nil nil (list nil (buffer-file-name) nil pos))))
-(define-key org-mode-map [?\C-c ?\C-x ?\C-h] 'org-reenter)
+(with-eval-after-load "org"
+  (define-key org-mode-map [?\C-c ?\C-x ?\C-h] 'org-reenter))
 
 ;; Automatically save after refile
 ;; TODO This seems excessive; can you just save the source and target file?
