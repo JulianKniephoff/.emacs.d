@@ -215,8 +215,10 @@ from the top down."
 
 ;; C++
 
-(c-set-offset 'arglist-intro '+)
-(c-set-offset 'arglist-close 0)
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (c-set-offset 'arglist-intro '+)
+            (c-set-offset 'arglist-close 0)))
 
 ;; Rust
 
