@@ -1,6 +1,8 @@
 ;; This is not needed in our Cask/pallet setup,
 ;; however, Emacs insists on automatically adding it
 ;; if it is not here, at least commented out.
+;; TODO Can we use `package-enable-at-startup`
+;;   or does it break shit with Cask?
 ;(package-initialize)
 
 ;; Some performance optimizations
