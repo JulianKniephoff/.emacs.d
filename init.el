@@ -6,8 +6,8 @@
 ;(package-initialize)
 
 ;; Some performance optimizations
-;; TODO You might want to reset this at the end ...
-(setq gc-cons-threshold 100000000
+(setq previous-file-name-handler-alist file-name-handler-alist)
+(setq gc-cons-threshold 100000000  ; TODO Do you want to reset this as well?
       file-name-handler-alist nil)
 
 (defvar jk/cask-path "/usr/share/cask/cask.el"
@@ -404,3 +404,5 @@ from the top down."
 
 ;; Load user defaults file
 (load (expand-file-name "default" user-emacs-directory) 'noerror)
+
+(setq file-name-handler-alist previous-file-name-handler-alist)
