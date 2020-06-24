@@ -58,13 +58,17 @@
 
 (setq inhibit-startup-screen t)
 
-(tool-bar-mode -1)
+;; Hide the toolbar; there are multiple ways to do this,
+;; of which we currently use the cheapest but least flexible.
+;(tool-bar-mode -1)
+;(set-frame-parameter nil 'tool-bar-lines 0)
+(setq default-frame-alist '((tool-bar-lines . 0)))
+
 ;; Start up maximized
 ;; This is actually the job of the window manager
 ;(setq default-frame-alist '((fullscreen . maximized)))
 
 (setq frame-background-mode 'dark)
-(mapc 'frame-set-background-mode (frame-list))
 (load-theme 'solarized-dark t)
 
 (global-hl-line-mode)
