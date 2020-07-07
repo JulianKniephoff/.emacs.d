@@ -16,6 +16,10 @@ the user for a different project to look in.
 
 \(fn &optional MAYBE-PROMPT DIR)" nil nil)
 
+(defvar project-prefix-map (let ((map (make-sparse-keymap))) (define-key map "f" 'project-find-file) (define-key map "b" 'project-switch-to-buffer) (define-key map "s" 'project-shell) (define-key map "d" 'project-dired) (define-key map "v" 'project-vc-dir) (define-key map "c" 'project-compile) (define-key map "e" 'project-eshell) (define-key map "k" 'project-kill-buffers) (define-key map "p" 'project-switch-project) (define-key map "g" 'project-find-regexp) (define-key map "r" 'project-query-replace-regexp) map) "\
+Keymap for project commands.")
+ (define-key ctl-x-map "p" project-prefix-map)
+
 (autoload 'project-find-regexp "project" "\
 Find all matches for REGEXP in the current project's roots.
 With \\[universal-argument] prefix, you can specify the directory
@@ -49,22 +53,30 @@ recognized.
 \(fn)" t nil)
 
 (autoload 'project-dired "project" "\
-Open Dired in the current project.
+Start Dired in the current project's root.
 
 \(fn)" t nil)
 
 (autoload 'project-vc-dir "project" "\
-Open VC-Dir in the current project.
+Run VC-Dir in the current project's root.
 
 \(fn)" t nil)
 
 (autoload 'project-shell "project" "\
-Open Shell in the current project.
+Start an inferior shell in the current project's root directory.
+If a buffer already exists for running a shell in the project's root,
+switch to it.  Otherwise, create a new shell buffer.
+With \\[universal-argument] prefix arg, create a new inferior shell buffer even
+if one already exists.
 
 \(fn)" t nil)
 
 (autoload 'project-eshell "project" "\
-Open Eshell in the current project.
+Start Eshell in the current project's root directory.
+If a buffer already exists for running Eshell in the project's root,
+switch to it.  Otherwise, create a new Eshell buffer.
+With \\[universal-argument] prefix arg, create a new Eshell buffer even
+if one already exists.
 
 \(fn)" t nil)
 
@@ -90,19 +102,37 @@ Arguments the same as in `compile'.
 
 \(fn COMMAND &optional COMINT)" t nil)
 
+(autoload 'project-switch-to-buffer "project" "\
+Switch to another buffer that is related to the current project.
+A buffer is related to a project if `project-current' returns the
+same (equal) value when called in that buffer.
+
+\(fn)" t nil)
+
+(autoload 'project-kill-buffers "project" "\
+Kill all live buffers belonging to the current project.
+Certain buffers may be \"spared\", see `project-kill-buffers-ignores'.
+
+\(fn)" t nil)
+
+(autoload 'project-known-project-roots "project" "\
+Return the list of root directories of all known projects.
+
+\(fn)" nil nil)
+
 (defvar project-switch-commands '((102 "Find file" project-find-file) (103 "Find regexp" project-find-regexp) (100 "Dired" project-dired) (118 "VC-Dir" project-vc-dir) (101 "Eshell" project-eshell)) "\
 Alist mapping keys to project switching menu entries.
 Used by `project-switch-project' to construct a dispatch menu of
 commands available upon \"switching\" to another project.
 
-Each element looks like (KEY LABEL COMMAND), where COMMAND is the
+Each element is of the form (KEY LABEL COMMAND), where COMMAND is the
 command to run when KEY is pressed.  LABEL is used to distinguish
-the choice in the dispatch menu.")
+the menu entries in the dispatch menu.")
 
 (autoload 'project-switch-project "project" "\
-\"Switch\" to another project by running a chosen command.
-The available commands are picked from `project-switch-commands'
-and presented in a dispatch menu.
+\"Switch\" to another project by running an Emacs command.
+The available commands are presented as a dispatch menu
+made from `project-switch-commands'.
 
 \(fn)" t nil)
 

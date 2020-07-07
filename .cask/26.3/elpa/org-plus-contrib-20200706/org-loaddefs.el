@@ -2612,7 +2612,7 @@ With a double prefix arg \\[universal-argument] \\[universal-argument], open the
 
 ;;;***
 
-;;;### (autoloads nil "org-plot" "org-plot.el" (0 0 0 0))
+;;;### (autoloads nil "org-plot" "org-plot.el" "b74b5a66677d21c53b9d1e79ecf3a0f3")
 ;;; Generated autoloads from org-plot.el
 
 (autoload 'org-plot/gnuplot "org-plot" "\
@@ -2621,8 +2621,6 @@ If not given options will be taken from the +PLOT
 line directly before or after the table.
 
 \(fn &optional PARAMS)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-plot" '("org-plot")))
 
 ;;;***
 
