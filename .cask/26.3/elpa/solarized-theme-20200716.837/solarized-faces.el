@@ -1013,14 +1013,6 @@
      `(linum-relative-current-face ((,class (:inherit linum))))
 ;;;;; display-line-number-mode
      `(line-number ((,class (:weight thin :underline nil :foreground ,s-fringe-fg :background ,s-fringe-bg))))
-;;;;; lsp-ui
-     `(lsp-ui-doc-background ((,class (:background ,base03))))
-     `(lsp-ui-doc-header ((,class (:background ,yellow-1bg :foreground ,yellow-1fg))))
-     `(lsp-ui-doc-url ((,class (:inherit link))))
-     `(lsp-ui-sideline-code-action ((,class (:foreground ,yellow-1fg :background ,yellow-1bg :weight normal))))
-     `(lsp-ui-sideline-current-symbol ((,class (:foreground ,magenta :weight normal))))
-     `(lsp-ui-sideline-global ((,class (:underline ,s-line))))
-     `(lsp-ui-sideline-symbol ((,class (:foreground ,base1 :background ,base02))))
 ;;;;; lusty-explorer
      `(lusty-directory-face ((,class (:inherit dired-directory))))
      `(lusty-file-face ((,class nil)))
@@ -1553,6 +1545,10 @@
      `(rst-level-4 ((,class (:inherit org-level-4))))
      `(rst-level-5 ((,class (:inherit org-level-5))))
      `(rst-level-6 ((,class (:inherit org-level-6))))
+;;;;; selectrum-mode
+     `(selectrum-current-candidate ((,class (:weight bold :background ,base02 :underline t))))
+     `(selectrum-primary-highlight ((,class (:foreground ,base1))))
+     `(selectrum-secondary-highlight ((,class (:foreground ,yellow))))
 ;;;;; sh-mode
      `(sh-quoted-exec ((,class (:foreground ,violet :weight bold))))
      `(sh-escaped-newline ((,class (:foreground ,yellow :weight bold))))
@@ -2014,7 +2010,15 @@
      `(hl-bg-colors '(,yellow-lc ,orange-lc ,red-lc ,magenta-lc
                                  ,violet-lc ,blue-lc ,cyan-lc ,green-lc))
 ;;;;; lsp-mode
+     `(lsp-face-highlight-read ((,class (:inherit highlight :underline t))))
+     `(lsp-ui-doc-background ((,class (:background ,base03))))
      `(lsp-ui-doc-border ,base1)
+     `(lsp-ui-doc-header ((,class (:background ,yellow-1bg :foreground ,yellow-1fg))))
+     `(lsp-ui-doc-url ((,class (:inherit link))))
+     `(lsp-ui-sideline-code-action ((,class (:foreground ,yellow-1fg :background ,yellow-1bg :weight normal))))
+     `(lsp-ui-sideline-current-symbol ((,class (:foreground ,magenta :weight normal))))
+     `(lsp-ui-sideline-global ((,class (:underline ,s-line))))
+     `(lsp-ui-sideline-symbol ((,class (:foreground ,base1 :background ,base02))))
 ;;;;; pos-tip
      `(pos-tip-foreground-color ,base1)
      `(pos-tip-background-color ,base02)

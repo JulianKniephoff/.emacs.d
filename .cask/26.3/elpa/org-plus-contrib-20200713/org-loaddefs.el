@@ -2514,7 +2514,7 @@ Load FILE with optional arguments NOERROR and MUSTSUFFIX.
 
 ;;;***
 
-;;;### (autoloads nil "org-mobile" "org-mobile.el" "253ec03c4a1602a599990056d1e3d593")
+;;;### (autoloads nil "org-mobile" "org-mobile.el" (0 0 0 0))
 ;;; Generated autoloads from org-mobile.el
 
 (autoload 'org-mobile-push "org-mobile" "\
@@ -2530,6 +2530,8 @@ Apply all flagged actions, flag entries to be flagged and then call an
 agenda view showing the flagged items.
 
 \(fn)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-mobile" '("org-mobile-")))
 
 ;;;***
 

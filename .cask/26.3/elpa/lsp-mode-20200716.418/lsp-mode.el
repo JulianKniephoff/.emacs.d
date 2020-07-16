@@ -670,7 +670,7 @@ If this is set to nil, `eldoc' will show only the symbol information."
   :group 'lsp-faces)
 
 (defcustom lsp-headerline-breadcrumb-enable nil
-  "Wheter to enable breadcrumb on headerline."
+  "Whether to enable breadcrumb on headerline."
   :type 'boolean
   :group 'lsp-mode)
 
@@ -683,25 +683,31 @@ If this is set to nil, `eldoc' will show only the symbol information."
                   (const :tag "Include document symbols if server supports it." symbols)))
   :group 'lsp-mode)
 
-(defcustom lsp-headerline-breadcrumb-separator-face 'shadow
+(defcustom lsp-headerline-breadcrumb-enable-symbol-numbers nil
+  "Whether to label symbols with numbers on the breadcrumb."
+  :type 'boolean
+  :group 'lsp-mode)
+
+(defface lsp-headerline-breadcrumb-separator-face '((t :inherit shadow :height 0.8))
   "Face used for breadcrumb separator on headerline."
-  :type 'face
   :group 'lsp-faces)
 
-(defcustom lsp-headerline-breadcrumb-prefix-face 'font-lock-string-face
+(defface lsp-headerline-breadcrumb-prefix-face '((t :inherit font-lock-string-face))
   "Face used for breadcrumb prefix on headerline."
-  :type 'face
   :group 'lsp-faces)
 
-(defcustom lsp-headerline-breadcrumb-project-prefix-face '((t :inherit font-lock-string-face :weight bold))
+(defface lsp-headerline-breadcrumb-project-prefix-face '((t :inherit font-lock-string-face :weight bold))
   "Face used for breadcrumb prefix on headerline.
 Only if `lsp-headerline-breadcrumb-prefix` is `project-name-only`."
-  :type 'face
   :group 'lsp-faces)
 
-(defcustom lsp-headerline-breadcrumb-symbols-face 'font-lock-doc-face
+(defface lsp-headerline-breadcrumb-unknown-project-prefix-face '((t :inherit shadow :weight bold))
+  "Face used for breadcrumb prefix on headerline.
+Only if `lsp-headerline-breadcrumb-prefix` is `project-name-only`."
+  :group 'lsp-faces)
+
+(defface lsp-headerline-breadcrumb-symbols-face '((t :inherit font-lock-doc-face :weight bold))
   "Face used for breadcrumb symbols text on headerline."
-  :type 'face
   :group 'lsp-faces)
 
 (defface lsp-headerline-breadcrumb-deprecated-face '((t :inherit font-lock-doc-face
@@ -1329,7 +1335,7 @@ depending on it."
                                         hovers))))
        ("textDocument/completion"
         (lsp-make-completion-list
-         :isIncomplete (seq-some
+         :is-incomplete (seq-some
                         #'lsp:completion-list-is-incomplete
                         results)
          :items (apply 'append (--map (append (if (lsp-completion-list? it)
@@ -2105,6 +2111,9 @@ The `:global' workspace is global one.")
 
 (defvar-local lsp--headerline-breadcrumb-string nil
   "Holds the current breadcrumb string on headerline.")
+(defvar-local lsp--headerline-breadcrumb-path-up-to-project-string nil
+  "Holds the current breadcrumb path-up-to-project segment string
+for caching purposes.")
 
 (declare-function all-the-icons-material "ext:all-the-icons" t t)
 (declare-function lsp-treemacs-symbol-icon "ext:lsp-treemacs" (kind))
@@ -2141,8 +2150,8 @@ The `:global' workspace is global one.")
   "Build the arrow icon for headerline breadcrumb."
   (if (require 'all-the-icons nil t)
       (all-the-icons-material "chevron_right"
-                              :face lsp-headerline-breadcrumb-separator-face)
-    (propertize "›" 'face lsp-headerline-breadcrumb-separator-face)))
+                              :face 'lsp-headerline-breadcrumb-separator-face)
+    (propertize "›" 'face 'lsp-headerline-breadcrumb-separator-face)))
 
 (lsp-defun lsp--headerline-breadcrumb-symbol-icon ((&DocumentSymbol :kind))
   "Build the SYMBOL icon for headerline breadcrumb."
@@ -2150,10 +2159,19 @@ The `:global' workspace is global one.")
     (concat (lsp--fix-image-background (lsp-treemacs-symbol-icon kind))
             " ")))
 
-(lsp-defun lsp--headerline-breadcrumb-go-to-symbol ((&DocumentSymbol :selection-range (&RangeToPoint :start)))
-  "Go to breadcrumb symbol."
-  (->> start
-       goto-char))
+(lsp-defun lsp--headerline-breadcrumb-go-to-symbol
+  ((&DocumentSymbol :selection-range (&RangeToPoint :start selection-range-start)
+                    :range (&RangeToPoint :start narrowing-range-start
+                                          :end narrowing-range-end)))
+  "Go to breadcrumb symbol.
+If the buffer is narrowed and the target symbol lies before the
+minimum reachable point in the narrowed buffer, then widen and
+narrow to the outer symbol."
+  (when (< selection-range-start (point-min))
+      (narrow-to-region
+       narrowing-range-start
+       narrowing-range-end))
+  (goto-char selection-range-start))
 
 (lsp-defun lsp--headerline-breadcrumb-narrow-to-symbol ((&DocumentSymbol :range (&RangeToPoint :start :end)))
   "Narrow to breadcrumb symbol range."
@@ -2178,10 +2196,12 @@ The `:global' workspace is global one.")
 (defun lsp--headerline-path-up-to-project-root (root-path path)
   "Find recursively the folders until the project ROOT-PATH.
 PATH is the current folder to be checked."
-  (let ((cur-path (list (lsp--filename-with-icon path))))
-    (if (lsp-f-same? root-path (lsp-f-parent path))
-        cur-path
-      (append (lsp--headerline-path-up-to-project-root root-path (lsp-f-parent path)) cur-path))))
+  (let ((current-path path)
+        headerline-path-components)
+    (while (not (lsp-f-same? root-path current-path))
+      (push (lsp--filename-with-icon current-path) headerline-path-components)
+      (setq current-path (lsp-f-parent current-path)))
+    headerline-path-components))
 
 (defun lsp--headerline-breadcrumb-build-project-string ()
   "Build the project segment string for the breadcrumb."
@@ -2191,10 +2211,11 @@ PATH is the current folder to be checked."
                 ""
               " ")
             (lsp--headerline-breadcrumb-arrow-icon)
-            (propertize (-if-let (root (lsp-workspace-root))
-                            (f-filename root)
-                          "unknown project")
-                        'font-lock-face lsp-headerline-breadcrumb-project-prefix-face))))
+            (-if-let (root (lsp-workspace-root))
+                (propertize (f-filename root)
+                            'font-lock-face 'lsp-headerline-breadcrumb-project-prefix-face)
+              (propertize "<unknown>"
+                          'font-lock-face 'lsp-headerline-breadcrumb-unknown-project-prefix-face)))))
 
 (defun lsp--headerline-breadcrumb-build-file-string ()
   "Build the file segment string for the breadcrumb."
@@ -2204,11 +2225,12 @@ PATH is the current folder to be checked."
                 ""
               " ")
             (lsp--headerline-breadcrumb-arrow-icon)
-            (propertize (lsp--filename-with-icon (buffer-file-name)) 'font-lock-face lsp-headerline-breadcrumb-prefix-face))))
+            (propertize (lsp--filename-with-icon (buffer-file-name))
+                        'font-lock-face 'lsp-headerline-breadcrumb-prefix-face))))
 
 (defun lsp--headerline-breadcrumb-build-path-up-to-project-string ()
   "Build the path-up-to-project segment string for the breadcrumb."
-  (when (and (member 'path-up-to-project lsp-headerline-breadcrumb-segments))
+  (when (member 'path-up-to-project lsp-headerline-breadcrumb-segments)
     (when-let (root (lsp-workspace-root))
       (seq-reduce (lambda (last-dirs next-dir)
                     (format "%s%s %s"
@@ -2218,8 +2240,8 @@ PATH is the current folder to be checked."
                                   ""
                                 " "))
                             (lsp--headerline-breadcrumb-arrow-icon)
-                            (propertize next-dir 'font-lock-face lsp-headerline-breadcrumb-prefix-face)))
-                  (lsp--headerline-path-up-to-project-root root (f-parent (buffer-file-name))) nil))))
+                            (propertize next-dir 'font-lock-face 'lsp-headerline-breadcrumb-prefix-face)))
+                  (lsp--headerline-path-up-to-project-root root (lsp-f-parent (buffer-file-name))) nil))))
 
 (defun lsp--headerline-breadcrumb-build-symbols-string ()
   "Build the symbols segment string for the breadcrumb."
@@ -2227,27 +2249,43 @@ PATH is the current folder to be checked."
              (lsp-feature? "textDocument/documentSymbol"))
     (-when-let* ((lsp--document-symbols-request-async t)
                  (symbols (lsp--get-document-symbols))
-                 (symbols-hierarchy (lsp-symbols->symbols-hierarchy symbols)))
-      (seq-reduce (lambda (last-symbol-name symbol-to-append)
-                    (let* ((symbol2-name (if (lsp:document-symbol-deprecated? symbol-to-append)
-                                             (propertize (lsp:document-symbol-name symbol-to-append)
-                                                         'font-lock-face 'lsp-headerline-breadcrumb-deprecated-face)
-                                           (propertize (lsp:document-symbol-name symbol-to-append)
-                                                       'font-lock-face lsp-headerline-breadcrumb-symbols-face)))
-                           (symbol2-icon (lsp--headerline-breadcrumb-symbol-icon symbol-to-append))
-                           (arrow-icon (lsp--headerline-breadcrumb-arrow-icon))
-                           (full-symbol-2 (if symbol2-icon
-                                              (concat symbol2-icon symbol2-name)
-                                            symbol2-name)))
-                      (format "%s%s %s"
-                              (if last-symbol-name
-                                  (concat last-symbol-name " ")
-                                (if (eq (cl-first lsp-headerline-breadcrumb-segments) 'symbols)
-                                    ""
-                                  " "))
-                              arrow-icon
-                              (lsp--headerline-with-action symbol-to-append full-symbol-2))))
-                  symbols-hierarchy nil))))
+                 (symbols-hierarchy (lsp-symbols->symbols-hierarchy symbols))
+                 (enumerated-symbols-hierarchy
+                  (-map-indexed (lambda (index elt)
+                                  (cons elt (1+ index)))
+                                symbols-hierarchy)))
+      (concat
+       (if (eq (cl-first lsp-headerline-breadcrumb-segments) 'symbol)
+           ""
+         " ")
+       (mapconcat
+        (-lambda (((symbol-to-append &as &DocumentSymbol :deprecated? :name)
+                   . index))
+          (let* ((symbol2-name
+                  (propertize name
+                              'font-lock-face
+                              (if deprecated?
+                                  'lsp-headerline-breadcrumb-deprecated-face
+                                'lsp-headerline-breadcrumb-symbols-face)))
+                 (symbol2-icon
+                  (lsp--headerline-breadcrumb-symbol-icon symbol-to-append))
+                 (full-symbol-2
+                  (concat
+                   (if lsp-headerline-breadcrumb-enable-symbol-numbers
+                       (concat
+                        (propertize (number-to-string index)
+                                    'face
+                                    'lsp-headerline-breadcrumb-symbols-face)
+                        " ")
+                     "")
+                   (if symbol2-icon
+                       (concat symbol2-icon symbol2-name)
+                     symbol2-name))))
+            (format "%s %s"
+                    (lsp--headerline-breadcrumb-arrow-icon)
+                    (lsp--headerline-with-action symbol-to-append full-symbol-2))))
+        enumerated-symbols-hierarchy
+        " ")))))
 
 (defun lsp--headerline-build-string ()
   "Build the header-line string."
@@ -2256,7 +2294,8 @@ PATH is the current folder to be checked."
                         (or (pcase next-segment
                               ('project (lsp--headerline-breadcrumb-build-project-string))
                               ('file (lsp--headerline-breadcrumb-build-file-string))
-                              ('path-up-to-project (lsp--headerline-breadcrumb-build-path-up-to-project-string))
+                              ('path-up-to-project (or lsp--headerline-breadcrumb-path-up-to-project-string
+                                                       (lsp--headerline-breadcrumb-build-path-up-to-project-string)))
                               ('symbols (lsp--headerline-breadcrumb-build-symbols-string)))
                             "")))
               lsp-headerline-breadcrumb-segments ""))
@@ -3760,7 +3799,8 @@ disappearing, unset all the variables related to it."
                       (rangeFormatting . ((dynamicRegistration . t)))
                       ,@(when lsp-enable-semantic-highlighting
                             `((semanticTokens
-                               . ((tokenModifiers . ,(if lsp-semantic-tokens-apply-modifiers
+                               . ((dynamicRegistration . t)
+                                  (tokenModifiers . ,(if lsp-semantic-tokens-apply-modifiers
                                                          (apply 'vector (mapcar #'car lsp-semantic-token-modifier-faces)) []))
                                   (tokenTypes . ,(apply 'vector (mapcar #'car lsp-semantic-token-faces)))))))
                       (rename . ((dynamicRegistration . t) (prepareSupport . t)))
@@ -4103,11 +4143,6 @@ in that particular folder."
 
       (lsp--semantic-highlighting-warn-about-deprecated-setting)
 
-      (when (and lsp-enable-semantic-highlighting
-                 (lsp-feature? "textDocument/semanticTokens"))
-        (lsp--semantic-tokens-initialize-buffer
-         (lsp-feature? "textDocument/semanticTokensRangeProvider")))
-
       (when lsp-enable-xref
         (add-hook 'xref-backend-functions #'lsp--xref-backend nil t))
 
@@ -4116,6 +4151,10 @@ in that particular folder."
                                        (cons status global-mode-string)))
       (when (bound-and-true-p company-mode)
         (lsp--setup-company))
+
+      (when (and lsp-headerline-breadcrumb-enable
+                 (member 'path-up-to-project lsp-headerline-breadcrumb-segments))
+        (setq lsp--headerline-breadcrumb-path-up-to-project-string (lsp--headerline-breadcrumb-build-path-up-to-project-string)))
 
       (lsp-configure-buffer))
      (t
@@ -4144,11 +4183,6 @@ in that particular folder."
       (remove-hook 'lsp-on-idle-hook #'lsp--document-links t)
       (remove-hook 'lsp-on-idle-hook #'lsp--document-highlight t)
 
-      (when lsp--semantic-tokens-teardown
-        (funcall lsp--semantic-tokens-teardown)
-        (setq lsp--semantic-tokens-teardown nil))
-
-      (lsp--remove-overlays 'lsp-sem-highlight)
       (lsp--remove-overlays 'lsp-highlight)
       (lsp--remove-overlays 'lsp-links)
 
@@ -4193,7 +4227,14 @@ in that particular folder."
 
     (when (and lsp-enable-dap-auto-configure
                (featurep 'dap-mode))
-      (dap-auto-configure-mode 1)))
+      (dap-auto-configure-mode 1))
+
+    (when (and lsp-enable-semantic-highlighting
+               (lsp-feature? "textDocument/semanticTokens"))
+      (mapc #'lsp--semantic-tokens-initialize-workspace
+            (lsp--find-workspaces-for "textDocument/semanticTokens"))
+      (lsp--semantic-tokens-initialize-buffer
+       (lsp-feature? "textDocument/semanticTokensRangeProvider"))))
 
   (let ((buffer (current-buffer)))
     (run-with-idle-timer
@@ -5804,9 +5845,9 @@ RENDER-ALL - nil if only the signature should be rendered."
 
 (defun lsp--handle-signature-update (signature)
   (let ((message
-         (if (string= 'cons (type-of signature))
-             (mapconcat 'lsp--signature->message signature "\n")
-           (lsp--signature->message signature))))
+         (if (lsp-signature-help? signature)
+             (lsp--signature->message signature)
+           (mapconcat #'lsp--signature->message signature "\n"))))
     (if (s-present? message)
         (funcall lsp-signature-function message)
       (lsp-signature-stop))))
@@ -6168,19 +6209,24 @@ A reference is highlighted only if it is visible in a window."
 
 (defun lsp--semantic-tokens-initialize-workspace (workspace)
   (cl-assert workspace)
-  (-let* ((token-capabilities (lsp:server-capabilities-semantic-tokens-provider?
-                               (lsp--workspace-server-capabilities workspace)))
-          ((&SemanticTokensOptions :legend) token-capabilities))
-    (setf (lsp--workspace-semantic-highlighting-faces workspace)
-          (lsp--build-face-map (lsp:semantic-tokens-legend-token-types legend)
-                               lsp-semantic-token-faces
-                               "semantic token"
-                               "lsp-semantic-token-faces"))
-    (setf (lsp--workspace-semantic-highlighting-modifier-faces workspace)
-          (lsp--build-face-map (lsp:semantic-tokens-legend-token-modifiers legend)
-                               lsp-semantic-token-modifier-faces
-                               "semantic token modifier"
-                               "lsp-semantic-token-modifier-faces"))))
+  (when-let ((token-capabilities
+              (or
+               (-some->
+                   (lsp--registered-capability "textDocument/semanticTokens")
+                 (lsp--registered-capability-options))
+               (lsp:server-capabilities-semantic-tokens-provider?
+                (lsp--workspace-server-capabilities workspace)))))
+    (-let* (((&SemanticTokensOptions :legend) token-capabilities))
+      (setf (lsp--workspace-semantic-highlighting-faces workspace)
+            (lsp--build-face-map (lsp:semantic-tokens-legend-token-types legend)
+                                 lsp-semantic-token-faces
+                                 "semantic token"
+                                 "lsp-semantic-token-faces"))
+      (setf (lsp--workspace-semantic-highlighting-modifier-faces workspace)
+            (lsp--build-face-map (lsp:semantic-tokens-legend-token-modifiers legend)
+                                 lsp-semantic-token-modifier-faces
+                                 "semantic token modifier"
+                                 "lsp-semantic-token-modifier-faces")))))
 
 (defun lsp--semantic-tokens-request-update ()
   (lsp--semantic-tokens-request
@@ -6202,6 +6248,11 @@ A reference is highlighted only if it is visible in a window."
     (setq lsp--semantic-tokens-teardown
           (lambda ()
             (setq font-lock-extend-region-functions old-extend-region-functions)
+            (when lsp--semantic-tokens-idle-timer
+              (cancel-timer lsp--semantic-tokens-idle-timer)
+              (setq lsp--semantic-tokens-idle-timer nil))
+            (setq lsp--semantic-tokens-use-ranged-requests nil)
+            (setq lsp--semantic-tokens-cache nil)
             (remove-function (local 'font-lock-fontify-region-function)
                              #'lsp--semantic-tokens-fontify)
             (remove-hook 'lsp-on-change-hook #'lsp--semantic-tokens-request-update t)))))
@@ -7548,9 +7599,6 @@ SESSION is the active session."
                                                                response)
                (lsp--workspace-status workspace) 'initialized)
 
-         (mapc #'lsp--semantic-tokens-initialize-workspace
-               (lsp--find-workspaces-for "textDocument/semanticTokens"))
-
          (with-lsp-workspace workspace
            (lsp-notify "initialized" lsp--empty-ht))
 
@@ -8647,7 +8695,7 @@ g. `error', `warning') and list of LSP TAGS."
 provided by lsp-mode.
 See https://github.com/emacs-lsp/lsp-mode."
     :start #'lsp--flycheck-start
-    :modes '(python-mode)
+    :modes '(lsp-placeholder-mode) ;; placeholder
     :predicate (lambda () lsp-mode)
     :error-explainer (lambda (e)
                        (cond ((string-prefix-p "clang-tidy" (flycheck-error-message e))

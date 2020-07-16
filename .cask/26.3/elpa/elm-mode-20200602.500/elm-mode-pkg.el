@@ -4,7 +4,7 @@
     (emacs "25.1")
     (dash "2.13.0")
     (reformatter "0.3"))
-  :commit "3f10c611fa15eb0b3de0190a87030bc2d78bfa2c" :authors
+  :commit "363da4b47c9de1ff091a8caf95fccc34188d59a3" :authors
   '(("Joseph Collard"))
   :maintainer
   '("Joseph Collard")
