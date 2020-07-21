@@ -2514,7 +2514,7 @@ Load FILE with optional arguments NOERROR and MUSTSUFFIX.
 
 ;;;***
 
-;;;### (autoloads nil "org-mobile" "org-mobile.el" "253ec03c4a1602a599990056d1e3d593")
+;;;### (autoloads nil "org-mobile" "org-mobile.el" (0 0 0 0))
 ;;; Generated autoloads from org-mobile.el
 
 (autoload 'org-mobile-push "org-mobile" "\
@@ -2530,6 +2530,8 @@ Apply all flagged actions, flag entries to be flagged and then call an
 agenda view showing the flagged items.
 
 \(fn)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-mobile" '("org-mobile-")))
 
 ;;;***
 
@@ -2610,7 +2612,7 @@ With a double prefix arg \\[universal-argument] \\[universal-argument], open the
 
 ;;;***
 
-;;;### (autoloads nil "org-plot" "org-plot.el" "b74b5a66677d21c53b9d1e79ecf3a0f3")
+;;;### (autoloads nil "org-plot" "org-plot.el" (0 0 0 0))
 ;;; Generated autoloads from org-plot.el
 
 (autoload 'org-plot/gnuplot "org-plot" "\
@@ -2619,6 +2621,8 @@ If not given options will be taken from the +PLOT
 line directly before or after the table.
 
 \(fn &optional PARAMS)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-plot" '("org-plot")))
 
 ;;;***
 
