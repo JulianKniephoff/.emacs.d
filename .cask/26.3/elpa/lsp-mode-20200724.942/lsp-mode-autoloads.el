@@ -145,6 +145,33 @@ Narrow to the symbol range on breadcrumb at SYMBOL-POSITION.
 
 ;;;***
 
+;;;### (autoloads nil "lsp-lens" "lsp-lens.el" (0 0 0 0))
+;;; Generated autoloads from lsp-lens.el
+
+(autoload 'lsp-lens-show "lsp-lens" "\
+Display lenses in the buffer.
+
+\(fn)" t nil)
+
+(autoload 'lsp-lens-hide "lsp-lens" "\
+Delete all lenses.
+
+\(fn)" t nil)
+
+(autoload 'lsp-lens-mode "lsp-lens" "\
+Toggle code-lens overlays.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'lsp-avy-lens "lsp-lens" "\
+Click lsp lens using `avy' package.
+
+\(fn)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-lens" '("lsp-lens-")))
+
+;;;***
+
 ;;;### (autoloads nil "lsp-mode" "lsp-mode.el" (0 0 0 0))
 ;;; Generated autoloads from lsp-mode.el
 (put 'lsp-enable-file-watchers 'safe-local-variable #'booleanp)
@@ -167,7 +194,26 @@ This avoids overloading the server with many files when starting Emacs.
 
 \(fn)" nil nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-mode" '("lsp-" "make-lsp-client" "with-lsp-workspace" "when-lsp-workspace")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-mode" '("lsp-" "make-lsp-client" "flymake-diagnostic-functions" "with-lsp-workspace" "when-lsp-workspace")))
+
+;;;***
+
+;;;### (autoloads nil "lsp-modeline" "lsp-modeline.el" (0 0 0 0))
+;;; Generated autoloads from lsp-modeline.el
+
+(autoload 'lsp-modeline-code-actions-mode "lsp-modeline" "\
+Toggle code actions on modeline.
+
+\(fn &optional ARG)" t nil)
+
+(define-obsolete-function-alias 'lsp-diagnostics-modeline-mode 'lsp-modeline-diagnostics-mode "lsp-mode 7.0.1")
+
+(autoload 'lsp-modeline-diagnostics-mode "lsp-modeline" "\
+Toggle diagnostics modeline.
+
+\(fn &optional ARG)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-modeline" '("lsp-")))
 
 ;;;***
 
