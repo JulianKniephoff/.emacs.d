@@ -2298,7 +2298,7 @@ BINDINGS is a list of (key def cond)."
 
       ;; actions
       "aa" lsp-execute-code-action (lsp-feature? "textDocument/codeAction")
-      "al" lsp-avy-lens (and lsp-lens-mode (featurep 'avy))
+      "al" lsp-avy-lens (and (bound-and-true-p lsp-lens-mode) (featurep 'avy))
       "ah" lsp-document-highlight (lsp-feature? "textDocument/documentHighlight")
 
       ;; peeks
@@ -4101,8 +4101,10 @@ Applies on type formatting."
               (cl-find ch more-trigger-characters :key #'string-to-char))
       (-let [(callback cleanup-fn) (lsp--create-apply-text-edits-handlers)]
         (lsp-request-async "textDocument/onTypeFormatting"
-                           (append (lsp--make-document-formatting-params)
-                                   `(:ch ,(char-to-string ch) :position ,(lsp--cur-position)))
+                           (lsp-merge (lsp-make-document-on-type-formatting-params
+                                       :ch (char-to-string ch)
+                                       :position (lsp--cur-position))
+                                      (lsp--make-document-formatting-params))
                            (lambda (text-edits)
                              (funcall callback text-edits)
                              (funcall cleanup-fn))
@@ -4110,7 +4112,7 @@ Applies on type formatting."
                                             (funcall cleanup-fn)
                                             (error (lsp:json-error-message err)))
                            :cancel-handler cleanup-fn
-                           :mode 'alive)))))
+                           :mode 'tick)))))
 
 
 ;; links
@@ -5509,14 +5511,19 @@ If ACTION is not set it will be selected from `lsp-code-actions-at-point'."
         (lsp--info "No formatting changes provided")
       (lsp--apply-text-edits edits))))
 
-(defun lsp-organize-imports ()
-  "Perform the source.organizeImports code action, if available."
-  (interactive)
-  (condition-case nil
-      (lsp-execute-code-action-by-kind "source.organizeImports")
-    (lsp-no-code-actions
-     (when (called-interactively-p 'any)
-       (lsp--info "source.organizeImports action not available")))))
+(defmacro lsp-make-interactive-code-action (func-name code-action-kind)
+  "Define an interactive function FUNC-NAME that attempts to
+execute a CODE-ACTION-KIND action."
+  `(defun ,(intern (concat "lsp-" (symbol-name func-name))) ()
+     ,(format "Perform the %s code action, if available." code-action-kind)
+     (interactive)
+     (condition-case nil
+         (lsp-execute-code-action-by-kind ,code-action-kind)
+       (lsp-no-code-actions
+        (when (called-interactively-p 'any)
+          (lsp--info ,(format "%s action not available" code-action-kind)))))))
+
+(lsp-make-interactive-code-action organize-imports "source.organizeImports")
 
 (defun lsp--make-document-range-formatting-params (start end)
   "Make DocumentRangeFormattingParams for selected region."
