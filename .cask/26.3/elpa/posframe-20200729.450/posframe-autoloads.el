@@ -70,6 +70,7 @@ The builtin poshandler functions are listed below:
 14. `posframe-poshandler-window-bottom-right-corner'
 15. `posframe-poshandler-point-top-left-corner'
 16. `posframe-poshandler-point-bottom-left-corner'
+17. `posframe-poshandler-point-bottom-left-corner-upward'
 
 This posframe's buffer is BUFFER-OR-NAME, which can be a buffer
 or a name of a (possibly nonexistent) buffer.
