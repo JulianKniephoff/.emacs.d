@@ -17,3 +17,5 @@
 /transient
 /tramp
 /.lsp-session-v1
+/.cache/
+/workspace/
