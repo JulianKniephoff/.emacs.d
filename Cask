@@ -33,7 +33,7 @@
 (depends-on "haskell-mode")
 (depends-on "highlight-indent-guides")
 (depends-on "ido-completing-read+")
-(depends-on "ido-vertical-mode")
+(depends-on "ido-vertical-mode" :git "https://github.com/wyuenho/ido-vertical-mode.el.git" :branch "patch-1")
 (depends-on "idris-mode")
 (depends-on "indium")
 (depends-on "js2-mode")
