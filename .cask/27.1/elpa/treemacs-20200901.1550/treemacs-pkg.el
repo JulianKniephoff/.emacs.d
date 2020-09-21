@@ -8,7 +8,7 @@
     (pfuture "1.7")
     (hydra "0.13.2")
     (ht "2.2"))
-  :commit "e6252a6c5c8ec632f9882861c08d57763964d405" :authors
+  :commit "16aad063260567741ad632ff43a978d2b77a115f" :authors
   '(("Alexander Miller" . "alexanderm@web.de"))
   :maintainer
   '("Alexander Miller" . "alexanderm@web.de")
