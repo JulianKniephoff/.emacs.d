@@ -3135,7 +3135,7 @@ agenda view showing the flagged items.
 
 ;;;***
 
-;;;### (autoloads nil "org-num" "org-num.el" "bb47516a506d5fe4da2dbe886cad3765")
+;;;### (autoloads nil "org-num" "org-num.el" (0 0 0 0))
 ;;; Generated autoloads from org-num.el
 
 (autoload 'org-num-default-format "org-num" "\
@@ -3147,12 +3147,14 @@ NUMBERING is a list of numbers.
 (autoload 'org-num-mode "org-num" "\
 Dynamic numbering of headlines in an Org buffer.
 
-If called interactively, enable Org-Num mode if ARG is positive,
-and disable it if ARG is zero or negative.  If called from Lisp,
-also enable the mode if ARG is omitted or nil, and toggle it if
-ARG is `toggle'; disable the mode otherwise.
+If called interactively, enable Org-Num mode if ARG is positive, and
+disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it
+if ARG is `toggle'; disable the mode otherwise.
 
 \(fn &optional ARG)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-num" '("org-num-")))
 
 ;;;***
 
@@ -3196,7 +3198,7 @@ With a double prefix arg \\[universal-argument] \\[universal-argument], open the
 
 ;;;***
 
-;;;### (autoloads nil "org-plot" "org-plot.el" "ebbc3f48e0330632e42c79b2ce37ef50")
+;;;### (autoloads nil "org-plot" "org-plot.el" (0 0 0 0))
 ;;; Generated autoloads from org-plot.el
 
 (autoload 'org-plot/gnuplot "org-plot" "\
@@ -3205,6 +3207,8 @@ If not given options will be taken from the +PLOT
 line directly before or after the table.
 
 \(fn &optional PARAMS)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-plot" '("org-plot")))
 
 ;;;***
 

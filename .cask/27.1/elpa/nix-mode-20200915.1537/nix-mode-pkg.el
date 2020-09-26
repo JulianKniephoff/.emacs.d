@@ -1,6 +1,6 @@
 (define-package "nix-mode" "20200915.1537" "Major mode for editing .nix files"
   '((emacs "25.1"))
-  :commit "0380e03203db55d75fe94c8473eaa761dd870c99" :keywords
+  :commit "bb0b49e3ac1579d3d811529ed274272c54a9fe3c" :keywords
   '("nix" "languages" "tools" "unix")
   :maintainer
   '("Matthew Bauer" . "mjbauer95@gmail.com")

@@ -1187,14 +1187,6 @@ list of message:// links to flagged mail after heading.
 
 ;;;***
 
-;;;### (autoloads "actual autoloads are elsewhere" "org-num" "org-num.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from org-num.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-num" '("org-num-")))
-
-;;;***
-
 ;;;### (autoloads nil "org-panel" "org-panel.el" (0 0 0 0))
 ;;; Generated autoloads from org-panel.el
 
@@ -1232,14 +1224,6 @@ With a double prefix arg \\[universal-argument] \\[universal-argument], open the
 ;;; Generated autoloads from org-pcomplete.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-pcomplete" '("org-" "pcomplete/org-mode/")))
-
-;;;***
-
-;;;### (autoloads "actual autoloads are elsewhere" "org-plot" "org-plot.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from org-plot.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-plot" '("org-plot")))
 
 ;;;***
 
