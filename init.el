@@ -1,28 +1,3 @@
-;; This is not needed in our Cask/pallet setup,
-;; however, Emacs insists on automatically adding it
-;; if it is not here, at least commented out.
-;; TODO Can we use `package-enable-at-startup`
-;;   or does it break shit with Cask?
-;(package-initialize)
-
-;; Some performance optimizations
-(setq previous-file-name-handler-alist file-name-handler-alist)
-(setq gc-cons-threshold 100000000  ; TODO Do you want to reset this as well?
-      file-name-handler-alist nil)
-
-(defvar jk/cask-path "/usr/share/cask/cask.el"
-  "The path where Cask is installed.")
-
-;; Load site specific stuff, e.g. values for the variables above
-(load (expand-file-name "site" user-emacs-directory) 'noerror)
-
-(require 'cask jk/cask-path)
-(cask-initialize)
-
-;(pallet-mode)
-
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-
 ;; Appearance
 
 ;; Set font if you wish
@@ -47,6 +22,9 @@
           (plist-put org-format-latex-options
                      :scale new-scale))))
 
+;; TODO You hardly ever change the font size at runtime;
+;;   maybe this could just set some default frame attribute?
+;;   Which could then happen in `early-init.el`?
 (defun set-font-size (n)
   (interactive "NSize: ")
   (let ((new-size (* 10 n)))
@@ -57,12 +35,6 @@
   (scale-org-latex-fonts (get-font-size)))
 
 (setq inhibit-startup-screen t)
-
-;; Hide the toolbar; there are multiple ways to do this,
-;; of which we currently use the cheapest but least flexible.
-;(tool-bar-mode -1)
-;(set-frame-parameter nil 'tool-bar-lines 0)
-(setq default-frame-alist '((tool-bar-lines . 0)))
 
 ;; Start up maximized
 ;; This is actually the job of the window manager
@@ -409,4 +381,5 @@ from the top down."
 ;; Load user defaults file
 (load (expand-file-name "default" user-emacs-directory) 'noerror)
 
+;; Reset performance related modifications (see `early-init.el`)
 (setq file-name-handler-alist previous-file-name-handler-alist)
