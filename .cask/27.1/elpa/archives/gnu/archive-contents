@@ -2363,7 +2363,7 @@
 	(:maintainer "Andrey Kotlarski" . "m00naticus@gmail.com")
 	(:keywords "large files" "utilities"))])
  (wcheck-mode .
-	      [(2019 6 17)
+	      [(2020 10 4)
 	       nil "General interface for text checkers" single
 	       ((:keywords "text" "spell" "check" "languages" "ispell")
 		(:authors
