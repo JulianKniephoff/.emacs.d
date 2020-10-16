@@ -99,6 +99,8 @@
 (evil-collection-init)
 
 (evil-select-search-module 'evil-search-module 'evil-search)
+(global-undo-tree-mode)
+(customize-set-variable 'evil-undo-system 'undo-tree)
 
 (with-eval-after-load "magit"
   (require 'evil-magit))
