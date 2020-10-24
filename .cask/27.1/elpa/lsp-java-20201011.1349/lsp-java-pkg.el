@@ -9,7 +9,7 @@
     (request "0.3.0")
     (treemacs "2.5")
     (dap-mode "0.5"))
-  :commit "3f1ed1762fd7cb2fece606df6fc63d35d0a6b835" :keywords
+  :commit "8153928d8ae072e354036c1c9e881cb1d179d081" :keywords
   '("languague" "tools")
   :url "https://github.com/emacs-lsp/lsp-java")
 ;; Local Variables:

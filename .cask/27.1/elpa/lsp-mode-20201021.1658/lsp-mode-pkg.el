@@ -7,7 +7,7 @@
     (spinner "1.7.3")
     (markdown-mode "2.3")
     (lv "0"))
-  :commit "536b6eedb7a72497bf6c4642aa5e07d167aa0287" :keywords
+  :commit "b76b85eca251e4573f03b4f69313e96aec628aa9" :keywords
   '("languages")
   :authors
   '(("Vibhav Pant, Fangrui Song, Ivan Yonchovski"))

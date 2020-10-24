@@ -1173,6 +1173,14 @@ list of message:// links to flagged mail after heading.
 
 ;;;***
 
+;;;### (autoloads "actual autoloads are elsewhere" "org-mobile" "org-mobile.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-mobile.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-mobile" '("org-mobile-")))
+
+;;;***
+
 ;;;### (autoloads nil "org-mouse" "org-mouse.el" (0 0 0 0))
 ;;; Generated autoloads from org-mouse.el
 
