@@ -9,9 +9,9 @@
     (hydra "0.13.2")
     (ht "2.2"))
   :commit "ed7de5d0a25b19d9ad5f376b5e447123b418964b" :authors
-  '(("Alexander Miller" . "alexanderm@web.de"))
+  (("Alexander Miller" . "alexanderm@web.de"))
   :maintainer
-  '("Alexander Miller" . "alexanderm@web.de")
+  ("Alexander Miller" . "alexanderm@web.de")
   :url "https://github.com/Alexander-Miller/treemacs")
 ;; Local Variables:
 ;; no-byte-compile: t
