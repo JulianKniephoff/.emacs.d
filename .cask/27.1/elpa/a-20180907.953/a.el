@@ -5,7 +5,7 @@
 ;; Author: Arne Brasseur <arne@arnebrasseur.net>
 ;; URL: https://github.com/plexus/a.el
 ;; Package-Version: 20180907.953
-;; Package-Commit: 18966975db7110d0aac726be95b593e2fc3d44ed
+;; Package-Commit: d0490619d374fbda20eb5fb6a91dd87b053d01c0
 ;; Keywords: lisp
 ;; Version: 0.1.1
 ;; Package-Requires: ((emacs "25"))
