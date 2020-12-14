@@ -8,7 +8,7 @@
     (s "1.12.0")
     (lsp-treemacs "0.1")
     (posframe "0.7.0"))
-  :commit "e582ff90c104703ed65c1f3174d4c4690e9cf1fd" :keywords
+  :commit "041db8eb7f0ceb9477ffff1730b5940814001158" :keywords
   ("languages" "debug")
   :authors
   (("Ivan Yonchovski" . "yyoncho@gmail.com"))
