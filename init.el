@@ -18,12 +18,12 @@
   ;; TODO Maybe this should just assume a fixed scale?
   ;; TODO Is it even guaranteed that `(face-attribute 'default :height)` is what you want?
   (let* ((old-size (get-font-size))
-         (old-scale (plist-get org-format-latex-options :scale))
-         (scale (/ new-size (float old-size)))
-         (new-scale (* scale old-scale)))
+	 (old-scale (plist-get org-format-latex-options :scale))
+	 (scale (/ new-size (float old-size)))
+	 (new-scale (* scale old-scale)))
     (setq org-format-latex-options
-          (plist-put org-format-latex-options
-                     :scale new-scale))))
+	  (plist-put org-format-latex-options
+		     :scale new-scale))))
 
 ;; TODO You hardly ever change the font size at runtime;
 ;;   maybe this could just set some default frame attribute?
@@ -41,7 +41,7 @@
 
 ;; Start up maximized
 ;; This is actually the job of the window manager
-;(setq default-frame-alist '((fullscreen . maximized)))
+;;(setq default-frame-alist '((fullscreen . maximized)))
 
 (setq frame-background-mode 'dark)
 (load-theme 'solarized-dark t)
@@ -138,19 +138,19 @@
 
 (setq backup-directory-alist
       `((".*" . ,(file-name-as-directory
-                  (expand-file-name "backups"
-                                    user-emacs-directory)))))
+		  (expand-file-name "backups"
+				    user-emacs-directory)))))
 (let ((auto-save-directory (expand-file-name "auto-save" user-emacs-directory)))
   ;; Ensure the auto-save directory exists
   (mkdir auto-save-directory 'ignore-existing)
   (setq auto-save-file-name-transforms
-        `((".*" ,(file-name-as-directory auto-save-directory) t))))
+	`((".*" ,(file-name-as-directory auto-save-directory) t))))
 
 ;; Session files
 (defun emacs-session-filename--subdir (orig-fn session-id)
   (expand-file-name session-id
-                    (expand-file-name "sessions"
-                                      user-emacs-directory)))
+		    (expand-file-name "sessions"
+				      user-emacs-directory)))
 (advice-add 'emacs-session-filename :around #'emacs-session-filename--subdir)
 
 ;; Remember cursor position accross sessions
@@ -176,20 +176,20 @@
   "Apply dir-local settings from the whole directory hierarchy,
 from the top down."
   (let ((original-buffer-file-name (buffer-file-name))
-        (nesting (file-name-directory-nesting (or (buffer-file-name)
-                                                  default-directory))))
+	(nesting (file-name-directory-nesting (or (buffer-file-name)
+						  default-directory))))
     (unwind-protect
-        (dolist (name nesting)
-          ;; make it look like we're in a directory higher up in the
-          ;; hierarchy; note that the file we're "visiting" does not
-          ;; have to exist
-          (setq buffer-file-name (expand-file-name "ignored" name))
-          (funcall orig))
+	(dolist (name nesting)
+	  ;; make it look like we're in a directory higher up in the
+	  ;; hierarchy; note that the file we're "visiting" does not
+	  ;; have to exist
+	  (setq buffer-file-name (expand-file-name "ignored" name))
+	  (funcall orig))
       ;; cleanup
       (setq buffer-file-name original-buffer-file-name))))
 
 (advice-add 'hack-dir-local-variables :around
-            #'hack-dir-local-variables-chained-advice)
+	    #'hack-dir-local-variables-chained-advice)
 
 ;; Automatically reload changed files from disk
 (global-auto-revert-mode)
@@ -261,11 +261,11 @@ from the top down."
 ;;  '(context-coloring-level-15-face ((t :foreground "#f771ac")))
 ;;  '(context-coloring-level-16-face ((t :foreground "#9ea0e5"))))
 ;; TODO Does not work
-;(add-hook 'js2-mode-hook 'context-coloring-mode)
+;;(add-hook 'js2-mode-hook 'context-coloring-mode)
 
 (advice-add #'js2-identifier-start-p
-            :after-until
-            (lambda (c) (eq c ?#)))
+	    :after-until
+	    (lambda (c) (eq c ?#)))
 
 (use-package json-mode
   :mode "\\.json\\'"
@@ -293,17 +293,17 @@ from the top down."
 
   ;; TODO Why is this even necessary?
   (setcdr (assq 'system org-file-apps-gnu)
-          (lambda (file &rest args)
-            (call-process "xdg-open" nil 0 nil file)))
+	  (lambda (file &rest args)
+	    (call-process "xdg-open" nil 0 nil file)))
   ;; TODO This seems like kind of a hack;
   ;;   shouldn't we just remove "pdf" from the `auto-mode-alist`?
   (add-to-list 'org-file-apps '("pdf" . system))
   (add-to-list 'org-file-apps '("ods" . system))
 
   (org-babel-do-load-languages 'org-babel-load-languages
-                               '((shell . t)
-                                 (latex . t)
-                                 (python . t)))
+			       '((shell . t)
+				 (latex . t)
+				 (python . t)))
 
   ;; Make (inline) code use a monospaced font
   (set-face-attribute 'org-code nil :family "Monospace"))
@@ -316,14 +316,14 @@ from the top down."
 (setq org-default-notes-file (expand-file-name "inbox.org" org-directory))
 (setq org-capture-templates
       '(("i" "Inbox entry" entry
-         (file "")
-         "* %?\nSCHEDULED: %t")
-        ("p" "Inbox entry from clipboard" entry
-         (file "")
-         "* %x%?\nSCHEDULED: %t")
-        ("w" "Browser capture" entry
-         (file "")
-         "* %:annotation\nSCHEDULED: %t\n%i")))
+	 (file "")
+	 "* %?\nSCHEDULED: %t")
+	("p" "Inbox entry from clipboard" entry
+	 (file "")
+	 "* %x%?\nSCHEDULED: %t")
+	("w" "Browser capture" entry
+	 (file "")
+	 "* %:annotation\nSCHEDULED: %t\n%i")))
 (global-set-key (kbd "C-c c") (lambda (goto) (interactive "P") (org-capture goto)))
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
@@ -346,10 +346,10 @@ from the top down."
 (defun org-reenter ()
   (interactive)
   (let ((pos (condition-case nil
-                 (save-excursion
-                   (org-up-element)
-                   (point))
-               (error nil))))
+		 (save-excursion
+		   (org-up-element)
+		   (point))
+	       (error nil))))
     (org-refile nil nil (list nil (buffer-file-name) nil pos))))
 (with-eval-after-load "org"
   (define-key org-mode-map [?\C-c ?\C-x ?\C-h] 'org-reenter))
