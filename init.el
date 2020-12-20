@@ -206,10 +206,6 @@ from the top down."
 (setq lsp-rust-server 'rust-analyzer)
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
 
-;; Swift
-
-(setq swift-mode:parenthesized-expression-offset 4)
-
 ;; Ruby
 
 (setq ruby-insert-encoding-magic-comment nil)
@@ -268,18 +264,6 @@ from the top down."
       (setq indent-tabs-mode nil)
       (set (make-local-variable 'js-indent-level) 2)))
   (add-hook 'json-mode-hook 'jk/package-json-hook))
-
-;; CSS
-
-(defun jk/css-mode-indentation-hook ()
-  (setq c-basic-offset 4))
-(add-hook 'css-mode-hook 'jk/css-mode-indentation-hook)
-
-;; LaTeX
-
-(defun jk/latex-mode-indentation-hook ()
-  (setq indent-tabs-mode t))
-(add-hook 'latex-mode-hook 'jk/latex-mode-indentation-hook)
 
 ;; Interpret latexmk configuration correctly as Perl
 (add-to-list 'auto-mode-alist '("latexmkrc\\'" . perl-mode))
