@@ -4,6 +4,7 @@
 
 (depends-on "ace-jump-mode")
 (depends-on "auctex")
+(depends-on "bind-key")
 (depends-on "cargo")
 (depends-on "cask-mode")
 (depends-on "cider")
@@ -25,7 +26,6 @@
 (depends-on "exec-path-from-shell")
 (depends-on "fill-column-indicator")
 (depends-on "floobits")
-(depends-on "fontify-face")
 (depends-on "fsharp-mode")
 (depends-on "glsl-mode")
 (depends-on "haml-mode")
