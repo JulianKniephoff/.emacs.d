@@ -189,10 +189,13 @@ from the top down."
 
 ;; Programming
 
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
-(add-hook 'prog-mode-hook 'lsp)
-(setq highlight-indent-guides-method 'character)
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+(use-package lsp-mode :hook (prog-mode . lsp))
+(use-package highlight-indent-guides
+  :hook (prog-mode . highlight-indent-guides-mode)
+  :config
+  (setq highlight-indent-guides-method 'character))
 
 ;; C++
 
