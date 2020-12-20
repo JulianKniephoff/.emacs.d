@@ -200,13 +200,6 @@ from the top down."
 (defun jk/no-tabs ()
   (setq indent-tabs-mode nil))
 
-;; C++
-
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            (c-set-offset 'arglist-intro '+)
-            (c-set-offset 'arglist-close 0)))
-
 ;; Rust
 
 (use-package rust-mode
