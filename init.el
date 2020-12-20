@@ -382,6 +382,3 @@ from the top down."
 
 ;; Load user defaults file
 (load (expand-file-name "default" user-emacs-directory) 'noerror)
-
-;; Reset performance related modifications (see `early-init.el`)
-(setq file-name-handler-alist previous-file-name-handler-alist)

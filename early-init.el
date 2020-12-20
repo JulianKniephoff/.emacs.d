@@ -1,7 +1,13 @@
+;; -*- lexical-binding: t -*-
+
 ;; Some performance optimizations
-(setq previous-file-name-handler-alist file-name-handler-alist
-      gc-cons-threshold 100000000  ; TODO Do you want to reset this as well?
-      file-name-handler-alist nil)
+(let ((previous-file-name-handler-alist file-name-handler-alist))
+  (setq gc-cons-threshold 100000000
+        file-name-handler-alist nil)
+  (add-hook 'after-init-hook
+            (lambda ()
+              ;; TODO Reset the GC as well?
+              (setq file-name-handler-alist previous-file-name-handler-alist))))
 
 (defvar jk/cask-path "/usr/share/cask/cask.el"
   "The path where Cask is installed.")
