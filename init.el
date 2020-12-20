@@ -197,6 +197,9 @@ from the top down."
   :config
   (setq highlight-indent-guides-method 'character))
 
+(defun jk/no-tabs ()
+  (setq indent-tabs-mode nil))
+
 ;; C++
 
 (add-hook 'c-mode-common-hook
@@ -209,7 +212,8 @@ from the top down."
 (use-package rust-mode
   :mode "\\.rs\\'"
   :config
-  (setq lsp-rust-server 'rust-analyzer))
+  (setq lsp-rust-server 'rust-analyzer)
+  (add-hook 'rust-mode-hook 'jk/no-tabs))
 
 (use-package cargo
   :hook (rust-mode-hook . cargo-minor-mode))
@@ -219,9 +223,7 @@ from the top down."
 (use-package ruby-mode
   :mode "\\.rb\\'"
   :config
-  (defun jk/ruby-indentation-mode-hook ()
-    (setq indent-tabs-mode nil))
-  (add-hook 'ruby-mode-hook 'jk/ruby-indentation-mode-hook))
+  (add-hook 'ruby-mode-hook 'jk/no-tabs))
 
 ;; Lisp
 
