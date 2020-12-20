@@ -1,3 +1,6 @@
+(eval-when-compile
+  (require 'use-package))
+
 ;; Appearance
 
 ;; Set font if you wish
