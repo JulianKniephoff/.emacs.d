@@ -1,6 +1,8 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package bind-key)
+
 ;; Appearance
 
 ;; Set font if you wish
