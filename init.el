@@ -259,12 +259,15 @@ from the top down."
             :after-until
             (lambda (c) (eq c ?#)))
 
-;; Special settings for `package.json` to appease `npm install --save`
-(defun jk/package-json-hook ()
-  (when (string= (file-name-nondirectory buffer-file-name) "package.json")
-    (setq indent-tabs-mode nil)
-    (set (make-local-variable 'js-indent-level) 2)))
-(add-hook 'json-mode-hook 'jk/package-json-hook)
+(use-package json-mode
+  :mode "\\.json\\'"
+  :config
+  ;; Special settings for `package.json` to appease `npm install --save`
+  (defun jk/package-json-hook ()
+    (when (string= (file-name-nondirectory buffer-file-name) "package.json")
+      (setq indent-tabs-mode nil)
+      (set (make-local-variable 'js-indent-level) 2)))
+  (add-hook 'json-mode-hook 'jk/package-json-hook))
 
 ;; CSS
 
