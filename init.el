@@ -227,11 +227,11 @@ from the top down."
 
 ;; Lisp
 
-(defun jk/emacs-lisp-indentation-mode-hook ()
-  (setq indent-tabs-mode nil))
-(add-hook 'emacs-lisp-mode-hook 'jk/emacs-lisp-indentation-mode-hook)
+(use-package elisp-mode
+  :mode ("\\.el\\'" . emacs-lisp-mode))
 
-(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+(use-package paredit
+  :hook (emacs-lisp-mode . enable-paredit-mode))
 
 ;; JavaScript
 
