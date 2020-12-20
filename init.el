@@ -208,10 +208,12 @@ from the top down."
 
 ;; Ruby
 
-(setq ruby-insert-encoding-magic-comment nil)
-(defun jk/ruby-indentation-mode-hook ()
-  (setq indent-tabs-mode nil))
-(add-hook 'ruby-mode-hook 'jk/ruby-indentation-mode-hook)
+(use-package ruby-mode
+  :mode "\\.rb\\'"
+  :config
+  (defun jk/ruby-indentation-mode-hook ()
+    (setq indent-tabs-mode nil))
+  (add-hook 'ruby-mode-hook 'jk/ruby-indentation-mode-hook))
 
 ;; Lisp
 
