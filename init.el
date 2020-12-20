@@ -83,14 +83,21 @@
 
 ;; ido
 
-(ido-mode)
-(ido-vertical-mode)
-(ido-everywhere)
-(ido-ubiquitous-mode)
+(use-package ido
+  :config
+  (ido-mode)
+  (ido-everywhere)
+  :bind (
+	 :map ido-common-completion-map
+	 ([?\C-x ?g] . ido-enter-magit-status)))
 
-;; Enable magit in ido
-(define-key ido-common-completion-map
-  [?\C-x ?g] 'ido-enter-magit-status)
+(use-package ido-vertical-mode
+  :config
+  (ido-vertical-mode))
+
+(use-package ido-completing-read+
+  :config
+  (ido-ubiquitous-mode))
 
 (setq magit-completing-read-function 'magit-ido-completing-read)
 
