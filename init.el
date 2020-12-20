@@ -206,8 +206,13 @@ from the top down."
 
 ;; Rust
 
-(setq lsp-rust-server 'rust-analyzer)
-(add-hook 'rust-mode-hook 'cargo-minor-mode)
+(use-package rust-mode
+  :mode "\\.rs\\'"
+  :config
+  (setq lsp-rust-server 'rust-analyzer))
+
+(use-package cargo
+  :hook (rust-mode-hook . cargo-minor-mode))
 
 ;; Ruby
 
