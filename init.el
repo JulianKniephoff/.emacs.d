@@ -157,14 +157,11 @@
 	  ([?g ?b] . evil-ace-jump-word-mode)
 	  ([?g return] . evil-ace-jump-line-mode)))
 
-  (use-package org
-    :defer t
+  (use-package evil-org
+    :after org
+    :hook (org-mode . evil-org-mode)
     :config
-
-    (use-package evil-org
-      :hook (org-mode . evil-org-mode)
-      :config
-      (evil-org-set-key-theme '(navigation insert textobjects additional calendar)))
+    (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
 
     (use-package evil-org-agenda
       :config
@@ -243,8 +240,12 @@ from the top down."
 
 ;; Org
 
-(with-eval-after-load "org"
-  (require 'org-inlinetask)
+(use-package org
+  :mode ("\\.org\\'" . org-mode)
+  :bind ([?\C-c ?l] . org-store-link)
+  :config
+
+  (use-package org-inlinetask)
 
   ;; TODO Why is this even necessary?
   (setcdr (assq 'system org-file-apps-gnu)
@@ -261,19 +262,16 @@ from the top down."
 				 (python . t)))
 
   ;; Make (inline) code use a monospaced font
-  (set-face-attribute 'org-code nil :family "Monospace"))
+  (set-face-attribute 'org-code nil :family "Monospace")
 
-;; Use IDs for linking if they are there
-(setq org-id-link-to-org-use-id 'use-existing)
+  ;; Use IDs for linking if they are there
+  (setq org-id-link-to-org-use-id 'use-existing)
 
-;; Links
-(global-set-key (kbd "C-c l") 'org-store-link)
+  ;; Indentation
+  (setq org-startup-indented t)
 
-;; Indentation
-(setq org-startup-indented t)
-
-;; Highlighting in code blocks
-(setq org-src-fontify-natively t)
+  ;; Highlighting in code blocks
+  (setq org-src-fontify-natively t))
 
 ;; Programming
 
