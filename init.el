@@ -389,10 +389,6 @@ from the top down."
 ;; Highlighting in code blocks
 (setq org-src-fontify-natively t)
 
-;; Ledger
-(with-eval-after-load "ledger-mode"
-  (setq ledger-default-date-format ledger-iso-date-format))
-
 ;; Load Customizations
 
 ;; Customize
