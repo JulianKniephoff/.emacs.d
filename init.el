@@ -241,6 +241,40 @@ from the top down."
   :config
   (global-auto-revert-mode))
 
+;; Org
+
+(with-eval-after-load "org"
+  (require 'org-inlinetask)
+
+  ;; TODO Why is this even necessary?
+  (setcdr (assq 'system org-file-apps-gnu)
+	  (lambda (file &rest args)
+	    (call-process "xdg-open" nil 0 nil file)))
+  ;; TODO This seems like kind of a hack;
+  ;;   shouldn't we just remove "pdf" from the `auto-mode-alist`?
+  (add-to-list 'org-file-apps '("pdf" . system))
+  (add-to-list 'org-file-apps '("ods" . system))
+
+  (org-babel-do-load-languages 'org-babel-load-languages
+			       '((shell . t)
+				 (latex . t)
+				 (python . t)))
+
+  ;; Make (inline) code use a monospaced font
+  (set-face-attribute 'org-code nil :family "Monospace"))
+
+;; Use IDs for linking if they are there
+(setq org-id-link-to-org-use-id 'use-existing)
+
+;; Links
+(global-set-key (kbd "C-c l") 'org-store-link)
+
+;; Indentation
+(setq org-startup-indented t)
+
+;; Highlighting in code blocks
+(setq org-src-fontify-natively t)
+
 ;; Programming
 
 (use-package prog-mode
@@ -310,84 +344,6 @@ from the top down."
 
 (use-package perl-mode
   :mode "\\`.?latexmkrc\\'")
-
-;; Org
-
-(with-eval-after-load "org"
-  (require 'org-inlinetask)
-  (require 'ob-async)
-
-  ;; TODO Why is this even necessary?
-  (setcdr (assq 'system org-file-apps-gnu)
-	  (lambda (file &rest args)
-	    (call-process "xdg-open" nil 0 nil file)))
-  ;; TODO This seems like kind of a hack;
-  ;;   shouldn't we just remove "pdf" from the `auto-mode-alist`?
-  (add-to-list 'org-file-apps '("pdf" . system))
-  (add-to-list 'org-file-apps '("ods" . system))
-
-  (org-babel-do-load-languages 'org-babel-load-languages
-			       '((shell . t)
-				 (latex . t)
-				 (python . t)))
-
-  ;; Make (inline) code use a monospaced font
-  (set-face-attribute 'org-code nil :family "Monospace"))
-
-;; Use IDs for linking if they are there
-(setq org-id-link-to-org-use-id 'use-existing)
-
-;; Capture
-(setq org-directory "~/org")
-(setq org-default-notes-file (expand-file-name "inbox.org" org-directory))
-(setq org-capture-templates
-      '(("i" "Inbox entry" entry
-	 (file "")
-	 "* %?\nSCHEDULED: %t")
-	("p" "Inbox entry from clipboard" entry
-	 (file "")
-	 "* %x%?\nSCHEDULED: %t")
-	("w" "Browser capture" entry
-	 (file "")
-	 "* %:annotation\nSCHEDULED: %t\n%i")))
-(global-set-key (kbd "C-c c") (lambda (goto) (interactive "P") (org-capture goto)))
-(add-hook 'org-capture-mode-hook 'evil-insert-state)
-
-;; Refile
-(defun jk/org-files ()
-  (directory-files-recursively org-directory "\\.org$"))
-(setq org-refile-targets '((jk/org-files . (:regexp . "."))))
-(setq org-refile-use-outline-path 'file)
-(setq org-outline-path-complete-in-steps nil)
-(setq org-completion-use-ido t)
-
-(defun org-reenter ()
-  (interactive)
-  (let ((pos (condition-case nil
-		 (save-excursion
-		   (org-up-element)
-		   (point))
-	       (error nil))))
-    (org-refile nil nil (list nil (buffer-file-name) nil pos))))
-(with-eval-after-load "org"
-  (define-key org-mode-map [?\C-c ?\C-x ?\C-h] 'org-reenter))
-
-;; Automatically save after refile
-;; TODO This seems excessive; can you just save the source and target file?
-(advice-add 'org-refile :after (lambda (&rest _) (org-save-all-org-buffers)))
-
-;; Agenda
-(setq org-agenda-files (list org-directory))
-(global-set-key (kbd "C-c a") 'org-agenda)
-
-;; Links
-(global-set-key (kbd "C-c l") 'org-store-link)
-
-;; Indentation
-(setq org-startup-indented t)
-
-;; Highlighting in code blocks
-(setq org-src-fontify-natively t)
 
 ;; Load Customizations
 
