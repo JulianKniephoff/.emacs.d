@@ -48,19 +48,21 @@
 (setq frame-background-mode 'dark)
 (load-theme 'solarized-dark t)
 
-(global-hl-line-mode)
+(use-package hl-line
+  :config
+  (global-hl-line-mode))
 
 ;; Highlighting whitespace
 
-(require 'whitespace)
-
-(setq whitespace-style
-      '(face trailing empty tabs))
-(setq whitespace-tab 'highlight)
-(global-whitespace-mode)
-(defun jk/prevent-whitespace-mode-for-magit ()
-  (not (derived-mode-p 'magit-mode)))
-(add-function :before-while whitespace-enable-predicate 'jk/prevent-whitespace-mode-for-magit)
+(use-package whitespace
+  :config
+  (setq whitespace-style '(face trailing empty tabs)
+	whitespace-tab 'highlight)
+  (global-whitespace-mode)
+  (defun jk/prevent-whitespace-mode-for-magit ()
+    (not (derived-mode-p 'magit-mode)))
+  (add-function :before-while whitespace-enable-predicate
+		'jk/prevent-whitespace-mode-for-magit))
 
 ;; Long lines
 
@@ -83,6 +85,14 @@
 (setq fci-handle-truncate-lines nil)
 (setq truncate-partial-width-windows nil)
 
+;; Magit
+
+(use-package magit
+  :bind ([?\C-c ?g] . magit-status)
+  :config
+  (setq magit-last-seen-setup-instructions "1.4.0")
+  (setq magit-completing-read-function 'magit-ido-completing-read))
+
 ;; ido
 
 (use-package ido
@@ -101,21 +111,33 @@
   :config
   (ido-ubiquitous-mode))
 
-(setq magit-completing-read-function 'magit-ido-completing-read)
-
 ;; Evil
 
-(setq evil-want-keybinding nil)
-(evil-mode)
-(global-evil-surround-mode)
-(evil-collection-init)
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
 
-(evil-select-search-module 'evil-search-module 'evil-search)
-(global-undo-tree-mode)
-(customize-set-variable 'evil-undo-system 'undo-tree)
+(use-package evil
+  :init
+  (setq evil-want-keybinding nil)
+  :config
+  (evil-mode)
+  (customize-set-variable 'evil-undo-system 'undo-tree))
 
-(with-eval-after-load "magit"
-  (require 'evil-magit))
+(use-package evil-surround
+  :config
+  (global-evil-surround-mode))
+
+(use-package evil-collection
+  :config
+  (evil-collection-init))
+
+(use-package evil-search
+  :config
+  (evil-select-search-module 'evil-search-module 'evil-search))
+
+(use-package evil-magit
+  :after (evil magit))
 
 ;; Ace integration
 (define-key evil-motion-state-map [?g ? ] 'evil-ace-jump-char-mode)
@@ -281,11 +303,6 @@ from the top down."
 
 ;; Interpret latexmk configuration correctly as Perl
 (add-to-list 'auto-mode-alist '("latexmkrc\\'" . perl-mode))
-
-;; Magit
-
-(global-set-key [(control c) ?g] 'magit-status)
-(setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; Org
 
