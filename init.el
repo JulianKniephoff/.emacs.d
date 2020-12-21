@@ -127,9 +127,11 @@
     :config
     (global-undo-tree-mode))
 
+  :custom
+  (evil-undo-system 'undo-tree)
+
   :config
   (evil-mode)
-  (customize-set-variable 'evil-undo-system 'undo-tree)
 
   (use-package evil-surround
     :config
