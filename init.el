@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (eval-when-compile
   (require 'use-package))
 
@@ -10,34 +12,15 @@
 ;;   (when (member font (font-family-list))
 ;;     (set-face-attribute 'default nil :family font)))
 
-;; TODO It's not nice that this returns another scale than `set-font-size`
-;;   but it's more convenient like this for now ...
-(defun get-font-size ()
-  ;; TODO Is this right? Pass a frame? What face to use?!
-  (face-attribute 'default :height))
-
-(defun scale-org-latex-fonts (new-size)
-  ;; TODO Maybe this should just assume a fixed scale?
-  ;; TODO Is it even guaranteed that `(face-attribute 'default :height)` is what you want?
-  (let* ((old-size (get-font-size))
-	 (old-scale (plist-get org-format-latex-options :scale))
-	 (scale (/ new-size (float old-size)))
-	 (new-scale (* scale old-scale)))
+(let ((old-size (face-attribute 'default :height))
+      (new-size (* 10 jk/font-size)))
+  (set-face-attribute 'default nil :height new-size)
+  (use-package org
+    :defer t
+    :config
     (setq org-format-latex-options
-	  (plist-put org-format-latex-options
-		     :scale new-scale))))
-
-;; TODO You hardly ever change the font size at runtime;
-;;   maybe this could just set some default frame attribute?
-;;   Which could then happen in `early-init.el`?
-(defun set-font-size (n)
-  (interactive "NSize: ")
-  (let ((new-size (* 10 n)))
-    (when (boundp 'org-format-latex-options)
-      (scale-org-latex-fonts new-size))
-    (set-face-attribute 'default nil :height new-size)))
-(with-eval-after-load "org"
-  (scale-org-latex-fonts (get-font-size)))
+    	  (plist-put org-format-latex-options
+    		     :scale (/ new-size (float old-size))))))
 
 (setq inhibit-startup-screen t)
 
@@ -52,9 +35,14 @@
 ;; Highlighting whitespace
 
 (use-package whitespace
+  :custom-face
+  (whitespace-tab ((t (
+		       :inverse-video nil
+		       :foreground nil
+		       :background nil
+		       :inherit 'highlight))))
   :config
-  (setq whitespace-style '(face trailing empty tabs)
-	whitespace-tab 'highlight)
+  (setq whitespace-style '(face trailing empty tabs))
   (global-whitespace-mode)
 
   (use-package magit
@@ -72,11 +60,6 @@
 (use-package fill-column-indicator
   :hook ((after-change-major-mode window-configuration-change) . auto-fci-mode)
   :config
-  (define-globalized-minor-mode global-fci-mode
-    fci-mode
-    (lambda ()
-      (fci-mode)))
-  (global-fci-mode)
   (defun auto-fci-mode ()
     (if (> (window-width) (or fci-rule-column fill-column))
 	(fci-mode 1)
@@ -189,14 +172,40 @@
     ;; Ensure the auto-save directory exists
     (mkdir auto-save-directory 'ignore-existing)
     (setq auto-save-file-name-transforms
-	  `((".*" ,(file-name-as-directory auto-save-directory) t)))))
+	  `((".*" ,(file-name-as-directory auto-save-directory) t))))
 
-;; Session files
-(defun emacs-session-filename--subdir (orig-fn session-id)
-  (expand-file-name session-id
-		    (expand-file-name "sessions"
-				      user-emacs-directory)))
-(advice-add 'emacs-session-filename :around #'emacs-session-filename--subdir)
+  ;; Allow multiple "nested" `.dir-locals.el` files
+  ;; Source: http://emacs.stackexchange.com/a/5537
+
+  (defun file-name-directory-nesting-helper (name previous-name accumulator)
+    (if (string= name previous-name)
+	accumulator         ; stop when names stop changing (at the top)
+      (file-name-directory-nesting-helper
+       (directory-file-name (file-name-directory name))
+       name
+       (cons name accumulator))))
+
+  (defun file-name-directory-nesting (name)
+    (file-name-directory-nesting-helper (expand-file-name name) "" ()))
+
+  (defun hack-dir-local-variables-chained-advice (orig)
+    "Apply dir-local settings from the whole directory hierarchy,
+from the top down."
+    (let ((original-buffer-file-name (buffer-file-name))
+	  (nesting (file-name-directory-nesting (or (buffer-file-name)
+						    default-directory))))
+      (unwind-protect
+	  (dolist (name nesting)
+	    ;; make it look like we're in a directory higher up in the
+	    ;; hierarchy; note that the file we're "visiting" does not
+	    ;; have to exist
+	    (setq buffer-file-name (expand-file-name "ignored" name))
+	    (funcall orig))
+	;; cleanup
+	(setq buffer-file-name original-buffer-file-name))))
+
+  (advice-add 'hack-dir-local-variables :around
+	      #'hack-dir-local-variables-chained-advice))
 
 ;; Remember cursor position accross sessions
 
@@ -204,39 +213,6 @@
   :config
   (setq save-place-file (expand-file-name "save-place" user-emacs-directory))
   (save-place-mode))
-
-;; Allow multiple "nested" `.dir-locals.el` files
-;; Source: http://emacs.stackexchange.com/a/5537
-
-(defun file-name-directory-nesting-helper (name previous-name accumulator)
-  (if (string= name previous-name)
-      accumulator         ; stop when names stop changing (at the top)
-    (file-name-directory-nesting-helper
-     (directory-file-name (file-name-directory name))
-     name
-     (cons name accumulator))))
-
-(defun file-name-directory-nesting (name)
-  (file-name-directory-nesting-helper (expand-file-name name) "" ()))
-
-(defun hack-dir-local-variables-chained-advice (orig)
-  "Apply dir-local settings from the whole directory hierarchy,
-from the top down."
-  (let ((original-buffer-file-name (buffer-file-name))
-	(nesting (file-name-directory-nesting (or (buffer-file-name)
-						  default-directory))))
-    (unwind-protect
-	(dolist (name nesting)
-	  ;; make it look like we're in a directory higher up in the
-	  ;; hierarchy; note that the file we're "visiting" does not
-	  ;; have to exist
-	  (setq buffer-file-name (expand-file-name "ignored" name))
-	  (funcall orig))
-      ;; cleanup
-      (setq buffer-file-name original-buffer-file-name))))
-
-(advice-add 'hack-dir-local-variables :around
-	    #'hack-dir-local-variables-chained-advice)
 
 ;; Automatically reload changed files from disk
 (use-package autorevert
@@ -254,7 +230,7 @@ from the top down."
 
   ;; TODO Why is this even necessary?
   (setcdr (assq 'system org-file-apps-gnu)
-	  (lambda (file &rest args)
+	  (lambda (file &rest _)
 	    (call-process "xdg-open" nil 0 nil file)))
   ;; TODO This seems like kind of a hack;
   ;;   shouldn't we just remove "pdf" from the `auto-mode-alist`?
@@ -356,6 +332,3 @@ from the top down."
 (setq custom-file (expand-file-name "customize.el" user-emacs-directory))
 (when (file-readable-p custom-file)
   (load custom-file))
-
-;; Load user defaults file
-(load (expand-file-name "default" user-emacs-directory) 'noerror)

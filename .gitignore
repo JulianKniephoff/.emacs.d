@@ -19,3 +19,4 @@
 /.cache
 /workspace
 /.dap-breakpoints
+/lsp-cache
