@@ -342,6 +342,8 @@ from the top down."
       (set (make-local-variable 'js-indent-level) 2)))
   (add-hook 'json-mode-hook 'jk/package-json-hook))
 
+;; LaTeX
+
 (use-package perl-mode
   :mode "\\`.?latexmkrc\\'")
 
