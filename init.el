@@ -69,22 +69,25 @@
 
 ;; 80 columns indicator
 
-(define-globalized-minor-mode global-fci-mode
-  fci-mode
-  (lambda ()
-    (fci-mode)))
-(global-fci-mode)
-(defun auto-fci-mode ()
-  (if (> (window-width) (or fci-rule-column fill-column))
-      (fci-mode 1)
-    (fci-mode 0)))
-(add-hook 'after-change-major-mode-hook 'auto-fci-mode)
-(add-hook 'window-configuration-change-hook 'auto-fci-mode)
+(use-package fill-column-indicator
+  :hook ((after-change-major-mode window-configuration-change) . auto-fci-mode)
+  :config
+  (define-globalized-minor-mode global-fci-mode
+    fci-mode
+    (lambda ()
+      (fci-mode)))
+  (global-fci-mode)
+  (defun auto-fci-mode ()
+    (if (> (window-width) (or fci-rule-column fill-column))
+	(fci-mode 1)
+      (fci-mode 0)))
+  (add-hook 'after-change-major-mode-hook 'auto-fci-mode)
+  (add-hook 'window-configuration-change-hook 'auto-fci-mode)
 
-;; Wrapping
+  ;; Wrapping
 
-(setq fci-handle-truncate-lines nil)
-(setq truncate-partial-width-windows nil)
+  (setq fci-handle-truncate-lines nil)
+  (setq truncate-partial-width-windows nil))
 
 ;; Magit
 
