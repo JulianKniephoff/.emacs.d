@@ -179,15 +179,17 @@
 
 ;; Backups
 
-(setq backup-directory-alist
-      `((".*" . ,(file-name-as-directory
-		  (expand-file-name "backups"
-				    user-emacs-directory)))))
-(let ((auto-save-directory (expand-file-name "auto-save" user-emacs-directory)))
-  ;; Ensure the auto-save directory exists
-  (mkdir auto-save-directory 'ignore-existing)
-  (setq auto-save-file-name-transforms
-	`((".*" ,(file-name-as-directory auto-save-directory) t))))
+(use-package files
+  :config
+  (setq backup-directory-alist
+	`((".*" . ,(file-name-as-directory
+		    (expand-file-name "backups"
+				      user-emacs-directory)))))
+  (let ((auto-save-directory (expand-file-name "auto-save" user-emacs-directory)))
+    ;; Ensure the auto-save directory exists
+    (mkdir auto-save-directory 'ignore-existing)
+    (setq auto-save-file-name-transforms
+	  `((".*" ,(file-name-as-directory auto-save-directory) t)))))
 
 ;; Session files
 (defun emacs-session-filename--subdir (orig-fn session-id)
