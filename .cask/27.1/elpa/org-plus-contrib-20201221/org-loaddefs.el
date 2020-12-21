@@ -2889,15 +2889,13 @@ list of message:// links to flagged mail after heading.
 
 ;;;***
 
-;;;### (autoloads nil "org-macs" "org-macs.el" (0 0 0 0))
+;;;### (autoloads nil "org-macs" "org-macs.el" "25185b5f251a9bb67ae43e196b8e6a63")
 ;;; Generated autoloads from org-macs.el
 
 (autoload 'org-load-noerror-mustsuffix "org-macs" "\
 Load FILE with optional arguments NOERROR and MUSTSUFFIX.
 
 \(fn FILE)" nil t)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-macs" '("org-")))
 
 ;;;***
 

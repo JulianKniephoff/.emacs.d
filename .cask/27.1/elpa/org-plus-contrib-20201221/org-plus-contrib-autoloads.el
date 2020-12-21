@@ -1357,6 +1357,14 @@ list of message:// links to flagged mail after heading.
 
 ;;;***
 
+;;;### (autoloads "actual autoloads are elsewhere" "org-macs" "org-macs.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-macs.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-macs" '("org-")))
+
+;;;***
+
 ;;;### (autoloads nil "org-mairix" "org-mairix.el" (0 0 0 0))
 ;;; Generated autoloads from org-mairix.el
 

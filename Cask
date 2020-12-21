@@ -11,7 +11,6 @@
 (depends-on "clojure-mode")
 (depends-on "cmake-mode")
 (depends-on "coffee-mode")
-(depends-on "context-coloring")
 (depends-on "csharp-mode")
 (depends-on "d-mode")
 (depends-on "dockerfile-mode")
