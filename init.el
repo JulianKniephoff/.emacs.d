@@ -41,12 +41,9 @@
 
 (setq inhibit-startup-screen t)
 
-;; Start up maximized
-;; This is actually the job of the window manager
-;;(setq default-frame-alist '((fullscreen . maximized)))
-
-(setq frame-background-mode 'dark)
-(load-theme 'solarized-dark t)
+(use-package solarized-dark-theme
+  :config
+  (load-theme 'solarized-dark t))
 
 (use-package hl-line
   :config
@@ -59,10 +56,14 @@
   (setq whitespace-style '(face trailing empty tabs)
 	whitespace-tab 'highlight)
   (global-whitespace-mode)
-  (defun jk/prevent-whitespace-mode-for-magit ()
-    (not (derived-mode-p 'magit-mode)))
-  (add-function :before-while whitespace-enable-predicate
-		'jk/prevent-whitespace-mode-for-magit))
+
+  (use-package magit
+    :defer t
+    :config
+    (defun jk/prevent-whitespace-mode-for-magit ()
+      (not (derived-mode-p 'magit-mode)))
+    (add-function :before-while whitespace-enable-predicate
+		  'jk/prevent-whitespace-mode-for-magit)))
 
 ;; Long lines
 
@@ -90,8 +91,7 @@
 (use-package magit
   :bind ([?\C-c ?g] . magit-status)
   :config
-  (setq magit-last-seen-setup-instructions "1.4.0")
-  (setq magit-completing-read-function 'magit-ido-completing-read))
+  (setq magit-last-seen-setup-instructions "1.4.0"))
 
 ;; ido
 
@@ -99,62 +99,79 @@
   :config
   (ido-mode)
   (ido-everywhere)
-  :bind (
-	 :map ido-common-completion-map
-	 ([?\C-x ?g] . ido-enter-magit-status)))
 
-(use-package ido-vertical-mode
-  :config
-  (ido-vertical-mode))
+  (use-package magit-extras
+    :bind (:map ido-common-completion-map
+		([?\C-x ?g] . ido-enter-magit-status)))
 
-(use-package ido-completing-read+
-  :config
-  (ido-ubiquitous-mode))
+  (use-package magit-utils
+    :after magit
+    :config
+    (setq magit-completing-read-function 'magit-ido-completing-read))
+
+  (use-package ido-vertical-mode
+    :config
+    (ido-vertical-mode))
+
+  (use-package ido-completing-read+
+    :config
+    (ido-ubiquitous-mode)))
 
 ;; Evil
-
-(use-package undo-tree
-  :config
-  (global-undo-tree-mode))
 
 (use-package evil
   :init
   (setq evil-want-keybinding nil)
+
+  (use-package undo-tree
+    :config
+    (global-undo-tree-mode))
+
   :config
   (evil-mode)
-  (customize-set-variable 'evil-undo-system 'undo-tree))
+  (customize-set-variable 'evil-undo-system 'undo-tree)
 
-(use-package evil-surround
-  :config
-  (global-evil-surround-mode))
+  (use-package evil-surround
+    :config
+    (global-evil-surround-mode))
 
-(use-package evil-collection
-  :config
-  (evil-collection-init))
+  (use-package evil-collection
+    :config
+    (evil-collection-init))
 
-(use-package evil-search
-  :config
-  (evil-select-search-module 'evil-search-module 'evil-search))
+  (use-package evil-search
+    :config
+    (evil-select-search-module 'evil-search-module 'evil-search))
 
-(use-package evil-magit
-  :after (evil magit))
+  (use-package evil-magit
+    :after magit)
 
-;; Ace integration
-(define-key evil-motion-state-map [?g ? ] 'evil-ace-jump-char-mode)
-(define-key evil-motion-state-map [?g ?	] 'evil-ace-jump-char-to-mode)
-(define-key evil-motion-state-map [?g ?b] 'evil-ace-jump-word-mode)
-(define-key evil-motion-state-map [?g return] 'evil-ace-jump-line-mode)
+  ;; Ace integration
+  (use-package evil-integration
+    :bind
+    (:map evil-motion-state-map
+	  ([?g ? ] . evil-ace-jump-char-mode)
+	  ([?g ?	] . evil-ace-jump-char-to-mode)
+	  ([?g ?b] . evil-ace-jump-word-mode)
+	  ([?g return] . evil-ace-jump-line-mode)))
+
+  (use-package org
+    :defer t
+    :config
+
+    (use-package evil-org
+      :hook (org-mode . evil-org-mode)
+      :config
+      (evil-org-set-key-theme '(navigation insert textobjects additional calendar)))
+
+    (use-package evil-org-agenda
+      :config
+      (evil-org-agenda-set-keys))))
 
 ;; Path
-(exec-path-from-shell-initialize)
-
-;; This seems necessary under Cygwin
-;; (setenv "PATH" (concat "/usr/local/bin:/usr/bin:/bin:/usr/sbin:"
-;;                        (getenv "PATH")))
-;; (add-to-list 'exec-path "/usr/local/bin")
-;; (add-to-list 'exec-path "/usr/bin")
-;; (add-to-list 'exec-path "/bin")
-;; (add-to-list 'exec-path "/usr/sbin")
+(use-package exec-path-from-shell
+  :config
+  (exec-path-from-shell-initialize))
 
 ;; Keep everything in one directory
 
@@ -179,8 +196,10 @@
 
 ;; Remember cursor position accross sessions
 
-(setq save-place-file (expand-file-name "save-place" user-emacs-directory))
-(save-place-mode)
+(use-package saveplace
+  :config
+  (setq save-place-file (expand-file-name "save-place" user-emacs-directory))
+  (save-place-mode))
 
 ;; Allow multiple "nested" `.dir-locals.el` files
 ;; Source: http://emacs.stackexchange.com/a/5537
@@ -216,31 +235,39 @@ from the top down."
 	    #'hack-dir-local-variables-chained-advice)
 
 ;; Automatically reload changed files from disk
-(global-auto-revert-mode)
+(use-package autorevert
+  :config
+  (global-auto-revert-mode))
 
 ;; Programming
 
-(use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
-(use-package lsp-mode :hook (prog-mode . lsp))
-(use-package highlight-indent-guides
-  :hook (prog-mode . highlight-indent-guides-mode)
+(use-package prog-mode
   :config
-  (setq highlight-indent-guides-method 'character))
+  (use-package rainbow-delimiters
+    :hook (prog-mode . rainbow-delimiters-mode))
+  (use-package lsp-mode :hook (prog-mode . lsp))
+  (use-package highlight-indent-guides
+    :hook (prog-mode . highlight-indent-guides-mode)
+    :config
+    (setq highlight-indent-guides-method 'character))
 
-(defun jk/no-tabs ()
-  (setq indent-tabs-mode nil))
+  (defun jk/no-tabs ()
+    (setq indent-tabs-mode nil)))
 
 ;; Rust
 
 (use-package rust-mode
   :mode "\\.rs\\'"
   :config
-  (setq lsp-rust-server 'rust-analyzer)
-  (add-hook 'rust-mode-hook 'jk/no-tabs))
 
-(use-package cargo
-  :hook (rust-mode-hook . cargo-minor-mode))
+  (use-package lsp-mode
+    :config
+    (setq lsp-rust-server 'rust-analyzer))
+
+  (add-hook 'rust-mode-hook 'jk/no-tabs)
+
+  (use-package cargo
+    :hook (rust-mode-hook . cargo-minor-mode)))
 
 ;; Ruby
 
@@ -252,21 +279,22 @@ from the top down."
 ;; Lisp
 
 (use-package elisp-mode
-  :mode ("\\.el\\'" . emacs-lisp-mode))
+  :mode ("\\.el\\'" . emacs-lisp-mode)
+  :config
+  (use-package paredit
+    :hook (emacs-lisp-mode . enable-paredit-mode)))
 
-(use-package paredit
-  :hook (emacs-lisp-mode . enable-paredit-mode))
+;; JavaScript & Co.
 
-;; JavaScript
+(use-package js2-mode
+  :mode "\\.m?jsx?\\'"
+  :config
+  (advice-add #'js2-identifier-start-p
+	      :after-until
+	      (lambda (c) (eq c ?#))))
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.mjs\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.html.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
-
-(advice-add #'js2-identifier-start-p
-	    :after-until
-	    (lambda (c) (eq c ?#)))
+(use-package typescript-mode
+  :mode "\\.tsx?\\'")
 
 (use-package json-mode
   :mode "\\.json\\'"
@@ -278,8 +306,8 @@ from the top down."
       (set (make-local-variable 'js-indent-level) 2)))
   (add-hook 'json-mode-hook 'jk/package-json-hook))
 
-;; Interpret latexmk configuration correctly as Perl
-(add-to-list 'auto-mode-alist '("latexmkrc\\'" . perl-mode))
+(use-package perl-mode
+  :mode "\\`.?latexmkrc\\'")
 
 ;; Org
 
@@ -322,14 +350,6 @@ from the top down."
 	 "* %:annotation\nSCHEDULED: %t\n%i")))
 (global-set-key (kbd "C-c c") (lambda (goto) (interactive "P") (org-capture goto)))
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
-
-;; Integrate with EVIL
-(with-eval-after-load "org"
-  (require 'evil-org)
-  (add-hook 'org-mode-hook 'evil-org-mode)
-  (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
-  (require 'evil-org-agenda)
-  (evil-org-agenda-set-keys))
 
 ;; Refile
 (defun jk/org-files ()
