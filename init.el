@@ -69,8 +69,8 @@
 
   ;; Wrapping
 
-  (setq fci-handle-truncate-lines nil)
-  (setq truncate-partial-width-windows nil))
+  (setq fci-handle-truncate-lines nil
+	truncate-partial-width-windows nil))
 
 ;; Magit
 
@@ -241,13 +241,13 @@ from the top down."
   (set-face-attribute 'org-code nil :family "Monospace")
 
   ;; Use IDs for linking if they are there
-  (setq org-id-link-to-org-use-id 'use-existing)
+  (setq org-id-link-to-org-use-id 'use-existing
 
-  ;; Indentation
-  (setq org-startup-indented t)
+	;; Indentation
+	org-startup-indented t
 
-  ;; Highlighting in code blocks
-  (setq org-src-fontify-natively t))
+	;; Highlighting in code blocks
+	org-src-fontify-natively t))
 
 ;; Programming
 
