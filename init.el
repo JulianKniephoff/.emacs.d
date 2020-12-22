@@ -12,16 +12,6 @@
 ;;   (when (member font (font-family-list))
 ;;     (set-face-attribute 'default nil :family font)))
 
-(let ((old-size (face-attribute 'default :height))
-      (new-size (* 10 jk/font-size)))
-  (set-face-attribute 'default nil :height new-size)
-  (use-package org
-    :defer t
-    :config
-    (setq org-format-latex-options
-	  (plist-put org-format-latex-options
-		     :scale (/ new-size (float old-size))))))
-
 (setq inhibit-startup-screen t)
 
 (use-package solarized-dark-theme
@@ -247,7 +237,13 @@ from the top down."
 	org-startup-indented t
 
 	;; Highlighting in code blocks
-	org-src-fontify-natively t))
+	org-src-fontify-natively t)
+
+  (advice-add 'org-latex-preview :before
+	      (lambda (&rest _)
+		(setq org-format-latex-options
+		      (plist-put org-format-latex-options
+				 :scale (/ (jk/get-font-size) jk/original-font-size))))))
 
 ;; Programming
 

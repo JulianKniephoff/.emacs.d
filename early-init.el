@@ -38,3 +38,8 @@
 ;; Other possibilities which would need to go in `init.el`, though, include:
 ;;(tool-bar-mode -1)
 ;;(set-frame-parameter nil 'tool-bar-lines 0)
+
+(defun jk/get-font-size ()
+  (face-attribute 'default :height))
+(setq jk/original-font-size (jk/get-font-size))
+(set-face-attribute 'default nil :height 240)
