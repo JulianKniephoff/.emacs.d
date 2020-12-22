@@ -10,23 +10,36 @@
 	      ;; TODO Reset the GC as well?
 	      (setq file-name-handler-alist previous-file-name-handler-alist))))
 
-(defvar jk/cask-path "/usr/share/cask/cask.el"
-  "The path where Cask is installed.")
-
 ;; Load site specific stuff, e.g. values for the variables above
 (load (expand-file-name "site" user-emacs-directory) 'noerror)
 
-(require 'cask jk/cask-path)
-;; TODO I don't like that this suppresses the warning for every one else
-;;   but there doesn't seem to be a way to do it temporarily.
-(setq warning-suppress-log-types '((package reinitialization)))
-(cask-initialize)
-
-;; Cask already called this for us ... twice ...
-;; No need to call it again; startup is slow enough as it is.
-(setq package-enable-at-startup nil)
+(setq package-user-dir "~/.config/emacs/.cask/27.1/elpa")
 
 ;; Source: https://github.com/nilcons/emacs-use-package-fast/blob/a9cc00c/README.md#the-missing-utility-steal-load-path-from-packageel
+;;;;;;;;;;;;;;;;;; PULL REQUEST STARTS HERE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Disable package initialize after us.  We either initialize it
+;; anyway in case of interpreted .emacs, or we don't want slow
+;; initizlization in case of byte-compiled .emacs.elc.
+(setq package-enable-at-startup nil)
+;; set use-package-verbose to t for interpreted .emacs,
+;; and to nil for byte-compiled .emacs.elc
+(eval-and-compile
+  (setq use-package-verbose (not (bound-and-true-p byte-compile-current-file))))
+;; Add the macro generated list of package.el loadpaths to load-path.
+(mapc #'(lambda (add) (add-to-list 'load-path add))
+      (eval-when-compile
+	(package-initialize)
+	(let ((package-user-dir-real (file-truename package-user-dir)))
+	  ;; The reverse is necessary, because outside we mapc
+	  ;; add-to-list element-by-element, which reverses.
+	  (nreverse (apply #'nconc
+			   ;; Only keep package.el provided loadpaths.
+			   (mapcar #'(lambda (path)
+				       (if (string-prefix-p package-user-dir-real path)
+					   (list path)
+					 nil))
+				   load-path))))))
+;;;;;;;;;;;;;;;;;; PULL REQUEST  ENDS  HERE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
