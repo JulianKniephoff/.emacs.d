@@ -2,7 +2,8 @@
 
 ;; Some performance optimizations
 (let ((previous-file-name-handler-alist file-name-handler-alist))
-  (setq gc-cons-threshold 100000000
+  (setq gc-cons-threshold (* gc-cons-threshold 2 2 2 2)
+	read-process-output-max (* 1024 1024)
         file-name-handler-alist nil)
   (add-hook 'after-init-hook
             (lambda ()
