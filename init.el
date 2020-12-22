@@ -19,8 +19,8 @@
     :defer t
     :config
     (setq org-format-latex-options
-    	  (plist-put org-format-latex-options
-    		     :scale (/ new-size (float old-size))))))
+	  (plist-put org-format-latex-options
+		     :scale (/ new-size (float old-size))))))
 
 (setq inhibit-startup-screen t)
 

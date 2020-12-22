@@ -4,11 +4,11 @@
 (let ((previous-file-name-handler-alist file-name-handler-alist))
   (setq gc-cons-threshold (* gc-cons-threshold 2 2 2 2)
 	read-process-output-max (* 1024 1024)
-        file-name-handler-alist nil)
+	file-name-handler-alist nil)
   (add-hook 'after-init-hook
-            (lambda ()
-              ;; TODO Reset the GC as well?
-              (setq file-name-handler-alist previous-file-name-handler-alist))))
+	    (lambda ()
+	      ;; TODO Reset the GC as well?
+	      (setq file-name-handler-alist previous-file-name-handler-alist))))
 
 (defvar jk/cask-path "/usr/share/cask/cask.el"
   "The path where Cask is installed.")
@@ -26,7 +26,7 @@
 ;; No need to call it again; startup is slow enough as it is.
 (setq package-enable-at-startup nil)
 
-;(pallet-mode)
+;;(pallet-mode)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
@@ -36,5 +36,5 @@
 ;; but profits from being in `early-init.el`
 (setq default-frame-alist '((tool-bar-lines . 0)))
 ;; Other possibilities which would need to go in `init.el`, though, include:
-;(tool-bar-mode -1)
-;(set-frame-parameter nil 'tool-bar-lines 0)
+;;(tool-bar-mode -1)
+;;(set-frame-parameter nil 'tool-bar-lines 0)
