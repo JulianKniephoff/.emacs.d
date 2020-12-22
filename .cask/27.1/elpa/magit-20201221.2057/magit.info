@@ -134,58 +134,58 @@ Node: Submodule Transient294897
 Node: Subtree297419
 Node: Worktree299395
 Node: Common Commands301254
-Node: Wip Modes303301
-Node: Wip Graph308232
-Node: Legacy Wip Modes310546
-Node: Commands for Buffers Visiting Files313441
-Node: Minor Mode for Buffers Visiting Blobs319063
-Node: Customizing319874
-Node: Per-Repository Configuration321470
-Node: Essential Settings323725
-Node: Safety324070
-Node: Performance325831
-Node: Microsoft Windows Performance332999
-Node: MacOS Performance334190
-Ref: MacOS Performance-Footnote-1335205
-Node: Default Bindings335287
-Node: Plumbing337142
-Node: Calling Git337971
-Node: Getting a Value from Git339496
-Node: Calling Git for Effect342582
-Node: Section Plumbing349104
-Node: Creating Sections349332
-Node: Section Selection353232
-Node: Matching Sections355031
-Node: Refreshing Buffers361004
-Node: Conventions364152
-Node: Theming Faces364344
-Node: FAQ372459
-Node: FAQ - How to ...?372901
-Node: How to pronounce Magit?373314
-Node: How to show git's output?374116
-Node: How to install the gitman info manual?374902
-Node: How to show diffs for gpg-encrypted files?375872
-Node: How does branching and pushing work?376468
-Node: Can Magit be used as ediff-version-control-package?376831
-Node: Should I disable VC?378849
-Node: FAQ - Issues and Errors379467
-Node: Magit is slow380363
-Node: I changed several thousand files at once and now Magit is unusable380577
-Node: I am having problems committing381306
-Node: I am using MS Windows and cannot push with Magit381787
-Node: I am using OS X and SOMETHING works in shell but not in Magit382404
-Node: Expanding a file to show the diff causes it to disappear383235
-Node: Point is wrong in the COMMIT_EDITMSG buffer383816
-Node: The mode-line information isn't always up-to-date384862
-Node: A branch and tag sharing the same name breaks SOMETHING385925
-Node: My Git hooks work on the command-line but not inside Magit386811
-Node: git-commit-mode isn't used when committing from the command-line387657
-Node: Point ends up inside invisible text when jumping to a file-visiting buffer389928
-Node: Debugging Tools390726
-Node: Keystroke Index392905
-Node: Command Index426938
-Node: Function Index464004
-Node: Variable Index480275
+Node: Wip Modes303377
+Node: Wip Graph308308
+Node: Legacy Wip Modes310622
+Node: Commands for Buffers Visiting Files313517
+Node: Minor Mode for Buffers Visiting Blobs319139
+Node: Customizing319950
+Node: Per-Repository Configuration321546
+Node: Essential Settings323801
+Node: Safety324146
+Node: Performance325907
+Node: Microsoft Windows Performance333075
+Node: MacOS Performance334266
+Ref: MacOS Performance-Footnote-1335281
+Node: Default Bindings335363
+Node: Plumbing337218
+Node: Calling Git338047
+Node: Getting a Value from Git339572
+Node: Calling Git for Effect342658
+Node: Section Plumbing349180
+Node: Creating Sections349408
+Node: Section Selection353308
+Node: Matching Sections355107
+Node: Refreshing Buffers361080
+Node: Conventions364228
+Node: Theming Faces364420
+Node: FAQ372535
+Node: FAQ - How to ...?372977
+Node: How to pronounce Magit?373390
+Node: How to show git's output?374192
+Node: How to install the gitman info manual?374978
+Node: How to show diffs for gpg-encrypted files?375948
+Node: How does branching and pushing work?376544
+Node: Can Magit be used as ediff-version-control-package?376907
+Node: Should I disable VC?378925
+Node: FAQ - Issues and Errors379543
+Node: Magit is slow380439
+Node: I changed several thousand files at once and now Magit is unusable380653
+Node: I am having problems committing381382
+Node: I am using MS Windows and cannot push with Magit381863
+Node: I am using OS X and SOMETHING works in shell but not in Magit382480
+Node: Expanding a file to show the diff causes it to disappear383311
+Node: Point is wrong in the COMMIT_EDITMSG buffer383892
+Node: The mode-line information isn't always up-to-date384938
+Node: A branch and tag sharing the same name breaks SOMETHING386001
+Node: My Git hooks work on the command-line but not inside Magit386887
+Node: git-commit-mode isn't used when committing from the command-line387733
+Node: Point ends up inside invisible text when jumping to a file-visiting buffer390004
+Node: Debugging Tools390802
+Node: Keystroke Index392981
+Node: Command Index427014
+Node: Function Index464080
+Node: Variable Index480351
 
 End Tag Table
 

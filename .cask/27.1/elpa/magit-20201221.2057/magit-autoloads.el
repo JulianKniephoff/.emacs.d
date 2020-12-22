@@ -972,8 +972,12 @@ argument is used, then save the revision at its tip to the
 
 When the region is active, then save that to the `kill-ring',
 like `kill-ring-save' would, instead of behaving as described
-above.  If a prefix argument is used and the region is within a
-hunk, strip the outer diff marker column." t nil)
+above.  If a prefix argument is used and the region is within
+a hunk, then strip the diff marker column and keep only either
+the added or removed lines, depending on the sign of the prefix
+argument.
+
+\(fn ARG)" t nil)
 
 (autoload 'magit-copy-buffer-revision "magit-extras" "\
 Save the revision of the current buffer for later use.
