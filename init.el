@@ -252,10 +252,10 @@ from the top down."
 ;; Programming
 
 (use-package prog-mode
+  :defer t
   :config
   (use-package rainbow-delimiters
     :hook (prog-mode . rainbow-delimiters-mode))
-  (use-package lsp-mode :hook (prog-mode . lsp))
   (use-package highlight-indent-guides
     :hook (prog-mode . highlight-indent-guides-mode)
     :config
@@ -271,6 +271,7 @@ from the top down."
   :config
 
   (use-package lsp-mode
+    :hook rust-mode
     :config
     (setq lsp-rust-server 'rust-analyzer))
 
