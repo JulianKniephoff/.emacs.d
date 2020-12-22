@@ -26,7 +26,7 @@
 ;; No need to call it again; startup is slow enough as it is.
 (setq package-enable-at-startup nil)
 
-;;(pallet-mode)
+;; Source: https://github.com/nilcons/emacs-use-package-fast/blob/a9cc00c/README.md#the-missing-utility-steal-load-path-from-packageel
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
