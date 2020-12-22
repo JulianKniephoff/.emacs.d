@@ -1,2 +1,2 @@
-;;; Generated package description from /home/jules/.emacs.d/.cask/27.1/elpa/csharp-mode-20201209.1122/csharp-mode.el  -*- no-byte-compile: t -*-
+;;; Generated package description from /home/jules/.config/emacs/.cask/27.1/elpa/csharp-mode-20201209.1122/csharp-mode.el  -*- no-byte-compile: t -*-
 (define-package "csharp-mode" "20201209.1122" "C# mode derived mode" 'nil :commit "a6caa85b914ade93310da17f669a57c6f7ff94bb" :keywords '("c#" "languages" "oop" "mode") :authors '(("Theodor Thornhill" . "theo@thornhill.no")) :maintainer '("Jostein Kjønigsen" . "jostein@gmail.com") :url "https://github.com/josteink/csharp-mode")

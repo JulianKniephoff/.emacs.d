@@ -153,11 +153,6 @@
       :config
       (evil-org-agenda-set-keys))))
 
-;; Path
-(use-package exec-path-from-shell
-  :config
-  (exec-path-from-shell-initialize))
-
 ;; Keep everything in one directory
 
 ;; Backups
