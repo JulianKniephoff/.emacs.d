@@ -143,47 +143,7 @@
       :config
       (evil-org-agenda-set-keys))))
 
-;; Keep everything in one directory
-
-;; Backups
-
-(use-package files
-  :config
-  ;; Allow multiple "nested" `.dir-locals.el` files
-  ;; Source: http://emacs.stackexchange.com/a/5537
-
-  (defun file-name-directory-nesting-helper (name previous-name accumulator)
-    (if (string= name previous-name)
-	accumulator         ; stop when names stop changing (at the top)
-      (file-name-directory-nesting-helper
-       (directory-file-name (file-name-directory name))
-       name
-       (cons name accumulator))))
-
-  (defun file-name-directory-nesting (name)
-    (file-name-directory-nesting-helper (expand-file-name name) "" ()))
-
-  (defun hack-dir-local-variables-chained-advice (orig)
-    "Apply dir-local settings from the whole directory hierarchy,
-from the top down."
-    (let ((original-buffer-file-name (buffer-file-name))
-	  (nesting (file-name-directory-nesting (or (buffer-file-name)
-						    default-directory))))
-      (unwind-protect
-	  (dolist (name nesting)
-	    ;; make it look like we're in a directory higher up in the
-	    ;; hierarchy; note that the file we're "visiting" does not
-	    ;; have to exist
-	    (setq buffer-file-name (expand-file-name "ignored" name))
-	    (funcall orig))
-	;; cleanup
-	(setq buffer-file-name original-buffer-file-name))))
-
-  (advice-add 'hack-dir-local-variables :around
-	      #'hack-dir-local-variables-chained-advice))
-
 ;; Remember cursor position accross sessions
-
 (use-package saveplace
   :config
   (setq save-place-file (expand-file-name "save-place" user-emacs-directory))
