@@ -149,16 +149,6 @@
 
 (use-package files
   :config
-  (setq backup-directory-alist
-	`((".*" . ,(file-name-as-directory
-		    (expand-file-name "backups"
-				      user-emacs-directory)))))
-  (let ((auto-save-directory (expand-file-name "auto-save" user-emacs-directory)))
-    ;; Ensure the auto-save directory exists
-    (mkdir auto-save-directory 'ignore-existing)
-    (setq auto-save-file-name-transforms
-	  `((".*" ,(file-name-as-directory auto-save-directory) t))))
-
   ;; Allow multiple "nested" `.dir-locals.el` files
   ;; Source: http://emacs.stackexchange.com/a/5537
 

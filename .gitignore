@@ -2,14 +2,10 @@
 /default.el
 /customize.el
 
-/auto-save-list
 /bookmarks
-/backups
 /save-place
 /ido.last
 /.org-id-locations
-/auto-save
-/sessions
 /elpa
 /eshell
 /history
