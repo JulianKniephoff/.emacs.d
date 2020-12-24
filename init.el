@@ -273,7 +273,12 @@
 ;; LaTeX
 
 (use-package perl-mode
-  :mode "\\`.?latexmkrc\\'")
+  :mode "/.?latexmkrc\\'")
+
+;; File types
+
+(use-package cask-mode
+  :mode "/Cask\\'")
 
 ;; Load Customizations
 
