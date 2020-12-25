@@ -280,6 +280,12 @@
 (use-package cask-mode
   :mode "/Cask\\'")
 
+(use-package dockerfile-mode
+  :mode "/Dockerfile\\'")
+
+(use-package yaml-mode
+  :mode "\\.ya?ml\\'")
+
 ;; Load Customizations
 
 ;; Customize
