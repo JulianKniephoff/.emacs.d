@@ -39,9 +39,9 @@
     :defer t
     :config
     (defun jk/prevent-whitespace-mode-for-magit ()
-      (not (derived-mode-p 'magit-mode)))
-    (add-function :before-while whitespace-enable-predicate
-		  'jk/prevent-whitespace-mode-for-magit)))
+      (not (derived-mode-p #'magit-mode)))
+    (advice-add #'whitespace-enable-predicate :before-while
+		#'jk/prevent-whitespace-mode-for-magit)))
 
 ;; Long lines
 
@@ -54,8 +54,8 @@
     (if (> (window-width) (or fci-rule-column fill-column))
 	(fci-mode 1)
       (fci-mode 0)))
-  (add-hook 'after-change-major-mode-hook 'auto-fci-mode)
-  (add-hook 'window-configuration-change-hook 'auto-fci-mode)
+  (add-hook 'after-change-major-mode-hook #'auto-fci-mode)
+  (add-hook 'window-configuration-change-hook #'auto-fci-mode)
 
   ;; Wrapping
 
@@ -65,7 +65,7 @@
 ;; Magit
 
 (use-package magit
-  :bind ([?\C-c ?g] . magit-status)
+  :bind ([?\C-c ?g] . #'magit-status)
   :config
   (setq magit-last-seen-setup-instructions "1.4.0"))
 
@@ -78,12 +78,12 @@
 
   (use-package magit-extras
     :bind (:map ido-common-completion-map
-		([?\C-x ?g] . ido-enter-magit-status)))
+		([?\C-x ?g] . #'ido-enter-magit-status)))
 
   (use-package magit-utils
     :after magit
     :config
-    (setq magit-completing-read-function 'magit-ido-completing-read))
+    (setq magit-completing-read-function #'magit-ido-completing-read))
 
   (use-package ido-vertical-mode
     :config
@@ -128,10 +128,10 @@
   (use-package evil-integration
     :bind
     (:map evil-motion-state-map
-	  ([?g ? ] . evil-ace-jump-char-mode)
-	  ([?g ?	] . evil-ace-jump-char-to-mode)
-	  ([?g ?b] . evil-ace-jump-word-mode)
-	  ([?g return] . evil-ace-jump-line-mode)))
+	  ([?g ? ] . #'evil-ace-jump-char-mode)
+	  ([?g ?	] . #'evil-ace-jump-char-to-mode)
+	  ([?g ?b] . #'evil-ace-jump-word-mode)
+	  ([?g return] . #'evil-ace-jump-line-mode)))
 
   (use-package evil-org
     :after org
@@ -158,7 +158,7 @@
 
 (use-package org
   :mode ("\\.org\\'" . org-mode)
-  :bind ([?\C-c ?l] . org-store-link)
+  :bind ([?\C-c ?l] . #'org-store-link)
   :config
 
   (use-package org-inlinetask)
@@ -189,7 +189,7 @@
 	;; Highlighting in code blocks
 	org-src-fontify-natively t)
 
-  (advice-add 'org-latex-preview :before
+  (advice-add #'org-latex-preview :before
 	      (lambda (&rest _)
 		(setq org-format-latex-options
 		      (plist-put org-format-latex-options
@@ -228,7 +228,7 @@
     :config
     (setq lsp-rust-server 'rust-analyzer))
 
-  (add-hook 'rust-mode-hook 'jk/no-tabs)
+  (add-hook 'rust-mode-hook #'jk/no-tabs)
 
   (use-package cargo
     :hook (rust-mode-hook . cargo-minor-mode)))
@@ -238,7 +238,7 @@
 (use-package ruby-mode
   :mode "\\.rb\\'"
   :config
-  (add-hook 'ruby-mode-hook 'jk/no-tabs))
+  (add-hook 'ruby-mode-hook #'jk/no-tabs))
 
 ;; Lisp
 
@@ -268,7 +268,7 @@
     (when (string= (file-name-nondirectory buffer-file-name) "package.json")
       (setq indent-tabs-mode nil)
       (set (make-local-variable 'js-indent-level) 2)))
-  (add-hook 'json-mode-hook 'jk/package-json-hook))
+  (add-hook 'json-mode-hook #'jk/package-json-hook))
 
 ;; LaTeX
 
