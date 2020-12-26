@@ -13,7 +13,7 @@
 ;; Load site specific stuff, e.g. values for the variables above
 (load (expand-file-name "site" user-emacs-directory) 'noerror)
 
-(setq package-user-dir "~/.config/emacs/.cask/27.1/elpa")
+(setq package-user-dir (expand-file-name ".cask/27.1/elpa" user-emacs-directory))
 
 ;; Source: https://github.com/nilcons/emacs-use-package-fast/blob/a9cc00c/README.md#the-missing-utility-steal-load-path-from-packageel
 ;;;;;;;;;;;;;;;;;; PULL REQUEST STARTS HERE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
