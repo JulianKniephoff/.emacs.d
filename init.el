@@ -199,6 +199,7 @@
   :defer t
   :config
   (use-package pallet
+    :commands pallet-mode
     :config
     (pallet-mode)))
 
