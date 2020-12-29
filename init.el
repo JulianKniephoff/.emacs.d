@@ -126,6 +126,8 @@
 
   ;; Ace integration
   (use-package evil-integration
+    :config
+    (use-package ace-jump-mode)
     :bind
     (:map evil-motion-state-map
 	  ([?g ? ] . #'evil-ace-jump-char-mode)
