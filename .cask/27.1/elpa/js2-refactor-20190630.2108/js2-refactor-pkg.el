@@ -5,7 +5,13 @@
     (dash "1.0.0")
     (s "1.0.0")
     (yasnippet "0.9.0.1"))
-  :commit "d4c40b5fc86d3edd7c6a7d83ac86483ee1cb7a28")
+  :commit "d4c40b5fc86d3edd7c6a7d83ac86483ee1cb7a28" :authors
+  (("Magnar Sveen" . "magnars@gmail.com")
+   ("Nicolas Petton" . "nicolas@petton.fr"))
+  :maintainer
+  ("Magnar Sveen" . "magnars@gmail.com")
+  :keywords
+  ("conveniences"))
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:

@@ -6,7 +6,7 @@
 ;;          Magnar Sveen <magnars@gmail.com>
 ;; Version: 1.2.0
 ;; Package-Version: 20201215.40
-;; Package-Commit: f2c0e0d3c19dd30268b5fc08163e0436914e24ba
+;; Package-Commit: e47ecb822f6bb10c196ca00030b0e6f5e176495e
 ;; Package-Requires: ((dash "2.0.0") (emacs "24"))
 ;; Keywords: extensions, lisp
 

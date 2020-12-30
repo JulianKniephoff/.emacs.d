@@ -1,8 +1,6 @@
 (define-package "lua-mode" "20201110.1250" "a major-mode for editing Lua scripts"
   '((emacs "24.3"))
-  :commit "d2ff3045b9694293a302fa60d7bd5d97f2673156" :keywords
-  ("languages" "processes" "tools")
-  :authors
+  :commit "d2ff3045b9694293a302fa60d7bd5d97f2673156" :authors
   (("2011-2013 immerrr" . "immerrr+lua@gmail.com")
    ("2010-2011 Reuben Thomas" . "rrt@sc3d.org")
    ("2006 Juergen Hoetzel" . "juergen@hoetzel.info")
@@ -15,6 +13,8 @@
    ("Aaron Smith" . "aaron-lua@gelatinous.com"))
   :maintainer
   ("2011-2013 immerrr" . "immerrr+lua@gmail.com")
+  :keywords
+  ("languages" "processes" "tools")
   :url "http://immerrr.github.com/lua-mode")
 ;; Local Variables:
 ;; no-byte-compile: t
