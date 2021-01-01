@@ -1,0 +1,2 @@
+;;; Generated package description from /home/jules/.config/emacs/.cask/27.1/elpa/pkgbuild-mode-20201230.1310/pkgbuild-mode.el  -*- no-byte-compile: t -*-
+(define-package "pkgbuild-mode" "20201230.1310" "Interface to the ArchLinux package manager" '((emacs "25.1")) :commit "284c78151a73b4813e8d0ff329456826a9fb5622" :authors '(("Juergen Hoetzel" . "juergen@hoetzel.info")) :maintainer '("Juergen Hoetzel" . "juergen@hoetzel.info") :keywords '("languages") :url "https://github.com/juergenhoetzel/pkgbuild-mode")

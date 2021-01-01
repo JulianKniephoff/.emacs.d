@@ -1686,6 +1686,14 @@ list of message:// links to flagged mail after heading.
 
 ;;;***
 
+;;;### (autoloads "actual autoloads are elsewhere" "org-mobile" "org-mobile.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-mobile.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-mobile" '("org-mobile-")))
+
+;;;***
+
 ;;;### (autoloads nil "org-mouse" "org-mouse.el" (0 0 0 0))
 ;;; Generated autoloads from org-mouse.el
 
@@ -1697,6 +1705,14 @@ list of message:// links to flagged mail after heading.
 ;;; Generated autoloads from org-notify.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-notify" '("org-notify-")))
+
+;;;***
+
+;;;### (autoloads "actual autoloads are elsewhere" "org-num" "org-num.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-num.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-num" '("org-num-")))
 
 ;;;***
 
@@ -1740,10 +1756,26 @@ With a double prefix arg \\[universal-argument] \\[universal-argument], open the
 
 ;;;***
 
+;;;### (autoloads "actual autoloads are elsewhere" "org-plot" "org-plot.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-plot.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-plot" '("org-plot")))
+
+;;;***
+
 ;;;### (autoloads nil "org-protocol" "org-protocol.el" (0 0 0 0))
 ;;; Generated autoloads from org-protocol.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-protocol" '("org-protocol-")))
+
+;;;***
+
+;;;### (autoloads "actual autoloads are elsewhere" "org-refile" "org-refile.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-refile.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-refile" '("org-")))
 
 ;;;***
 
@@ -1860,10 +1892,26 @@ Open A Dired buffer with unused screenshots marked" t nil)
 
 ;;;***
 
+;;;### (autoloads "actual autoloads are elsewhere" "org-table" "org-table.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-table.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-table" '("org")))
+
+;;;***
+
 ;;;### (autoloads nil "org-tempo" "org-tempo.el" (0 0 0 0))
 ;;; Generated autoloads from org-tempo.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-tempo" '("org-tempo-")))
+
+;;;***
+
+;;;### (autoloads "actual autoloads are elsewhere" "org-timer" "org-timer.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-timer.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-timer" '("org-timer-")))
 
 ;;;***
 

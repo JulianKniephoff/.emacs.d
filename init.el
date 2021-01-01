@@ -121,9 +121,6 @@
     :config
     (evil-select-search-module 'evil-search-module 'evil-search))
 
-  (use-package evil-magit
-    :after magit)
-
   ;; Ace integration
   (use-package evil-integration
     :config
