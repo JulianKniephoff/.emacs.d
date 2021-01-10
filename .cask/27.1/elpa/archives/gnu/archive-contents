@@ -131,7 +131,7 @@
 	   ("John Wiegley" . "jwiegley@gmail.com"))
 	  (:keywords "async"))])
  (auctex .
-	 [(13 0 1)
+	 [(13 0 3)
 	  ((emacs
 	    (24 3))
 	   (cl-lib
@@ -652,9 +652,9 @@
 	      (:maintainer "Markus Triska" . "triska@metalevel.at")
 	      (:url . "https://www.metalevel.at/ediprolog/"))])
  (eev .
-      [(20201013)
+      [(20210102)
        ((emacs
-	 (24 1)))
+	 (24 4)))
        "Support for e-scripts (eepitch blocks, elisp hyperlinks, etc)" tar
        ((:url . "http://angg.twu.net/#eev")
 	(:maintainer "Eduardo Ochs" . "eduardoochs@gmail.com")
@@ -973,12 +973,12 @@
 	   ("Thien-Thi Nguyen" . "ttn@gnu.org"))
 	  (:keywords "games" "processes"))])
  (gnus-mock .
-	    [(0 4 5)
+	    [(0 5)
 	     nil "Mock Gnus installation for testing" tar
 	     ((:maintainer "Eric Abrahamsen" . "eric@ericabrahamsen.net")
 	      (:authors
 	       ("Eric Abrahamsen" . "eric@ericabrahamsen.net"))
-	      (:url . "http://elpa.gnu.org/packages/gnus-mock.html"))])
+	      (:url . "https://elpa.gnu.org/packages/gnus-mock.html"))])
  (gpastel .
 	  [(0 5 0)
 	   ((emacs
@@ -2469,15 +2469,15 @@
 	       ("Pierre Neidhardt" . "mail@ambrevar.xyz"))
 	      (:keywords "news" "hypermedia" "blog" "feed" "rss" "atom"))])
  (websocket .
-	    [(1 12)
+	    [(1 13)
 	     ((cl-lib
 	       (0 5)))
 	     "Emacs WebSocket client and server" tar
-	     ((:maintainer "Andrew Hyatt" . "ahyatt@gmail.com")
+	     ((:url . "https://github.com/ahyatt/emacs-websocket")
+	      (:maintainer "Andrew Hyatt" . "ahyatt@gmail.com")
 	      (:authors
 	       ("Andrew Hyatt" . "ahyatt@gmail.com"))
-	      (:keywords "communication" "websocket" "server")
-	      (:url . "http://elpa.gnu.org/packages/websocket.html"))])
+	      (:keywords "communication" "websocket" "server"))])
  (which-key .
 	    [(3 3 2)
 	     ((emacs

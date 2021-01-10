@@ -8,11 +8,11 @@
     (db "0.0.5")
     (kv "0.0.17"))
   :commit "29ef0f51a65a24fca7fdcdb4140d2e4556e4bb29" :authors
-  (("Nic Ferrier" . "nferrier@ferrier.me.uk"))
+  '(("Nic Ferrier" . "nferrier@ferrier.me.uk"))
   :maintainer
-  ("GitHub user \"Jcaw\"")
+  '("GitHub user \"Jcaw\"")
   :keywords
-  ("lisp" "http" "hypermedia"))
+  '("lisp" "http" "hypermedia"))
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:

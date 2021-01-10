@@ -6,11 +6,11 @@
     (company "0.9.0")
     (json-process-client "0.2.0"))
   :commit "b870d1ed6b350d3753e7a148c61c373ca76ba78a" :authors
-  (("Nicolas Petton" . "nicolas@petton.fr"))
+  '(("Nicolas Petton" . "nicolas@petton.fr"))
   :maintainer
-  ("Nicolas Petton" . "nicolas@petton.fr")
+  '("Nicolas Petton" . "nicolas@petton.fr")
   :keywords
-  ("tools" "javascript")
+  '("tools" "javascript")
   :url "https://github.com/NicolasPetton/indium")
 ;; Local Variables:
 ;; no-byte-compile: t

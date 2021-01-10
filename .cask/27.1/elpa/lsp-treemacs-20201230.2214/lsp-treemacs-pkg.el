@@ -7,11 +7,11 @@
     (treemacs "2.5")
     (lsp-mode "6.0"))
   :commit "64e375fcc700d4d47cf52ad912e6863d479e3bfa" :authors
-  (("Ivan Yonchovski"))
+  '(("Ivan Yonchovski"))
   :maintainer
-  ("Ivan Yonchovski")
+  '("Ivan Yonchovski")
   :keywords
-  ("languages")
+  '("languages")
   :url "https://github.com/emacs-lsp/lsp-treemacs")
 ;; Local Variables:
 ;; no-byte-compile: t

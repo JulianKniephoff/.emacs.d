@@ -8,11 +8,11 @@
     (package-build "1.2")
     (ansi "0.4.1"))
   :commit "b0afdf94c0a2424db86b264bcac175b75c4395b3" :authors
-  (("Johan Andersson" . "johan.rejeep@gmail.com"))
+  '(("Johan Andersson" . "johan.rejeep@gmail.com"))
   :maintainer
-  ("Johan Andersson" . "johan.rejeep@gmail.com")
+  '("Johan Andersson" . "johan.rejeep@gmail.com")
   :keywords
-  ("speed" "convenience")
+  '("speed" "convenience")
   :url "http://github.com/cask/cask")
 ;; Local Variables:
 ;; no-byte-compile: t
