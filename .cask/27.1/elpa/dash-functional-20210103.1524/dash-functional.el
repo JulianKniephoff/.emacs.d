@@ -6,7 +6,7 @@
 ;;          Magnar Sveen <magnars@gmail.com>
 ;; Version: 1.2.0
 ;; Package-Version: 20210103.1524
-;; Package-Commit: 3694ae930577a233e4f094d2f83db0333395e8f7
+;; Package-Commit: 4fb9613314f4ea07b1f6965799bd4a044703accd
 ;; Package-Requires: ((emacs "24") (dash "2.0.0"))
 ;; Keywords: extensions, lisp
 ;; Homepage: https://github.com/magnars/dash.el
