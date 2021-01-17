@@ -1071,21 +1071,15 @@ refresh because that also automatically moves to the next change.
 
      Calls git synchronously with ARGS and then refreshes.
 
- -- Function: magit-run-git-with-input input &rest args
+ -- Function: magit-run-git-with-input &rest args
 
-     Calls git synchronously with ARGS and sends it INPUT on standard
-     input.
+     Calls git synchronously with ARGS and sends it the content of the
+     current buffer on standard input.
 
-     INPUT should be a buffer or the name of an existing buffer.  The
-     content of that buffer is used as the process’s standard input.
-     After the process returns a refresh is performed.
-
-     As a special case, INPUT may also be nil.  In that case the content
-     of the current buffer is used as standard input and *no* refresh is
-     performed.
-
-     This function actually runs git asynchronously.  But then it waits
-     for the process to return, so the function itself is synchronous.
+     If the current buffer’s ‘default-directory’ is on a remote
+     filesystem, this function actually runs git asynchronously.  But
+     then it waits for the process to return, so the function itself is
+     synchronous.
 
  -- Function: magit-run-git-with-logfile file &rest args
 
@@ -1136,7 +1130,7 @@ refresh because that also automatically moves to the next change.
      current when this function was called (if it is a Magit buffer and
      still alive), as well as the respective Magit status buffer.
 
- -- Function: magit-start-git &rest args
+ -- Function: magit-start-git input &rest args
 
      Start Git, prepare for refresh, and return the process object.
 
@@ -3230,7 +3224,7 @@ Appendix E Function Index
                                                               (line  17)
 * magit-get-section:                     Matching Sections.   (line  16)
 * magit-git:                             Calling Git for Effect.
-                                                              (line  65)
+                                                              (line  59)
 * magit-git-exit-code:                   Getting a Value from Git.
                                                               (line  10)
 * magit-git-failure:                     Getting a Value from Git.
@@ -3252,7 +3246,7 @@ Appendix E Function Index
 * magit-git-true:                        Getting a Value from Git.
                                                               (line  24)
 * magit-git-wash:                        Calling Git for Effect.
-                                                              (line  70)
+                                                              (line  64)
 * magit-hunk-set-window-start:           Section Movement.    (line  51)
 * magit-ido-completing-read:             Support for Completion Frameworks.
                                                               (line  48)
@@ -3349,13 +3343,13 @@ Appendix E Function Index
 * magit-run-git:                         Calling Git for Effect.
                                                               (line  36)
 * magit-run-git-async:                   Calling Git for Effect.
-                                                              (line  80)
+                                                              (line  74)
 * magit-run-git-with-editor:             Calling Git for Effect.
-                                                              (line  93)
+                                                              (line  87)
 * magit-run-git-with-input:              Calling Git for Effect.
                                                               (line  40)
 * magit-run-git-with-logfile:            Calling Git for Effect.
-                                                              (line  56)
+                                                              (line  50)
 * magit-save-window-configuration:       Switching Buffers.   (line  89)
 * magit-section-case:                    Matching Sections.   (line  71)
 * magit-section-hide:                    Section Visibility.  (line  49)
@@ -3369,9 +3363,9 @@ Appendix E Function Index
 * magit-section-toggle-children:         Section Visibility.  (line  68)
 * magit-section-value-if:                Matching Sections.   (line  61)
 * magit-start-git:                       Calling Git for Effect.
-                                                              (line 105)
+                                                              (line  99)
 * magit-start-process:                   Calling Git for Effect.
-                                                              (line 124)
+                                                              (line 118)
 * magit-stashes-maybe-update-stash-buffer: Section Movement.  (line 106)
 * magit-status-maybe-update-blob-buffer: Section Movement.    (line 100)
 * magit-status-maybe-update-revision-buffer: Section Movement.
@@ -3532,7 +3526,7 @@ Appendix F Variable Index
 * magit-prefix-use-buffer-arguments:     Transient Arguments and Buffer Variables.
                                                               (line  64)
 * magit-process-raise-error:             Calling Git for Effect.
-                                                              (line 151)
+                                                              (line 145)
 * magit-pull-or-fetch:                   Fetching.            (line  59)
 * magit-reflog-margin:                   Reflog.              (line  23)
 * magit-refresh-args:                    Refreshing Buffers.  (line  55)
@@ -3577,7 +3571,7 @@ Appendix F Variable Index
 * magit-status-sections-hook:            Status Sections.     (line  10)
 * magit-submodule-list-columns:          Listing Submodules.  (line  21)
 * magit-this-process:                    Calling Git for Effect.
-                                                              (line 146)
+                                                              (line 140)
 * magit-uniquify-buffer-names:           Naming Buffers.      (line  74)
 * magit-unstage-committed:               Staging and Unstaging.
                                                               (line  56)

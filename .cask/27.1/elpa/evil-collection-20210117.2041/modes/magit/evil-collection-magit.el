@@ -39,8 +39,15 @@
 
 (defvar magit-blame-mode-map)
 
-(defconst evil-collection-magit-maps '(magit-blame-mode-map
-                                       magit-blame-read-only-mode-map))
+(defconst evil-collection-magit-maps '(evil-collection-magit-toggle-text-minor-mode-map
+                                       magit-blame-mode-map
+                                       magit-blame-read-only-mode-map
+                                       magit-blob-mode-map
+                                       magit-log-mode-map
+                                       magit-mode-map
+                                       magit-repolist-mode-map
+                                       magit-status-mode-map
+                                       magit-submodule-list-mode-map))
 
 (defcustom evil-collection-magit-use-y-for-yank t
   "When non nil, replace \"y\" for `magit-show-refs-popup' with
@@ -427,13 +434,13 @@ denotes the original magit key for this command.")
 (add-hook 'magit-blame-mode-hook 'evil-normalize-keymaps)
 
 (evil-set-initial-state 'magit-repolist-mode 'motion)
-(evil-define-key 'motion magit-repolist-mode-map
+(evil-collection-define-key 'motion 'magit-repolist-mode-map
   (kbd "RET") 'magit-repolist-status
   (kbd "gr")  'magit-list-repositories)
 (add-hook 'magit-repolist-mode-hook 'evil-normalize-keymaps)
 
 (evil-set-initial-state 'magit-submodule-list-mode 'motion)
-(evil-define-key 'motion magit-submodule-list-mode-map
+(evil-collection-define-key 'motion 'magit-submodule-list-mode-map
   (kbd "RET") 'magit-repolist-status
   (kbd "gr")  'magit-list-submodules)
 (add-hook 'magit-submodule-list-mode-hook 'evil-normalize-keymaps)
@@ -614,10 +621,11 @@ go back to evil-collection-magit behavior."
 using `evil-collection-magit-toggle-text-mode'"
   :keymap (make-sparse-keymap))
 
-(evil-define-key 'normal evil-collection-magit-toggle-text-minor-mode-map
+(evil-collection-define-key 'normal
+  'evil-collection-magit-toggle-text-minor-mode-map
   "\C-t" 'evil-collection-magit-toggle-text-mode
   "\\"   'evil-collection-magit-toggle-text-mode)
-(evil-define-key evil-collection-magit-state magit-mode-map
+(evil-collection-define-key evil-collection-magit-state 'magit-mode-map
   "\C-t" 'evil-collection-magit-toggle-text-mode
   "\\"   'evil-collection-magit-toggle-text-mode)
 
