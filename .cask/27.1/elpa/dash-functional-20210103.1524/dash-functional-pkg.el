@@ -1,2 +1,2 @@
 ;;; Generated package description from /home/jules/.config/emacs/.cask/27.1/elpa/dash-functional-20210103.1524/dash-functional.el  -*- no-byte-compile: t -*-
-(define-package "dash-functional" "20210103.1524" "Collection of useful combinators for Emacs Lisp" '((emacs "24") (dash "2.0.0")) :commit "f61769dd3a29307017f990fc573431c9abebb0d5" :keywords '("extensions" "lisp") :url "https://github.com/magnars/dash.el")
+(define-package "dash-functional" "20210103.1524" "Collection of useful combinators for Emacs Lisp" '((emacs "24") (dash "2.0.0")) :commit "8bd28878f48cd34bb88ed86cdfff845efcc14b52" :keywords '("extensions" "lisp") :url "https://github.com/magnars/dash.el")
