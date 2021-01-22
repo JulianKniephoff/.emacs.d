@@ -13,8 +13,6 @@
 ;; Load site specific stuff, e.g. values for the variables above
 (load (expand-file-name "site" user-emacs-directory) 'noerror)
 
-(setq package-user-dir (expand-file-name ".cask/27.1/elpa" user-emacs-directory))
-
 ;; Source: https://github.com/nilcons/emacs-use-package-fast/blob/a9cc00c/README.md#the-missing-utility-steal-load-path-from-packageel
 ;;;;;;;;;;;;;;;;;; PULL REQUEST STARTS HERE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Disable package initialize after us.  We either initialize it
@@ -28,6 +26,9 @@
 ;; Add the macro generated list of package.el loadpaths to load-path.
 (mapc (lambda (add) (add-to-list 'load-path add))
       (eval-when-compile
+	;; jules: The following two lines adapt this to Cask
+	(require 'package)
+	(setq package-user-dir (expand-file-name ".cask/27.1/elpa" user-emacs-directory))
 	(package-initialize)
 	(let ((package-user-dir-real (file-truename package-user-dir)))
 	  ;; The reverse is necessary, because outside we mapc
@@ -54,5 +55,5 @@
 
 (defun jk/get-font-size ()
   (face-attribute 'default :height))
-(setq jk/original-font-size (jk/get-font-size))
+(defvar jk/original-font-size (jk/get-font-size))
 (set-face-attribute 'default nil :height 240)
