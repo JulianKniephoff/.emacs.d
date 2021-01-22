@@ -286,6 +286,9 @@
 (use-package yaml-mode
   :mode "\\.ya?ml\\'")
 
+(use-package ledger-mode
+  :mode "\\.ledger\\'")
+
 ;; Load Customizations
 
 ;; Customize
