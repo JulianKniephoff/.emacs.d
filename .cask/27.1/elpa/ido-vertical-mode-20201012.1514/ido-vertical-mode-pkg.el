@@ -1,2 +1,0 @@
-;;; Generated package description from /home/jules/.config/emacs/.cask/27.1/elpa/ido-vertical-mode-20201012.1514/ido-vertical-mode.el  -*- no-byte-compile: t -*-
-(define-package "ido-vertical-mode" "20201012.1514" "Makes ido-mode display vertically." 'nil :commit "3a61d5183eebcdfcdeb783fe4664363270c81d8d" :authors '(("Steven Degutis")) :maintainer '("Christopher Reichert" . "creichert07@gmail.com") :keywords '("convenience") :url "https://github.com/creichert/ido-vertical-mode.el")
