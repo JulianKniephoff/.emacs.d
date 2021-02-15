@@ -1,2 +1,2 @@
 ;;; Generated package description from /home/jules/.config/emacs/.cask/27.1/elpa/clojure-mode-20201126.1558/clojure-mode.el  -*- no-byte-compile: t -*-
-(define-package "clojure-mode" "20201126.1558" "Major mode for Clojure code" '((emacs "25.1")) :commit "53ef8ac076ae7811627fbdd408e519ab7fca9a0b" :maintainer '("Bozhidar Batsov" . "bozhidar@batsov.com") :keywords '("languages" "clojure" "clojurescript" "lisp") :url "http://github.com/clojure-emacs/clojure-mode")
+(define-package "clojure-mode" "20201126.1558" "Major mode for Clojure code" '((emacs "25.1")) :commit "f26379bc18b089e794d4c3c3a2756c8c9ec0882f" :maintainer '("Bozhidar Batsov" . "bozhidar@batsov.com") :keywords '("languages" "clojure" "clojurescript" "lisp") :url "http://github.com/clojure-emacs/clojure-mode")
