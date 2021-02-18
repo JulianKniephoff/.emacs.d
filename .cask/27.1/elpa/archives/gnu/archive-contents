@@ -454,13 +454,15 @@
 	      ("João Távora" . "joaotavora@gmail.com"))
 	     (:maintainer "João Távora" . "joaotavora@gmail.com"))])
  (dash .
-       [(2 12 0)
-	nil "A modern list library for Emacs" tar
-	((:maintainer "Magnar Sveen" . "magnars@gmail.com")
+       [(2 18 0)
+	((emacs
+	  (24)))
+	"A modern list library for Emacs" tar
+	((:url . "https://github.com/magnars/dash.el")
+	 (:maintainer "Magnar Sveen" . "magnars@gmail.com")
 	 (:authors
 	  ("Magnar Sveen" . "magnars@gmail.com"))
-	 (:keywords "lists")
-	 (:url . "http://elpa.gnu.org/packages/dash.html"))])
+	 (:keywords "extensions" "lisp"))])
  (dbus-codegen .
 	       [(0 1)
 		((cl-lib
@@ -1956,7 +1958,7 @@
 	      ("Stefan Monnier" . "monnier@iro.umontreal.ca"))
 	     (:maintainer "Stefan Monnier" . "monnier@iro.umontreal.ca"))])
  (rt-liberation .
-		[(2 1)
+		[(2 2)
 		 nil "Emacs interface to RT" tar
 		 ((:url . "http://www.nongnu.org/rtliber/")
 		  (:maintainer "Yoni Rabkin" . "yrk@gnu.org")
@@ -2587,7 +2589,7 @@
 	 ("Thien-Thi Nguyen" . "ttn@gnu.org"))
 	(:keywords "multimedia" "xpm"))])
  (xr .
-     [(1 20)
+     [(1 21)
       ((emacs
 	(26 1)))
       "Convert string regexp to rx notation" tar
