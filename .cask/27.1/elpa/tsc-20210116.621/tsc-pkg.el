@@ -1,6 +1,6 @@
 (define-package "tsc" "20210116.621" "Core Tree-sitter APIs"
   '((emacs "25.1"))
-  :commit "a811525932756a1fbfb69043d42bedcd483e50fa" :authors
+  :commit "1d44e10cf93f6b814fb0a2a69e689537edd530d7" :authors
   '(("Tuấn-Anh Nguyễn" . "ubolonton@gmail.com")
     ("Jorge Javier Araya Navarro" . "jorgejavieran@yahoo.com.mx"))
   :maintainer
