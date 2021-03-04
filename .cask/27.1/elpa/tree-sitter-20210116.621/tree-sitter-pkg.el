@@ -1,7 +1,7 @@
 (define-package "tree-sitter" "20210116.621" "Incremental parsing system"
   '((emacs "25.1")
     (tsc "0.13.1"))
-  :commit "1d44e10cf93f6b814fb0a2a69e689537edd530d7" :authors
+  :commit "4742e5e7fbd676eeb7333c874640c054e2493f48" :authors
   '(("Tuấn-Anh Nguyễn" . "ubolonton@gmail.com"))
   :maintainer
   '("Tuấn-Anh Nguyễn" . "ubolonton@gmail.com")

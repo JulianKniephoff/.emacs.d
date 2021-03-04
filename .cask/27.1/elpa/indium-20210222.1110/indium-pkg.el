@@ -5,7 +5,7 @@
     (js2-refactor "0.9.0")
     (company "0.9.0")
     (json-process-client "0.2.0"))
-  :commit "32487a432d6c0728e1fd69db61c4a07b94bb5798" :authors
+  :commit "84322967099ad7a700dcd2f21fdd262a8354fe09" :authors
   '(("Nicolas Petton" . "nicolas@petton.fr"))
   :maintainer
   '("Nicolas Petton" . "nicolas@petton.fr")
