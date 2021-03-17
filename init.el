@@ -289,6 +289,9 @@
 (use-package ledger-mode
   :mode "\\.ledger\\'")
 
+(use-package markdown-mode
+  :mode "\\.md\\'")
+
 ;; Load Customizations
 
 ;; Customize
