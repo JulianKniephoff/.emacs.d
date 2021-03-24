@@ -1,8 +1,11 @@
 #!/bin/sh
 
-ssh-add ~/.ssh/github
-rm -rf .cask
-cask
+ssh-add -l |
+	grep -q $(ssh-keygen -lf ~/.ssh/github | cut -d' ' -f2) ||
+	ssh-add ~/.ssh/github
+
+rm -rf .cask || exit 1
+cask || cask || exit 1
 ./scripts/recompile.sh
 git add .cask
 git commit -m updates
