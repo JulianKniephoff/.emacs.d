@@ -28,7 +28,17 @@
       (eval-when-compile
 	;; jules: The following two lines adapt this to Cask
 	(require 'package)
-	(setq package-user-dir (expand-file-name ".cask/27.1/elpa" user-emacs-directory))
+	(setq package-user-dir
+	      (file-name-as-directory
+	       (expand-file-name
+		"elpa"
+		(file-name-as-directory
+		 (expand-file-name
+		  emacs-version
+		  (file-name-as-directory
+		   (expand-file-name
+		    ".cask"
+		    (file-name-as-directory user-emacs-directory))))))))
 	(package-initialize)
 	(let ((package-user-dir-real (file-truename package-user-dir)))
 	  ;; The reverse is necessary, because outside we mapc
