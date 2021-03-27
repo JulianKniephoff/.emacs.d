@@ -6,7 +6,9 @@ ssh-add -l |
 
 rm -rf .cask || exit 1
 cask || cask || exit 1
+
 ./scripts/recompile.sh
+
 git add .cask
 git commit -m updates
 git push
