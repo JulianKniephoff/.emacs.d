@@ -2889,15 +2889,13 @@ list of message:// links to flagged mail after heading.
 
 ;;;***
 
-;;;### (autoloads nil "org-macs" "org-macs.el" (0 0 0 0))
+;;;### (autoloads nil "org-macs" "org-macs.el" "b3bdd8cd35ef6e2c6cb68ae1b1fdfa58")
 ;;; Generated autoloads from org-macs.el
 
 (autoload 'org-load-noerror-mustsuffix "org-macs" "\
 Load FILE with optional arguments NOERROR and MUSTSUFFIX.
 
 \(fn FILE)" nil t)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-macs" '("org-")))
 
 ;;;***
 
@@ -2908,24 +2906,18 @@ Load FILE with optional arguments NOERROR and MUSTSUFFIX.
 
 ;;;***
 
-;;;### (autoloads nil "org-mobile" "org-mobile.el" (0 0 0 0))
+;;;### (autoloads nil "org-mobile" "org-mobile.el" "707620486fe498c539d1ce68daf5500a")
 ;;; Generated autoloads from org-mobile.el
 
 (autoload 'org-mobile-push "org-mobile" "\
 Push the current state of Org affairs to the target directory.
 This will create the index file, copy all agenda files there, and also
-create all custom agenda views, for upload to the mobile phone.
-
-\(fn)" t nil)
+create all custom agenda views, for upload to the mobile phone." t nil)
 
 (autoload 'org-mobile-pull "org-mobile" "\
 Pull the contents of `org-mobile-capture-file' and integrate them.
 Apply all flagged actions, flag entries to be flagged and then call an
-agenda view showing the flagged items.
-
-\(fn)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-mobile" '("org-mobile-")))
+agenda view showing the flagged items." t nil)
 
 ;;;***
 
@@ -2943,7 +2935,7 @@ agenda view showing the flagged items.
 
 ;;;***
 
-;;;### (autoloads nil "org-num" "org-num.el" (0 0 0 0))
+;;;### (autoloads nil "org-num" "org-num.el" "a685f7d11f639138ebe19dc0f815fb41")
 ;;; Generated autoloads from org-num.el
 
 (autoload 'org-num-default-format "org-num" "\
@@ -2955,14 +2947,12 @@ NUMBERING is a list of numbers.
 (autoload 'org-num-mode "org-num" "\
 Dynamic numbering of headlines in an Org buffer.
 
-If called interactively, enable Org-Num mode if ARG is positive, and
-disable it if ARG is zero or negative.  If called from Lisp,
-also enable the mode if ARG is omitted or nil, and toggle it
-if ARG is `toggle'; disable the mode otherwise.
+If called interactively, enable Org-Num mode if ARG is positive,
+and disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it if
+ARG is `toggle'; disable the mode otherwise.
 
 \(fn &optional ARG)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-num" '("org-num-")))
 
 ;;;***
 
@@ -3006,7 +2996,7 @@ With a double prefix arg \\[universal-argument] \\[universal-argument], open the
 
 ;;;***
 
-;;;### (autoloads nil "org-plot" "org-plot.el" (0 0 0 0))
+;;;### (autoloads nil "org-plot" "org-plot.el" "e15a096d7ccb96ba3135c3edd079bf0e")
 ;;; Generated autoloads from org-plot.el
 
 (autoload 'org-plot/gnuplot "org-plot" "\
@@ -3015,8 +3005,6 @@ If not given options will be taken from the +PLOT
 line directly before or after the table.
 
 \(fn &optional PARAMS)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-plot" '("org-plot")))
 
 ;;;***
 
@@ -3027,13 +3015,11 @@ line directly before or after the table.
 
 ;;;***
 
-;;;### (autoloads nil "org-refile" "org-refile.el" (0 0 0 0))
+;;;### (autoloads nil "org-refile" "org-refile.el" "6a50a09d289d68afeeaae93398449586")
 ;;; Generated autoloads from org-refile.el
 
 (autoload 'org-refile-copy "org-refile" "\
-Like `org-refile', but preserve the refiled subtree.
-
-\(fn)" t nil)
+Like `org-refile', but preserve the refiled subtree." t nil)
 
 (autoload 'org-refile "org-refile" "\
 Move the entry or entries at point to another heading.
@@ -3084,8 +3070,6 @@ This can be done with a `0' prefix (`C-0 C-c C-w') or a triple
 prefix argument (`C-u C-u C-u C-c C-w').
 
 \(fn &optional ARG DEFAULT-BUFFER RFLOC MSG)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-refile" '("org-")))
 
 ;;;***
 
