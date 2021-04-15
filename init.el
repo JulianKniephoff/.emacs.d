@@ -289,6 +289,9 @@
 (use-package ledger-mode
   :mode "\\.ledger\\'")
 
+(use-package beancount
+  :mode ("\\.beancount\\'" . beancount-mode))
+
 (use-package markdown-mode
   :mode "\\.md\\'")
 
