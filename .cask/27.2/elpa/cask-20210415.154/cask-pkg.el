@@ -7,7 +7,7 @@
     (cl-lib "0.3")
     (package-build "0")
     (ansi "0.4.1"))
-  :commit "e7d08217225a5c20cc4f68cf3e915d7d7ee634b5" :authors
+  :commit "0654cccbfe6e991b7f0cd79144cc4ba23f43c22a" :authors
   '(("Johan Andersson" . "johan.rejeep@gmail.com"))
   :maintainer
   '("Johan Andersson" . "johan.rejeep@gmail.com")
