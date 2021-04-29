@@ -4,7 +4,7 @@
     (git-commit "20200516")
     (transient "20200601")
     (with-editor "20200522"))
-  :commit "f883b62fedd42eaabace946336d61457211cc5ff" :authors
+  :commit "3fdf7e0da717d71e2ad0d71781bb2da090f51a5e" :authors
   '(("Marius Vollmer" . "marius.vollmer@gmail.com"))
   :maintainer
   '("Jonas Bernoulli" . "jonas@bernoul.li")
