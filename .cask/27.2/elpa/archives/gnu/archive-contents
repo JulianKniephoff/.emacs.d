@@ -581,15 +581,17 @@
 	       (:maintainer "Pierre Neidhardt" . "mail@ambrevar.xyz")
 	       (:url . "https://gitlab.com/Ambrevar/emacs-disk-usage"))])
  (dismal .
-	 [(1 5)
+	 [(1 5 2)
 	  ((cl-lib
-	    (0)))
+	    (0))
+	   (emacs
+	    (24 3)))
 	  "Dis Mode Ain't Lotus: Spreadsheet program Emacs" tar
 	  ((:maintainer "UnMaintainer" . "emacs-devel@gnu.org")
 	   (:authors
 	    (nil . "David Fox, fox@cs.nyu.edu")
 	    (nil . "Frank E. Ritter, ritter@cs.cmu.edu"))
-	   (:url . "http://elpa.gnu.org/packages/dismal.html"))])
+	   (:url . "https://elpa.gnu.org/packages/dismal.html"))])
  (djvu .
        [(1 1 1)
 	nil "Edit and view Djvu files via djvused" single
@@ -795,7 +797,7 @@
 		    ("Matthew L. Fidler" . "matthew.fidler@gmail.com"))
 		   (:keywords "convenience"))])
  (excorporate .
-	      [(0 9 6)
+	      [(1 0 0)
 	       ((emacs
 		 (24 1))
 		(cl-lib
@@ -1637,14 +1639,14 @@
 	      (:maintainer "Michael Heerdegen" . "michael_heerdegen@web.de")
 	      (:url . "https://github.com/michael-heerdegen/on-screen.el"))])
  (org .
-      [(9 4 5)
+      [(9 4 6)
        ((emacs
 	 (24 3)))
        "Outline-based notes management and organizer" tar
        ((:url . "https://orgmode.org")
 	(:maintainer "Bastien Guerry" . "bzg@gnu.org")
 	(:authors
-	 ("Carsten Dominik <carsten at orgmode dot org>"))
+	 ("Carsten Dominik" . "carsten.dominik@gmail.com"))
 	(:keywords "outlines" "hypermedia" "calendar" "wp"))])
  (org-edna .
 	   [(1 1 2)
@@ -2139,11 +2141,11 @@
 	     ("Michael R. Mauger" . "michael@mauger.com"))
 	    (:maintainer "Michael R. Mauger" . "michael@mauger.com"))])
  (shell-command+ .
-		 [(2 1 0)
+		 [(2 2 0)
 		  ((emacs
 		    (24 1)))
 		  "An extended shell-command" tar
-		  ((:url . "http://elpa.gnu.org/packages/shell-command+.html")
+		  ((:url . "https://git.sr.ht/~zge/bang")
 		   (:maintainer "Philip K." . "philipk@posteo.net")
 		   (:authors
 		    ("Philip K." . "philipk@posteo.net"))
@@ -2544,7 +2546,7 @@
 		  ("Wilson Snyder" . "wsnyder@wsnyder.org"))
 		 (:keywords "languages"))])
  (vertico .
-	  [(0 10)
+	  [(0 11)
 	   ((emacs
 	     (27 1)))
 	   "VERTical Interactive COmpletion" tar
