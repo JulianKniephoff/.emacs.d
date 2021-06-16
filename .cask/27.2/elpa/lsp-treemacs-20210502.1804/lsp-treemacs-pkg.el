@@ -5,7 +5,7 @@
     (ht "2.0")
     (treemacs "2.5")
     (lsp-mode "6.0"))
-  :commit "b07868740d6f7d364e496048cee00bce10a6ab33" :authors
+  :commit "f360d54fa68a00baec228d9582bc67c1a327d757" :authors
   '(("Ivan Yonchovski"))
   :maintainer
   '("Ivan Yonchovski")

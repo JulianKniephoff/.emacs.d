@@ -8,7 +8,7 @@
     (lsp-treemacs "0.1")
     (posframe "0.7.0")
     (ht "2.3"))
-  :commit "434784654e26daa7a8512ed57907829a043592d3" :authors
+  :commit "cc395e066755c7513d4862f5639f3d162b3bd30f" :authors
   '(("Ivan Yonchovski" . "yyoncho@gmail.com"))
   :maintainer
   '("Ivan Yonchovski" . "yyoncho@gmail.com")
