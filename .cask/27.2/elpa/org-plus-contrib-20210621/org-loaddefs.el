@@ -2889,13 +2889,15 @@ list of message:// links to flagged mail after heading.
 
 ;;;***
 
-;;;### (autoloads nil "org-macs" "org-macs.el" "b3bdd8cd35ef6e2c6cb68ae1b1fdfa58")
+;;;### (autoloads nil "org-macs" "org-macs.el" (0 0 0 0))
 ;;; Generated autoloads from org-macs.el
 
 (autoload 'org-load-noerror-mustsuffix "org-macs" "\
 Load FILE with optional arguments NOERROR and MUSTSUFFIX.
 
 \(fn FILE)" nil t)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-macs" '("org-")))
 
 ;;;***
 
@@ -2906,18 +2908,24 @@ Load FILE with optional arguments NOERROR and MUSTSUFFIX.
 
 ;;;***
 
-;;;### (autoloads nil "org-mobile" "org-mobile.el" "707620486fe498c539d1ce68daf5500a")
+;;;### (autoloads nil "org-mobile" "org-mobile.el" (0 0 0 0))
 ;;; Generated autoloads from org-mobile.el
 
 (autoload 'org-mobile-push "org-mobile" "\
 Push the current state of Org affairs to the target directory.
 This will create the index file, copy all agenda files there, and also
-create all custom agenda views, for upload to the mobile phone." t nil)
+create all custom agenda views, for upload to the mobile phone.
+
+\(fn)" t nil)
 
 (autoload 'org-mobile-pull "org-mobile" "\
 Pull the contents of `org-mobile-capture-file' and integrate them.
 Apply all flagged actions, flag entries to be flagged and then call an
-agenda view showing the flagged items." t nil)
+agenda view showing the flagged items.
+
+\(fn)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-mobile" '("org-mobile-")))
 
 ;;;***
 

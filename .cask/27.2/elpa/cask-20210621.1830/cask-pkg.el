@@ -1,4 +1,4 @@
-(define-package "cask" "20210528.1605" "Cask: Project management for package development"
+(define-package "cask" "20210621.1830" "Cask: Project management for package development"
   '((emacs "24.1")
     (s "1.8.0")
     (f "0.16.0")
@@ -7,7 +7,7 @@
     (cl-lib "0.3")
     (package-build "0")
     (ansi "0.4.1"))
-  :commit "daee4bec9c7d96a165366f7edeaa4616837bf432" :authors
+  :commit "9fbc15dfe8b0739082e7bbff65f226dfe74ac9dd" :authors
   '(("Johan Andersson" . "johan.rejeep@gmail.com"))
   :maintainer
   '("Johan Andersson" . "johan.rejeep@gmail.com")

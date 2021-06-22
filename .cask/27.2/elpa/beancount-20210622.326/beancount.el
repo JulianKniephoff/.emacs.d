@@ -5,7 +5,7 @@
 ;; Copyright (C) 2019 Daniele Nicolodi <daniele@grinta.net>
 
 ;; Version: 0
-;; Package-Version: 20210303.1652
+;; Package-Version: 20210622.326
 ;; Author: Martin Blais <blais@furius.ca>
 ;; Author: Stefan Monnier <monnier@iro.umontreal.ca>
 ;; Author: Daniele Nicolodi <daniele@grinta.net>
@@ -259,10 +259,10 @@ from the open directive for the relevant account."
     ;; Tags and links.
     (,(concat "\\#[" beancount-tag-chars "]*") . 'beancount-tag)
     (,(concat "\\^[" beancount-tag-chars "]*") . 'beancount-link)
-    ;; Number followed by currency not covered by previous rules.
-    (,(concat beancount-number-regexp "\\s-+" beancount-currency-regexp) . 'beancount-amount)
     ;; Accounts not covered by previous rules.
     (,beancount-account-regexp . 'beancount-account)
+    ;; Number followed by currency not covered by previous rules.
+    (,(concat beancount-number-regexp "\\s-+" beancount-currency-regexp) . 'beancount-amount)
     ))
 
 (defun beancount-tab-dwim (&optional arg)
