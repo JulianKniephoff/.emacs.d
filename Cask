@@ -23,7 +23,6 @@
 (depends-on "evil-org")
 (depends-on "evil-surround")
 (depends-on "fill-column-indicator")
-(depends-on "floobits")
 (depends-on "fsharp-mode")
 (depends-on "glsl-mode")
 (depends-on "haml-mode")
