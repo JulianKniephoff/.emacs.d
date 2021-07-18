@@ -1740,26 +1740,10 @@ With a double prefix arg \\[universal-argument] \\[universal-argument], open the
 
 ;;;***
 
-;;;### (autoloads "actual autoloads are elsewhere" "org-plot" "org-plot.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from org-plot.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-plot" '("org-plot")))
-
-;;;***
-
 ;;;### (autoloads nil "org-protocol" "org-protocol.el" (0 0 0 0))
 ;;; Generated autoloads from org-protocol.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-protocol" '("org-protocol-")))
-
-;;;***
-
-;;;### (autoloads "actual autoloads are elsewhere" "org-refile" "org-refile.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from org-refile.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-refile" '("org-")))
 
 ;;;***
 
@@ -1873,14 +1857,6 @@ Open A Dired buffer with unused screenshots marked" t nil)
 ;;; Generated autoloads from org-sudoku.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-sudoku" '("org-sudoku-")))
-
-;;;***
-
-;;;### (autoloads "actual autoloads are elsewhere" "org-table" "org-table.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from org-table.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-table" '("org")))
 
 ;;;***
 

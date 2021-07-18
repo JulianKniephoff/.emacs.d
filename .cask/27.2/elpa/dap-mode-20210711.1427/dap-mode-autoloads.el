@@ -41,6 +41,13 @@
 
 ;;;***
 
+;;;### (autoloads nil "dap-erlang" "dap-erlang.el" (0 0 0 0))
+;;; Generated autoloads from dap-erlang.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dap-erlang" '("dap-erlang--populate-start-file-args")))
+
+;;;***
+
 ;;;### (autoloads nil "dap-firefox" "dap-firefox.el" (0 0 0 0))
 ;;; Generated autoloads from dap-firefox.el
 
