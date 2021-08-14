@@ -3,7 +3,7 @@
     (dash "2.18.1")
     (transient "0.3.6")
     (with-editor "3.0.4"))
-  :commit "f6ccde31a3d47f7da46dd3d5856aa25e48ec2b43" :authors
+  :commit "e401bd4d39c1799d8689f116f066bb8a7c7e8899" :authors
   '(("Jonas Bernoulli" . "jonas@bernoul.li")
     ("Sebastian Wiesner" . "lunaryorn@gmail.com")
     ("Florian Ragwitz" . "rafl@debian.org")
