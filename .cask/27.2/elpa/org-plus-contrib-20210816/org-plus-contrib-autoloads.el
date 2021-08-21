@@ -1679,10 +1679,26 @@ list of message:// links to flagged mail after heading.
 
 ;;;***
 
+;;;### (autoloads "actual autoloads are elsewhere" "org-macs" "org-macs.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-macs.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-macs" '("org-")))
+
+;;;***
+
 ;;;### (autoloads nil "org-mairix" "org-mairix.el" (0 0 0 0))
 ;;; Generated autoloads from org-mairix.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-mairix" '("org-")))
+
+;;;***
+
+;;;### (autoloads "actual autoloads are elsewhere" "org-mobile" "org-mobile.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-mobile.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-mobile" '("org-mobile-")))
 
 ;;;***
 
@@ -1697,6 +1713,14 @@ list of message:// links to flagged mail after heading.
 ;;; Generated autoloads from org-notify.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-notify" '("org-notify-")))
+
+;;;***
+
+;;;### (autoloads "actual autoloads are elsewhere" "org-num" "org-num.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-num.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-num" '("org-num-")))
 
 ;;;***
 

@@ -7,7 +7,7 @@
     (spinner "1.7")
     (seq "2.22")
     (sesman "0.3.2"))
-  :commit "62cf3b036503d402ea7d27cfd2e535af62f7a421" :authors
+  :commit "7098a0dbec97c01e7a87f5354f8a8cbfc8f6ed0d" :authors
   '(("Tim King" . "kingtim@gmail.com")
     ("Phil Hagelberg" . "technomancy@gmail.com")
     ("Bozhidar Batsov" . "bozhidar@batsov.dev")
