@@ -6,7 +6,6 @@
 
 ;; Version: 0
 ;; Package-Version: 20210801.1446
-;; Package-Commit: 5be04a37d6a189f1680cb47d022a85d9faeba8fc
 ;; Author: Martin Blais <blais@furius.ca>
 ;; Author: Stefan Monnier <monnier@iro.umontreal.ca>
 ;; Author: Daniele Nicolodi <daniele@grinta.net>
