@@ -295,6 +295,9 @@
 (use-package markdown-mode
   :mode "\\.md\\'")
 
+(use-package glsl-mode
+  :mode "\\.glsl\\'")
+
 ;; Load Customizations
 
 ;; Customize
