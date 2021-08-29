@@ -2,9 +2,12 @@
 
 ;; Copyright (c) 2013 Spotify AB
 ;; Package-Requires: ((emacs "24"))
-;; Package-Version: 20210404.2224
-;; Package-Commit: ad06a41259ff2961d603bf23a3a8fbd22dde2161
+;; Package-Version: 20210828.1805
+;; Package-Commit: 628315e2e4ab2f269548126444234caa057b2c75
 ;; Homepage: https://github.com/spotify/dockerfile-mode
+;; URL: https://github.com/spotify/dockerfile-mode
+;; Version: 1.5
+;; Keywords: docker
 ;;
 ;; Licensed under the Apache License, Version 2.0 (the "License"); you may not
 ;; use this file except in compliance with the License. You may obtain a copy of

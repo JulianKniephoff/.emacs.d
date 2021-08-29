@@ -40,6 +40,7 @@
 (require 'cider-profile) ; required only for the menu
 (require 'cider-completion)
 (require 'cider-inspector)
+(require 'cider-find)
 (require 'subr-x)
 (require 'cider-compat)
 
@@ -475,15 +476,23 @@ If invoked with a prefix ARG eval the expression after inserting it."
 As it stands Emacs fires these events on <mouse-8> and <mouse-9> on 'x' and
 'w32'systems while on macOS it presents them on <mouse-4> and <mouse-5>.")
 
+(defcustom cider-use-xref t
+  "Enable xref integration."
+  :type 'boolean
+  :safe #'booleanp
+  :group 'cider
+  :version '(cider . "1.2.0"))
+
 (defconst cider-mode-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "C-c C-d") 'cider-doc-map)
-    (define-key map (kbd "M-.") #'cider-find-var)
+    (unless cider-use-xref
+      (define-key map (kbd "M-.") #'cider-find-var)
+      (define-key map (kbd "M-,") #'cider-pop-back))
     (define-key map (kbd (if cider--has-many-mouse-buttons "<mouse-8>" "<mouse-4>")) #'xref-pop-marker-stack)
     (define-key map (kbd (if cider--has-many-mouse-buttons "<mouse-9>" "<mouse-5>")) #'cider-find-dwim-at-mouse)
     (define-key map (kbd "C-c C-.") #'cider-find-ns)
     (define-key map (kbd "C-c C-:") #'cider-find-keyword)
-    (define-key map (kbd "M-,") #'cider-pop-back)
     (define-key map (kbd "C-c M-.") #'cider-find-resource)
     (define-key map (kbd "M-TAB") #'complete-symbol)
     (define-key map (kbd "C-M-x")   #'cider-eval-defun-at-point)
@@ -1053,6 +1062,8 @@ property."
         (when cider-dynamic-indentation
           (setq-local clojure-get-indent-function #'cider--get-symbol-indent))
         (setq-local clojure-expected-ns-function #'cider-expected-ns)
+        (when cider-use-xref
+          (add-hook 'xref-backend-functions #'cider--xref-backend nil 'local))
         (setq next-error-function #'cider-jump-to-compilation-error))
     ;; Mode cleanup
     (mapc #'kill-local-variable '(completion-at-point-functions
@@ -1060,6 +1071,8 @@ property."
                                   x-gtk-use-system-tooltips
                                   font-lock-fontify-region-function
                                   clojure-get-indent-function))
+    (when cider-use-xref
+      (remove-hook 'xref-backend-functions #'cider--xref-backend 'local))
     (remove-hook 'font-lock-mode-hook #'cider-refresh-dynamic-font-lock 'local)
     (font-lock-add-keywords nil cider--reader-conditionals-font-lock-keywords)
     (font-lock-remove-keywords nil cider--dynamic-font-lock-keywords)
