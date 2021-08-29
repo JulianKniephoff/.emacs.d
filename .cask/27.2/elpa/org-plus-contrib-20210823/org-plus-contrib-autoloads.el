@@ -1700,6 +1700,14 @@ list of message:// links to flagged mail after heading.
 
 ;;;***
 
+;;;### (autoloads "actual autoloads are elsewhere" "org-num" "org-num.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from org-num.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-num" '("org-num-")))
+
+;;;***
+
 ;;;### (autoloads nil "org-panel" "org-panel.el" (0 0 0 0))
 ;;; Generated autoloads from org-panel.el
 
