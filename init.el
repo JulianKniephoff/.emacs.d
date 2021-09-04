@@ -194,14 +194,6 @@
 		      (plist-put org-format-latex-options
 				 :scale (/ (jk/get-font-size) jk/original-font-size))))))
 
-(use-package package
-  :defer t
-  :config
-  (use-package pallet
-    :commands pallet-mode
-    :config
-    (pallet-mode)))
-
 ;; Programming
 
 (use-package prog-mode

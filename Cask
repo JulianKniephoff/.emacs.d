@@ -45,7 +45,6 @@
 (depends-on "nginx-mode")
 (depends-on "nix-mode")
 (depends-on "org-plus-contrib")
-(depends-on "pallet")
 (depends-on "paredit")
 (depends-on "php-mode")
 (depends-on "pkgbuild-mode")
