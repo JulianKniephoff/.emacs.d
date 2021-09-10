@@ -440,7 +440,7 @@
 	      (:keywords "files")
 	      (:url . "http://elpa.gnu.org/packages/cpio-mode.html"))])
  (crdt .
-       [(0 1 4)
+       [(0 2 0)
 	nil "Collaborative editing using Conflict-free Replicated Data Types" tar
 	((:url . "https://code.librehq.com/qhong/crdt.el")
 	 (:maintainer "Qiantan Hong" . "qhong@alum.mit.edu")
@@ -516,7 +516,7 @@
 		  ("Daiki Ueno" . "ueno@gnu.org"))
 		 (:maintainer nil . "emacs-devel@gnu.org"))])
  (debbugs .
-	  [(0 28)
+	  [(0 29)
 	   ((emacs
 	     (25 1))
 	    (soap-client
@@ -664,7 +664,7 @@
 	       ("Leo Liu" . "sdl.web@gmail.com"))
 	      (:keywords "killing" "convenience"))])
  (ebdb .
-       [(0 8 3)
+       [(0 8 4)
 	((emacs
 	  (25 1))
 	 (seq
@@ -795,6 +795,16 @@
 	 (:authors
 	  ("Jorgen Schäfer" . "forcer@forcix.cx"))
 	 (:keywords "emms" "mp3" "ogg" "flac" "music" "mpeg" "video" "multimedia"))])
+ (engrave-faces .
+		[(0 2 0)
+		 ((emacs
+		   (27 1)))
+		 "Convert font-lock faces to other formats" tar
+		 ((:url . "https://github.com/tecosaur/engrave-faces")
+		  (:maintainer "TEC" . "tec@tecosaur.com")
+		  (:authors
+		   ("TEC <https://github/tecosaur>"))
+		  (:keywords "faces"))])
  (enwc .
        [(2 0)
 	((emacs
@@ -2427,7 +2437,7 @@
 	 (:maintainer "Toby Cubitt" . "toby-predictive@dr-qubit.org")
 	 (:url . "http://www.dr-qubit.org/emacs.php"))])
  (taxy .
-       [(0 4)
+       [(0 5)
 	((emacs
 	  (26 3)))
 	"Programmable taxonomical grouping for arbitrary objects" tar
@@ -2591,6 +2601,17 @@
 	      (:authors
 	       ("Philip Kaludercic" . "philipk@posteo.net"))
 	      (:keywords "vc"))])
+ (vc-got .
+	 [(1 0)
+	  ((emacs
+	    (25 1)))
+	  "VC backend for Game of Trees VCS" tar
+	  ((:url . "https://git.omarpolo.com/vc-got/")
+	   (:maintainer "Omar Polo" . "op@omarpolo.com")
+	   (:authors
+	    ("Omar Polo" . "op@omarpolo.com")
+	    ("Timo Myyrä" . "timo.myyra@bittivirhe.fi"))
+	   (:keywords "vc" "tools"))])
  (vc-hgcmd .
 	   [(1 14)
 	    ((emacs
@@ -2828,7 +2849,7 @@
 	("Mattias Engdegård" . "mattiase@acm.org"))
        (:keywords "lisp" "regexps"))])
  (xref .
-       [(1 1 0)
+       [(1 2 2)
 	((emacs
 	  (26 1)))
 	"Cross-referencing commands" tar
