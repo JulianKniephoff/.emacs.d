@@ -2577,8 +2577,8 @@ Move WORKTREE to PATH.
 
 ;;;***
 
-;;;### (autoloads nil nil ("magit-core.el" "magit-libgit-pkg.el"
-;;;;;;  "magit-pkg.el" "magit-section-pkg.el") (0 0 0 0))
+;;;### (autoloads nil nil ("magit-core.el" "magit-pkg.el") (0 0 0
+;;;;;;  0))
 
 ;;;***
 
