@@ -748,7 +748,7 @@
 	      (:maintainer "Markus Triska" . "triska@metalevel.at")
 	      (:url . "https://www.metalevel.at/ediprolog/"))])
  (eev .
-      [(20211021)
+      [(20211024)
        ((emacs
 	 (24 4)))
        "Support for e-scripts (eepitch blocks, elisp hyperlinks, etc)" tar
@@ -971,15 +971,15 @@
 	     ("Pavel Kobyakov" . "pk_at_work@yahoo.com"))
 	    (:url . "https://elpa.gnu.org/packages/flymake.html"))])
  (flymake-proselint .
-		    [(0 2 1)
+		    [(0 2 2)
 		     ((emacs
 		       (26 1)))
 		     "Flymake backend for proselint" tar
 		     ((:url . "https://github.com/manuel-uberti/flymake-proselint")
+		      (:keywords "convenience")
 		      (:maintainer "Manuel Uberti" . "manuel.uberti@inventati.org")
 		      (:authors
-		       ("Manuel Uberti" . "manuel.uberti@inventati.org"))
-		      (:keywords "convenience"))])
+		       ("Manuel Uberti" . "manuel.uberti@inventati.org")))])
  (frame-tabs .
 	     [(1 1)
 	      nil "show buffer tabs in side window" single
@@ -2339,7 +2339,7 @@
 	      (:maintainer "Ralph Amissah" . "ralph.amissah@gmail.com")
 	      (:url . "http://www.sisudoc.org/"))])
  (sketch-mode .
-	      [(1 0)
+	      [(1 0 3)
 	       nil "Quickly create svg sketches using keyboard and mouse" tar
 	       ((:url . "https://github.com/dalanicolai/sketch-mode")
 		(:keywords "multimedia")
@@ -2627,15 +2627,15 @@
 		("David Gonzalez Gandara" . "dggandara@member.fsf.org"))
 	       (:maintainer "David Gonzalez Gandara" . "dggandara@member.fsf.org"))])
  (transient .
-	    [(0 3 6)
+	    [(0 3 7)
 	     ((emacs
 	       (25 1)))
 	     "Transient commands" tar
 	     ((:url . "https://github.com/magit/transient")
+	      (:keywords "bindings")
 	      (:maintainer "Jonas Bernoulli" . "jonas@bernoul.li")
 	      (:authors
-	       ("Jonas Bernoulli" . "jonas@bernoul.li"))
-	      (:keywords "bindings"))])
+	       ("Jonas Bernoulli" . "jonas@bernoul.li")))])
  (trie .
        [(0 5)
 	((tNFA
@@ -2727,15 +2727,15 @@
 	    ("Timo Myyrä" . "timo.myyra@bittivirhe.fi"))
 	   (:keywords "vc" "tools"))])
  (vc-hgcmd .
-	   [(1 14)
+	   [(1 14 1)
 	    ((emacs
 	      (25 1)))
 	    "VC mercurial backend that uses hg command server" tar
 	    ((:url . "https://github.com/muffinmad/emacs-vc-hgcmd")
+	     (:keywords "vc")
 	     (:maintainer "Andrii Kolomoiets" . "andreyk.mad@gmail.com")
 	     (:authors
-	      ("Andrii Kolomoiets" . "andreyk.mad@gmail.com"))
-	     (:keywords "vc"))])
+	      ("Andrii Kolomoiets" . "andreyk.mad@gmail.com")))])
  (vcard .
 	[(0 2 1)
 	 ((emacs
