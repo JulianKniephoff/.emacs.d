@@ -195,7 +195,8 @@
 
 	;; Configure refile
 	org-refile-use-outline-path 'file
-	org-outline-path-complete-in-steps nil)
+	org-outline-path-complete-in-steps nil
+	org-refile-targets '((nil . (:maxlevel . 65535))))  ; TODO This is a hack ...
 
   (advice-add #'org-latex-preview :before
 	      (lambda (&rest _)
