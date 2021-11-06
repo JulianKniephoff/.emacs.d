@@ -197,7 +197,9 @@
 	      (lambda (&rest _)
 		(setq org-format-latex-options
 		      (plist-put org-format-latex-options
-				 :scale (/ (jk/get-font-size) jk/original-font-size))))))
+				 :scale (/ (jk/get-font-size) jk/original-font-size)))))
+
+  (setq org-refile-use-outline-path 'file))
 
 ;; Programming
 
