@@ -191,15 +191,17 @@
 	org-startup-indented t
 
 	;; Highlighting in code blocks
-	org-src-fontify-natively t)
+	org-src-fontify-natively t
+
+	;; Configure refile
+	org-refile-use-outline-path 'file
+	org-outline-path-complete-in-steps nil)
 
   (advice-add #'org-latex-preview :before
 	      (lambda (&rest _)
 		(setq org-format-latex-options
 		      (plist-put org-format-latex-options
-				 :scale (/ (jk/get-font-size) jk/original-font-size)))))
-
-  (setq org-refile-use-outline-path 'file))
+				 :scale (/ (jk/get-font-size) jk/original-font-size))))))
 
 ;; Programming
 
