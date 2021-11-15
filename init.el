@@ -233,7 +233,7 @@
   (add-hook 'rust-mode-hook #'jk/no-tabs)
 
   (use-package cargo
-    :hook (rust-mode-hook . cargo-minor-mode)))
+    :hook (rust-mode . cargo-minor-mode)))
 
 ;; Ruby
 
