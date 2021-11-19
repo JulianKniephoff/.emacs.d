@@ -421,7 +421,7 @@
 			("Ingo Lohmar" . "i.lohmar@gmail.com"))
 		       (:keywords "abbrev" "convenience" "matching"))])
  (consult .
-	  [(0 12)
+	  [(0 13)
 	   ((emacs
 	     (26 1)))
 	   "Consulting completing-read" tar
@@ -440,7 +440,7 @@
 		      ("Jackson Ray Hamilton" . "jackson@jacksonrayhamilton.com"))
 		     (:keywords "convenience" "faces" "tools"))])
  (corfu .
-	[(0 14)
+	[(0 15)
 	 ((emacs
 	   (27 1)))
 	 "Completion Overlay Region FUnction" tar
@@ -499,15 +499,15 @@
 	   ("Gary D. Foster" . "Gary.Foster@Corp.Sun.COM"))
 	  (:maintainer "Luke Lee" . "luke.yx.lee@gmail.com"))])
  (csharp-mode .
-	      [(1 0 2)
+	      [(1 1 0)
 	       ((emacs
 		 (26 1)))
 	       "C# mode derived mode" tar
 	       ((:url . "https://github.com/emacs-csharp/csharp-mode")
+		(:keywords "c#" "languages" "oop" "mode")
 		(:maintainer "Jostein Kjønigsen" . "jostein@gmail.com")
 		(:authors
-		 ("Theodor Thornhill" . "theo@thornhill.no"))
-		(:keywords "c#" "languages" "oop" "mode"))])
+		 ("Theodor Thornhill" . "theo@thornhill.no")))])
  (csv-mode .
 	   [(1 16)
 	    ((emacs
@@ -953,7 +953,7 @@
 		   ("Magnar Sveen" . "magnars@gmail.com"))
 		  (:keywords "marking" "region"))])
  (exwm .
-       [(0 25)
+       [(0 26)
 	((xelb
 	  (0 18)))
 	"Emacs X Window Manager" tar
@@ -1413,6 +1413,18 @@
 	  (:authors
 	   ("Ivan Kanis" . "ivan@kanis.fr"))
 	  (:maintainer "Ivan Kanis" . "ivan@kanis.fr"))])
+ (kind-icon .
+	    [(0 1 1)
+	     ((emacs
+	       (27 1))
+	      (svg-lib
+	       (0)))
+	     "Completion kind icons" tar
+	     ((:url . "https://github.com/jdtsmith/kind-icon")
+	      (:keywords "completion")
+	      (:maintainer "J.D. Smith" . "jdtsmith@gmail.com")
+	      (:authors
+	       ("J.D. Smith" . "jdtsmith@gmail.com")))])
  (kiwix .
 	[(1 1 4)
 	 ((emacs
@@ -1525,7 +1537,7 @@
 	 ("Nicolas Petton" . "nicolas@petton.fr"))
 	(:url . "https://elpa.gnu.org/packages/map.html"))])
  (marginalia .
-	     [(0 9)
+	     [(0 10)
 	      ((emacs
 		(26 1)))
 	      "Enrich existing commands with completion annotations" tar
@@ -1549,7 +1561,7 @@
 		      (:maintainer "Vitalie Spinu" . "spinuvit@gmail.com")
 		      (:url . "https://github.com/vspinu/math-symbol-lists"))])
  (mct .
-      [(0 1 0)
+      [(0 2 0)
        ((emacs
 	 (28 1)))
        "Minibuffer and Completions in Tandem" tar
@@ -1634,7 +1646,7 @@
 			  ("Protesilaos Stavrou" . "info@protesilaos.com"))
 			 (:keywords "faces" "theme" "accessibility"))])
  (modus-themes .
-	       [(1 6 0)
+	       [(1 7 0)
 		((emacs
 		  (27 1)))
 		"Highly accessible themes (WCAG AAA)" tar
@@ -2817,7 +2829,7 @@
 		  ("Michael McNamara" . "mac@verilog.com")
 		  ("Wilson Snyder" . "wsnyder@wsnyder.org")))])
  (vertico .
-	  [(0 15)
+	  [(0 16)
 	   ((emacs
 	     (27 1)))
 	   "VERTical Interactive COmpletion" tar
