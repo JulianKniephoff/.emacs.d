@@ -135,11 +135,6 @@
   (use-package evil-org
     :after org
     :hook (org-mode . evil-org-mode)
-    ;; TODO This `:init`-block can be removed once https://github.com/Somelauw/evil-org-mode/issues/93 is resolved
-    :init
-    (fset 'evil-redirect-digit-argument 'ignore)
-    (add-to-list 'evil-digit-bound-motions 'evil-org-beginning-of-line)
-    (evil-define-key 'motion 'evil-org-mode (kbd "0") 'evil-org-beginning-of-line)
     :config
     (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
 
