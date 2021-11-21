@@ -196,6 +196,11 @@
 	org-refile-targets '((nil . (:maxlevel . 65535)))  ; TODO This is a hack ...
 	org-capture-templates '(("a" "Autofocus" entry (file "~/Sync/autofocus.org") "* %?")))
 
+  (use-package evil
+    :defer t
+    :config
+    (add-hook 'org-capture-mode-hook 'evil-insert-state))
+
   (advice-add #'org-latex-preview :before
 	      (lambda (&rest _)
 		(setq org-format-latex-options
