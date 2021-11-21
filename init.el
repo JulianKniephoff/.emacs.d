@@ -158,7 +158,8 @@
 (use-package org
   :mode ("\\.org\\'" . org-mode)
   :bind (([?\C-c ?l] . #'org-store-link)
-	 ([?\C-c ?a] . #'org-agenda))
+	 ([?\C-c ?a] . #'org-agenda)
+	 ([?\C-c ?c] . #'org-capture))
   :config
 
   (use-package org-inlinetask)
@@ -192,7 +193,8 @@
 	;; Configure refile
 	org-refile-use-outline-path 'file
 	org-outline-path-complete-in-steps nil
-	org-refile-targets '((nil . (:maxlevel . 65535))))  ; TODO This is a hack ...
+	org-refile-targets '((nil . (:maxlevel . 65535)))  ; TODO This is a hack ...
+	org-capture-templates '(("a" "Autofocus" entry (file "~/Sync/autofocus.org") "* %?")))
 
   (advice-add #'org-latex-preview :before
 	      (lambda (&rest _)
