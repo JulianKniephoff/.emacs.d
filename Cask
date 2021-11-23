@@ -1,6 +1,6 @@
 (source gnu)
 (source melpa)
-(source org)
+(source "nongnu" "https://elpa.nongnu.org/nongnu/")
 
 (depends-on "ace-jump-mode")
 (depends-on "auctex")
@@ -44,7 +44,8 @@
 (depends-on "markdown-mode")
 (depends-on "nginx-mode")
 (depends-on "nix-mode")
-(depends-on "org-plus-contrib")
+(depends-on "org" "9.5")
+(depends-on "org-contrib")
 (depends-on "paredit")
 (depends-on "php-mode")
 (depends-on "pkgbuild-mode")
