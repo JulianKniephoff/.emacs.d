@@ -44,7 +44,7 @@
 (depends-on "markdown-mode")
 (depends-on "nginx-mode")
 (depends-on "nix-mode")
-(depends-on "org" "9.5")
+(depends-on "org")
 (depends-on "org-contrib")
 (depends-on "paredit")
 (depends-on "php-mode")
