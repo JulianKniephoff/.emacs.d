@@ -20,7 +20,7 @@ END-INFO-DIR-ENTRY
 
 Indirect:
 magit.info-1: 754
-magit.info-2: 302316
+magit.info-2: 302369
 
 Tag Table:
 (Indirect)
@@ -113,86 +113,86 @@ Node: Editing Rebase Sequences254184
 Node: Information About In-Progress Rebase258512
 Ref: Information About In-Progress Rebase-Footnote-1267394
 Node: Cherry Picking267990
-Node: Reverting272321
-Node: Resetting273770
-Node: Stashing275636
-Node: Transferring280337
-Node: Remotes280559
-Node: Remote Commands280711
-Node: Remote Git Variables284792
-Node: Fetching286071
-Node: Pulling288558
-Node: Pushing289604
-Node: Plain Patches293942
-Node: Maildir Patches295433
-Node: Miscellaneous296947
-Node: Tagging297272
-Node: Notes299190
-Node: Submodules302316
-Node: Listing Submodules302534
-Node: Submodule Transient303940
-Node: Subtree306462
-Node: Worktree308438
-Node: Bundle309534
-Node: Common Commands309902
-Node: Wip Modes312541
-Node: Wip Graph317472
-Node: Legacy Wip Modes319786
-Node: Commands for Buffers Visiting Files322681
-Node: Minor Mode for Buffers Visiting Blobs328303
-Node: Customizing329116
-Node: Per-Repository Configuration330712
-Node: Essential Settings332967
-Node: Safety333312
-Node: Performance335073
-Ref: Log Performance338102
-Ref: Diff Performance339412
-Ref: Refs Buffer Performance340753
-Ref: Committing Performance341328
-Node: Microsoft Windows Performance342241
-Node: MacOS Performance343432
-Ref: MacOS Performance-Footnote-1344137
-Node: Default Bindings344219
-Node: Plumbing346461
-Node: Calling Git347290
-Node: Getting a Value from Git348815
-Node: Calling Git for Effect352556
-Node: Section Plumbing358462
-Node: Creating Sections358690
-Node: Section Selection362590
-Node: Matching Sections364389
-Node: Refreshing Buffers370362
-Node: Conventions373510
-Node: Theming Faces373702
-Node: FAQ381807
-Node: FAQ - How to ...?382249
-Node: How to pronounce Magit?382662
-Node: How to show git's output?383464
-Node: How to install the gitman info manual?384250
-Node: How to show diffs for gpg-encrypted files?385220
-Node: How does branching and pushing work?385816
-Node: Can Magit be used as ediff-version-control-package?386179
-Node: Should I disable VC?388197
-Node: FAQ - Issues and Errors388815
-Node: Magit is slow389816
-Node: I changed several thousand files at once and now Magit is unusable390030
-Node: I am having problems committing390759
-Node: I am using MS Windows and cannot push with Magit391240
-Node: I am using OS X and SOMETHING works in shell but not in Magit391857
-Node: Expanding a file to show the diff causes it to disappear392688
-Node: Point is wrong in the COMMIT_EDITMSG buffer393269
-Node: The mode-line information isn't always up-to-date394315
-Node: A branch and tag sharing the same name breaks SOMETHING395378
-Node: My Git hooks work on the command-line but not inside Magit396264
-Node: git-commit-mode isn't used when committing from the command-line397110
-Node: Point ends up inside invisible text when jumping to a file-visiting buffer399381
-Node: I am unable to stage when using Tramp from MS Windows400241
-Node: I am no longer able to save popup defaults401148
-Node: Debugging Tools402108
-Node: Keystroke Index404287
-Node: Command Index438675
-Node: Function Index476807
-Node: Variable Index493931
+Node: Reverting272374
+Node: Resetting273823
+Node: Stashing275689
+Node: Transferring280390
+Node: Remotes280612
+Node: Remote Commands280764
+Node: Remote Git Variables284845
+Node: Fetching286124
+Node: Pulling288611
+Node: Pushing289657
+Node: Plain Patches293995
+Node: Maildir Patches295486
+Node: Miscellaneous297000
+Node: Tagging297325
+Node: Notes299243
+Node: Submodules302369
+Node: Listing Submodules302587
+Node: Submodule Transient303993
+Node: Subtree306515
+Node: Worktree308491
+Node: Bundle309587
+Node: Common Commands309955
+Node: Wip Modes312594
+Node: Wip Graph317525
+Node: Legacy Wip Modes319839
+Node: Commands for Buffers Visiting Files322734
+Node: Minor Mode for Buffers Visiting Blobs328356
+Node: Customizing329169
+Node: Per-Repository Configuration330765
+Node: Essential Settings333020
+Node: Safety333365
+Node: Performance335126
+Ref: Log Performance338155
+Ref: Diff Performance339465
+Ref: Refs Buffer Performance340806
+Ref: Committing Performance341381
+Node: Microsoft Windows Performance342294
+Node: MacOS Performance343485
+Ref: MacOS Performance-Footnote-1344190
+Node: Default Bindings344272
+Node: Plumbing346514
+Node: Calling Git347343
+Node: Getting a Value from Git348868
+Node: Calling Git for Effect352609
+Node: Section Plumbing358515
+Node: Creating Sections358743
+Node: Section Selection362643
+Node: Matching Sections364442
+Node: Refreshing Buffers370415
+Node: Conventions373563
+Node: Theming Faces373755
+Node: FAQ381860
+Node: FAQ - How to ...?382302
+Node: How to pronounce Magit?382715
+Node: How to show git's output?383517
+Node: How to install the gitman info manual?384303
+Node: How to show diffs for gpg-encrypted files?385273
+Node: How does branching and pushing work?385869
+Node: Can Magit be used as ediff-version-control-package?386232
+Node: Should I disable VC?388250
+Node: FAQ - Issues and Errors388868
+Node: Magit is slow389869
+Node: I changed several thousand files at once and now Magit is unusable390083
+Node: I am having problems committing390812
+Node: I am using MS Windows and cannot push with Magit391293
+Node: I am using OS X and SOMETHING works in shell but not in Magit391910
+Node: Expanding a file to show the diff causes it to disappear392741
+Node: Point is wrong in the COMMIT_EDITMSG buffer393322
+Node: The mode-line information isn't always up-to-date394368
+Node: A branch and tag sharing the same name breaks SOMETHING395431
+Node: My Git hooks work on the command-line but not inside Magit396317
+Node: git-commit-mode isn't used when committing from the command-line397163
+Node: Point ends up inside invisible text when jumping to a file-visiting buffer399434
+Node: I am unable to stage when using Tramp from MS Windows400294
+Node: I am no longer able to save popup defaults401201
+Node: Debugging Tools402161
+Node: Keystroke Index404340
+Node: Command Index438728
+Node: Function Index476860
+Node: Variable Index493984
 
 End Tag Table
 
