@@ -1,2 +1,2 @@
 ;;; Generated package description from cmake-mode.el  -*- no-byte-compile: t -*-
-(define-package "cmake-mode" "20210104.1831" "major-mode for editing CMake sources" '((emacs "24.1")) :commit "b00cb8f40530feefa245c92944da5a48d8ed804c")
+(define-package "cmake-mode" "20210104.1831" "major-mode for editing CMake sources" '((emacs "24.1")) :commit "879f77a1955ad23b0cbf430e28859ae8cc985364")
