@@ -67,6 +67,15 @@
 		("Eric Beuscher" . "beuscher@eecs.tulane.edu"))
 	       (:keywords "bison-mode" "yacc-mode")
 	       (:url . "https://elpa.nongnu.org/nongnu/bison-mode.html"))])
+ (buttercup .
+	    [(1 24)
+	     ((emacs
+	       (24 3)))
+	     "Behavior-Driven Emacs Lisp Testing" tar
+	     ((:url . "https://github.com/jorgenschaefer/emacs-buttercup")
+	      (:maintainer "Jorgen Schaefer" . "contact@jorgenschaefer.de")
+	      (:authors
+	       ("Jorgen Schaefer" . "contact@jorgenschaefer.de")))])
  (caml .
        [(4 9)
 	((emacs
@@ -182,17 +191,17 @@
 	   (:authors
 	    ("Jose Antonio Ortega Ruiz" . "jao@gnu.org")))])
  (geiser-chez .
-	      [(0 16)
+	      [(0 17)
 	       ((emacs
 		 (26 1))
 		(geiser
-		 (0 16)))
+		 (0 19)))
 	       "Chez Scheme's implementation of the geiser protocols" tar
 	       ((:url . "https://gitlab.com/emacs-geiser/chez")
+		(:keywords "languages" "chez" "scheme" "geiser")
 		(:maintainer "Jose A Ortega Ruiz" . "jao@gnu.org")
 		(:authors
-		 ("Peter" . "craven@gmx.net"))
-		(:keywords "languages" "chez" "scheme" "geiser"))])
+		 ("Peter" . "craven@gmx.net")))])
  (geiser-chibi .
 	       [(0 17)
 		((emacs
