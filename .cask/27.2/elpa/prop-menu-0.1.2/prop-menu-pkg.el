@@ -1,2 +1,0 @@
-;; Generated package description from prop-menu.el  -*- no-byte-compile: t -*-
-(define-package "prop-menu" "0.1.2" "Create and display a context menu based on text and overlay properties" '((emacs "24.3") (cl-lib "0.5")) :keywords '("convenience") :authors '(("David Christiansen" . "david@davidchristiansen.dk")) :maintainer '("David Christiansen" . "david@davidchristiansen.dk") :url "https://github.com/david-christiansen/prop-menu-el")

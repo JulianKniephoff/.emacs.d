@@ -1450,7 +1450,7 @@ Otherwise, return nil." t nil)
 
 ;;;***
 
-;;;### (autoloads nil "org-colview" "org-colview.el" "8b8cff156cbeb45bc1b67244c28741c6")
+;;;### (autoloads nil "org-colview" "org-colview.el" (0 0 0 0))
 ;;; Generated autoloads from org-colview.el
 
 (autoload 'org-columns-remove-overlays "org-colview" "\
@@ -1538,6 +1538,8 @@ Create a dynamic block capturing a column view table." t nil)
 
 (autoload 'org-agenda-columns "org-colview" "\
 Turn on or update column view in the agenda." t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-colview" '("org-")))
 
 ;;;***
 
@@ -2896,7 +2898,7 @@ which will prompt for the width.
 
 ;;;***
 
-;;;### (autoloads nil "org-timer" "org-timer.el" "75e6b4a24097d5c0fcac8b141b65ca47")
+;;;### (autoloads nil "org-timer" "org-timer.el" (0 0 0 0))
 ;;; Generated autoloads from org-timer.el
 
 (autoload 'org-timer-start "org-timer" "\
@@ -2968,6 +2970,8 @@ minutes in the Effort property, if any.  You can ignore this by
 using three \\[universal-argument] prefix arguments.
 
 \(fn &optional OPT)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-timer" '("org-timer-")))
 
 ;;;***
 
@@ -4044,7 +4048,7 @@ Return output file name.
 
 ;;;***
 
-;;;### (autoloads nil "ox-md" "ox-md.el" "2b399d8c10668d24b7733db17b2861c2")
+;;;### (autoloads nil "ox-md" "ox-md.el" (0 0 0 0))
 ;;; Generated autoloads from ox-md.el
 
 (autoload 'org-md-export-as-markdown "ox-md" "\
@@ -4111,6 +4115,8 @@ publishing directory.
 Return output file name.
 
 \(fn PLIST FILENAME PUB-DIR)" nil nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ox-md" '("org-md-")))
 
 ;;;***
 
