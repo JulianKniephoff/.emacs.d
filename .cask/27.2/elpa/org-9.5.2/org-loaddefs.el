@@ -1450,7 +1450,7 @@ Otherwise, return nil." t nil)
 
 ;;;***
 
-;;;### (autoloads nil "org-colview" "org-colview.el" (0 0 0 0))
+;;;### (autoloads nil "org-colview" "org-colview.el" "8b8cff156cbeb45bc1b67244c28741c6")
 ;;; Generated autoloads from org-colview.el
 
 (autoload 'org-columns-remove-overlays "org-colview" "\
@@ -1538,8 +1538,6 @@ Create a dynamic block capturing a column view table." t nil)
 
 (autoload 'org-agenda-columns "org-colview" "\
 Turn on or update column view in the agenda." t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-colview" '("org-")))
 
 ;;;***
 
@@ -1964,7 +1962,7 @@ Describe all keybindings behind `org-babel-key-prefix'." t nil)
 
 ;;;***
 
-;;;### (autoloads nil "org-lint" "org-lint.el" (0 0 0 0))
+;;;### (autoloads nil "org-lint" "org-lint.el" "ef9470da9d3e9882e1c1b96873e92418")
 ;;; Generated autoloads from org-lint.el
 
 (autoload 'org-lint "org-lint" "\
@@ -1977,8 +1975,6 @@ checker by its name.
 ARG can also be a list of checker names, as symbols, to run.
 
 \(fn &optional ARG)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-lint" '("org-lint-")))
 
 ;;;***
 
@@ -2898,7 +2894,7 @@ which will prompt for the width.
 
 ;;;***
 
-;;;### (autoloads nil "org-timer" "org-timer.el" (0 0 0 0))
+;;;### (autoloads nil "org-timer" "org-timer.el" "75e6b4a24097d5c0fcac8b141b65ca47")
 ;;; Generated autoloads from org-timer.el
 
 (autoload 'org-timer-start "org-timer" "\
@@ -2970,8 +2966,6 @@ minutes in the Effort property, if any.  You can ignore this by
 using three \\[universal-argument] prefix arguments.
 
 \(fn &optional OPT)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-timer" '("org-timer-")))
 
 ;;;***
 
@@ -4048,7 +4042,7 @@ Return output file name.
 
 ;;;***
 
-;;;### (autoloads nil "ox-md" "ox-md.el" (0 0 0 0))
+;;;### (autoloads nil "ox-md" "ox-md.el" "2b399d8c10668d24b7733db17b2861c2")
 ;;; Generated autoloads from ox-md.el
 
 (autoload 'org-md-export-as-markdown "ox-md" "\
@@ -4115,8 +4109,6 @@ publishing directory.
 Return output file name.
 
 \(fn PLIST FILENAME PUB-DIR)" nil nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ox-md" '("org-md-")))
 
 ;;;***
 
