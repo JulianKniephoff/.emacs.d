@@ -305,6 +305,9 @@
 (use-package glsl-mode
   :mode "\\.glsl\\'")
 
+(use-package zig-mode
+  :mode "\\.zig\\'")
+
 ;; Load Customizations
 
 ;; Customize
