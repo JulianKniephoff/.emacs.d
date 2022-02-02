@@ -1962,7 +1962,7 @@ Describe all keybindings behind `org-babel-key-prefix'." t nil)
 
 ;;;***
 
-;;;### (autoloads nil "org-lint" "org-lint.el" (0 0 0 0))
+;;;### (autoloads nil "org-lint" "org-lint.el" "ef9470da9d3e9882e1c1b96873e92418")
 ;;; Generated autoloads from org-lint.el
 
 (autoload 'org-lint "org-lint" "\
@@ -1975,8 +1975,6 @@ checker by its name.
 ARG can also be a list of checker names, as symbols, to run.
 
 \(fn &optional ARG)" t nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-lint" '("org-lint-")))
 
 ;;;***
 
