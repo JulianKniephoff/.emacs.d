@@ -12,7 +12,8 @@
 ;;   (when (member font (font-family-list))
 ;;     (set-face-attribute 'default nil :family font)))
 
-(setq inhibit-startup-screen t)
+(setq inhibit-startup-screen t
+      visible-bell t)
 
 (use-package solarized-dark-theme
   :config
