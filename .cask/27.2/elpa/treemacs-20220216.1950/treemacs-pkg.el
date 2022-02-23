@@ -8,7 +8,7 @@
     (hydra "0.13.2")
     (ht "2.2")
     (cfrs "1.3.2"))
-  :commit "2b19baaf2a69897dc274bceff56070372033de09" :authors
+  :commit "b18a05b1f62074a40e6011d83cd4c92cbee040dd" :authors
   '(("Alexander Miller" . "alexanderm@web.de"))
   :maintainer
   '("Alexander Miller" . "alexanderm@web.de")
