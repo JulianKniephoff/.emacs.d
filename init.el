@@ -195,7 +195,7 @@
 	org-refile-use-outline-path 'file
 	org-outline-path-complete-in-steps nil
 	org-refile-targets '((nil . (:maxlevel . 65535)))  ; TODO This is a hack ...
-	org-capture-templates '(("a" "Autofocus" entry (file "~/Sync/autofocus.org") "* %?"))
+	org-capture-templates '(("a" "Autofocus" entry (file "~/Sync/org/dump.org") "* %?"))
 
 	org-agenda-todo-ignore-scheduled 'future)
 
