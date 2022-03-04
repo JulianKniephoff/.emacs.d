@@ -1034,14 +1034,6 @@ Set `org-capture-templates' to be similar to `org-remember-templates'." t nil)
 
 ;;;***
 
-;;;### (autoloads "actual autoloads are elsewhere" "org-colview"
-;;;;;;  "org-colview.el" (0 0 0 0))
-;;; Generated autoloads from org-colview.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-colview" '("org-")))
-
-;;;***
-
 ;;;### (autoloads "actual autoloads are elsewhere" "org-compat" "org-compat.el"
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from org-compat.el
@@ -1180,14 +1172,6 @@ Add a hook to automatically encrypt entries before a file is saved to disk." nil
 
 ;;;***
 
-;;;### (autoloads "actual autoloads are elsewhere" "org-lint" "org-lint.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from org-lint.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-lint" '("org-lint-")))
-
-;;;***
-
 ;;;### (autoloads "actual autoloads are elsewhere" "org-list" "org-list.el"
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from org-list.el
@@ -1283,14 +1267,6 @@ Add a hook to automatically encrypt entries before a file is saved to disk." nil
 ;;; Generated autoloads from org-tempo.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-tempo" '("org-tempo-")))
-
-;;;***
-
-;;;### (autoloads "actual autoloads are elsewhere" "org-timer" "org-timer.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from org-timer.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-timer" '("org-timer-")))
 
 ;;;***
 
@@ -1462,14 +1438,6 @@ Return PDF file's name.
 ;;; Generated autoloads from ox-man.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ox-man" '("org-man-")))
-
-;;;***
-
-;;;### (autoloads "actual autoloads are elsewhere" "ox-md" "ox-md.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ox-md.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ox-md" '("org-md-")))
 
 ;;;***
 

@@ -2,7 +2,7 @@
   '((emacs "25.1")
     (evil "1.2.13")
     (annalist "1.0"))
-  :commit "017ec2a63d3fdb0535886751cf82955a776d2cb6" :authors
+  :commit "412a908104d1d238e903b96c32deea4954f41876" :authors
   '(("James Nguyen" . "james@jojojames.com"))
   :maintainer
   '("James Nguyen" . "james@jojojames.com")
