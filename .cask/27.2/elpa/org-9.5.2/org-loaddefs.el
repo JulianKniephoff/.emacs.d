@@ -382,7 +382,7 @@ Mark current source block." t nil)
 
 ;;;***
 
-;;;### (autoloads nil "ob-lob" "ob-lob.el" "f88c2277aca81467214c57a5217e41ef")
+;;;### (autoloads nil "ob-lob" "ob-lob.el" (0 0 0 0))
 ;;; Generated autoloads from ob-lob.el
 
 (autoload 'org-babel-lob-execute-maybe "ob-lob" "\
@@ -400,6 +400,8 @@ a list compatible with `org-babel-get-src-block-info', which
 see.
 
 \(fn &optional DATUM)" nil nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ob-lob" '("org-babel-")))
 
 ;;;***
 
@@ -2156,7 +2158,7 @@ prefix argument (`C-u C-u C-u C-c C-w').
 
 ;;;***
 
-;;;### (autoloads nil "org-table" "org-table.el" "7abbbe0fc8b35c584e97ccfd854ece6f")
+;;;### (autoloads nil "org-table" "org-table.el" (0 0 0 0))
 ;;; Generated autoloads from org-table.el
 
 (autoload 'org-table-header-line-mode "org-table" "\
@@ -2888,6 +2890,8 @@ characters width of the plot.  ASK may also be the `\\[universal-argument]' pref
 which will prompt for the width.
 
 \(fn &optional ASK)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-table" '("org")))
 
 ;;;***
 
@@ -4258,7 +4262,7 @@ Return output file name.
 
 ;;;***
 
-;;;### (autoloads nil "ox-publish" "ox-publish.el" "5a31bb72e99716b09561f75cfdf6f8ca")
+;;;### (autoloads nil "ox-publish" "ox-publish.el" (0 0 0 0))
 ;;; Generated autoloads from ox-publish.el
 
 (defalias 'org-publish-project 'org-publish)
@@ -4298,6 +4302,8 @@ With a prefix argument, force publishing of all files in
 the project.
 
 \(fn &optional FORCE ASYNC)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ox-publish" '("org-publish-")))
 
 ;;;***
 

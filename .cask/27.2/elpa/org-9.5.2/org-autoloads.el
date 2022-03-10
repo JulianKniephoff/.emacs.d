@@ -182,14 +182,6 @@
 
 ;;;***
 
-;;;### (autoloads "actual autoloads are elsewhere" "ob-lob" "ob-lob.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ob-lob.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ob-lob" '("org-babel-")))
-
-;;;***
-
 ;;;### (autoloads nil "ob-lua" "ob-lua.el" (0 0 0 0))
 ;;; Generated autoloads from ob-lua.el
 
@@ -1255,14 +1247,6 @@ Add a hook to automatically encrypt entries before a file is saved to disk." nil
 
 ;;;***
 
-;;;### (autoloads "actual autoloads are elsewhere" "org-table" "org-table.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from org-table.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-table" '("org")))
-
-;;;***
-
 ;;;### (autoloads nil "org-tempo" "org-tempo.el" (0 0 0 0))
 ;;; Generated autoloads from org-tempo.el
 
@@ -1454,14 +1438,6 @@ Return PDF file's name.
 ;;; Generated autoloads from ox-org.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ox-org" '("org-org-")))
-
-;;;***
-
-;;;### (autoloads "actual autoloads are elsewhere" "ox-publish" "ox-publish.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ox-publish.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ox-publish" '("org-publish-")))
 
 ;;;***
 
