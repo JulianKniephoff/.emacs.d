@@ -2,7 +2,7 @@
   '((emacs "25.1")
     (transient "20210920")
     (with-editor "20211001"))
-  :commit "da1815172fca35985b71cc75c42050aa4b5130f4" :authors
+  :commit "4b1b7b4a1c864fbe86c81aab5c61e46c632e408a" :authors
   '(("Jonas Bernoulli" . "jonas@bernoul.li")
     ("Sebastian Wiesner" . "lunaryorn@gmail.com")
     ("Florian Ragwitz" . "rafl@debian.org")
