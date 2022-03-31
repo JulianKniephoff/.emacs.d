@@ -184,15 +184,15 @@
 	 ("Oleh Krehel" . "ohwoeowho@gmail.com"))
 	(:keywords "point" "location"))])
  (bbdb .
-       [(3 2 1)
+       [(3 2 2 1)
 	((emacs
 	  (24))
 	 (cl-lib
 	  (0 5)))
-	"core of BBDB" tar
+	"Big Brother DataBase" tar
 	((:maintainer "Roland Winkler" . "winkler@gnu.org")
 	 (:url . "https://elpa.gnu.org/packages/bbdb.html")
-	 (:commit . "b3739cbaf2f021ac776925254e12abf0699e46f8"))])
+	 (:commit . "387bb5f216dd7c2d901af186b07d84f005c583c4"))])
  (beacon .
 	 [(1 3 3)
 	  ((seq
@@ -1506,7 +1506,7 @@
 	   ("Ivan Kanis" . "ivan@kanis.fr"))
 	  (:maintainer "Ivan Kanis" . "ivan@kanis.fr"))])
  (kind-icon .
-	    [(0 1 4)
+	    [(0 1 5)
 	     ((emacs
 	       (27 1))
 	      (svg-lib
@@ -1516,7 +1516,8 @@
 	      (:keywords "completion")
 	      (:maintainer "J.D. Smith" . "jdtsmith@gmail.com")
 	      (:authors
-	       ("J.D. Smith" . "jdtsmith@gmail.com")))])
+	       ("J.D. Smith" . "jdtsmith@gmail.com"))
+	      (:commit . "235c3d20d1e667d6ac73e11d55a380e070b7cacf"))])
  (kiwix .
 	[(1 1 5)
 	 ((emacs
@@ -1620,7 +1621,7 @@
 	   (:maintainer "Alexey Veretennikov" . "alexey.veretennikov@gmail.com")
 	   (:url . "https://github.com/fourier/loccur"))])
  (logos .
-	[(0 2 0)
+	[(0 3 0)
 	 ((emacs
 	   (27 1)))
 	 "Simple focus mode and extras" tar
@@ -1629,7 +1630,7 @@
 	  (:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
 	  (:authors
 	   ("Protesilaos Stavrou" . "info@protesilaos.com"))
-	  (:commit . "36e911064c263813110b17acd5fb9b01b9436112"))])
+	  (:commit . "de6959ceef59d818aa5ec2b1700932f5b78bcb78"))])
  (map .
       [(3 2 1)
        ((emacs
@@ -1851,13 +1852,14 @@
 		(:keywords "convenience" "org-mode" "org-agenda")
 		(:maintainer "Nicolas P. Rougier" . "Nicolas.Rougier@inria.fr"))])
  (nano-modeline .
-		[(0 5)
+		[(0 6)
 		 ((emacs
 		   (27 1)))
 		 "N Λ N O modeline" tar
 		 ((:url . "https://github.com/rougier/nano-modeline")
 		  (:keywords "convenience" "mode-line" "header-line")
-		  (:maintainer "Nicolas P. Rougier" . "Nicolas.Rougier@inria.fr"))])
+		  (:maintainer "Nicolas P. Rougier" . "Nicolas.Rougier@inria.fr")
+		  (:commit . "1c743a9dbe72a1bdc2196ad43a217060e163c929"))])
  (nano-theme .
 	     [(0 3 0)
 	      ((emacs
@@ -2832,7 +2834,7 @@
 	 (:maintainer "Toby Cubitt" . "toby-predictive@dr-qubit.org")
 	 (:url . "http://www.dr-qubit.org/emacs.php"))])
  (taxy .
-       [(0 8)
+       [(0 9)
 	((emacs
 	  (26 3)))
 	"Programmable taxonomical grouping for arbitrary objects" tar
@@ -2840,7 +2842,21 @@
 	 (:keywords "lisp")
 	 (:maintainer "Adam Porter" . "adam@alphapapa.net")
 	 (:authors
-	  ("Adam Porter" . "adam@alphapapa.net")))])
+	  ("Adam Porter" . "adam@alphapapa.net"))
+	 (:commit . "b209692b632bbe8d7f97ea8a39b0c28c1be3b7ec"))])
+ (taxy-magit-section .
+		     [(0 9 1)
+		      ((emacs
+			(26 3))
+		       (magit-section
+			(3 2 1)))
+		      "View Taxy structs in a Magit Section buffer" tar
+		      ((:url . "https://github.com/alphapapa/taxy.el")
+		       (:keywords "lisp")
+		       (:maintainer "Adam Porter" . "adam@alphapapa.net")
+		       (:authors
+			("Adam Porter" . "adam@alphapapa.net"))
+		       (:commit . "62624c32d7f58bfa4acc89becc7cc8427d546aab"))])
  (temp-buffer-browse .
 		     [(1 5)
 		      ((emacs
@@ -2891,7 +2907,7 @@
 	  ("Oleh Krehel" . "ohwoeowho@gmail.com"))
 	 (:keywords "convenience"))])
  (tramp .
-	[(2 5 2 2)
+	[(2 5 2 3)
 	 ((emacs
 	   (25 1)))
 	 "Transparent Remote Access, Multiple Protocol" tar
@@ -2900,7 +2916,7 @@
 	  (:maintainer "Michael Albinus" . "michael.albinus@gmx.de")
 	  (:authors
 	   ("Kai Großjohann" . "kai.grossjohann@gmx.net"))
-	  (:commit . "aeb0ea73406d7d7066149cb487683e55b86e7124"))])
+	  (:commit . "ad1b28dca70c70cd4c317dcb606c92dfb436ccee"))])
  (tramp-nspawn .
 	       [(1 0)
 		((emacs
