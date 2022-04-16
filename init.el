@@ -5,6 +5,9 @@
 
 (use-package bind-key)
 
+;; Platform specific stuff
+(setq mac-right-option-modifier 'none)
+
 ;; Appearance
 
 ;; Set font if you wish
