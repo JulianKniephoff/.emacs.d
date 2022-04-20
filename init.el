@@ -84,7 +84,7 @@
     :bind (:map ido-common-completion-map
 		([?\C-x ?g] . #'ido-enter-magit-status)))
 
-  (use-package magit-utils
+  (use-package magit-base
     :after magit
     :config
     (setq magit-completing-read-function #'magit-ido-completing-read))
