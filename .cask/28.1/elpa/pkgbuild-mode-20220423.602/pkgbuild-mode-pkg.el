@@ -1,0 +1,2 @@
+;;; Generated package description from pkgbuild-mode.el  -*- no-byte-compile: t -*-
+(define-package "pkgbuild-mode" "20220423.602" "Interface to the ArchLinux package manager" '((emacs "26.1")) :commit "2fc38d30bd2a6b0333a5492fdc5c2dfbbc455653" :authors '(("Juergen Hoetzel" . "juergen@hoetzel.info")) :maintainer '("Juergen Hoetzel" . "juergen@hoetzel.info") :keywords '("languages") :url "https://github.com/juergenhoetzel/pkgbuild-mode")
