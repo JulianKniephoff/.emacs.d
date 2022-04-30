@@ -1136,6 +1136,16 @@
 		      (:maintainer "Manuel Uberti" . "manuel.uberti@inventati.org")
 		      (:authors
 		       ("Manuel Uberti" . "manuel.uberti@inventati.org")))])
+ (fontaine .
+	   [(0 1 1)
+	    ((emacs
+	      (27 1)))
+	    "Set font configurations using presets" tar
+	    ((:url . "https://git.sr.ht/~protesilaos/fontaine")
+	     (:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
+	     (:authors
+	      ("Protesilaos Stavrou" . "info@protesilaos.com"))
+	     (:commit . "e8e25d681854a97483a5ca3a0c39f04aaa19b1a0"))])
  (frame-tabs .
 	     [(1 1)
 	      nil "show buffer tabs in side window" single
@@ -1913,14 +1923,14 @@
 		  (:maintainer "Nicolas P. Rougier" . "Nicolas.Rougier@inria.fr")
 		  (:commit . "1c743a9dbe72a1bdc2196ad43a217060e163c929"))])
  (nano-theme .
-	     [(0 3 0)
+	     [(0 3 1)
 	      ((emacs
 		(27 1)))
 	      "N Λ N O theme" tar
 	      ((:url . "https://github.com/rougier/nano-theme")
 	       (:keywords "theme" "dark" "light")
 	       (:maintainer "Nicolas P. Rougier" . "Nicolas.Rougier@inria.fr")
-	       (:commit . "11362f22ba631d84ae300fd3c4bd6db128ba5960"))])
+	       (:commit . "c4f296d349cf5ef2efd88d68535a4dbf577b9a87"))])
  (nhexl-mode .
 	     [(1 5)
 	      ((emacs
@@ -2782,6 +2792,15 @@
 		(:authors
 		 ("Filipp Gunbin" . "fgunbin@fastmail.fm"))
 		(:url . "https://elpa.gnu.org/packages/sql-beeline.html"))])
+ (sql-cassandra .
+		[(0 1)
+		 nil "Cassandra support for sql.el" tar
+		 ((:keywords "sql" "cassandra" "cql" "cqlsh")
+		  (:maintainer "Filipp Gunbin" . "fgunbin@fastmail.fm")
+		  (:authors
+		   ("Filipp Gunbin" . "fgunbin@fastmail.fm"))
+		  (:url . "https://elpa.gnu.org/packages/sql-cassandra.html")
+		  (:commit . "19a9bf54120c816f9635ed144b5be67bb11a31ea"))])
  (sql-indent .
 	     [(1 6)
 	      ((cl-lib
@@ -2961,7 +2980,7 @@
 	  ("Oleh Krehel" . "ohwoeowho@gmail.com"))
 	 (:keywords "convenience"))])
  (tmr .
-      [(0 2 2)
+      [(0 2 3)
        ((emacs
 	 (27 1)))
        "Set timers using a convenient notation" tar
@@ -2970,9 +2989,9 @@
 	(:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
 	(:authors
 	 ("Protesilaos Stavrou" . "info@protesilaos.com"))
-	(:commit . "bf13ea973126ea5a1a8f6d4216959d9da4ade979"))])
+	(:commit . "7157ec61c451e3b97ba6117688d0de52bf294bea"))])
  (tramp .
-	[(2 5 2 3)
+	[(2 5 2 4)
 	 ((emacs
 	   (25 1)))
 	 "Transparent Remote Access, Multiple Protocol" tar
@@ -2981,7 +3000,7 @@
 	  (:maintainer "Michael Albinus" . "michael.albinus@gmx.de")
 	  (:authors
 	   ("Kai Großjohann" . "kai.grossjohann@gmx.net"))
-	  (:commit . "ad1b28dca70c70cd4c317dcb606c92dfb436ccee"))])
+	  (:commit . "8f2578d043d2d633c20a74a8b836920b7d0a3fa0"))])
  (tramp-nspawn .
 	       [(1 0)
 		((emacs
@@ -3236,7 +3255,7 @@
 	(:maintainer "Andrey Kotlarski" . "m00naticus@gmail.com")
 	(:keywords "large files" "utilities"))])
  (vundo .
-	[(1 0 0)
+	[(2 0 0)
 	 ((emacs
 	   (28 1)))
 	 "Visual undo tree" tar
@@ -3245,7 +3264,7 @@
 	  (:maintainer "Yuan Fu" . "casouri@gmail.com")
 	  (:authors
 	   ("Yuan Fu" . "casouri@gmail.com"))
-	  (:commit . "0e3af84944c2c69ddaf5364868fe77c31f62527e"))])
+	  (:commit . "10d5debe317b2244d19085151040f955dda4a9ab"))])
  (wcheck-mode .
 	      [(2021)
 	       nil "General interface for text checkers" tar
