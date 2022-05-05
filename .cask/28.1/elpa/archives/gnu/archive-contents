@@ -785,7 +785,7 @@
 	     ("Chong Yidong" . "cyd@gnu.org"))
 	    (:maintainer "Chong Yidong" . "cyd@gnu.org"))])
  (dtache .
-	 [(0 5)
+	 [(0 6)
 	  ((emacs
 	    (27 1)))
 	  "Run and interact with detached shell commands" tar
@@ -794,7 +794,7 @@
 	   (:maintainer "Niklas Eklund" . "niklas.eklund@posteo.net")
 	   (:authors
 	    ("Niklas Eklund" . "niklas.eklund@posteo.net"))
-	   (:commit . "ecf4c57d96eda400d9b2d5cfeaa9244993ae3603"))])
+	   (:commit . "4ecda689e4ccddc23805a22484c95c4f3f65e3bb"))])
  (dts-mode .
 	   [(1 0)
 	    ((emacs
@@ -1313,6 +1313,17 @@
 	     (:authors
 	      ("Michael R. Mauger" . "michael@mauger.com"))
 	     (:maintainer "Michael R. Mauger" . "michael@mauger.com"))])
+ (gtags-mode .
+	     [(1 0)
+	      ((emacs
+		(28)))
+	      "GNU Global integration with xref, project and imenu." tar
+	      ((:url . "https://github.com/Ergus/gtags-mode")
+	       (:keywords "xref" "project" "imenu" "gtags" "global")
+	       (:maintainer "Jimmy Aguilar Mena")
+	       (:authors
+		("Jimmy Aguilar Mena"))
+	       (:commit . "f108a46c6c03eb5e18c73a908c655071aa153a14"))])
  (guess-language .
 		 [(0 0 1)
 		  ((cl-lib
@@ -1382,15 +1393,16 @@
 	   ("Oleh Krehel" . "ohwoeowho@gmail.com"))
 	  (:keywords "bindings"))])
  (hyperbole .
-	    [(7 1 3)
+	    [(8 0 0)
 	     ((emacs
-	       (27 1)))
+	       (27 0)))
 	     "GNU Hyperbole: The Everyday Hypertextual Information Manager" tar
 	     ((:url . "http://www.gnu.org/software/hyperbole")
+	      (:keywords "comm" "convenience" "files" "frames" "hypermedia" "languages" "mail" "matching" "mouse" "multimedia" "outlines" "tools" "wp")
 	      (:maintainer "Bob Weiner <rsw@gnu.org>, Mats Lidell" . "matsl@gnu.org")
 	      (:authors
 	       ("Bob Weiner"))
-	      (:keywords "comm" "convenience" "files" "frames" "hypermedia" "languages" "mail" "matching" "mouse" "multimedia" "outlines" "tools" "wp"))])
+	      (:commit . "4214716e06920a3e10db5811bd22a343ad6435d9"))])
  (ilist .
 	[(0 1)
 	 nil "Display a list in an ibuffer way." tar
@@ -2356,13 +2368,14 @@
 	  (:maintainer "Toby Cubitt" . "toby-predictive@dr-qubit.org")
 	  (:url . "http://www.dr-qubit.org/emacs.php"))])
  (rainbow-mode .
-	       [(1 0 5)
-		nil "Colorize color names in buffers" single
-		((:url . "http://elpa.gnu.org/packages/rainbow-mode.html")
-		 (:keywords "faces")
+	       [(1 0 6)
+		nil "Colorize color names in buffers" tar
+		((:keywords "faces")
+		 (:maintainer "Julien Danjou" . "julien@danjou.info")
 		 (:authors
 		  ("Julien Danjou" . "julien@danjou.info"))
-		 (:maintainer "Julien Danjou" . "julien@danjou.info"))])
+		 (:url . "https://elpa.gnu.org/packages/rainbow-mode.html")
+		 (:commit . "ac68593018ef3555e64ea592d72334f4e3e39209"))])
  (rbit .
        [(0 1)
 	nil "Red-black persistent interval trees" single
@@ -2552,14 +2565,14 @@
 	      ("Stefan Monnier" . "monnier@iro.umontreal.ca"))
 	     (:maintainer "Stefan Monnier" . "monnier@iro.umontreal.ca"))])
  (rt-liberation .
-		[(4)
+		[(5)
 		 nil "Emacs interface to RT" tar
 		 ((:url . "http://www.nongnu.org/rtliber/")
 		  (:keywords "rt" "tickets")
 		  (:maintainer "Yoni Rabkin" . "yrk@gnu.org")
 		  (:authors
 		   ("Yoni Rabkin" . "yrk@gnu.org"))
-		  (:commit . "f9dbe356479c10c32a8f420e4f3d2c7a99edf9ce"))])
+		  (:commit . "b76ae2828b12efc5f45f51ba873489e049a70924"))])
  (rudel .
 	[(0 3 2)
 	 ((emacs
@@ -2793,14 +2806,16 @@
 		 ("Filipp Gunbin" . "fgunbin@fastmail.fm"))
 		(:url . "https://elpa.gnu.org/packages/sql-beeline.html"))])
  (sql-cassandra .
-		[(0 1)
-		 nil "Cassandra support for sql.el" tar
+		[(0 2 1)
+		 ((emacs
+		   (29)))
+		 "Cassandra support for sql.el" tar
 		 ((:keywords "sql" "cassandra" "cql" "cqlsh")
 		  (:maintainer "Filipp Gunbin" . "fgunbin@fastmail.fm")
 		  (:authors
 		   ("Filipp Gunbin" . "fgunbin@fastmail.fm"))
 		  (:url . "https://elpa.gnu.org/packages/sql-cassandra.html")
-		  (:commit . "19a9bf54120c816f9635ed144b5be67bb11a31ea"))])
+		  (:commit . "2920f8c64e937904087f3636696501fb1cfe7acc"))])
  (sql-indent .
 	     [(1 6)
 	      ((cl-lib
@@ -2990,6 +3005,17 @@
 	(:authors
 	 ("Protesilaos Stavrou" . "info@protesilaos.com"))
 	(:commit . "7157ec61c451e3b97ba6117688d0de52bf294bea"))])
+ (tomelr .
+	 [(0 2 5)
+	  ((emacs
+	    (26 3)))
+	  "Convert S-expressions to TOML" tar
+	  ((:url . "https://github.com/kaushalmodi/tomelr/")
+	   (:keywords "data" "tools" "toml" "serialization" "config")
+	   (:maintainer "Kaushal Modi" . "kaushal.modi@gmail.com")
+	   (:authors
+	    ("Kaushal Modi" . "kaushal.modi@gmail.com"))
+	   (:commit . "8fc2257ec072a3fc3316c7f311722db50b37558e"))])
  (tramp .
 	[(2 5 2 4)
 	 ((emacs
