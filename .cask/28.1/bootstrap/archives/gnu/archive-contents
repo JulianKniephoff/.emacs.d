@@ -881,7 +881,7 @@
 	      (:maintainer "Markus Triska" . "triska@metalevel.at")
 	      (:url . "https://www.metalevel.at/ediprolog/"))])
  (eev .
-      [(20220416)
+      [(20220518)
        ((emacs
 	 (24 4)))
        "Support for e-scripts (eepitch blocks, elisp hyperlinks, etc)" tar
@@ -890,7 +890,7 @@
 	(:maintainer "Eduardo Ochs" . "eduardoochs@gmail.com")
 	(:authors
 	 ("Eduardo Ochs" . "eduardoochs@gmail.com"))
-	(:commit . "84a0b6e6bb247efcb519c1e32de172aa55e184c7"))])
+	(:commit . "9019554599f37803fac0bfeb4efad77f024209ef"))])
  (eglot .
 	[(1 8)
 	 ((emacs
@@ -2850,6 +2850,19 @@
 	       (:authors
 		("Alex Harsanyi" . "AlexHarsanyi@gmail.com"))
 	       (:keywords "languages" "sql"))])
+ (srht .
+       [(0 1)
+	((emacs
+	  (27 1))
+	 (plz
+	  (0 1)))
+	"Sourcehut" tar
+	((:url . "https://sr.ht/~akagi/srht.el/")
+	 (:keywords "comm" "vc")
+	 (:maintainer "Aleksandr Vityazev" . "avityazev@posteo.org")
+	 (:authors
+	  ("Aleksandr Vityazev" . "avityazev@posteo.org"))
+	 (:commit . "e4648260024bef41006bc77b18a598623e7d7201"))])
  (ssh-deploy .
 	     [(3 1 13)
 	      ((emacs
@@ -3019,7 +3032,7 @@
 	  ("Oleh Krehel" . "ohwoeowho@gmail.com"))
 	 (:keywords "convenience"))])
  (tmr .
-      [(0 2 3)
+      [(0 3 0)
        ((emacs
 	 (27 1)))
        "Set timers using a convenient notation" tar
@@ -3027,8 +3040,9 @@
 	(:keywords "convenience" "timer")
 	(:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
 	(:authors
-	 ("Protesilaos Stavrou" . "info@protesilaos.com"))
-	(:commit . "7157ec61c451e3b97ba6117688d0de52bf294bea"))])
+	 ("Protesilaos Stavrou" . "info@protesilaos.com")
+	 ("Damien Cassou" . "damien@cassou.me"))
+	(:commit . "79a57fce5139f764eee1a7f1414e3075d4e1549b"))])
  (tomelr .
 	 [(0 4 3)
 	  ((emacs

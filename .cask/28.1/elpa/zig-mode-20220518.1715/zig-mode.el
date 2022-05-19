@@ -1,8 +1,8 @@
 ;;; zig-mode.el --- A major mode for the Zig programming language -*- lexical-binding: t -*-
 
 ;; Version: 0.0.8
-;; Package-Version: 20211227.1108
-;; Package-Commit: aa20d630b8c413dab8d6bd120ec3ed5db5c9da70
+;; Package-Version: 20220518.1715
+;; Package-Commit: 905917322b8b5f191593c66b5f26dd347fe1290d
 ;; Author: Andrea Orru <andreaorru1991@gmail.com>, Andrew Kelley <superjoe30@gmail.com>
 ;; Keywords: zig, languages
 ;; Package-Requires: ((emacs "24.3"))
@@ -531,6 +531,7 @@ This is written mainly to be used as `end-of-defun-function' for Zig."
 \\{zig-mode-map}"
   :group 'zig-mode
   (setq-local comment-start "// ")
+  (setq-local comment-start-skip "//+ *")
   (setq-local comment-end "")
   (setq-local electric-indent-chars
               (append zig-electric-indent-chars

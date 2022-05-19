@@ -6,7 +6,7 @@
     (spinner "1.7.3")
     (markdown-mode "2.3")
     (lv "0"))
-  :commit "9131ab7a8c83a027f42c4cb4a209aeb36c2217dd" :authors
+  :commit "11c0c7af611ecb63f7797caae66fb03ba10c8c1e" :authors
   '(("Vibhav Pant, Fangrui Song, Ivan Yonchovski"))
   :maintainer
   '("Vibhav Pant, Fangrui Song, Ivan Yonchovski")
