@@ -3,7 +3,7 @@
     (compat "28.1.1.0")
     (transient "20210920")
     (with-editor "20211001"))
-  :commit "e920cdb326d2c2da5a32809085aa6b9369b51b1a" :authors
+  :commit "a4a78d341a7006ccdec708b424048ba3b22ee801" :authors
   '(("Jonas Bernoulli" . "jonas@bernoul.li")
     ("Sebastian Wiesner" . "lunaryorn@gmail.com")
     ("Florian Ragwitz" . "rafl@debian.org")

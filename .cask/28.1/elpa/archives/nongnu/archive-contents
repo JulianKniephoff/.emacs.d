@@ -207,6 +207,21 @@
 			   (:maintainer "Julien Barnier")
 			   (:authors
 			    ("Julien Barnier")))])
+ (corfu-popup .
+	      [(0 1)
+	       ((emacs
+		 (26 1))
+		(corfu
+		 (0 23))
+		(popon
+		 (0)))
+	       "Corfu popup on terminal" tar
+	       ((:url . "https://codeberg.org/akib/emacs-corfu-terminal")
+		(:keywords "convenience")
+		(:maintainer "Akib Azmain Turja" . "akib@disroot.org")
+		(:authors
+		 ("Akib Azmain Turja" . "akib@disroot.org"))
+		(:commit . "eb4106aa5a103e2ad52b8dd2f2803f5dacecf850"))])
  (crux .
        [(0 4 0)
 	((seq
@@ -439,6 +454,23 @@
 		   (:maintainer "https://turbocafe.keybase.pub")
 		   (:authors
 		    ("https://turbocafe.keybase.pub")))])
+ (flymake-popon .
+		[(0 1)
+		 ((emacs
+		   (26 1))
+		  (flymake
+		   (0))
+		  (popon
+		   (0))
+		  (posframe
+		   (0)))
+		 "Flymake diagnostics on cursor hover" tar
+		 ((:url . "https://codeberg.org/akib/emacs-flymake-popon")
+		  (:keywords "convenience")
+		  (:maintainer "Akib Azmain Turja" . "akib@disroot.org")
+		  (:authors
+		   ("Akib Azmain Turja" . "akib@disroot.org"))
+		  (:commit . "df877f3656bce86cbee33aa6c4eedd42b37647e7"))])
  (forth-mode .
 	     [(0 2)
 	      nil "Programming language mode for Forth" tar
@@ -1074,16 +1106,16 @@
 		 ("Bastian Bechtold")
 		 ("Christian Schwarzgruber")))])
  (org-mime .
-	   [(0 3 0)
+	   [(0 3 1)
 	    ((emacs
 	      (25 1)))
 	    "org html export for text/html MIME emails" tar
 	    ((:url . "http://github.com/org-mime/org-mime")
 	     (:keywords "mime" "mail" "email" "html")
-	     (:maintainer "Chen Bin (redguardtoo)")
+	     (:maintainer "Chen Bin" . "chenbin.sh@gmail.com")
 	     (:authors
 	      ("Eric Schulte"))
-	     (:commit . "2eede712acc51aaf495984ec457431dbb520038c"))])
+	     (:commit . "cf96f585c68ad14751a3f73d937cbfcb890171b9"))])
  (org-present .
 	      [(0 1)
 	       ((org
@@ -1203,6 +1235,17 @@
 	     (:authors
 	      ("Eric James Michael Ritz"))
 	     (:keywords "languages" "php"))])
+ (popon .
+	[(0 1)
+	 ((emacs
+	   (25 1)))
+	 "\"Pop\" floating text \"on\" a window" tar
+	 ((:url . "https://codeberg.org/akib/emacs-popon")
+	  (:keywords "lisp" "extensions" "frames")
+	  (:maintainer "Akib Azmain Turja" . "akib@disroot.org")
+	  (:authors
+	   ("Akib Azmain Turja" . "akib@disroot.org"))
+	  (:commit . "240fb286d8e8f8333c5d20da5fe8b32c277cd6eb"))])
  (popup .
 	[(0 5 9)
 	 ((emacs
@@ -1513,14 +1556,15 @@
 	       ("Venkat Iyer" . "venkat@comit.com"))
 	      (:url . "https://elpa.nongnu.org/nongnu/vc-fossil.html"))])
  (visual-fill-column .
-		     [(2 4)
+		     [(2 5)
 		      ((emacs
 			(25 1)))
 		      "fill-column for visual-line-mode" tar
 		      ((:url . "https://codeberg.org/joostkremers/visual-fill-column")
 		       (:maintainer "Joost Kremers" . "joostkremers@fastmail.fm")
 		       (:authors
-			("Joost Kremers" . "joostkremers@fastmail.fm")))])
+			("Joost Kremers" . "joostkremers@fastmail.fm"))
+		       (:commit . "afaad5ac6b15cdf9f362662538e35d48578e218a"))])
  (web-mode .
 	   [(17 2 0)
 	    ((emacs
