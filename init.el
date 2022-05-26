@@ -8,6 +8,12 @@
 ;; Platform specific stuff
 (setq mac-right-option-modifier 'none)
 
+;; Put backups in a central directory
+(setq backup-directory (expand-file-name "backup" user-emacs-directory))
+(use-package files
+  :config
+  (setq backup-directory-alist (list (cons "." (expand-file-name "backup")))))
+
 ;; Appearance
 
 ;; Set font if you wish
@@ -104,7 +110,9 @@
   (setq evil-want-keybinding nil)
 
   (use-package undo-tree
+    :after files
     :config
+    (setq undo-tree-history-directory-alist backup-directory-alist)
     (global-undo-tree-mode))
 
   :custom
