@@ -208,7 +208,7 @@
 			   (:authors
 			    ("Julien Barnier")))])
  (corfu-terminal .
-		 [(0 2)
+		 [(0 3)
 		  ((emacs
 		    (26 1))
 		   (corfu
@@ -221,7 +221,7 @@
 		   (:maintainer "Akib Azmain Turja" . "akib@disroot.org")
 		   (:authors
 		    ("Akib Azmain Turja" . "akib@disroot.org"))
-		   (:commit . "15c1b149cf1bda0f928b706be4b5050afa1699e0"))])
+		   (:commit . "e9cae1b23a252ae497f3564b9f588be807337b35"))])
  (crux .
        [(0 4 0)
 	((seq
@@ -455,22 +455,22 @@
 		   (:authors
 		    ("https://turbocafe.keybase.pub")))])
  (flymake-popon .
-		[(0 1)
+		[(0 2)
 		 ((emacs
 		   (26 1))
 		  (flymake
-		   (0))
+		   (1 2 2))
 		  (popon
-		   (0))
+		   (0 1))
 		  (posframe
-		   (0)))
+		   (1 1 7)))
 		 "Flymake diagnostics on cursor hover" tar
 		 ((:url . "https://codeberg.org/akib/emacs-flymake-popon")
 		  (:keywords "convenience")
 		  (:maintainer "Akib Azmain Turja" . "akib@disroot.org")
 		  (:authors
 		   ("Akib Azmain Turja" . "akib@disroot.org"))
-		  (:commit . "df877f3656bce86cbee33aa6c4eedd42b37647e7"))])
+		  (:commit . "3423e462fc32a3a87b43a4b118933606d02882f5"))])
  (forth-mode .
 	     [(0 2)
 	      nil "Programming language mode for Forth" tar
@@ -1236,7 +1236,7 @@
 	      ("Eric James Michael Ritz"))
 	     (:keywords "languages" "php"))])
  (popon .
-	[(0 1)
+	[(0 3)
 	 ((emacs
 	   (25 1)))
 	 "\"Pop\" floating text \"on\" a window" tar
@@ -1245,7 +1245,7 @@
 	  (:maintainer "Akib Azmain Turja" . "akib@disroot.org")
 	  (:authors
 	   ("Akib Azmain Turja" . "akib@disroot.org"))
-	  (:commit . "240fb286d8e8f8333c5d20da5fe8b32c277cd6eb"))])
+	  (:commit . "26224d2345ca4e39e376d1d39c96c81bb533de8b"))])
  (popup .
 	[(0 5 9)
 	 ((emacs
@@ -1356,7 +1356,7 @@
 	   (:authors
 	    ("Vitalie Spinu")))])
  (shellcop .
-	   [(0 0 9)
+	   [(0 1 0)
 	    ((emacs
 	      (25 1)))
 	    "Analyze info&error in shell-mode" tar
@@ -1365,7 +1365,7 @@
 	     (:maintainer "Chen Bin" . "chenbin.sh@gmail.com")
 	     (:authors
 	      ("Chen Bin" . "chenbin.sh@gmail.com"))
-	     (:commit . "327f5ac43e5d543149a772aef06cdb616477eb43"))])
+	     (:commit . "4e71f5b9199a0ad10017104a6b2bf5ef5f207dfc"))])
  (slime .
 	[(2 26 1)
 	 ((cl-lib
@@ -1560,12 +1560,13 @@
 		 (:authors
 		  ("Mark Tran" . "mark.tran@gmail.com")))])
  (vc-fossil .
-	    [(20210928)
+	    [(20220528)
 	     nil "VC backend for the fossil sofware configuraiton management system" tar
 	     ((:maintainer "Alfred M. Szmidt" . "ams@gnu.org")
 	      (:authors
 	       ("Venkat Iyer" . "venkat@comit.com"))
-	      (:url . "https://elpa.nongnu.org/nongnu/vc-fossil.html"))])
+	      (:url . "https://elpa.nongnu.org/nongnu/vc-fossil.html")
+	      (:commit . "88e2e164c0f547497b92b5b0b68ba214bff22c6a"))])
  (vcomplete .
 	    [(1 2 1)
 	     ((emacs
