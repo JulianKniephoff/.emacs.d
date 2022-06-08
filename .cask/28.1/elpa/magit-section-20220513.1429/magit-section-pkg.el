@@ -2,7 +2,7 @@
   '((emacs "25.1")
     (compat "28.1.1.0")
     (dash "20210826"))
-  :commit "4b8eab3af130c47421482c1d28c1cbcb033106fc" :authors
+  :commit "2dfeaa6839c643a54d96c9f855bae11d5cba2453" :authors
   '(("Jonas Bernoulli" . "jonas@bernoul.li"))
   :maintainer
   '("Jonas Bernoulli" . "jonas@bernoul.li")
