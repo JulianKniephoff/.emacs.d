@@ -12,7 +12,7 @@
 (setq backup-directory (expand-file-name "backup" user-emacs-directory))
 (use-package files
   :config
-  (setq backup-directory-alist (list (cons "." (expand-file-name "backup")))))
+  (setq backup-directory-alist (list (cons "." backup-directory))))
 
 ;; Appearance
 
