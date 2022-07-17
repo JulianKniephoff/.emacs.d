@@ -18,11 +18,11 @@
 	 ("Leo Liu" . "sdl.web@gmail.com"))
 	(:keywords "tools" "processes" "convenience"))])
  (ada-mode .
-	   [(7 2 0)
+	   [(7 2 1)
 	    ((uniquify-files
 	      (1 0 1))
 	     (wisi
-	      (3 1 5))
+	      (3 1 8))
 	     (emacs
 	      (25 3)))
 	    "major-mode for editing Ada sources" tar
@@ -30,7 +30,8 @@
 	     (:keywords "languages" "ada")
 	     (:maintainer "Stephen Leake" . "stephen_leake@stephe-leake.org")
 	     (:authors
-	      ("Stephen Leake" . "stephen_leake@stephe-leake.org")))])
+	      ("Stephen Leake" . "stephen_leake@stephe-leake.org"))
+	     (:commit . "fa4f86a75b54d30fdc4f9bbf3ceeac24d2ab5e0b"))])
  (ada-ref-man .
 	      [(2020 1)
 	       nil "Ada Reference Manual 2012" tar
@@ -692,7 +693,7 @@
 	    (:maintainer "Phil Sainty" . "psainty@orcon.net.nz")
 	    (:url . "https://savannah.nongnu.org/projects/delight"))])
  (denote .
-	 [(0 2 1)
+	 [(0 3 1)
 	  ((emacs
 	    (27 2)))
 	  "Simple notes with an efficient file-naming scheme" tar
@@ -700,7 +701,7 @@
 	   (:maintainer "Denote Development" . "~protesilaos/denote@lists.sr.ht")
 	   (:authors
 	    ("Protesilaos Stavrou" . "info@protesilaos.com"))
-	   (:commit . "f10fe51fcd80bbcfc44bbef31d5b8f6952b4be4c"))])
+	   (:commit . "08fa8b223926b6aee1549b87602d6bf3ac284d8b"))])
  (detached .
 	   [(0 7)
 	    ((emacs
@@ -3215,7 +3216,7 @@
 		    (:url . "https://elpa.gnu.org/packages/uni-confusables.html")
 		    (:commit . "393e1adeec5b0eb51f9606983655cfe2272c6e54"))])
  (uniquify-files .
-		 [(1 0 3)
+		 [(1 0 4)
 		  ((emacs
 		    (25 0)))
 		  "Completion style for files, minimizing directories" tar
@@ -3223,7 +3224,8 @@
 		   (:maintainer "Stephen Leake" . "stephen_leake@stephe-leake.org")
 		   (:authors
 		    ("Stephen Leake" . "stephen_leake@stephe-leake.org"))
-		   (:url . "https://elpa.gnu.org/packages/uniquify-files.html"))])
+		   (:url . "https://elpa.gnu.org/packages/uniquify-files.html")
+		   (:commit . "1d76b4f0e283afaff2be053d85f8726ffc3abd6e"))])
  (url-http-ntlm .
 		[(2 0 4)
 		 ((cl-lib
@@ -3291,14 +3293,16 @@
 	     (:authors
 	      ("Andrii Kolomoiets" . "andreyk.mad@gmail.com")))])
  (vcard .
-	[(0 2 1)
+	[(0 2 2)
 	 ((emacs
 	   (27 1)))
 	 "Package for handling vCard files" tar
-	 ((:maintainer "Eric Abrahamsen" . "eric@ericabrahamsen.net")
+	 ((:keywords "vcard" "mail" "news")
+	  (:maintainer "Noah Friedman <friedman@splode.com>, Eric Abrahamsen" . "eric@ericabrahamsen.net")
 	  (:authors
-	   ("Eric Abrahamsen" . "eric@ericabrahamsen.net"))
-	  (:url . "https://elpa.gnu.org/packages/vcard.html"))])
+	   ("Noah Friedman" . "friedman@splode.com"))
+	  (:url . "https://elpa.gnu.org/packages/vcard.html")
+	  (:commit . "28b88fd8ed53ca12d9499175217af81f5ea161fc"))])
  (vcl-mode .
 	   [(1 1)
 	    nil "Major mode for Varnish Configuration Language" single
@@ -3476,17 +3480,18 @@
 		("Bastien" . "bzg@gnu.org"))
 	       (:maintainer "Bastien" . "bzg@gnu.org"))])
  (wisi .
-       [(3 1 7)
+       [(3 1 8)
 	((emacs
 	  (25 3))
 	 (seq
 	  (2 20)))
-	"Utilities for implementing an indentation/navigation engine using a generalized LALR parser" tar
+	"Utilities for implementing an indentation/navigation engine using a generalized LR parser" tar
 	((:url . "http://stephe-leake.org/ada/wisitoken.html")
 	 (:keywords "parser" "indentation" "navigation")
 	 (:maintainer "Stephen Leake" . "stephen_leake@stephe-leake.org")
 	 (:authors
-	  ("Stephen Leake" . "stephen_leake@stephe-leake.org")))])
+	  ("Stephen Leake" . "stephen_leake@stephe-leake.org"))
+	 (:commit . "45f57f38c3771f00406cdf5c33ffc74c045d2b9e"))])
  (wisitoken-grammar-mode .
 			 [(1 2 0)
 			  ((wisi
@@ -3542,7 +3547,7 @@
 	(:authors
 	 ("Thien-Thi Nguyen" . "ttn@gnu.org")))])
  (xr .
-     [(1 22)
+     [(1 23)
       ((emacs
 	(26 1)))
       "Convert string regexp to rx notation" tar
@@ -3551,7 +3556,7 @@
        (:maintainer "Mattias Engdegård" . "mattiase@acm.org")
        (:authors
 	("Mattias Engdegård" . "mattiase@acm.org"))
-       (:commit . "a873bbbe9cdf1abab63fc94730966f5a8f9adaa6"))])
+       (:commit . "74906f6d104b7daae162dc32684e0443e80fdb03"))])
  (xref .
        [(1 4 1)
 	((emacs
