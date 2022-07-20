@@ -317,6 +317,9 @@
 (use-package glsl-mode
   :mode "\\.glsl\\'")
 
+(use-package graphql-mode
+  :mode "\\.graphql\\'")
+
 (use-package zig-mode
   :mode "\\.zig\\'")
 

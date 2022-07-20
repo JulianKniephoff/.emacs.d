@@ -25,6 +25,7 @@
 (depends-on "fill-column-indicator")
 (depends-on "fsharp-mode")
 (depends-on "glsl-mode")
+(depends-on "graphql-mode")
 (depends-on "haml-mode")
 (depends-on "handlebars-mode")
 (depends-on "haskell-mode")
