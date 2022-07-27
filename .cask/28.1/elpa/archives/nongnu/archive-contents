@@ -914,7 +914,7 @@
 	   ("Victor Ren" . "victorhge@gmail.com"))
 	  (:commit . "699e179dac18c78698cba1a2052bee6f0bbc6bf7"))])
  (inf-clojure .
-	      [(3 2 0)
+	      [(3 2 1)
 	       ((emacs
 		 (25 1))
 		(clojure-mode
@@ -922,7 +922,8 @@
 	       "Run an external Clojure process in an Emacs buffer" tar
 	       ((:url . "http://github.com/clojure-emacs/inf-clojure")
 		(:keywords "processes" "comint" "clojure")
-		(:commit . "67b0403aa183d521e36545266100f1f62a34e783"))])
+		(:maintainer "Bozhidar Batsov" . "bozhidar@batsov.dev")
+		(:commit . "151b20ba9d3ae39b88f91aecbab98bd5a5215f1a"))])
  (inf-ruby .
 	   [(2 6 1)
 	    ((emacs
@@ -1365,7 +1366,7 @@
 	      ("Eric James Michael Ritz"))
 	     (:keywords "languages" "php"))])
  (popon .
-	[(0 7)
+	[(0 8)
 	 ((emacs
 	   (25 1)))
 	 "\"Pop\" floating text \"on\" a window" tar
@@ -1374,7 +1375,7 @@
 	  (:maintainer "Akib Azmain Turja" . "akib@disroot.org")
 	  (:authors
 	   ("Akib Azmain Turja" . "akib@disroot.org"))
-	  (:commit . "11ee8321e777ebef67f4956961bb6c7bfad225df"))])
+	  (:commit . "e7ef75f81687bb01d413ba073aa35683a810e0f3"))])
  (popup .
 	[(0 5 9)
 	 ((emacs
@@ -1607,7 +1608,7 @@
 		     ("John Olsson" . "john@cryon.se"))
 		    (:commit . "2d5acd143a153e16372d59000e57d76291ab81dd"))])
  (subed .
-	[(1 0 5)
+	[(1 0 7)
 	 ((emacs
 	   (25 1)))
 	 "A major mode for editing subtitles" tar
@@ -1616,7 +1617,7 @@
 	  (:maintainer "Sacha Chua" . "sacha@sachachua.com")
 	  (:authors
 	   ("Random User"))
-	  (:commit . "7a0c36c808e107b5851ba48ec3825dfa3c1a902e"))])
+	  (:commit . "eefe94f308d7006a498b17fc9acf01790b793bcd"))])
  (swift-mode .
 	     [(8 6 0)
 	      ((emacs
