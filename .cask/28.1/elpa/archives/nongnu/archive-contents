@@ -28,13 +28,13 @@
 		(:authors
 		 ("Jordon Biondo" . "jordonbiondo@gmail.com")))])
  (annotate .
-	   [(1 7 0)
+	   [(1 7 1)
 	    nil "annotate files without changing them" tar
 	    ((:url . "https://github.com/bastibe/annotate.el")
 	     (:maintainer "Bastian Bechtold <bastibe.dev@mailbox.org>, cage" . "cage-dev@twistfold.it")
 	     (:authors
 	      ("Bastian Bechtold"))
-	     (:commit . "9bfa065a4e14f7e96c8ac487c4e54b084a02133c"))])
+	     (:commit . "7aadf4b9838ad83da9f4e6128aa9a450c66220ad"))])
  (anti-zenburn-theme .
 		     [(2 5 1)
 		      nil "Low-contrast Zenburn-inverted theme" tar
@@ -78,7 +78,7 @@
 		 (:maintainer "stardiviner" . "numbchild@gmail.com")
 		 (:keywords "languages" "arduino"))])
  (autothemer .
-	     [(0 2 3)
+	     [(0 2 5)
 	      ((dash
 		(2 10 0))
 	       (emacs
@@ -86,10 +86,11 @@
 	       (cl-lib
 		(0 5)))
 	      "Conveniently define themes." tar
-	      ((:url . "https://github.com/sebastiansturm/autothemer")
-	       (:maintainer "Sebastian Sturm")
+	      ((:url . "https://github.com/jasonm23/autothemer")
+	       (:maintainer "Jason Milkins" . "jasonm23@gmail.com")
 	       (:authors
-		("Sebastian Sturm")))])
+		("Sebastian Sturm"))
+	       (:commit . "3223cd8867fb75a109e41ccce98ab0e89d0a4f1b"))])
  (better-jumper .
 		[(1 0 1)
 		 ((emacs
@@ -129,7 +130,7 @@
 	     (:authors
 	      ("Dave Pearson" . "davep@davep.org")))])
  (buttercup .
-	    [(1 25)
+	    [(1 26)
 	     ((emacs
 	       (24 3)))
 	     "Behavior-Driven Emacs Lisp Testing" tar
@@ -137,7 +138,7 @@
 	      (:maintainer "Ola Nilsson" . "ola.nilsson@gmail.com")
 	      (:authors
 	       ("Jorgen Schaefer" . "contact@jorgenschaefer.de"))
-	      (:commit . "ba62f80555d46faf49dc451c0ad20f39f6a170ab"))])
+	      (:commit . "9022546ebf2f492e9f3ce92e02ed893bcecab027"))])
  (caml .
        [(4 9)
 	((emacs
@@ -307,13 +308,13 @@
 		     ("Campbell Barton" . "ideasman42@gmail.com"))
 		    (:commit . "1c5837d2a667d977a1bd90ba44ebd911cc660f26"))])
  (dockerfile-mode .
-		  [(1 5)
+		  [(1 7)
 		   ((emacs
 		     (24)))
 		   "Major mode for editing Docker's Dockerfiles" tar
 		   ((:url . "https://github.com/spotify/dockerfile-mode")
 		    (:keywords "docker")
-		    (:commit . "628315e2e4ab2f269548126444234caa057b2c75"))])
+		    (:commit . "74ed3dfd1584298a0ea9881115d33ba1808a4c3f"))])
  (dracula-theme .
 		[(1 7 0)
 		 ((emacs
@@ -1866,7 +1867,7 @@
 	      (:authors
 	       ("Le Wang")))])
  (xah-fly-keys .
-	       [(17 18 20220804202952)
+	       [(17 19 20220806194323)
 		((emacs
 		  (24 1)))
 		"ergonomic modal keybinding minor mode." tar
@@ -1875,7 +1876,7 @@
 		 (:maintainer "Xah Lee" . "xah@xahlee.org")
 		 (:authors
 		  ("Xah Lee ( http://xahlee.info/ )"))
-		 (:commit . "2ea5484f091266bb394ab72a6b8397cc4ae6742a"))])
+		 (:commit . "49857c341388dd58dcee4962226599510715f278"))])
  (xml-rpc .
 	  [(1 6 15)
 	   nil "An elisp implementation of clientside XML-RPC" tar
