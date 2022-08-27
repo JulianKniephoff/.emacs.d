@@ -1,6 +1,6 @@
 (define-package "fsharp-mode" "20220630.1931" "Support for the F# programming language"
   '((emacs "25"))
-  :commit "42e8db5ff67c37228f92ca8750d203aa5bd9e1e5" :authors
+  :commit "da57a3bb8a2521de1cd2bb61743ac64d19d91091" :authors
   '(("1993-1997 Xavier Leroy, Jacques Garrigue and Ian T Zimmerman")
     ("2010-2011 Laurent Le Brun" . "laurent@le-brun.eu")
     ("2012-2014 Robin Neatherway" . "robin.neatherway@gmail.com")

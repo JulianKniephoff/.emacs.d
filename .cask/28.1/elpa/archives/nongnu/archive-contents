@@ -78,19 +78,17 @@
 		 (:maintainer "stardiviner" . "numbchild@gmail.com")
 		 (:keywords "languages" "arduino"))])
  (autothemer .
-	     [(0 2 5)
+	     [(0 2 9)
 	      ((dash
 		(2 10 0))
 	       (emacs
-		(24))
-	       (cl-lib
-		(0 5)))
-	      "Conveniently define themes." tar
+		(26 1)))
+	      "Conveniently define themes" tar
 	      ((:url . "https://github.com/jasonm23/autothemer")
 	       (:maintainer "Jason Milkins" . "jasonm23@gmail.com")
 	       (:authors
 		("Sebastian Sturm"))
-	       (:commit . "3223cd8867fb75a109e41ccce98ab0e89d0a4f1b"))])
+	       (:commit . "378f8707bdd944f19b6fd4544359e993c9113752"))])
  (better-jumper .
 		[(1 0 1)
 		 ((emacs
@@ -152,22 +150,20 @@
 	  ("Damien Doligez" . "damien.doligez@inria.fr"))
 	 (:keywords "ocaml"))])
  (cdlatex .
-	  [(4 12)
-	   ((auctex
-	     (9 9)))
-	   "Fast input methods for LaTeX environments and math" tar
+	  [(4 14)
+	   nil "Fast input methods for LaTeX environments and math" tar
 	   ((:keywords "tex")
 	    (:maintainer "Carsten Dominik" . "carsten.dominik@gmail.com")
 	    (:authors
 	     ("Carsten Dominik" . "carsten.dominik@gmail.com"))
 	    (:url . "https://elpa.nongnu.org/nongnu/cdlatex.html")
-	    (:commit . "7791fa94d509f56ed671055e856c5d00c788dd7e"))])
+	    (:commit . "6f734db8ab87f11dffb77c33a445140baeb723c4"))])
  (cider .
-	[(1 4 1)
+	[(1 5 0)
 	 ((emacs
 	   (26))
 	  (clojure-mode
-	   (5 14))
+	   (5 15 1))
 	  (parseedn
 	   (1 0 6))
 	  (queue
@@ -189,7 +185,7 @@
 	   ("Artur Malabarba" . "bruce.connor.am@gmail.com")
 	   ("Hugo Duncan" . "hugo@hugoduncan.org")
 	   ("Steve Purcell" . "steve@sanityinc.com"))
-	  (:commit . "11156e7b0cab470f4aab39d3af5ee3cb1e0b09d0"))])
+	  (:commit . "700ded1d6c245e01fca7f364db1561ad1e1bb595"))])
  (clojure-mode .
 	       [(5 15 1)
 		((emacs
@@ -550,7 +546,7 @@
 	       ("Matus Goljer" . "matus.goljer@gmail.com"))
 	      (:commit . "6f9172376af4d399c7853cbdfdd7425348a878f9"))])
  (geiser .
-	 [(0 24)
+	 [(0 26)
 	  ((emacs
 	    (25 1))
 	   (transient
@@ -563,7 +559,7 @@
 	   (:maintainer "Jose Antonio Ortega Ruiz" . "jao@gnu.org")
 	   (:authors
 	    ("Jose Antonio Ortega Ruiz" . "jao@gnu.org"))
-	   (:commit . "d28d19b582347bffebbf0ca905297e744842a5f2"))])
+	   (:commit . "40f03bbad917a16ffda0e4b5d5795a2875bc0428"))])
  (geiser-chez .
 	      [(0 17)
 	       ((emacs
@@ -1804,7 +1800,7 @@
 			("Joost Kremers" . "joostkremers@fastmail.fm"))
 		       (:commit . "afaad5ac6b15cdf9f362662538e35d48578e218a"))])
  (web-mode .
-	   [(17 2 3)
+	   [(17 3 1)
 	    ((emacs
 	      (23 1)))
 	    "major mode for editing web templates" tar
@@ -1813,7 +1809,7 @@
 	     (:maintainer "François-Xavier Bois" . "fxbois@gmail.com")
 	     (:authors
 	      ("François-Xavier Bois"))
-	     (:commit . "7b5459f58c381f31eed257480b000a9a46209094"))])
+	     (:commit . "38ed4c575939083487e8abe59240d0ce4f671c93"))])
  (webpaste .
 	   [(3 2 2)
 	    ((emacs
@@ -1867,7 +1863,7 @@
 	      (:authors
 	       ("Le Wang")))])
  (xah-fly-keys .
-	       [(17 19 20220812194903)
+	       [(17 20 20220819141933)
 		((emacs
 		  (24 1)))
 		"ergonomic modal keybinding minor mode." tar
@@ -1876,7 +1872,7 @@
 		 (:maintainer "Xah Lee" . "xah@xahlee.org")
 		 (:authors
 		  ("Xah Lee ( http://xahlee.info/ )"))
-		 (:commit . "df9284fe4f6939c3d09b6922e14a88ee8401a97c"))])
+		 (:commit . "6ed5cd15d6b63a967a5d10c3cdfafbe8bdf3e9c6"))])
  (xml-rpc .
 	  [(1 6 15)
 	   nil "An elisp implementation of clientside XML-RPC" tar

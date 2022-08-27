@@ -2,7 +2,7 @@
   '((emacs "24.1")
     (s "1.7.0")
     (dash "2.2.0"))
-  :commit "85c91f95f8b98e153fd959ae467b46bf79622c5d" :authors
+  :commit "9f7346b863022c0e2259c6d26d74e898f6047ab6" :authors
   '(("Johan Andersson" . "johan.rejeep@gmail.com"))
   :maintainer
   '("Lucien Cartier-Tilet" . "lucien@phundrak.com")
