@@ -323,6 +323,9 @@
 (use-package zig-mode
   :mode "\\.zig\\'")
 
+(use-package clojure-mode
+  :mode "\\.clj[sc]?\\'")
+
 ;; Load Customizations
 
 ;; Customize
