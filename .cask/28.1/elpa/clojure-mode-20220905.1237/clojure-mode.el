@@ -11,8 +11,8 @@
 ;;       Magnar Sveen <magnars@gmail.com>
 ;; Maintainer: Bozhidar Batsov <bozhidar@batsov.dev>
 ;; URL: http://github.com/clojure-emacs/clojure-mode
-;; Package-Version: 20220830.1036
-;; Package-Commit: 68e0e1355cd21e0752a24432afa091ada4b35b8e
+;; Package-Version: 20220905.1237
+;; Package-Commit: d47298212ffc486ade3f2428f103feba3a467af0
 ;; Keywords: languages clojure clojurescript lisp
 ;; Version: 5.15.1
 ;; Package-Requires: ((emacs "25.1"))
@@ -477,7 +477,7 @@ ENDP and DELIM."
              (if (member delim clojure-omit-space-between-tag-and-delimiters)
                  "\\_<\\(?:'+\\|#.*\\)"
                "\\_<\\(?:'+\\|#\\)")
-             (point-at-bol)))))
+             (line-beginning-position)))))
 
 (defconst clojure--collection-tag-regexp "#\\(::[a-zA-Z0-9._-]*\\|:?\\([a-zA-Z0-9._-]+/\\)?[a-zA-Z0-9._-]+\\)"
   "Collection reader macro tag regexp.
@@ -804,12 +804,12 @@ Called by `imenu--generic-function'."
 (eval-and-compile
   (defconst clojure--sym-forbidden-rest-chars "][\";@\\^`~\(\)\{\}\\,\s\t\n\r"
     "A list of chars that a Clojure symbol cannot contain.
-See definition of 'macros': URL `http://git.io/vRGLD'.")
+See definition of `macros': URL `http://git.io/vRGLD'.")
   (defconst clojure--sym-forbidden-1st-chars (concat clojure--sym-forbidden-rest-chars "0-9:'")
     "A list of chars that a Clojure symbol cannot start with.
 See the for-loop: URL `http://git.io/vRGTj' lines: URL
 `http://git.io/vRGIh', URL `http://git.io/vRGLE' and value
-definition of 'macros': URL `http://git.io/vRGLD'.")
+definition of `macros': URL `http://git.io/vRGLD'.")
   (defconst clojure--sym-regexp
     (concat "[^" clojure--sym-forbidden-1st-chars "][^" clojure--sym-forbidden-rest-chars "]*")
     "A regexp matching a Clojure symbol or namespace alias.
@@ -880,10 +880,17 @@ any number of matches of `clojure--sym-forbidden-rest-chars'."))
                 "\\(?:#?^\\(?:{[^}]*}\\|\\sw+\\)[ \r\n\t]*\\)*"
                 "\\(\\sw+\\)?")
        (2 font-lock-type-face nil t))
-      ;; Function definition (anything that starts with def and is not
-      ;; listed above)
-      (,(concat "(\\(?:" clojure--sym-regexp "/\\)?"
-                "\\(def[^ \r\n\t]*\\)"
+      ;; Function definition
+      (,(concat "(\\(?:clojure.core/\\)?\\("
+                (regexp-opt '("defn"
+                              "defn-"
+                              "defmulti"
+                              "defmethod"
+                              "deftest"
+                              "deftest-"
+                              "defmacro"
+                              "definline"))
+                "\\)"
                 ;; Function declarations
                 "\\>"
                 ;; Any whitespace
@@ -1307,7 +1314,7 @@ will align the values like this:
 
 (defcustom clojure-special-arg-indent-factor
   2
-  "Factor of the 'lisp-body-indent' used to indent special arguments."
+  "Factor of the `lisp-body-indent' used to indent special arguments."
   :package-version '(clojure-mode . "5.13")
   :type 'integer
   :safe 'integerp)
@@ -1712,7 +1719,7 @@ This function also returns nil meaning don't specify the indentation."
   (put sym 'clojure-indent-function indent))
 
 (defun clojure--maybe-quoted-symbol-p (x)
-  "Check that X is either a symbol or a quoted symbol like :foo or 'foo."
+  "Check that X is either a symbol or a quoted symbol like :foo or \\='foo."
   (or (symbolp x)
       (and (listp x)
            (= 2 (length x))
@@ -1746,7 +1753,7 @@ https://docs.cider.mx/cider/indent_spec.html e.g. (2 :form
 
 (defun clojure--valid-put-clojure-indent-call-p (exp)
   "Check that EXP is a valid `put-clojure-indent' expression.
-For example: (put-clojure-indent 'defrecord '(2 :form :form (1))."
+For example: (put-clojure-indent \\='defrecord \\='(2 :form :form (1))."
   (unless (and (listp exp)
                (= 3 (length exp))
                (eq 'put-clojure-indent (nth 0 exp))
