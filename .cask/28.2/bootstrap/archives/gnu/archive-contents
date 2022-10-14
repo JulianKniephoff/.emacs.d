@@ -522,18 +522,18 @@
 	     ("Daniel Mendler and Consult contributors"))
 	    (:commit . "ef3aad65e41e425fbcc80c4a9a1f6fc4cafff383"))])
  (consult-recoll .
-		 [(0 7)
+		 [(0 8)
 		  ((emacs
 		    (26 1))
 		   (consult
-		    (0 18)))
+		    (0 19)))
 		  "Recoll queries using consult" tar
 		  ((:url . "https://codeberg.org/jao/consult-recoll")
 		   (:keywords "docs" "convenience")
 		   (:maintainer "Jose A Ortega Ruiz" . "jao@gnu.org")
 		   (:authors
 		    ("Jose A Ortega Ruiz" . "jao@gnu.org"))
-		   (:commit . "714810486a13bb6adba5be0eaaca7eabe3298927"))])
+		   (:commit . "1480027006df774ac3e2f38a6750a369263ea409"))])
  (context-coloring .
 		   [(8 1 0)
 		    ((emacs
@@ -975,26 +975,28 @@
 	       ("Protesilaos Stavrou" . "info@protesilaos.com"))
 	      (:commit . "887f91e07c9997df9038401252cac6769ed393ca"))])
  (eglot .
-	[(1 8)
+	[(1 9)
 	 ((emacs
 	   (26 1))
 	  (jsonrpc
 	   (1 0 14))
 	  (flymake
-	   (1 0 9))
+	   (1 2 1))
 	  (project
 	   (0 3 0))
 	  (xref
 	   (1 0 1))
 	  (eldoc
-	   (1 11 0)))
+	   (1 11 0))
+	  (seq
+	   (2 23)))
 	 "Client for Language Server Protocol (LSP) servers" tar
 	 ((:url . "https://github.com/joaotavora/eglot")
 	  (:keywords "convenience" "languages")
 	  (:maintainer "João Távora" . "joaotavora@gmail.com")
 	  (:authors
 	   ("João Távora" . "joaotavora@gmail.com"))
-	  (:commit . "132ea08f97f94ad2e050fc8d1628ecb41de7229a"))])
+	  (:commit . "d1159172c9d436d7e649207565c606e9e572a8db"))])
  (el-search .
 	    [(1 12 6 1)
 	     ((emacs
@@ -2502,14 +2504,14 @@
 	      ("Feng Shu" . "tumashu@163.com"))
 	     (:commit . "0c5e57ac870735cb780936b1efc4bdd17fe87112"))])
  (project .
-	  [(0 8 1)
+	  [(0 8 2)
 	   ((emacs
 	     (26 1))
 	    (xref
-	     (1 0 2)))
+	     (1 4 0)))
 	   "Operations on the current project" tar
 	   ((:url . "https://elpa.gnu.org/packages/project.html")
-	    (:commit . "6bf29072e968401f842789c71468e624e5c913a9"))])
+	    (:commit . "ef6e518035fddf13547d7f1f945b5069a0fe6ea7"))])
  (psgml .
 	[(1 3 4)
 	 nil "SGML-editing mode with parsing support" tar
@@ -3178,7 +3180,7 @@
 	  ("Adam Porter" . "adam@alphapapa.net"))
 	 (:commit . "b27fa67ecf3f8954ce0d5c2747d1de4dc94ff09f"))])
  (taxy-magit-section .
-		     [(0 11)
+		     [(0 12 1)
 		      ((emacs
 			(26 3))
 		       (magit-section
@@ -3191,7 +3193,7 @@
 		       (:maintainer "Adam Porter" . "adam@alphapapa.net")
 		       (:authors
 			("Adam Porter" . "adam@alphapapa.net"))
-		       (:commit . "aeadee643c292acdf584eaf292da9c0e36826390"))])
+		       (:commit . "1a209a60516a955ffbe80a03158c961d35e237b7"))])
  (temp-buffer-browse .
 		     [(1 5)
 		      ((emacs
