@@ -1,4 +1,4 @@
-(define-package "magit" "20221008.1927" "A Git porcelain inside Emacs."
+(define-package "magit" "20221014.1745" "A Git porcelain inside Emacs."
   '((emacs "25.1")
     (compat "28.1.1.2")
     (dash "20210826")
@@ -6,7 +6,7 @@
     (magit-section "20220325")
     (transient "20220325")
     (with-editor "20220318"))
-  :commit "3e833f369911069eb55e96bc617cb2cfdaa1713f" :authors
+  :commit "557ab2c0620930afc0b1da3453c42fa2b5d86145" :authors
   '(("Marius Vollmer" . "marius.vollmer@gmail.com")
     ("Jonas Bernoulli" . "jonas@bernoul.li"))
   :maintainer

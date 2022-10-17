@@ -1,8 +1,8 @@
-(define-package "evil" "20221013.2123" "Extensible Vi layer for Emacs."
+(define-package "evil" "20221017.1223" "Extensible Vi layer for Emacs."
   '((emacs "24.1")
     (goto-chg "1.6")
     (cl-lib "0.5"))
-  :commit "b27997b693dca40a08bfea00ae961f10bf839c0c" :maintainer
+  :commit "d43fe063816ba090e2892460ff1038d6d982d166" :maintainer
   '("Tom Dalziel" . "tom.dalziel@gmail.com")
   :keywords
   '("emulation" "vim")
