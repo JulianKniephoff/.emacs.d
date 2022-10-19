@@ -326,6 +326,9 @@
 (use-package clojure-mode
   :mode "\\.clj[sc]?\\'")
 
+(use-package nix-mode
+  :mode "\\.nix\\'")
+
 ;; Load Customizations
 
 ;; Customize
