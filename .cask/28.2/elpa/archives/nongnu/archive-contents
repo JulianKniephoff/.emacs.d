@@ -28,13 +28,13 @@
 		(:authors
 		 ("Jordon Biondo" . "jordonbiondo@gmail.com")))])
  (annotate .
-	   [(1 8 0)
+	   [(1 8 1)
 	    nil "annotate files without changing them" tar
 	    ((:url . "https://github.com/bastibe/annotate.el")
 	     (:maintainer "Bastian Bechtold <bastibe.dev@mailbox.org>, cage" . "cage-dev@twistfold.it")
 	     (:authors
 	      ("Bastian Bechtold"))
-	     (:commit . "c210a75a2582bfd8e28f177747d3a9ec89fc2f3e"))])
+	     (:commit . "a2751a028f9303e6b891bfe1beee49e1e3197256"))])
  (anti-zenburn-theme .
 		     [(2 5 1)
 		      nil "Low-contrast Zenburn-inverted theme" tar
@@ -341,7 +341,7 @@
 		   ("Fanael Linithien" . "fanael4@gmail.com"))
 		  (:commit . "f80f63822ffae78de38dbe72cacaeb1aaa96c732"))])
  (editorconfig .
-	       [(0 8 2)
+	       [(0 9 0)
 		((cl-lib
 		  (0 5))
 		 (nadvice
@@ -352,7 +352,8 @@
 		((:url . "https://github.com/editorconfig/editorconfig-emacs#readme")
 		 (:maintainer "EditorConfig Team" . "editorconfig@googlegroups.com")
 		 (:authors
-		  ("EditorConfig Team" . "editorconfig@googlegroups.com")))])
+		  ("EditorConfig Team" . "editorconfig@googlegroups.com"))
+		 (:commit . "bcd377596fc0c5c315598adaa59fcd0455916f8d"))])
  (elixir-mode .
 	      [(2 4 0)
 	       ((emacs
@@ -508,7 +509,7 @@
 		   (:authors
 		    ("https://turbocafe.keybase.pub")))])
  (flymake-popon .
-		[(0 3)
+		[(0 5)
 		 ((emacs
 		   (26 1))
 		  (flymake
@@ -523,7 +524,7 @@
 		  (:maintainer "Akib Azmain Turja" . "akib@disroot.org")
 		  (:authors
 		   ("Akib Azmain Turja" . "akib@disroot.org"))
-		  (:commit . "3255a917fc90d946a7a6f04ef7f7632c9a89ac94"))])
+		  (:commit . "e9572a1b63b65ec7417f7add0584fd5aeb0d6dc4"))])
  (focus .
 	[(1 0 1)
 	 ((emacs
@@ -1350,19 +1351,15 @@
 		("Jonathan Waltman" . "jonathan.waltman@gmail.com"))
 	       (:commit . "5f2943fd70d94065496c52d21f05eb89028637cc"))])
  (pcre2el .
-	  [(1 9)
+	  [(1 11)
 	   ((emacs
-	     (25 1))
-	    (cl-lib
-	     (0 3))
-	    (a
-	     (1 0 0)))
+	     (25 1)))
 	   "regexp syntax converter" tar
 	   ((:url . "https://github.com/joddie/pcre2el")
 	    (:maintainer "joddie <jonxfield at gmail.com>")
 	    (:authors
 	     ("joddie <jonxfield at gmail.com>"))
-	    (:commit . "ffa53a7c78c55bfb068cdfb68ca8b1705c119f82"))])
+	    (:commit . "3a59d133d1ed9fd941ddecc85ee2a8e32be3d267"))])
  (pdf-tools .
 	    [(1 0)
 	     ((emacs
@@ -1410,15 +1407,16 @@
 	  (:authors
 	   ("Tomohiro Matsuyama" . "m2ym.pub@gmail.com")))])
  (projectile .
-	     [(2 5 0)
+	     [(2 6 0)
 	      ((emacs
 		(25 1)))
 	      "Manage and navigate projects in Emacs easily" tar
 	      ((:url . "https://github.com/bbatsov/projectile")
+	       (:keywords "project" "convenience")
 	       (:maintainer "Bozhidar Batsov" . "bozhidar@batsov.dev")
 	       (:authors
 		("Bozhidar Batsov" . "bozhidar@batsov.dev"))
-	       (:keywords "project" "convenience"))])
+	       (:commit . "e3bae8c91bb69c501dcc2e74f9ea14e89cf0a09c"))])
  (proof-general .
 		[(4 5)
 		 ((emacs
@@ -1641,7 +1639,7 @@
 		     ("John Olsson" . "john@cryon.se"))
 		    (:commit . "2d5acd143a153e16372d59000e57d76291ab81dd"))])
  (subed .
-	[(1 0 10)
+	[(1 0 12)
 	 ((emacs
 	   (25 1)))
 	 "A major mode for editing subtitles" tar
@@ -1650,18 +1648,18 @@
 	  (:maintainer "Sacha Chua" . "sacha@sachachua.com")
 	  (:authors
 	   ("Random User"))
-	  (:commit . "b10ab60a4e567a1fb7d7702d146ed7055b203113"))])
+	  (:commit . "e528c001d98fcd526fd04ff49caef5c475d74f3b"))])
  (sweeprolog .
-	     [(0 6 3)
+	     [(0 8 0)
 	      ((emacs
-		(28)))
+		(28 1)))
 	      "Embedded SWI-Prolog" tar
 	      ((:url . "https://git.sr.ht/~eshel/sweep")
 	       (:keywords "prolog" "languages" "extensions")
 	       (:maintainer "Eshel Yaron" . "~eshel/dev@lists.sr.ht")
 	       (:authors
 		("Eshel Yaron" . "me@eshelyaron.com"))
-	       (:commit . "87e98628e5e6e73d016afbc09480d8bf1f0a70ee"))])
+	       (:commit . "6e42efc6f83a29a8201a742e00020b4cf4377e3d"))])
  (swift-mode .
 	     [(8 6 0)
 	      ((emacs
@@ -1679,7 +1677,7 @@
 		("Arthur Evstifeev" . "lod@pisem.net"))
 	       (:commit . "cdd194cbadcee724a9813da386f0a612082b1ab1"))])
  (swsw .
-       [(2 2)
+       [(2 3)
 	((emacs
 	  (27 1)))
 	"Simple window switching" tar
@@ -1688,7 +1686,7 @@
 	 (:maintainer "swsw Mailing List" . "~dsemy/swsw-devel@lists.sr.ht")
 	 (:authors
 	  ("Daniel Semyonov" . "daniel@dsemy.com"))
-	 (:commit . "5faeffc16329a4a4946780c880c343a9fb95deb4"))])
+	 (:commit . "f41a36677737786d0f651f2d0ba5eb23d63c8ab5"))])
  (symbol-overlay .
 		 [(4 1)
 		  ((emacs
@@ -1921,7 +1919,7 @@
 	      (:authors
 	       ("Le Wang")))])
  (xah-fly-keys .
-	       [(18 2 20221004113716)
+	       [(19 1 20221022135313)
 		((emacs
 		  (24 1)))
 		"ergonomic modal keybinding minor mode." tar
@@ -1930,7 +1928,7 @@
 		 (:maintainer "Xah Lee" . "xah@xahlee.org")
 		 (:authors
 		  ("Xah Lee ( http://xahlee.info/ )"))
-		 (:commit . "e7c77fa7337c92d12209007b77b5ad62aedea6b0"))])
+		 (:commit . "2be7669f2f972fe1020e7b8bf4e486f9a86deef5"))])
  (xml-rpc .
 	  [(1 6 15)
 	   nil "An elisp implementation of clientside XML-RPC" tar
