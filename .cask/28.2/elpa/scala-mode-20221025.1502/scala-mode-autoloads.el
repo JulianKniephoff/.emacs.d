@@ -113,6 +113,14 @@ When started, runs `scala-mode-hook'.
 
 ;;;***
 
+;;;### (autoloads nil "scala-organise" "scala-organise.el" (0 0 0
+;;;;;;  0))
+;;; Generated autoloads from scala-organise.el
+
+(register-definition-prefixes "scala-organise" '("scala-organise"))
+
+;;;***
+
 ;;;### (autoloads nil nil ("scala-mode-pkg.el" "scala-mode-prettify-symbols.el")
 ;;;;;;  (0 0 0 0))
 

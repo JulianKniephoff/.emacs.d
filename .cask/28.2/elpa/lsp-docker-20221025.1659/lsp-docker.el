@@ -4,8 +4,8 @@
 
 ;; Author: Ivan Yonchovski <yyoncho@gmail.com>
 ;; URL: https://github.com/emacs-lsp/lsp-docker
-;; Package-Version: 20220513.1434
-;; Package-Commit: a0d7cbf80652429c0be4dc7d39e1887ba4691ec7
+;; Package-Version: 20221025.1659
+;; Package-Commit: 3ffd7729cdd748586734135e36713517e14a1578
 ;; Keywords: languages langserver
 ;; Version: 1.0.0
 ;; Package-Requires: ((emacs "26.1") (dash "2.14.1") (lsp-mode "6.2.1") (f "0.20.0") (yaml "0.2.0") (ht "2.0"))
@@ -88,7 +88,7 @@ Argument SERVER-COMMAND the language server command to run inside the container.
 Argument DOCKER-CONTAINER-NAME name of container to exec into.
 Argument SERVER-COMMAND the command to execute inside the running container."
 (split-string
-   (format "docker exec -i %s %s" docker-container-name server-command)))
+   (format "%s exec -i %s %s" lsp-docker-command docker-container-name server-command)))
 
 (cl-defun lsp-docker-register-client (&key server-id
                                            docker-server-id
