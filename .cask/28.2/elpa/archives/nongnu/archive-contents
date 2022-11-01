@@ -127,7 +127,7 @@
 	      ("Dave Pearson" . "davep@davep.org"))
 	     (:commit . "fe676396fa7e4372e01bf2c3d9a62e8d53615d46"))])
  (buttercup .
-	    [(1 27)
+	    [(1 28)
 	     ((emacs
 	       (24 3)))
 	     "Behavior-Driven Emacs Lisp Testing" tar
@@ -135,7 +135,7 @@
 	      (:maintainer "Ola Nilsson" . "ola.nilsson@gmail.com")
 	      (:authors
 	       ("Jorgen Schaefer" . "contact@jorgenschaefer.de"))
-	      (:commit . "001adc064170b1e5beff3bc5a50c40f6c1949bbb"))])
+	      (:commit . "eaa4b3ccd115a2bb25be98dc637950645d3adbae"))])
  (caml .
        [(4 9)
 	((emacs
@@ -1094,7 +1094,7 @@
 		   (:authors
 		    ("Christoph Paulik" . "cpaulik@gmail.com")))])
  (mentor .
-	 [(0 4)
+	 [(0 5)
 	  ((emacs
 	    (25 1))
 	   (xml-rpc
@@ -1102,14 +1102,16 @@
 	   (seq
 	    (1 11))
 	   (async
-	    (1 9 3)))
+	    (1 9 3))
+	   (url-scgi
+	    (0 7)))
 	  "Frontend for the rTorrent bittorrent client" tar
 	  ((:url . "https://github.com/skangas/mentor")
 	   (:keywords "comm" "processes" "bittorrent")
 	   (:maintainer "Stefan Kangas" . "stefankangas@gmail.com")
 	   (:authors
 	    ("Stefan Kangas" . "stefankangas@gmail.com"))
-	   (:commit . "4ce024e17bf8ae079b2cd67af475b3e636c82be1"))])
+	   (:commit . "480602f2ec5467aa2418ee98b328fb85d3b58d0c"))])
  (moe-theme .
 	    [(1 0 2)
 	     nil "A colorful eye-candy theme. Moe, moe, kyun!" tar
@@ -1639,7 +1641,7 @@
 		     ("John Olsson" . "john@cryon.se"))
 		    (:commit . "2d5acd143a153e16372d59000e57d76291ab81dd"))])
  (subed .
-	[(1 0 14)
+	[(1 0 16)
 	 ((emacs
 	   (25 1)))
 	 "A major mode for editing subtitles" tar
@@ -1648,7 +1650,7 @@
 	  (:maintainer "Sacha Chua" . "sacha@sachachua.com")
 	  (:authors
 	   ("Random User"))
-	  (:commit . "74793f06532d15ea5e1008b5d227dab17ab8f27a"))])
+	  (:commit . "1215c6821fadd8213bbd39bef1e0538eac38dbfa"))])
  (sweeprolog .
 	     [(0 8 1)
 	      ((emacs
@@ -1919,7 +1921,7 @@
 	      (:authors
 	       ("Le Wang")))])
  (xah-fly-keys .
-	       [(20 0 20221025214709)
+	       [(22 0 20221031102959)
 		((emacs
 		  (24 1)))
 		"ergonomic modal keybinding minor mode." tar
@@ -1928,13 +1930,14 @@
 		 (:maintainer "Xah Lee" . "xah@xahlee.org")
 		 (:authors
 		  ("Xah Lee ( http://xahlee.info/ )"))
-		 (:commit . "9432cc4787685029146cb03b891f61304be80778"))])
+		 (:commit . "644dc9a4e254264560019578f8b84bc4523de8de"))])
  (xml-rpc .
-	  [(1 6 15)
+	  [(1 6 16)
 	   nil "An elisp implementation of clientside XML-RPC" tar
 	   ((:url . "http://github.com/xml-rpc-el/xml-rpc-el")
 	    (:keywords "xml" "rpc" "network")
-	    (:maintainer "Mark A. Hershberger" . "mah@everybody.org"))])
+	    (:maintainer "Mark A. Hershberger" . "mah@everybody.org")
+	    (:commit . "fc0c82eb5c8a5d5d837a21bca50f7c8169165f03"))])
  (yaml-mode .
 	    [(0 0 15)
 	     ((emacs
