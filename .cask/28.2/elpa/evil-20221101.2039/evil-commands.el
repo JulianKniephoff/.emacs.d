@@ -4086,6 +4086,67 @@ This is the same as :%s//~/&"
   (apply #'evil-ex-substitute (point-min) (point-max)
          (evil-ex-get-substitute-info (concat "//~/&"))))
 
+(defun evil-keep-lines (pattern beg end)
+  "Stripped down version of `keep-lines'.
+Delete lines between BEG & END which don't match PATTERN."
+  (goto-char (min beg end))
+  (setq end
+        (progn
+          (save-excursion
+            (goto-char (max beg end))
+            (unless (or (bolp) (eobp))
+              (forward-line 0))
+            (point-marker))))
+  (save-excursion
+    (or (bolp) (forward-line 1))
+    (let ((start (point)))
+      (while (< (point) end)
+        ;; Start is first char not preserved by previous match.
+        (if (not (re-search-forward pattern end 'move))
+            (delete-region start end)
+          (let ((end (save-excursion (goto-char (match-beginning 0))
+                                     (forward-line 0)
+                                     (point))))
+            ;; Now end is first char preserved by the new match.
+            (if (< start end)
+                (delete-region start end))))
+
+        (setq start (save-excursion (forward-line 1) (point)))
+        ;; If the match was empty, avoid matching again at same place.
+        (and (< (point) end)
+             (= (match-beginning 0) (match-end 0))
+             (forward-char 1)))))
+  (set-marker end nil)
+  nil)
+
+(defun evil-flush-lines (pattern beg end)
+  "Stripped down version of `flush-lines'.
+Delete lines between BEG & END which match PATTERN."
+  (goto-char (min beg end))
+  (setq end (copy-marker (max beg end)))
+  (save-excursion
+    (while (and (< (point) end)
+                (re-search-forward pattern end t))
+      (delete-region (save-excursion (goto-char (match-beginning 0))
+                                     (forward-line 0)
+                                     (point))
+                     (progn (forward-line 1) (point)))))
+  (set-marker end nil))
+
+(defun evil--ex-performant-global-delete (beg end pattern invert)
+  "Use fast functions for fast line deletion.
+Delete lines between BEG & END which match PATTERN.
+Use `evil-flush-lines' if INVERT is nil, or `evil-keep-lines' if not."
+  (goto-char end)
+  (re-search-backward pattern beg t)
+  (let ((end-marker (make-marker)))
+    (set-marker end-marker (point))
+    (if invert
+        (evil-keep-lines pattern beg end)
+      (evil-flush-lines pattern beg end))
+    (goto-char end-marker)
+    (set-marker end-marker nil)))
+
 (evil-define-operator evil-ex-global
   (beg end pattern command &optional invert)
   "The Ex global command.
@@ -4101,37 +4162,41 @@ This is the same as :%s//~/&"
   ;; :substitute can re-use :global's pattern depending on its `r'
   ;; flag. This isn't supported currently but should be simple to add
   (evil-with-single-undo
-    (let ((case-fold-search
-           (eq (evil-ex-regex-case pattern evil-ex-search-case) 'insensitive))
-          (command-form (evil-ex-parse command))
-          (transient-mark-mode transient-mark-mode)
-          (deactivate-mark deactivate-mark)
-          match markers)
+    (let* ((case-fold-search
+            (eq (evil-ex-regex-case pattern evil-ex-search-case) 'insensitive))
+           (pattern (evil-ex-regex-without-case pattern))
+           (command-form (evil-ex-parse command))
+           (ex-delete (eq 'evil-ex-delete (evil-ex-completed-binding (nth 2 command-form))))
+           (transient-mark-mode transient-mark-mode)
+           (deactivate-mark deactivate-mark)
+           match markers)
       (when (and pattern command)
         (when evil-ex-search-vim-style-regexp
           (setq pattern (evil-transform-vim-style-regexp pattern)))
-        (setq isearch-string pattern)
-        (isearch-update-ring pattern t)
-        (goto-char beg)
-        (evil-move-beginning-of-line)
-        (while (< (point) end)
-          (setq match (re-search-forward pattern (line-end-position) t))
-          (when (or (and match (not invert))
-                    (and invert (not match)))
-            (push (move-marker (make-marker)
-                               (or (and match (match-beginning 0))
-                                   (line-beginning-position)))
-                  markers))
-          (forward-line))
-        (setq markers (nreverse markers))
-        (unwind-protect
+        (if ex-delete
+            (evil--ex-performant-global-delete beg end pattern invert)
+          (setq isearch-string pattern)
+          (isearch-update-ring pattern t)
+          (goto-char beg)
+          (evil-move-beginning-of-line)
+          (while (< (point) end)
+            (setq match (re-search-forward pattern (line-end-position) t))
+            (when (or (and match (not invert))
+                      (and invert (not match)))
+              (push (move-marker (make-marker)
+                                 (or (and match (match-beginning 0))
+                                     (line-beginning-position)))
+                    markers))
+            (forward-line))
+          (setq markers (nreverse markers))
+          (unwind-protect
+              (dolist (marker markers)
+                (goto-char marker)
+                (eval command-form))
+            ;; ensure that all markers are deleted afterwards,
+            ;; even in the event of failure
             (dolist (marker markers)
-              (goto-char marker)
-              (eval command-form))
-          ;; ensure that all markers are deleted afterwards,
-          ;; even in the event of failure
-          (dolist (marker markers)
-            (set-marker marker nil)))))))
+              (set-marker marker nil))))))))
 
 (evil-define-operator evil-ex-global-inverted
   (beg end pattern command &optional invert)

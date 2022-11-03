@@ -364,6 +364,8 @@ the server has requested that."
     "[/\\\\]\\.babel_cache\\'"
     "[/\\\\]\\.cpcache\\'"
     "[/\\\\]\\checkouts\\'"
+    ;; Gradle
+    "[/\\\\]\\.gradle\\'"
     ;; Maven
     "[/\\\\]\\.m2\\'"
     ;; .Net Core build-output
@@ -3552,6 +3554,7 @@ disappearing, unset all the variables related to it."
                                       (linkSupport . t)))
                       (definition . ((dynamicRegistration . t)
                                      (linkSupport . t)))
+                      (references . ((dynamicRegistration . t)))
                       (implementation . ((dynamicRegistration . t)
                                          (linkSupport . t)))
                       (typeDefinition . ((dynamicRegistration . t)
