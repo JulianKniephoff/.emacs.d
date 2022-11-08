@@ -73,7 +73,11 @@ Lisp package.")
               ((bufferp buffer)
                buffer)
               (t (message "don't know how to kill buffer")))))
-    (when (and buf (buffer-live-p buf)) (kill-buffer buf))))
+    (when (and buf (buffer-live-p buf))
+      (let ((win (get-buffer-window buf)))
+        (kill-buffer buf)
+        (when (null (window-prev-buffers win))
+          (delete-window win))))))
 
 (defun idris-minibuffer-respecting-message (text &rest args)
   "Display TEXT as a message, without hiding any minibuffer contents."
@@ -360,8 +364,8 @@ corresponding values in the CDR of VALUE."
              `((t (error "ELISP destructure-case failed: %S" ,tmp))))))))
 
 (defun idris-lidr-p (&optional buffer)
-  "Return t if BUFFER is a literate Idris file, or nil otherwise. Use the current buffer if
-BUFFER is not supplied or is nil."
+  "Return t if BUFFER is a literate Idris file, or nil otherwise.
+Use the current buffer if BUFFER is not supplied or is nil."
   (let ((file-name (buffer-file-name buffer)))
     ;; We check for nil here because idris-lidr-p might be called on
     ;; buffers that don't have associated files, such as the REPL

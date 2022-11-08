@@ -1,8 +1,8 @@
-(define-package "idris-mode" "20220609.1232" "Major mode for editing Idris code"
+(define-package "idris-mode" "20221108.1159" "Major mode for editing Idris code"
   '((emacs "24")
     (prop-menu "0.1")
     (cl-lib "0.5"))
-  :commit "9bc7697406f719258d93835df3c1761efbfecaa7" :keywords
+  :commit "8933ab84f9713b2b7b49c953cb0c23e3918b6c89" :keywords
   '("languages")
   :url "https://github.com/idris-hackers/idris-mode")
 ;; Local Variables:
