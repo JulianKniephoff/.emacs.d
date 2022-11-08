@@ -331,7 +331,7 @@
 		   ("Fanael Linithien" . "fanael4@gmail.com"))
 		  (:commit . "f80f63822ffae78de38dbe72cacaeb1aaa96c732"))])
  (editorconfig .
-	       [(0 9 0)
+	       [(0 9 1)
 		((cl-lib
 		  (0 5))
 		 (nadvice
@@ -343,7 +343,7 @@
 		 (:maintainer "EditorConfig Team" . "editorconfig@googlegroups.com")
 		 (:authors
 		  ("EditorConfig Team" . "editorconfig@googlegroups.com"))
-		 (:commit . "bcd377596fc0c5c315598adaa59fcd0455916f8d"))])
+		 (:commit . "3352e487809dda4a0366314e30c9efa431b61f79"))])
  (elixir-mode .
 	      [(2 4 0)
 	       ((emacs
@@ -548,11 +548,9 @@
 	       ("Matus Goljer" . "matus.goljer@gmail.com"))
 	      (:commit . "6f9172376af4d399c7853cbdfdd7425348a878f9"))])
  (geiser .
-	 [(0 27)
+	 [(0 28)
 	  ((emacs
 	    (25 1))
-	   (transient
-	    (0 3))
 	   (project
 	    (0 8 1)))
 	  "GNU Emacs and Scheme talk to each other" tar
@@ -561,7 +559,7 @@
 	   (:maintainer "Jose Antonio Ortega Ruiz" . "jao@gnu.org")
 	   (:authors
 	    ("Jose Antonio Ortega Ruiz" . "jao@gnu.org"))
-	   (:commit . "af81e4fb1088d9ccbd36dcd541e29eb2770e4d87"))])
+	   (:commit . "04dbdacfeca0190856abad859360da4bb873f9dd"))])
  (geiser-chez .
 	      [(0 17)
 	       ((emacs
@@ -624,18 +622,20 @@
 		   ("András Simonyi" . "andras.simonyi@gmail.com"))
 		  (:keywords "languages" "gauche" "scheme" "geiser"))])
  (geiser-guile .
-	       [(0 26 1)
+	       [(0 28 0)
 		((emacs
 		  (25 1))
+		 (transient
+		  (0 3))
 		 (geiser
-		  (0 26 1)))
-		"Guile's implementation of the geiser protocols" tar
+		  (0 28)))
+		"Guile and Geiser talk to each other" tar
 		((:url . "https://gitlab.com/emacs-geiser/guile")
 		 (:keywords "languages" "guile" "scheme" "geiser")
 		 (:maintainer "Jose Antonio Ortega Ruiz" . "jao@gnu.org")
 		 (:authors
 		  ("Jose Antonio Ortega Ruiz" . "jao@gnu.org"))
-		 (:commit . "e540e14db538ed0d116a188569413f5aadd79180"))])
+		 (:commit . "f5e82dc0f5a076335f201885a7edbefaa1ad435f"))])
  (geiser-kawa .
 	      [(0 0 1)
 	       ((emacs
@@ -1633,7 +1633,7 @@
 		     ("John Olsson" . "john@cryon.se"))
 		    (:commit . "2d5acd143a153e16372d59000e57d76291ab81dd"))])
  (subed .
-	[(1 0 16)
+	[(1 0 18)
 	 ((emacs
 	   (25 1)))
 	 "A major mode for editing subtitles" tar
@@ -1642,9 +1642,9 @@
 	  (:maintainer "Sacha Chua" . "sacha@sachachua.com")
 	  (:authors
 	   ("Random User"))
-	  (:commit . "1215c6821fadd8213bbd39bef1e0538eac38dbfa"))])
+	  (:commit . "fcd2299f365eb37ced4a838bd39aaefd6c6ac576"))])
  (sweeprolog .
-	     [(0 8 1)
+	     [(0 8 3)
 	      ((emacs
 		(28 1)))
 	      "Embedded SWI-Prolog" tar
@@ -1653,7 +1653,7 @@
 	       (:maintainer "Eshel Yaron" . "~eshel/dev@lists.sr.ht")
 	       (:authors
 		("Eshel Yaron" . "me@eshelyaron.com"))
-	       (:commit . "24b5e1637e4e07049c437372f4f1f7818320cc27"))])
+	       (:commit . "8a532f318320f5a62a6295edc35a21cd45aa69a1"))])
  (swift-mode .
 	     [(8 6 0)
 	      ((emacs
