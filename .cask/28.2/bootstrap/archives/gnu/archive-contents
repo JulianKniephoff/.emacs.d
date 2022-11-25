@@ -335,7 +335,7 @@
 		("Artur Malabarba" . "emacs@endlessparentheses.com"))
 	       (:keywords "lisp"))])
  (cape .
-       [(0 10)
+       [(0 11)
 	((emacs
 	  (27 1)))
 	"Completion At Point Extensions" tar
@@ -343,7 +343,7 @@
 	 (:maintainer "Daniel Mendler" . "mail@daniel-mendler.de")
 	 (:authors
 	  ("Daniel Mendler" . "mail@daniel-mendler.de"))
-	 (:commit . "4b32036a6c667b445dcc001fd70a01eee8baa924"))])
+	 (:commit . "8962e15381682544b268afd032661101692a3cd2"))])
  (capf-autosuggest .
 		   [(0 3)
 		    ((emacs
@@ -537,7 +537,7 @@
 		      ("Jackson Ray Hamilton" . "jackson@jacksonrayhamilton.com"))
 		     (:keywords "convenience" "faces" "tools"))])
  (corfu .
-	[(0 31)
+	[(0 33)
 	 ((emacs
 	   (27 1)))
 	 "Completion Overlay Region FUnction" tar
@@ -545,7 +545,7 @@
 	  (:maintainer "Daniel Mendler" . "mail@daniel-mendler.de")
 	  (:authors
 	   ("Daniel Mendler" . "mail@daniel-mendler.de"))
-	  (:commit . "01ddb3b13e7b32c640cce208fe3bdac04a3e5bb0"))])
+	  (:commit . "c75ed960f4c6c835abf574247406c244dbe62916"))])
  (coterm .
 	 [(1 6)
 	  ((emacs
@@ -717,7 +717,7 @@
 	    ("Protesilaos Stavrou" . "info@protesilaos.com"))
 	   (:commit . "d9a1b0c0b801b4f841fab412b8318cb66ca55134"))])
  (detached .
-	   [(0 9 2)
+	   [(0 10 0)
 	    ((emacs
 	      (27 1)))
 	    "A package to launch, and manage, detached processes" tar
@@ -726,7 +726,7 @@
 	     (:maintainer "detached.el Development" . "~niklaseklund/detached.el@lists.sr.ht")
 	     (:authors
 	      ("Niklas Eklund" . "niklas.eklund@posteo.net"))
-	     (:commit . "6415d90f8260b6c5f1da00e0028acf4be5b4053e"))])
+	     (:commit . "7b263b51232fee664f35b3d432de75334cde5e7f"))])
  (devdocs .
 	  [(0 5)
 	   ((emacs
@@ -1707,7 +1707,7 @@
 	   ("Ivan Kanis" . "ivan@kanis.fr"))
 	  (:maintainer "Ivan Kanis" . "ivan@kanis.fr"))])
  (kind-icon .
-	    [(0 1 7)
+	    [(0 1 9)
 	     ((emacs
 	       (27 1))
 	      (svg-lib
@@ -1718,7 +1718,7 @@
 	      (:maintainer "J.D. Smith" . "jdtsmith@gmail.com")
 	      (:authors
 	       ("J.D. Smith" . "jdtsmith@gmail.com"))
-	      (:commit . "4fe30b105c21303754f04156a41e00d9a058777d"))])
+	      (:commit . "8a740ca4f2b14773aedd0849b682c40d3a616cbe"))])
  (kiwix .
 	[(1 1 5)
 	 ((emacs
@@ -1843,6 +1843,17 @@
 	  (:authors
 	   ("Protesilaos Stavrou" . "info@protesilaos.com"))
 	  (:commit . "d8f18f74591ffcac6466409ac7cd29f90838b2fe"))])
+ (luwak .
+	[(1 0 0)
+	 ((emacs
+	   (28)))
+	 "Web browser based on lynx -dump." tar
+	 ((:url . "https://g.ypei.me/luwak.git")
+	  (:keywords "web-browser" "lynx" "html" "tor")
+	  (:maintainer "Yuchen Pei" . "id@ypei.org")
+	  (:authors
+	   ("Yuchen Pei" . "id@ypei.org"))
+	  (:commit . "37a36288c8d4cdba461812dbdf5da434ca156fee"))])
  (lv .
      [(0 15 0)
       nil "Other echo area" tar
@@ -2244,7 +2255,7 @@
 	      ("Ian Dunn" . "dunni@gnu.org"))
 	     (:keywords "convenience" "text" "org"))])
  (org-modern .
-	     [(0 5)
+	     [(0 6)
 	      ((emacs
 		(27 1)))
 	      "Modern looks for Org" tar
@@ -2252,7 +2263,7 @@
 	       (:maintainer "Daniel Mendler" . "mail@daniel-mendler.de")
 	       (:authors
 		("Daniel Mendler" . "mail@daniel-mendler.de"))
-	       (:commit . "ed9d67d00f26148019acd67b4aac0e26360a33b1"))])
+	       (:commit . "e87ca8a9ec45fcfa2556028aa9feffb7bc3aecee"))])
  (org-notify .
 	     [(0 1 0)
 	      ((emacs
@@ -3510,7 +3521,7 @@
 		  ("Wilson Snyder" . "wsnyder@wsnyder.org"))
 		 (:commit . "86f08fb377e2b8f2df0614c48783bdce347f3758"))])
  (vertico .
-	  [(0 28)
+	  [(0 29)
 	   ((emacs
 	     (27 1)))
 	   "VERTical Interactive COmpletion" tar
@@ -3518,7 +3529,7 @@
 	    (:maintainer "Daniel Mendler" . "mail@daniel-mendler.de")
 	    (:authors
 	     ("Daniel Mendler" . "mail@daniel-mendler.de"))
-	    (:commit . "31060942d65ccd3c1b488d8db497af5eda9ac7fc"))])
+	    (:commit . "cacb0bd76153790ba6ecc67921deed236c96371e"))])
  (vertico-posframe .
 		   [(0 5 4)
 		    ((emacs
@@ -3734,12 +3745,12 @@
 	("Mattias Engdegård" . "mattiase@acm.org"))
        (:commit . "74906f6d104b7daae162dc32684e0443e80fdb03"))])
  (xref .
-       [(1 5 1)
+       [(1 6 0)
 	((emacs
 	  (26 1)))
 	"Cross-referencing commands" tar
 	((:url . "https://elpa.gnu.org/packages/xref.html")
-	 (:commit . "e0f137f079c346c5cb05f738ed96e9a09aaad4e6"))])
+	 (:commit . "65f35b7f6f4115291affa754855ad62a697524af"))])
  (yasnippet .
 	    [(0 14 0)
 	     ((cl-lib
