@@ -87,6 +87,17 @@
 	      ((:url . "https://github.com/jasonm23/autothemer")
 	       (:maintainer "Jason Milkins" . "jasonm23@gmail.com")
 	       (:commit . "87a21019ed4f41a487a8af34467e0ebff19f365e"))])
+ (bash-completion .
+		  [(3 1 0)
+		   ((emacs
+		     (24 3)))
+		   "BASH completion for the shell buffer" tar
+		   ((:url . "http://github.com/szermatt/emacs-bash-completion")
+		    (:keywords "shell" "bash" "bash-completion")
+		    (:maintainer "Stephane Zermatten" . "szermatt@gmail.com")
+		    (:authors
+		     ("Stephane Zermatten" . "szermatt@gmx.net"))
+		    (:commit . "d47edb9d4142a22746009c1f680df93a4fefd107"))])
  (better-jumper .
 		[(1 0 1)
 		 ((emacs
@@ -138,7 +149,7 @@
 	      ("Dave Pearson" . "davep@davep.org"))
 	     (:commit . "fe676396fa7e4372e01bf2c3d9a62e8d53615d46"))])
  (buttercup .
-	    [(1 28)
+	    [(1 29)
 	     ((emacs
 	       (24 3)))
 	     "Behavior-Driven Emacs Lisp Testing" tar
@@ -146,7 +157,7 @@
 	      (:maintainer "Ola Nilsson" . "ola.nilsson@gmail.com")
 	      (:authors
 	       ("Jorgen Schaefer" . "contact@jorgenschaefer.de"))
-	      (:commit . "eaa4b3ccd115a2bb25be98dc637950645d3adbae"))])
+	      (:commit . "b3ea11826e2ca5d648d677c4ae27974ce8e7c7e3"))])
  (camera .
 	 [(0 2)
 	  ((emacs
@@ -500,16 +511,16 @@
 		  ("Chen Bin" . "chenbin.sh@gmail.com"))
 		 (:commit . "7a2a7384b6e752a805d6fbb78cf9425e54c2b18b"))])
  (evil-nerd-commenter .
-		      [(3 5 8)
+		      [(3 6 0)
 		       ((emacs
-			 (25 1)))
+			 (26 1)))
 		       "Comment/uncomment lines efficiently. Like Nerd Commenter in Vim" tar
 		       ((:url . "http://github.com/redguardtoo/evil-nerd-commenter")
 			(:keywords "convenience" "evil")
 			(:maintainer "Chen Bin" . "chenbin.sh@gmail.com")
 			(:authors
 			 ("Chen Bin" . "chenbin.sh@gmail.com"))
-			(:commit . "9609fb170da00aeca1716b022d93e1cb68464a34"))])
+			(:commit . "8c0f23d46a3927b9f83c1c2c4590be53d0b740db"))])
  (evil-numbers .
 	       [(0 7)
 		((emacs
@@ -1263,7 +1274,7 @@
 	       (:keywords "languages" "nginx")
 	       (:url . "https://elpa.nongnu.org/nongnu/nginx-mode.html"))])
  (nix-mode .
-	   [(1 4 4)
+	   [(1 5 0)
 	    ((emacs
 	      (25 1))
 	     (magit-section
@@ -1274,7 +1285,7 @@
 	    ((:url . "https://github.com/NixOS/nix-mode")
 	     (:keywords "nix" "languages" "tools" "unix")
 	     (:maintainer "Matthew Bauer" . "mjbauer95@gmail.com")
-	     (:commit . "e4e604ae3ac91748c4e7d51a591cb9ee60961b7c"))])
+	     (:commit . "54e5626829168e22126b233e079f04dff3c71b90"))])
  (oblivion-theme .
 		 [(0 1)
 		  ((emacs
@@ -1543,14 +1554,14 @@
 	       ("David Christiansen" . "david@davidchristiansen.dk"))
 	      (:keywords "convenience"))])
  (racket-mode .
-	      [(1 0 20221122 90959)
+	      [(1 0 20221205 101826)
 	       ((emacs
 		 (25 1)))
 	       "Racket editing, REPL, and more" tar
 	       ((:url . "https://www.racket-mode.com/")
 		(:maintainer "Greg Hendershott")
 		(:authors
-		 ("Greg Hendershott"))
+		 ("Greg Hendershott" . "racket-mode-author@greghendershott.com"))
 		(:commit . "HEAD"))])
  (rainbow-delimiters .
 		     [(2 1 5)
@@ -1767,7 +1778,7 @@
 		     ("John Olsson" . "john@cryon.se"))
 		    (:commit . "2d5acd143a153e16372d59000e57d76291ab81dd"))])
  (subed .
-	[(1 0 24)
+	[(1 0 26)
 	 ((emacs
 	   (25 1)))
 	 "A major mode for editing subtitles" tar
@@ -1776,9 +1787,9 @@
 	  (:maintainer "Sacha Chua" . "sacha@sachachua.com")
 	  (:authors
 	   ("Random User"))
-	  (:commit . "7842bb9f15f08ea3d223f98bf7be98d6d01be522"))])
+	  (:commit . "7563c61b7e152e0c7e06387edf98809c08cb134f"))])
  (sweeprolog .
-	     [(0 9 3)
+	     [(0 9 4)
 	      ((emacs
 		(28 1)))
 	      "Embedded SWI-Prolog" tar
@@ -1787,7 +1798,7 @@
 	       (:maintainer "Eshel Yaron" . "~eshel/dev@lists.sr.ht")
 	       (:authors
 		("Eshel Yaron" . "me@eshelyaron.com"))
-	       (:commit . "f4e9d872c81bab6772025f2a481adbc25338f37f"))])
+	       (:commit . "0e324b3216ff031104fefbdb23e081d88ed1e7f6"))])
  (swift-mode .
 	     [(8 6 0)
 	      ((emacs
