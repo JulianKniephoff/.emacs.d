@@ -4,7 +4,7 @@
 
 (depends-on "ace-jump-mode")
 (depends-on "auctex")
-(depends-on "beancount" :git "https://github.com/beancount/beancount-mode")
+;(depends-on "beancount" :git "https://github.com/beancount/beancount-mode")
 (depends-on "bind-key")
 (depends-on "cargo")
 (depends-on "cask-mode")
