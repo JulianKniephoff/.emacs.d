@@ -1,7 +1,7 @@
-(define-package "cargo" "20221025.810" "Emacs Minor Mode for Cargo, Rust's Package Manager."
+(define-package "cargo" "20230125.1253" "Emacs Minor Mode for Cargo, Rust's Package Manager."
   '((emacs "24.3")
     (markdown-mode "2.4"))
-  :commit "d2720c8dc7ac3b18ce112a886d3b8696797d01cb" :authors
+  :commit "225fdb846c702a193e58a98c1585bb3586a9aa86" :authors
   '(("Kevin W. van Rooijen"))
   :maintainer
   '("Kevin W. van Rooijen")

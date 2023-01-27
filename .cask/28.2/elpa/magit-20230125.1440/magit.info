@@ -8324,6 +8324,12 @@ the faster ‘vfork’ will be used.  (The creation of child processes still
 takes about twice as long on Darwin compared to Linux.)  See (1) for
 more information.
 
+   Additionally, ‘git’ installed from a package manager like ‘brew’ or
+‘nix’ seems to be slower than the native executable.  Profile the ‘git’
+executable you’re running against the one at ‘/usr/bin/git’, and if you
+notice a notable difference try using the latter as
+‘magit-git-executable’.
+
    ---------- Footnotes ----------
 
    (1) 
@@ -11175,45 +11181,45 @@ Ref: Refs Buffer Performance347390
 Ref: Committing Performance347965
 Node: Microsoft Windows Performance348947
 Node: MacOS Performance350138
-Ref: MacOS Performance-Footnote-1350843
-Node: Default Bindings350925
-Node: Plumbing353166
-Node: Calling Git353995
-Node: Getting a Value from Git355520
-Node: Calling Git for Effect359248
-Node: Section Plumbing365142
-Node: Creating Sections365370
-Node: Section Selection369266
-Node: Matching Sections371062
-Node: Refreshing Buffers376983
-Node: Conventions380127
-Node: Theming Faces380319
-Node: FAQ388424
-Node: FAQ - How to ...?388862
-Node: How to pronounce Magit?389219
-Node: How to show git's output?390022
-Node: How to install the gitman info manual?390808
-Node: How to show diffs for gpg-encrypted files?391778
-Node: How does branching and pushing work?392374
-Node: Should I disable VC?392706
-Node: FAQ - Issues and Errors393309
-Node: Magit is slow394254
-Node: I changed several thousand files at once and now Magit is unusable394547
-Node: I am having problems committing395273
-Node: I am using MS Windows and cannot push with Magit395754
-Node: I am using macOS and SOMETHING works in shell but not in Magit396372
-Node: Expanding a file to show the diff causes it to disappear397206
-Node: Point is wrong in the COMMIT_EDITMSG buffer397788
-Node: The mode-line information isn't always up-to-date398834
-Node: A branch and tag sharing the same name breaks SOMETHING399897
-Node: My Git hooks work on the command-line but not inside Magit400783
-Node: git-commit-mode isn't used when committing from the command-line401629
-Node: Point ends up inside invisible text when jumping to a file-visiting buffer403900
-Node: I am no longer able to save popup defaults404749
-Node: Debugging Tools405730
-Node: Keystroke Index408904
-Node: Function and Command Index443232
-Node: Variable Index495262
+Ref: MacOS Performance-Footnote-1351161
+Node: Default Bindings351243
+Node: Plumbing353484
+Node: Calling Git354313
+Node: Getting a Value from Git355838
+Node: Calling Git for Effect359566
+Node: Section Plumbing365460
+Node: Creating Sections365688
+Node: Section Selection369584
+Node: Matching Sections371380
+Node: Refreshing Buffers377301
+Node: Conventions380445
+Node: Theming Faces380637
+Node: FAQ388742
+Node: FAQ - How to ...?389180
+Node: How to pronounce Magit?389537
+Node: How to show git's output?390340
+Node: How to install the gitman info manual?391126
+Node: How to show diffs for gpg-encrypted files?392096
+Node: How does branching and pushing work?392692
+Node: Should I disable VC?393024
+Node: FAQ - Issues and Errors393627
+Node: Magit is slow394572
+Node: I changed several thousand files at once and now Magit is unusable394865
+Node: I am having problems committing395591
+Node: I am using MS Windows and cannot push with Magit396072
+Node: I am using macOS and SOMETHING works in shell but not in Magit396690
+Node: Expanding a file to show the diff causes it to disappear397524
+Node: Point is wrong in the COMMIT_EDITMSG buffer398106
+Node: The mode-line information isn't always up-to-date399152
+Node: A branch and tag sharing the same name breaks SOMETHING400215
+Node: My Git hooks work on the command-line but not inside Magit401101
+Node: git-commit-mode isn't used when committing from the command-line401947
+Node: Point ends up inside invisible text when jumping to a file-visiting buffer404218
+Node: I am no longer able to save popup defaults405067
+Node: Debugging Tools406048
+Node: Keystroke Index409222
+Node: Function and Command Index443550
+Node: Variable Index495580
 
 End Tag Table
 

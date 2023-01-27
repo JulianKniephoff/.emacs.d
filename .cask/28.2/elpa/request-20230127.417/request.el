@@ -6,8 +6,8 @@
 
 ;; Author: Takafumi Arakaki <aka.tkf at gmail.com>
 ;; URL: https://github.com/tkf/emacs-request
-;; Package-Version: 20230104.1925
-;; Package-Commit: 6ddb4fc4d8a0746ee2dfd8473af315ebe8f6215b
+;; Package-Version: 20230127.417
+;; Package-Commit: 01e338c335c07e4407239619e57361944a82cb8a
 ;; Package-Requires: ((emacs "24.4"))
 ;; Version: 0.3.3
 
@@ -44,7 +44,6 @@
 (require 'cl-lib)
 (require 'url)
 (require 'mail-utils)
-(require 'autorevert)
 (require 'auth-source)
 (require 'mailheader)
 
@@ -900,22 +899,25 @@ BUG: Simultaneous requests are a known cause of cookie-jar corruption."
             for (name . item) in files
             collect "--form"
             collect
-            (apply #'format "%s=@%s;filename=%s%s"
+            (apply #'format "%s=%s%s;filename=%s%s"
                    (cond ((stringp item)
-                          (list name item (file-name-nondirectory item) ""))
+                          (list name "@" item (file-name-nondirectory item) ""))
                          ((bufferp item)
                           (if stdin-p
                               (error (concat "request--curl-command-args: "
                                              "only one buffer or data entry permitted"))
                             (setq stdin-p t))
-                          (list name "-" (buffer-name item) ""))
+                          (list name "@" "-" (buffer-name item) ""))
                          ((listp item)
                           (unless (plist-get (cdr item) :file)
                             (if stdin-p
                                 (error (concat "request--curl-command-args: "
                                                "only one buffer or data entry permitted"))
                               (setq stdin-p t)))
-                          (list name (or (plist-get (cdr item) :file) "-") (car item)
+                          (list name
+                                (if (plist-get (cdr item) :use-contents) "<" "@")
+                                (or (plist-get (cdr item) :file) "-")
+                                (car item)
                                 (if (plist-get (cdr item) :mime-type)
                                     (format ";type=%s" (plist-get (cdr item) :mime-type))
                                   "")))
@@ -949,9 +951,12 @@ posting fields, FILES containing one or more lists of the form
   (NAME . BUFFER)
   (NAME . (FILENAME :buffer BUFFER))
   (NAME . (FILENAME :data DATA))
+  (NAME . (FILENAME :file FILE :use-contents t))
 with NAME and FILENAME defined by curl(1)'s overwrought `--form` switch format,
 TIMEOUT in seconds, RESPONSE a mandatory struct, ENCODING, and SEMAPHORE,
-an internal semaphore.
+an internal semaphore.  Adding `:use-contents t` sends a text field
+with the file's contents as opposed to attaching a file as described
+in curl(1).
 
 Redirection handling strategy
 -----------------------------
@@ -1150,34 +1155,9 @@ See info entries on sentinels regarding PROC and EVENT."
               (or error (and (numberp code) (>= code 400) `(error . (http ,code)))))
         (apply #'request--callback buffer settings))))))
 
-;;;###autoload
-(defun request-auto-revert-notify-rm-watch ()
-  "Backport of M. Engdegard's fix of `auto-revert-notify-rm-watch'."
-  (let ((desc auto-revert-notify-watch-descriptor)
-        (table (if (boundp 'auto-revert--buffers-by-watch-descriptor)
-                   auto-revert--buffers-by-watch-descriptor
-                 (when (boundp 'auto-revert-notify-watch-descriptor-hash-list)
-                   auto-revert-notify-watch-descriptor-hash-list))))
-    (when (and desc table)
-      (let ((buffers (delq (current-buffer) (gethash desc table))))
-        (if buffers
-            (puthash desc buffers table)
-          (remhash desc table)))
-      (condition-case nil ;; ignore-errors doesn't work for me, sorry
-	  (file-notify-rm-watch desc)
-        (error))
-      (remove-hook 'kill-buffer-hook #'auto-revert-notify-rm-watch t)))
-  (setq auto-revert-notify-watch-descriptor nil
-	auto-revert-notify-modified-p nil))
-
 (cl-defun request--curl-sync (url &rest settings &key response &allow-other-keys)
   "Internal synchronous curl call to URL with SETTINGS bespeaking RESPONSE."
   (let (finished)
-    (auto-revert-set-timer)
-    (when auto-revert-use-notify
-      (dolist (buf (buffer-list))
-        (with-current-buffer buf
-          (request-auto-revert-notify-rm-watch))))
     (prog1 (apply #'request--curl url
                   :semaphore (lambda (&rest _) (setq finished t))
                   settings)

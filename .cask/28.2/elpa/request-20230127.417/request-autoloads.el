@@ -200,9 +200,6 @@ associated process is exited.
 
 \(fn RESPONSE)" nil nil)
 
-(autoload 'request-auto-revert-notify-rm-watch "request" "\
-Backport of M. Engdegard's fix of `auto-revert-notify-rm-watch'." nil nil)
-
 (register-definition-prefixes "request" '("request-"))
 
 ;;;***

@@ -1,4 +1,4 @@
-(define-package "lsp-mode" "20230125.758" "LSP mode"
+(define-package "lsp-mode" "20230126.1057" "LSP mode"
   '((emacs "26.3")
     (dash "2.18.0")
     (f "0.20.0")
@@ -7,7 +7,7 @@
     (markdown-mode "2.3")
     (lv "0")
     (eldoc "1.11"))
-  :commit "ff3d560ee6386851481700d7dadd903e6b66cdc3" :authors
+  :commit "9240e3ee55b5ec6902097a87df357a39611c73e9" :authors
   '(("Vibhav Pant, Fangrui Song, Ivan Yonchovski"))
   :maintainer
   '("Vibhav Pant, Fangrui Song, Ivan Yonchovski")
