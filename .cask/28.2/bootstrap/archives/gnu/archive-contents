@@ -519,17 +519,17 @@
 	    ("Philip Kaludercic <philipk@posteo.net>, Daniel Mendler" . "mail@daniel-mendler.de"))
 	   (:commit . "62da199f0a9c2f8917bfe74b3ec1882f9d6a9d02"))])
  (consult .
-	  [(0 31)
+	  [(0 32)
 	   ((emacs
 	     (27 1))
 	    (compat
-	     (29 1 0 1)))
+	     (29 1 3 2)))
 	   "Consulting completing-read" tar
 	   ((:url . "https://github.com/minad/consult")
 	    (:maintainer "Daniel Mendler" . "mail@daniel-mendler.de")
 	    (:authors
 	     ("Daniel Mendler and Consult contributors"))
-	    (:commit . "2e1c45d1bda9b4c9746d2a4f107b9689218d1083"))])
+	    (:commit . "0759dd12bb2290480644a7ec34118f67718074ad"))])
  (consult-recoll .
 		 [(0 8)
 		  ((emacs
@@ -1612,7 +1612,7 @@
 	   ("Durand" . "mmemmew@gmail.com"))
 	  (:url . "https://elpa.gnu.org/packages/ilist.html"))])
  (inspector .
-	    [(0 16)
+	    [(0 18)
 	     ((emacs
 	       (27 1)))
 	     "Tool for inspection of Emacs Lisp objects" tar
@@ -1621,7 +1621,7 @@
 	      (:maintainer "Mariano Montone" . "marianomontone@gmail.com")
 	      (:authors
 	       ("Mariano Montone" . "marianomontone@gmail.com"))
-	      (:commit . "32f752c5cd996991c4dba67733cfb4e4159c2e75"))])
+	      (:commit . "0750dc4c7ae104aa6abd4b3f7f0e773ab04995fa"))])
  (ioccur .
 	 [(2 6)
 	  ((emacs
@@ -2389,7 +2389,7 @@
 		("Noboru Ota" . "me@nobiot.com"))
 	       (:commit . "576e5680682bfb80a50b057b8752e0674d766f8d"))])
  (org-transclusion .
-		   [(1 3 1)
+		   [(1 3 2)
 		    ((emacs
 		      (27 1))
 		     (org
@@ -2400,7 +2400,7 @@
 		     (:maintainer "Noboru Ota" . "me@nobiot.com")
 		     (:authors
 		      ("Noboru Ota" . "me@nobiot.com"))
-		     (:commit . "cf51df7b87e0d32ba13ac5380557e81d9845d81b"))])
+		     (:commit . "7f4ad67bf1944b814a8763d304d4d27325504eb4"))])
  (org-translate .
 		[(0 1 4)
 		 ((emacs
@@ -3279,7 +3279,7 @@
 	    ("Oleh Krehel" . "ohwoeowho@gmail.com"))
 	   (:keywords "matching"))])
  (sxhkdrc-mode .
-	       [(0 1 4)
+	       [(0 1 5)
 		((emacs
 		  (27 1)))
 		"Major mode for sxhkdrc files (Simple X Hot Key Daemon)" tar
@@ -3287,7 +3287,7 @@
 		 (:maintainer "Protesilaos Stavrou General Issues" . "~protesilaos/general-issues@lists.sr.ht")
 		 (:authors
 		  ("Protesilaos Stavrou" . "info@protesilaos.com"))
-		 (:commit . "95b2c324f8ab66f1ca9eaee89fda54a535e06d6a"))])
+		 (:commit . "d41bb1f9f5fc5ea8ba629052dc87a809fb16750b"))])
  (system-packages .
 		  [(1 0 11)
 		   ((emacs
