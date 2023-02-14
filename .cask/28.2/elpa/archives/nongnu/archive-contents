@@ -386,7 +386,7 @@
 		 ("Arne Jørgensen" . "arne@arnested.dk"))
 		(:commit . "ed90b0c4d808365e9ae9f16cc8a96eff17815621"))])
  (eat .
-      [(0 5)
+      [(0 6)
        ((emacs
 	 (28 1)))
        "Emulate A Terminal, in a region, in a buffer and in Eshell" tar
@@ -395,7 +395,7 @@
 	(:maintainer "Akib Azmain Turja" . "akib@disroot.org")
 	(:authors
 	 ("Akib Azmain Turja" . "akib@disroot.org"))
-	(:commit . "d66c55a2855f6a60f6184135d95d2d5f4b64535e"))])
+	(:commit . "f2bca97ac679666f56db4d45c578275da26a9a6b"))])
  (edit-indirect .
 		[(0 1 10)
 		 ((emacs
@@ -620,7 +620,7 @@
 		   (:authors
 		    ("https://turbocafe.keybase.pub")))])
  (flymake-popon .
-		[(0 5)
+		[(0 5 1)
 		 ((emacs
 		   (26 1))
 		  (flymake
@@ -628,14 +628,14 @@
 		  (popon
 		   (0 1))
 		  (posframe
-		   (1 1 7)))
+		   (1 3 2)))
 		 "Flymake diagnostics on cursor hover" tar
 		 ((:url . "https://codeberg.org/akib/emacs-flymake-popon")
 		  (:keywords "convenience")
 		  (:maintainer "Akib Azmain Turja" . "akib@disroot.org")
 		  (:authors
 		   ("Akib Azmain Turja" . "akib@disroot.org"))
-		  (:commit . "e9572a1b63b65ec7417f7add0584fd5aeb0d6dc4"))])
+		  (:commit . "99ea813346f3edef7220d8f4faeed2ec69af6060"))])
  (focus .
 	[(1 0 1)
 	 ((emacs
@@ -1649,7 +1649,7 @@
 	       ("David Christiansen" . "david@davidchristiansen.dk"))
 	      (:keywords "convenience"))])
  (racket-mode .
-	      [(1 0 20230207 92126)
+	      [(1 0 20230209 92406)
 	       ((emacs
 		 (25 1)))
 	       "Racket editing, REPL, and more" tar
@@ -1884,7 +1884,7 @@
 	   ("Random User"))
 	  (:commit . "28a75a6f6803e5c5d121c4d36ef403e8832fbf1f"))])
  (sweeprolog .
-	     [(0 15 0)
+	     [(0 16 0)
 	      ((emacs
 		(28 1)))
 	      "Embedded SWI-Prolog" tar
@@ -1893,7 +1893,7 @@
 	       (:maintainer "Eshel Yaron" . "~eshel/dev@lists.sr.ht")
 	       (:authors
 		("Eshel Yaron" . "me@eshelyaron.com"))
-	       (:commit . "86b629b99bdbe288372033132da58992aa70d517"))])
+	       (:commit . "75ea97b686aa6389dfcb1a79713e2041ebbb0706"))])
  (swift-mode .
 	     [(8 6 0)
 	      ((emacs
