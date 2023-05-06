@@ -7,6 +7,8 @@
     (json-process-client "0.2.0"))
   :commit "8499e156bf7286846c3a2bf8c9e0c4d4f24b224c" :authors
   '(("Nicolas Petton" . "nicolas@petton.fr"))
+  :maintainers
+  '(("Nicolas Petton" . "nicolas@petton.fr"))
   :maintainer
   '("Nicolas Petton" . "nicolas@petton.fr")
   :keywords

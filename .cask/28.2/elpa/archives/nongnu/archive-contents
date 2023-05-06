@@ -429,16 +429,16 @@
 		(:keywords "languages" "elixir")
 		(:commit . "1d94b525ddcc995b5a979de7b050c2309648ca6f"))])
  (elpher .
-	 [(3 4 3)
+	 [(3 5 0)
 	  ((emacs
 	    (27 1)))
 	  "A friendly gopher and gemini client" tar
 	  ((:url . "https://thelambdalab.xyz/elpher")
-	   (:keywords "comm" "gopher")
+	   (:keywords "comm" "gopher" "gemini")
 	   (:maintainer "Tim Vaughan" . "plugd@thelambdalab.xyz")
 	   (:authors
 	    ("Tim Vaughan" . "plugd@thelambdalab.xyz"))
-	   (:commit . "2f66d418cf4ed176b12c24eaadb5240b49da0448"))])
+	   (:commit . "81f2883614c303184116449ec3583ef5c136ec2f"))])
  (engine-mode .
 	      [(2 2 1)
 	       ((cl-lib
@@ -1651,7 +1651,7 @@
 	       ("David Christiansen" . "david@davidchristiansen.dk"))
 	      (:keywords "convenience"))])
  (racket-mode .
-	      [(1 0 20230425 124430)
+	      [(1 0 20230428 102438)
 	       ((emacs
 		 (25 1)))
 	       "Racket editing, REPL, and more" tar
@@ -2086,13 +2086,13 @@
 		     ("Campbell Barton" . "ideasman42@gmail.com"))
 		    (:commit . "6a306462ee1fa3a7c6303561f9ddf510e448b731"))])
  (vc-fossil .
-	    [(20221120)
+	    [(20230504)
 	     nil "VC backend for the fossil sofware configuraiton management system" tar
 	     ((:maintainer "Alfred M. Szmidt" . "ams@gnu.org")
 	      (:authors
 	       ("Venkat Iyer" . "venkat@comit.com"))
 	      (:url . "https://elpa.nongnu.org/nongnu/vc-fossil.html")
-	      (:commit . "e059ca466cc8914757c6bdb26fa9cc6b0820a9c1"))])
+	      (:commit . "4a4a3e4df83ba2f1ea8bfd8aa7e9f9b2c1c32ca9"))])
  (vcomplete .
 	    [(2 0)
 	     ((emacs

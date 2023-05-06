@@ -10,6 +10,8 @@
     (cfrs "1.3.2"))
   :commit "983ea5a66801a5c1f6e32e3d515bd48761677ac6" :authors
   '(("Alexander Miller" . "alexanderm@web.de"))
+  :maintainers
+  '(("Alexander Miller" . "alexanderm@web.de"))
   :maintainer
   '("Alexander Miller" . "alexanderm@web.de")
   :url "https://github.com/Alexander-Miller/treemacs")

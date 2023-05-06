@@ -5,6 +5,8 @@
   '(("Steve Yegge" . "steve.yegge@gmail.com")
     ("mooz" . "stillpedant@gmail.com")
     ("Dmitry Gutov" . "dgutov@yandex.ru"))
+  :maintainers
+  '(("Steve Yegge" . "steve.yegge@gmail.com"))
   :maintainer
   '("Steve Yegge" . "steve.yegge@gmail.com")
   :keywords

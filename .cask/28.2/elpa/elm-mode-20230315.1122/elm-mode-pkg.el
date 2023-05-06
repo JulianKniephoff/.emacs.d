@@ -6,6 +6,8 @@
     (reformatter "0.3"))
   :commit "699841865e1bd5b7f2077baa7121510b6bcad3c7" :authors
   '(("Joseph Collard"))
+  :maintainers
+  '(("Joseph Collard"))
   :maintainer
   '("Joseph Collard")
   :url "https://github.com/jcollard/elm-mode")

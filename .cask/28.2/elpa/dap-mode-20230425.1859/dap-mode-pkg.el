@@ -11,6 +11,8 @@
     (lsp-docker "1.0.0"))
   :commit "24892f9e30aa9645d51b0a15dfebd75861e6c97f" :authors
   '(("Ivan Yonchovski" . "yyoncho@gmail.com"))
+  :maintainers
+  '(("Ivan Yonchovski" . "yyoncho@gmail.com"))
   :maintainer
   '("Ivan Yonchovski" . "yyoncho@gmail.com")
   :keywords

@@ -2,6 +2,8 @@
   '((emacs "25"))
   :commit "4d0e780e00f1828b00c43099e6eebc6582998f72" :authors
   '(("Arne Brasseur" . "arne@arnebrasseur.net"))
+  :maintainers
+  '(("Arne Brasseur" . "arne@arnebrasseur.net"))
   :maintainer
   '("Arne Brasseur" . "arne@arnebrasseur.net")
   :keywords

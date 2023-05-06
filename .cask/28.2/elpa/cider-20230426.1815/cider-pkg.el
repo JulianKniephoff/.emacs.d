@@ -13,6 +13,8 @@
     ("Artur Malabarba" . "bruce.connor.am@gmail.com")
     ("Hugo Duncan" . "hugo@hugoduncan.org")
     ("Steve Purcell" . "steve@sanityinc.com"))
+  :maintainers
+  '(("Bozhidar Batsov" . "bozhidar@batsov.dev"))
   :maintainer
   '("Bozhidar Batsov" . "bozhidar@batsov.dev")
   :keywords

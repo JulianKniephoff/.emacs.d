@@ -3,6 +3,8 @@
     (bind-key "2.4"))
   :commit "b59b4dc2361c7b351238990d0c34eece8d79ecf0" :authors
   '(("John Wiegley" . "johnw@newartisans.com"))
+  :maintainers
+  '(("John Wiegley" . "johnw@newartisans.com"))
   :maintainer
   '("John Wiegley" . "johnw@newartisans.com")
   :keywords
