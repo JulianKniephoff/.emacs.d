@@ -252,7 +252,7 @@
 	    ("Artur Malabarba" . "emacs@endlessparentheses.com"))
 	   (:commit . "0cf8b60f62876f3e75653a5fb30d5d5cdd74c586"))])
  (beframe .
-	  [(0 2 0)
+	  [(0 3 0)
 	   ((emacs
 	     (28 1)))
 	   "Isolate buffers per frame" tar
@@ -260,7 +260,7 @@
 	    (:maintainer "Protesilaos Stavrou General Issues" . "~protesilaos/general-issues@lists.sr.ht")
 	    (:authors
 	     ("Protesilaos Stavrou" . "info@protesilaos.com"))
-	    (:commit . "edfab6eefe4ac35cd8d1ed87fc7f670496d25e40"))])
+	    (:commit . "24551a22b4561cdf4c256b941aeb6176e993c280"))])
  (bind-key .
 	   [(2 4 1)
 	    nil "A simple way to manage personal keybindings" tar
@@ -381,6 +381,18 @@
 	       (:authors
 		("Artur Malabarba" . "emacs@endlessparentheses.com"))
 	       (:keywords "lisp"))])
+ (calibre .
+	  [(1 3 3)
+	   ((emacs
+	     (27 1))
+	    (compat
+	     (29 1 4 1)))
+	   "Interact with Calibre libraries from Emacs" tar
+	   ((:url . "https://git.disroot.org/kjartanoli/calibre.el")
+	    (:maintainer "Kjartan Oli Agustsson" . "kjartanoli@disroot.org")
+	    (:authors
+	     ("Kjartan Oli Agustsson" . "kjartanoli@disroot.org"))
+	    (:commit . "ad65bf9b51edaf85371db958a1dcaff2f620519f"))])
  (cape .
        [(0 15)
 	((emacs
@@ -1013,7 +1025,7 @@
 	 ("Eduardo Ochs" . "eduardoochs@gmail.com"))
 	(:commit . "16613c18c5ec17755f083f4839bca7e4e05dd4c7"))])
  (ef-themes .
-	    [(1 0 0)
+	    [(1 0 2)
 	     ((emacs
 	       (27 1)))
 	     "Colorful and legible themes" tar
@@ -1022,7 +1034,7 @@
 	      (:maintainer "Ef-Themes Development" . "~protesilaos/ef-themes@lists.sr.ht")
 	      (:authors
 	       ("Protesilaos Stavrou" . "info@protesilaos.com"))
-	      (:commit . "27c8a119557ddd183a9b679c01e65a70b5c79636"))])
+	      (:commit . "6eef76fd65d1dc44cc8e3ee77ed9ac743f1ac36e"))])
  (eglot .
 	[(1 15)
 	 ((emacs
@@ -1126,7 +1138,7 @@
 		    ("Omar Antolín Camarena" . "omar@matem.unam.mx"))
 		   (:commit . "127492fac048cecfdba145d496a902022a68d1d5"))])
  (ement .
-	[(0 9 2)
+	[(0 9 3)
 	 ((emacs
 	   (27 1))
 	  (map
@@ -1149,7 +1161,7 @@
 	  (:maintainer "Adam Porter" . "adam@alphapapa.net")
 	  (:authors
 	   ("Adam Porter" . "adam@alphapapa.net"))
-	  (:commit . "7f39fa5694232fa3f0a32b2104187fe1e886c202"))])
+	  (:commit . "16e05cf4d3f3cc8dcfa30a4c2426066dbef798ad"))])
  (emms .
        [(15)
 	((cl-lib
@@ -1224,7 +1236,7 @@
 		    ("Matthew L. Fidler" . "matthew.fidler@gmail.com"))
 		   (:keywords "convenience"))])
  (excorporate .
-	      [(1 1 0)
+	      [(1 1 1)
 	       ((emacs
 		 (24 1))
 		(cl-lib
@@ -1245,7 +1257,7 @@
 		(:maintainer "Thomas Fitzsimmons" . "fitzsim@fitzsim.org")
 		(:authors
 		 ("Thomas Fitzsimmons" . "fitzsim@fitzsim.org"))
-		(:commit . "7df1891759e26541711ccbff739a39be6bca09ac"))])
+		(:commit . "a6617dea1f9c3af8a4d8a20a53f5b265455b8e96"))])
  (expand-region .
 		[(0 11 0)
 		 nil "Increase selected region by semantic units." tar
@@ -1682,7 +1694,7 @@
 	   ("Durand" . "mmemmew@gmail.com"))
 	  (:url . "https://elpa.gnu.org/packages/ilist.html"))])
  (inspector .
-	    [(0 30)
+	    [(0 31)
 	     ((emacs
 	       (27 1)))
 	     "Tool for inspection of Emacs Lisp objects" tar
@@ -1691,7 +1703,7 @@
 	      (:maintainer "Mariano Montone" . "marianomontone@gmail.com")
 	      (:authors
 	       ("Mariano Montone" . "marianomontone@gmail.com"))
-	      (:commit . "f06e3490cb3fba9335dfca9022d3cc8babaa8654"))])
+	      (:commit . "baa486ac2e4faed9a362322c0b2914d6f0c59ede"))])
  (ioccur .
 	 [(2 6)
 	  ((emacs
@@ -2188,7 +2200,7 @@
 	      ("Michael Abraham Shulman" . "viritrilbia@gmail.com"))
 	     (:commit . "d1c85e5e2cfc0cff3f63409b0ac15dd230568609"))])
  (modus-themes .
-	       [(4 1 1)
+	       [(4 2 0)
 		((emacs
 		  (27 1)))
 		"Elegant, highly legible and customizable themes" tar
@@ -2197,7 +2209,7 @@
 		 (:maintainer "Modus-Themes Development" . "~protesilaos/modus-themes@lists.sr.ht")
 		 (:authors
 		  ("Protesilaos Stavrou" . "info@protesilaos.com"))
-		 (:commit . "2942c77e30d8b89b609ff639e527e67813b6b067"))])
+		 (:commit . "b4ef90bb950b820a3bf316d7b212320a5b2f84d7"))])
  (multi-mode .
 	     [(1 14)
 	      nil "support for multiple major modes" tar
@@ -2508,18 +2520,18 @@
 	      ("Taylor Grinn" . "grinntaylor@gmail.com"))
 	     (:commit . "9ae5d4a2c576671e8f7ab20d202eefa65af51b25"))])
  (org-remark .
-	     [(1 0 5)
+	     [(1 1 0)
 	      ((emacs
 		(27 1))
 	       (org
 		(9 4)))
 	      "Highlight & annotate any text files" tar
 	      ((:url . "https://github.com/nobiot/org-remark")
-	       (:keywords "org-mode" "annotation" "writing" "note-taking" "marginal-notes")
+	       (:keywords "org-mode" "annotation" "note-taking" "marginal-notes" "wp")
 	       (:maintainer "Noboru Ota" . "me@nobiot.com")
 	       (:authors
 		("Noboru Ota" . "me@nobiot.com"))
-	       (:commit . "576e5680682bfb80a50b057b8752e0674d766f8d"))])
+	       (:commit . "41a615c9f865c4c192d074f95b88cf2290cbc971"))])
  (org-transclusion .
 		   [(1 3 2)
 		    ((emacs
@@ -3598,7 +3610,7 @@
 	      ("Trevor Edwin Pogue" . "trevor.pogue@gmail.com"))
 	     (:commit . "33c2a6f0a11d1d88cdb2065c5a897e33507f4c86"))])
  (tramp .
-	[(2 6 0 4)
+	[(2 6 0 5)
 	 ((emacs
 	   (26 1)))
 	 "Transparent Remote Access, Multiple Protocol" tar
@@ -3607,7 +3619,7 @@
 	  (:maintainer "Michael Albinus" . "michael.albinus@gmx.de")
 	  (:authors
 	   ("Kai Großjohann" . "kai.grossjohann@gmx.net"))
-	  (:commit . "9f4a6ac09014318bc6283438574a411a034ff1a3"))])
+	  (:commit . "fc8bfababd07ac9fa1e338782a16ffb1f756ae04"))])
  (tramp-nspawn .
 	       [(1 0 1)
 		((emacs
