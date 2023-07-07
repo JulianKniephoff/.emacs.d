@@ -118,6 +118,10 @@ All, any or none of these keys may be specified.
 
 ;;;***
 
+;;;### (autoloads nil nil ("creole-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

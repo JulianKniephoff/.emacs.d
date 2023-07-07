@@ -4,8 +4,6 @@
 
 ;; Author: David Vazquez Pua <davazp@gmail.com>
 ;; Keywords: languages
-;; Package-Version: 20230411.1943
-;; Package-Commit: 0ad4ae0160cabad46109dfbb394297a185eb2525
 ;; Package-Requires: ((emacs "24.3"))
 ;; Homepage: https://github.com/davazp/graphql-mode
 ;; Version: 1.0.0

@@ -204,6 +204,10 @@ associated process is exited.
 
 ;;;***
 
+;;;### (autoloads nil nil ("request-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

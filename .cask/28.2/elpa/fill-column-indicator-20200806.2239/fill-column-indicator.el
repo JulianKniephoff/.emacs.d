@@ -4,8 +4,6 @@
 
 ;; Author: Alp Aker <alp.tekin.aker@gmail.com>
 ;; Version: 1.91
-;; Package-Version: 20200806.2239
-;; Package-Commit: c35f9de072c241699b57bcb46da84bed5af29cfe
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or

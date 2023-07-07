@@ -125,6 +125,10 @@ Get the specified URL into the BUFFER.
 
 ;;;***
 
+;;;### (autoloads nil nil ("web-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

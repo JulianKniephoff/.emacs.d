@@ -27,6 +27,10 @@ The variable nginx-indent-level controls the amount of indentation.
 
 ;;;***
 
+;;;### (autoloads nil nil ("nginx-mode-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

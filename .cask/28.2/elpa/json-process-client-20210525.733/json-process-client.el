@@ -5,8 +5,6 @@
 ;; Author: Nicolas Petton <nicolas@petton.fr>
 ;;         Damien Cassou <damien@cassou.me>,
 ;; Version: 1.0.0
-;; Package-Version: 20210525.733
-;; Package-Commit: 373b2cc7e3d26dc00594e0b2c1bb66815aad2826
 ;; Package-Requires: ((emacs "25.1"))
 ;; Url: https://gitlab.petton.fr/nico/json-process-client
 

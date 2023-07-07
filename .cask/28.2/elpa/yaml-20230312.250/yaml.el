@@ -4,8 +4,6 @@
 
 ;; Author: Zachary Romero <zkry@posteo.org>
 ;; Version: 0.5.1
-;; Package-Version: 20230312.250
-;; Package-Commit: a19fbf948a945571300e5a20ff1dbfa6ecfa0d16
 ;; Homepage: https://github.com/zkry/yaml.el
 ;; Package-Requires: ((emacs "25.1"))
 ;; Keywords: tools
