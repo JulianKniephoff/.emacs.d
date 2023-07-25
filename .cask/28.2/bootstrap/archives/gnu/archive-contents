@@ -164,14 +164,14 @@
 	   ("John Wiegley" . "jwiegley@gmail.com"))
 	  (:commit . "53addd02fbad33765f508f8e6254ebd44e1f81e5"))])
  (auctex .
-	 [(13 2 0)
+	 [(13 2 1)
 	  ((emacs
 	    (25 1)))
 	  "Integrated environment for *TeX*" tar
 	  ((:url . "https://www.gnu.org/software/auctex/")
 	   (:keywords "tex" "latex" "texinfo" "context" "doctex" "preview-latex")
 	   (:maintainer nil . "auctex-devel@gnu.org")
-	   (:commit . "9d47b0a1bdffb8e01a83bf507dac7677ecca92f7"))])
+	   (:commit . "1c3360b1621a524e14fa0067dc7e138630c2267f"))])
  (aumix-mode .
 	     [(7)
 	      nil "run the aumix program in a buffer" single
@@ -777,7 +777,7 @@
 	    (:maintainer "Phil Sainty" . "psainty@orcon.net.nz")
 	    (:url . "https://savannah.nongnu.org/projects/delight"))])
  (denote .
-	 [(1 2 0)
+	 [(2 0 0)
 	  ((emacs
 	    (28 1)))
 	  "Simple notes with an efficient file-naming scheme" tar
@@ -785,7 +785,7 @@
 	   (:maintainer "Denote Development" . "~protesilaos/denote@lists.sr.ht")
 	   (:authors
 	    ("Protesilaos Stavrou" . "info@protesilaos.com"))
-	   (:commit . "7c425a2d0988f3fae603434c1f8044be8293d517"))])
+	   (:commit . "df3aedacdd6e96923df2b88492eba1b87147e14f"))])
  (denote-menu .
 	      [(1 1 1)
 	       ((emacs
@@ -888,6 +888,17 @@
 		    ("Clemens Radermacher" . "clemera@posteo.net"))
 		   (:maintainer "Clemens Radermacher" . "clemera@posteo.net")
 		   (:url . "https://github.com/clemera/dired-git-info"))])
+ (dired-preview .
+		[(0 1 1)
+		 ((emacs
+		   (27 1)))
+		 "Automatically preview file at point in Dired" tar
+		 ((:url . "https://git.sr.ht/~protesilaos/dired-preview")
+		  (:keywords "files" "convenience")
+		  (:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
+		  (:authors
+		   ("Protesilaos Stavrou" . "info@protesilaos.com"))
+		  (:commit . "63f6d9a2daff031554bf3321d00a8a361e98bc01"))])
  (disk-usage .
 	     [(1 3 3)
 	      ((emacs
@@ -1111,7 +1122,7 @@
 		     (:url . "https://elpa.gnu.org/packages/elisp-benchmarks.html")
 		     (:commit . "70e38dbfa8f4acbdebfd0f417410d99f5031e05f"))])
  (emacs-gc-stats .
-		 [(1 3)
+		 [(1 4 1)
 		  ((emacs
 		    (25 1)))
 		  "Collect Emacs GC statistics" tar
@@ -1119,7 +1130,7 @@
 		   (:maintainer "Ihor Radchenko" . "yantar92@posteo.net")
 		   (:authors
 		    ("Ihor Radchenko" . "yantar92@posteo.net"))
-		   (:commit . "f17fd30098c284a11feb06d505308d1f85ba2c55"))])
+		   (:commit . "703516c63ce71ec68945d48c297d294990728686"))])
  (embark .
 	 [(0 22 1)
 	  ((emacs
@@ -2721,7 +2732,7 @@
 	      ("Daiki Ueno" . "ueno@gnu.org"))
 	     (:maintainer "Daiki Ueno" . "ueno@gnu.org"))])
  (plz .
-      [(0 6)
+      [(0 7)
        ((emacs
 	 (26 3)))
        "HTTP library" tar
@@ -2730,7 +2741,7 @@
 	(:maintainer "Adam Porter" . "adam@alphapapa.net")
 	(:authors
 	 ("Adam Porter" . "adam@alphapapa.net"))
-	(:commit . "271d0aa8e7d6b0575135a94fcb64af125e23323d"))])
+	(:commit . "70ebd6edea2b5c376776cd747bc378b07f0e6646"))])
  (poke .
        [(3 2)
 	((emacs
@@ -3142,12 +3153,13 @@
 		    ("Martin Rudalics" . "rudalics@gmx.at"))
 		   (:maintainer "Martin Rudalics" . "rudalics@gmx.at"))])
  (sed-mode .
-	   [(1 0)
-	    nil "Major mode to edit sed scripts" single
-	    ((:url . "http://elpa.gnu.org/packages/sed-mode.html")
+	   [(1 1)
+	    nil "Major mode to edit sed scripts" tar
+	    ((:maintainer "Stefan Monnier" . "monnier@iro.umontreal.ca")
 	     (:authors
 	      ("Stefan Monnier" . "monnier@iro.umontreal.ca"))
-	     (:maintainer "Stefan Monnier" . "monnier@iro.umontreal.ca"))])
+	     (:url . "https://elpa.gnu.org/packages/sed-mode.html")
+	     (:commit . "6009f57567959387b9e34068567e982b6991eb24"))])
  (seq .
       [(2 23)
        nil "Sequence manipulation functions" tar
