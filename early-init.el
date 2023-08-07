@@ -26,7 +26,7 @@
 ;; Add the macro generated list of package.el loadpaths to load-path.
 (mapc (lambda (add) (add-to-list 'load-path add))
       (eval-when-compile
-	;; jules: The following two lines adapt this to Cask
+	;; jules: The following two statements adapt this to Cask
 	(require 'package)
 	(setq package-user-dir
 	      (file-name-as-directory
