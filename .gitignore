@@ -1,7 +1,13 @@
+# Compiled files
+/early-init.elc
+
+# Site specific files
 /site.el
 /default.el
 /customize.el
 
+# Transient files
+/backup
 /bookmarks
 /save-place
 /ido.last
