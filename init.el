@@ -22,7 +22,8 @@
 ;;     (set-face-attribute 'default nil :family font)))
 
 (setq inhibit-startup-screen t
-      visible-bell t)
+      visible-bell t
+      initial-scratch-message nil)
 
 (use-package solarized-dark-theme
   :config
