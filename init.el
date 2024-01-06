@@ -209,7 +209,11 @@
 	org-refile-targets '((nil . (:maxlevel . 65535)))  ; TODO This is a hack ...
 	org-capture-templates '(("a" "Autofocus" entry (file "~/Sync/org/dump.org") "* %?"))
 
-	org-agenda-todo-ignore-scheduled 'future)
+	org-agenda-todo-ignore-scheduled 'future
+
+	;; Work around a bug between evil and org
+	;; See https://github.com/emacs-evil/evil/issues/1630
+	org-fold-core-style 'overlays)
 
   (use-package evil
     :defer t
